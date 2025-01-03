@@ -1,10 +1,10 @@
-package org.frc1410.viridian;
+package org.frc1410.reefscape2025;
 // PLEASE
 
 import org.frc1410.framework.PhaseDrivenRobot;
 import org.frc1410.framework.control.Controller;
 
-import static org.frc1410.viridian.util.IDs.*;
+import static org.frc1410.reefscape2025.util.IDs.*;
 
 public final class Robot extends PhaseDrivenRobot {
 	public Robot() {}
