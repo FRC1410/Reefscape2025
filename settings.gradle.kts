@@ -6,8 +6,8 @@ pluginManagement {
 //        val prefFile = File(".wpilib", "wpilib_preferences.json")
 //        val prefs = groovy.json.JsonSlurper().parseText(prefFile.readText()) as Map<String, Any>
 //        val frcYear = prefs.get("projectYear") as String
-        val frcYear = "2024"
-        val os = System.getProperty("os.name").toLowerCase()
+        val frcYear = "2025"
+        val os = System.getProperty("os.name").lowercase()
 
         val publicDir = if (os.startsWith("win")) {
             File(System.getenv("PUBLIC") ?: "C:\\Users\\Public")

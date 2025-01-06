@@ -8,7 +8,7 @@ plugins {
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
-def ROBOT_MAIN_CLASS = "org.frc1410.viridian.Main"
+def ROBOT_MAIN_CLASS = "org.frc1410.reefscape2025.Main"
 
 deploy {
     targets {
