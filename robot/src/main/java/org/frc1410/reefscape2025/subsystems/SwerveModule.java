@@ -25,6 +25,7 @@ import edu.wpi.first.units.measure.LinearVelocity;
 import org.frc1410.framework.scheduler.subsystem.TickedSubsystem;
 
 import static org.frc1410.reefscape2025.util.Constants.*;
+import static org.frc1410.reefscape2025.util.Tuning.*;
 
 public class SwerveModule implements TickedSubsystem {
     private final TalonFX driveMotor;

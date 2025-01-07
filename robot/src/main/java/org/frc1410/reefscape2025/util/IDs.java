@@ -18,8 +18,8 @@ public final class IDs {
 	public static final int BACK_RIGHT_DRIVE_MOTOR = 6;
 	public static final int BACK_RIGHT_STEER_MOTOR = 7;
 
-	public static final int FRONT_LEFT_ENCODER = 0;
-	public static final int FRONT_RIGHT_ENCODER = 1;
-	public static final int BACK_LEFT_ENCODER = 2;
-	public static final int BACK_RIGHT_ENCODER = 3;
+	public static final int FRONT_LEFT_STEER_ENCODER = 0;
+	public static final int FRONT_RIGHT_STEER_ENCODER = 1;
+	public static final int BACK_LEFT_STEER_ENCODER = 2;
+	public static final int BACK_RIGHT_STEER_ENCODER = 3;
 }
