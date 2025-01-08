@@ -4,14 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="Rest of the drivetrain code">
+    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="hol up trying to do something rq">
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/libs/robot.jar" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/libs/robot.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/NetworkTables.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Robot.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Test 2025.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Test 2025.path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Drivetrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Drivetrain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/SwerveModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/SwerveModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/IDs.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/IDs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Tuning.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Tuning.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,40 +68,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Reefscape2025" type="f1a62948:ProjectNode" />
                 <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
-                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
-                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
-                <item name="framework" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
-                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
-                <item name="framework" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
-                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
-                <item name="framework" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
-                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
                 <item name="robot" type="2d1252cf:ModuleNode" />
               </path>
               <path>
@@ -92,23 +75,7 @@
                 <item name="Reefscape2025" type="f1a62948:ProjectNode" />
                 <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
                 <item name="robot" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
-                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
-                <item name="robot" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
-                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
-                <item name="robot" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="deployutils" type="c8890929:TasksNode$1" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -177,7 +144,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.Reefscape2025:robot [deploy]">
+  <component name="RunManager" selected="Gradle.Build &amp; Deploy Robot">
     <configuration name="Reefscape2025:framework [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -288,6 +255,22 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Gradle.Build &amp; Deploy Robot" />
+      <item itemvalue="Gradle.Build &amp; Deploy Robot for Debugging" />
+      <item itemvalue="Gradle.Build Robot" />
+      <item itemvalue="Gradle.Clean" />
+      <item itemvalue="Gradle.Clean Build &amp; Deploy Robot" />
+      <item itemvalue="Gradle.Clean Build &amp; Deploy Robot for Debugging" />
+      <item itemvalue="Gradle.Clean Build Robot" />
+      <item itemvalue="Gradle.Reefscape2025:framework [build]" />
+      <item itemvalue="Gradle.Reefscape2025:robot [build]" />
+      <item itemvalue="Gradle.Reefscape2025:robot [deploy]" />
+      <item itemvalue="Gradle.Reefscape2025:robot [deployfrcJavaroborio]" />
+      <item itemvalue="Gradle.Viridian-Framework [build]" />
+      <item itemvalue="Remote JVM Debug.Debug Robot via IP" />
+      <item itemvalue="Remote JVM Debug.Debug Robot via USB" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Reefscape2025:robot [deploy]" />
@@ -321,6 +304,9 @@
       <workItem from="1736147706886" duration="5796000" />
       <workItem from="1736190560111" duration="5356000" />
       <workItem from="1736203314893" duration="5559000" />
+      <workItem from="1736269020708" duration="836000" />
+      <workItem from="1736270544314" duration="1000" />
+      <workItem from="1736291777943" duration="8638000" />
     </task>
     <task id="LOCAL-00001" summary="Changed package name from Viridian to Reefscape">
       <option name="closed" value="true" />
@@ -402,7 +388,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736211120876</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="hol up trying to do something rq">
+      <option name="closed" value="true" />
+      <created>1736269617475</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1736269617475</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,9 +415,10 @@
     <MESSAGE value="sent it no balls" />
     <MESSAGE value="Swerve module code and the basic network table stuff for the drivetrain" />
     <MESSAGE value="Rest of the drivetrain code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rest of the drivetrain code" />
+    <MESSAGE value="hol up trying to do something rq" />
+    <option name="LAST_COMMIT_MESSAGE" value="hol up trying to do something rq" />
   </component>
   <component name="WpiLibVersionService">
-    <option name="lastChecked" value="20250106154203" />
+    <option name="lastChecked" value="20250107161618" />
   </component>
 </project>
