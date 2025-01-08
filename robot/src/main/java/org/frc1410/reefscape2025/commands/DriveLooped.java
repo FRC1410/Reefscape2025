@@ -5,6 +5,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 import org.frc1410.framework.control.Axis;
 import org.frc1410.reefscape2025.subsystems.Drivetrain;
 
+import static edu.wpi.first.units.Units.MetersPerSecond;
+import static edu.wpi.first.units.Units.RadiansPerSecond;
 import static org.frc1410.reefscape2025.util.Constants.*;
 
 public class DriveLooped extends Command {
@@ -34,7 +36,17 @@ public class DriveLooped extends Command {
         var yVelocity = SWERVE_DRIVE_MAX_SPEED.times(-this.yAxis.get());
         var angularVelocity = SWERVE_DRIVE_MAX_ANGULAR_VELOCITY.times(-this.rotationAxis.get());
 
-        this.drivetrain.drive(new ChassisSpeeds(xVelocity, yVelocity, angularVelocity));
+        if(robotRelativeTrigger.button().isActive()) {
+            drivetrain.drive(new ChassisSpeeds(xVelocity, yVelocity, angularVelocity));
+        } else {
+            this.drivetrain.fieldOrientedDrive(
+                    new ChassisSpeeds(
+                            xVelocity.in(MetersPerSecond),
+                            yVelocity.in(MetersPerSecond),
+                            angularVelocity.in(RadiansPerSecond)
+                    )
+            );
+        }
     }
 
     @Override

@@ -1,8 +1,10 @@
 package org.frc1410.reefscape2025.subsystems;
 
+import com.studica.frc.AHRS;
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.kinematics.SwerveModulePosition;
@@ -12,9 +14,13 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.networktables.StructPublisher;
 import edu.wpi.first.units.measure.AngularVelocity;
 import edu.wpi.first.units.measure.Voltage;
+import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.SerialPort;
 import org.frc1410.framework.scheduler.subsystem.SubsystemStore;
 import org.frc1410.framework.scheduler.subsystem.TickedSubsystem;
 import org.frc1410.reefscape2025.util.NetworkTables;
+
+import java.util.Optional;
 
 import static edu.wpi.first.units.Units.MetersPerSecond;
 import static edu.wpi.first.units.Units.Volts;
@@ -66,7 +72,9 @@ public class Drivetrain implements TickedSubsystem {
     private final SwerveModule frontRightModule;
     private final SwerveModule backRightModule;
 
-//    private final SwerveDrivePoseEstimator poseEstimator;
+    private final AHRS gyro = new AHRS(AHRS.NavXComType.kUSB1);
+
+    private final SwerveDrivePoseEstimator poseEstimator;
 
     private double previousPipelineTimestamp = 0;
 
@@ -127,12 +135,12 @@ public class Drivetrain implements TickedSubsystem {
                 this.backRightObservedAngle
         ));
 
-//        this.poseEstimator = new SwerveDrivePoseEstimator(
-//                SWERVE_DRIVE_KINEMATICS,
-//                this.getGyroYaw(),
-//                this.getSwerveModulePositions(),
-//                new Pose2d()
-//        );
+        this.poseEstimator = new SwerveDrivePoseEstimator(
+                SWERVE_DRIVE_KINEMATICS,
+                this.getGyroYaw(),
+                this.getSwerveModulePositions(),
+                new Pose2d()
+        );
     }
 
     public void drive(ChassisSpeeds chassisSpeeds) {
@@ -145,6 +153,17 @@ public class Drivetrain implements TickedSubsystem {
         this.backRightModule.setDesiredState(swerveModuleStates[3]);
     }
 
+    public void fieldOrientedDrive(ChassisSpeeds chassisSpeeds) {
+        Rotation2d robotAngle = this.gyro.getRotation2d().minus(this.fieldRelativeOffset);
+        if(DriverStation.getAlliance().equals(Optional.of(DriverStation.Alliance.Red))) {
+            robotAngle = robotAngle.rotateBy(Rotation2d.fromDegrees(180));
+        }
+
+        var robotRelativeChassisSpeeds = ChassisSpeeds.fromRobotRelativeSpeeds(chassisSpeeds, robotAngle);
+
+        this.drive(robotRelativeChassisSpeeds);
+    }
+
     public void drive(Voltage voltage) {
         this.characterizationVolts.set(voltage.in(Volts));
 
@@ -152,6 +171,28 @@ public class Drivetrain implements TickedSubsystem {
         frontRightModule.drive(voltage);
         backLeftModule.drive(voltage);
         backRightModule.drive(voltage);
+    }
+
+    public Pose2d getPoseEstimator() {
+        return this.poseEstimator.getEstimatedPosition();
+    }
+
+    public void resetPose(Pose2d pose) {
+        this.poseEstimator.resetPosition(
+                this.getGyroYaw(),
+                this.getSwerveModulePositions(),
+                pose
+        );
+
+        this.fieldRelativeOffset = this.getGyroYaw().minus(pose.getRotation());
+    }
+
+    public Pose2d getEstimatedPosition() {
+        return this.poseEstimator.getEstimatedPosition();
+    }
+
+    public void setYaw(Rotation2d yaw) {
+        this.resetPose(new Pose2d(this.getEstimatedPosition().getTranslation(), yaw));
     }
 
     public ChassisSpeeds getChassisSpeeds() {
@@ -171,6 +212,10 @@ public class Drivetrain implements TickedSubsystem {
         };
     }
 
+    private Rotation2d getGyroYaw() {
+        return Rotation2d.fromDegrees(-this.gyro.getYaw());
+    }
+
     public AngularVelocity getAverageDriveAngularVelocity() {
         return this.frontLeftModule.getAngularVelocity()
                 .plus(this.frontRightModule.getAngularVelocity())
@@ -181,6 +226,20 @@ public class Drivetrain implements TickedSubsystem {
 
     @Override
     public void periodic() {
+        this.poseEstimator.update(
+                this.getGyroYaw(),
+                this.getSwerveModulePositions()
+        );
 
+        this.poseX.set(this.getEstimatedPosition().getX());
+        this.poseY.set(this.getEstimatedPosition().getY());
+        this.heading.set(this.getEstimatedPosition().getRotation().getDegrees());
+
+        this.yaw.set(this.getGyroYaw().getDegrees());
+        this.pitch.set(this.gyro.getPitch());
+        this.roll.set(this.gyro.getRoll());
+
+        this.posePublisher.set(this.getEstimatedPosition());
+        this.encoderOnlyPosePublisher.set(new Pose2d(new Translation2d(4, 4), this.getGyroYaw()));
     }
 }
