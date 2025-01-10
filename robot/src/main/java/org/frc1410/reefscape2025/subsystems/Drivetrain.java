@@ -183,7 +183,7 @@ public class Drivetrain implements TickedSubsystem {
         backRightModule.drive(voltage);
     }
 
-    public Pose2d getPoseEstimator() {
+    public Pose2d getEstimatedPosition() {
         return this.poseEstimator.getEstimatedPosition();
     }
 
@@ -195,10 +195,6 @@ public class Drivetrain implements TickedSubsystem {
         );
 
         this.fieldRelativeOffset = this.getGyroYaw().minus(pose.getRotation());
-    }
-
-    public Pose2d getEstimatedPosition() {
-        return this.poseEstimator.getEstimatedPosition();
     }
 
     public void setYaw(Rotation2d yaw) {
