@@ -4,24 +4,24 @@
     {
       "anchor": {
         "x": 7.1,
-        "y": 6.17
+        "y": 4.05
       },
       "prevControl": null,
       "nextControl": {
-        "x": 6.86937056729316,
-        "y": 5.791057263529613
+        "x": 6.792906783499214,
+        "y": 4.081863452494028
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 5.840250000000001,
-        "y": 4.181
+        "x": 5.87,
+        "y": 3.87
       },
       "prevControl": {
-        "x": 5.982983772099777,
-        "y": 4.39439383379422
+        "x": 6.248847903788667,
+        "y": 3.8252056635916074
       },
       "nextControl": null,
       "isLocked": false,
@@ -45,7 +45,7 @@
     "rotation": 180.0
   },
   "reversed": false,
-  "folder": "Water One",
+  "folder": null,
   "idealStartingState": {
     "velocity": 0,
     "rotation": 180.0
