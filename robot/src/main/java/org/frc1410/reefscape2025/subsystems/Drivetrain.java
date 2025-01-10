@@ -68,11 +68,11 @@ public class Drivetrain implements TickedSubsystem {
             .getStructTopic("encoderOnlyPose", Pose2d.struct).publish();
 
     private final SwerveModule frontLeftModule;
-    private final SwerveModule backLeftModule;
     private final SwerveModule frontRightModule;
+    private final SwerveModule backLeftModule;
     private final SwerveModule backRightModule;
 
-    private final AHRS gyro = new AHRS(AHRS.NavXComType.kUSB1);
+    private final AHRS gyro = new AHRS(AHRS.NavXComType.kMXP_SPI);
 
     private final SwerveDrivePoseEstimator poseEstimator;
 
@@ -141,10 +141,20 @@ public class Drivetrain implements TickedSubsystem {
                 this.getSwerveModulePositions(),
                 new Pose2d()
         );
+
+        gyro.reset();
     }
 
     public void drive(ChassisSpeeds chassisSpeeds) {
-        var swerveModuleStates = SWERVE_DRIVE_KINEMATICS.toSwerveModuleStates(chassisSpeeds);
+        var discretizedChassisSpeeds = ChassisSpeeds.discretize(
+                chassisSpeeds.vxMetersPerSecond,
+                chassisSpeeds.vyMetersPerSecond,
+                chassisSpeeds.omegaRadiansPerSecond,
+                0.02
+        );
+        var swerveModuleStates = SWERVE_DRIVE_KINEMATICS.toSwerveModuleStates(discretizedChassisSpeeds);
+
+//        var swerveModuleStates = SWERVE_DRIVE_KINEMATICS.toSwerveModuleStates(chassisSpeeds);
         SwerveDriveKinematics.desaturateWheelSpeeds(swerveModuleStates, SWERVE_DRIVE_MAX_SPEED.in(MetersPerSecond));
 
         this.frontLeftModule.setDesiredState(swerveModuleStates[0]);
@@ -154,17 +164,17 @@ public class Drivetrain implements TickedSubsystem {
     }
 
     public void fieldOrientedDrive(ChassisSpeeds chassisSpeeds) {
-        Rotation2d robotAngle = this.gyro.getRotation2d().minus(this.fieldRelativeOffset);
-        if(DriverStation.getAlliance().equals(Optional.of(DriverStation.Alliance.Red))) {
+        Rotation2d robotAngle = this.getGyroYaw().minus(this.fieldRelativeOffset);
+        if (DriverStation.getAlliance().equals(Optional.of(DriverStation.Alliance.Red))) {
             robotAngle = robotAngle.rotateBy(Rotation2d.fromDegrees(180));
         }
 
-        var robotRelativeChassisSpeeds = ChassisSpeeds.fromRobotRelativeSpeeds(chassisSpeeds, robotAngle);
+        var robotRelativeChassisSpeeds = ChassisSpeeds.fromFieldRelativeSpeeds(chassisSpeeds, robotAngle);
 
         this.drive(robotRelativeChassisSpeeds);
     }
 
-    public void drive(Voltage voltage) {
+    public void driveV(Voltage voltage) {
         this.characterizationVolts.set(voltage.in(Volts));
 
         frontLeftModule.drive(voltage);
@@ -238,6 +248,8 @@ public class Drivetrain implements TickedSubsystem {
         this.yaw.set(this.getGyroYaw().getDegrees());
         this.pitch.set(this.gyro.getPitch());
         this.roll.set(this.gyro.getRoll());
+
+        System.out.println(this.gyro.getYaw() + " This is the gyro Yaw");
 
         this.posePublisher.set(this.getEstimatedPosition());
         this.encoderOnlyPosePublisher.set(new Pose2d(new Translation2d(4, 4), this.getGyroYaw()));

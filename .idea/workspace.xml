@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="Uhhh auto shit">
-      <change afterPath="$PROJECT_DIR$/robot/vendordeps/Studica-2025.0.0.json" afterDir="false" />
+    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="Added gyro stuff and added field oriented drive and things to prepare for Auto code">
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
@@ -18,9 +17,16 @@
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/libs/robot.jar" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/libs/robot.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Starting line to South East Coral R.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Starting line to South East Coral R.path" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/DriveLooped.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/DriveLooped.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Drivetrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Drivetrain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Tuning.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Tuning.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,32 +118,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Gradle.Reefscape2025 [buildDependents].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Reefscape2025 [dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Reefscape2025:framework [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Reefscape2025:robot [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Reefscape2025:robot [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Reefscape2025:robot [deployfrcJavaroborio].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Viridian-Framework [build].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Swerve&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.Reefscape2025 [buildDependents].executor": "Run",
+    "Gradle.Reefscape2025 [dependencies].executor": "Run",
+    "Gradle.Reefscape2025:framework [build].executor": "Run",
+    "Gradle.Reefscape2025:robot [build].executor": "Run",
+    "Gradle.Reefscape2025:robot [deploy].executor": "Run",
+    "Gradle.Reefscape2025:robot [deployfrcJavaroborio].executor": "Run",
+    "Gradle.Viridian-Framework [build].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Swerve",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Gradle.Reefscape2025:robot [build]">
+}]]></component>
+  <component name="RunManager" selected="Gradle.Reefscape2025:robot [deploy]">
     <configuration name="Reefscape2025:framework [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -266,8 +273,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Reefscape2025:robot [build]" />
         <item itemvalue="Gradle.Reefscape2025:robot [deploy]" />
+        <item itemvalue="Gradle.Reefscape2025:robot [build]" />
         <item itemvalue="Gradle.Reefscape2025:robot [deployfrcJavaroborio]" />
         <item itemvalue="Gradle.Reefscape2025:framework [build]" />
         <item itemvalue="Gradle.Viridian-Framework [build]" />
@@ -301,7 +308,11 @@
       <workItem from="1736270544314" duration="1000" />
       <workItem from="1736291777943" duration="8638000" />
       <workItem from="1736319254685" duration="327000" />
-      <workItem from="1736356557344" duration="3705000" />
+      <workItem from="1736356557344" duration="3991000" />
+      <workItem from="1736367431506" duration="585000" />
+      <workItem from="1736375588692" duration="6281000" />
+      <workItem from="1736441650393" duration="4367000" />
+      <workItem from="1736453459732" duration="4821000" />
     </task>
     <task id="LOCAL-00001" summary="Changed package name from Viridian to Reefscape">
       <option name="closed" value="true" />
@@ -407,7 +418,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736319573099</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added gyro stuff and added field oriented drive and things to prepare for Auto code">
+      <option name="closed" value="true" />
+      <created>1736364845759</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1736364845759</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,9 +448,10 @@
     <MESSAGE value="hol up trying to do something rq" />
     <MESSAGE value=":see_no_evil: Functioning swerve code" />
     <MESSAGE value="Uhhh auto shit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Uhhh auto shit" />
+    <MESSAGE value="Added gyro stuff and added field oriented drive and things to prepare for Auto code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added gyro stuff and added field oriented drive and things to prepare for Auto code" />
   </component>
   <component name="WpiLibVersionService">
-    <option name="lastChecked" value="20250108101558" />
+    <option name="lastChecked" value="20250109131106" />
   </component>
 </project>
