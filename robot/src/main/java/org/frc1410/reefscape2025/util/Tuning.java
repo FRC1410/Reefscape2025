@@ -17,6 +17,6 @@ public final class Tuning {
     public static final double DRIVE_KV = 0.12280;
 
     // Path following
-    public static final PIDConstants PATH_AUTO_TRANSLATION_CONSTRAINTS = new PIDConstants(4, 0, 0);
-    public static final PIDConstants PATH_AUTO_ROTATION_CONSTRAINTS = new PIDConstants(1, 0, 0);
+    public static final PIDConstants PATH_AUTO_TRANSLATION_CONSTRAINTS = new PIDConstants(3.5, 0, 0.8);
+    public static final PIDConstants PATH_AUTO_ROTATION_CONSTRAINTS = new PIDConstants(0.3, 0, 0.1);
 }
