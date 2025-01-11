@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="we ball again" />
+    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="Working and good auto PID constants">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/SwerveModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/SwerveModule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/libs/robot.jar" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/libs/robot.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Tuning.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Tuning.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -239,13 +257,13 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle.Build Robot" />
       <item itemvalue="Gradle.Build &amp; Deploy Robot" />
       <item itemvalue="Gradle.Build &amp; Deploy Robot for Debugging" />
-      <item itemvalue="Gradle.Build Robot" />
       <item itemvalue="Gradle.Clean" />
+      <item itemvalue="Gradle.Clean Build Robot" />
       <item itemvalue="Gradle.Clean Build &amp; Deploy Robot" />
       <item itemvalue="Gradle.Clean Build &amp; Deploy Robot for Debugging" />
-      <item itemvalue="Gradle.Clean Build Robot" />
       <item itemvalue="Gradle.Reefscape2025:framework [build]" />
       <item itemvalue="Gradle.Reefscape2025:robot [build]" />
       <item itemvalue="Gradle.Reefscape2025:robot [deploy]" />
@@ -302,7 +320,9 @@
       <workItem from="1736565056000" duration="2233000" />
       <workItem from="1736570042082" duration="1068000" />
       <workItem from="1736614503011" duration="685000" />
-      <workItem from="1736615223330" duration="345000" />
+      <workItem from="1736615223330" duration="6812000" />
+      <workItem from="1736622550878" duration="858000" />
+      <workItem from="1736623478666" duration="807000" />
     </task>
     <task id="LOCAL-00001" summary="Changed package name from Viridian to Reefscape">
       <option name="closed" value="true" />
@@ -456,7 +476,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736615377111</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Working and good auto PID constants">
+      <option name="closed" value="true" />
+      <created>1736622211245</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1736622211245</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,9 +513,10 @@
     <MESSAGE value="working" />
     <MESSAGE value="we ball" />
     <MESSAGE value="we ball again" />
-    <option name="LAST_COMMIT_MESSAGE" value="we ball again" />
+    <MESSAGE value="Working and good auto PID constants" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working and good auto PID constants" />
   </component>
   <component name="WpiLibVersionService">
-    <option name="lastChecked" value="20250111100735" />
+    <option name="lastChecked" value="20250111122438" />
   </component>
 </project>
