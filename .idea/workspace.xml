@@ -4,7 +4,65 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="Added gyro stuff and added field oriented drive and things to prepare for Auto code">
+    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="we ball">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/Reefscape2025.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/build-logic/build-logic.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/build-logic/build-logic.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Build_Robot.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Build___Deploy_Robot.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Build___Deploy_Robot_for_Debugging.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Clean.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Clean_Build_Robot.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Clean_Build___Deploy_Robot.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Clean_Build___Deploy_Robot_for_Debugging.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Debug_Robot_via_IP.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Debug_Robot_via_USB.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/DriveLooped.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Drivetrain.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/SwerveModule.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/debug/debug_info.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/debug/roborio.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_aruco.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_calib3d.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_core.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_dnn.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_features2d.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_flann.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_gapi.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_highgui.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_imgcodecs.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_imgproc.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_java4100.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_ml.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_objdetect.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_photo.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_stitching.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_video.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_0ec4c1b5e27073f57cbd8da30899ff82/linux/athena/shared/libopencv_videoio.so.4.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_23a848a40010f6fbacaa4c5658f7e276/linux/athena/shared/libCTRE_PhoenixCCI.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_31a28cd6e10ebde9153183c9ab29526a/linux/athena/shared/libwpiHal.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_31a28cd6e10ebde9153183c9ab29526a/linux/athena/shared/libwpiHaljni.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_507d7f95ec3a26f6bff8a40453d4ff24/linux/athena/shared/libREVLibDriver.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_626e08cf6feccfbd34c09ea312490a60/linux/athena/shared/libCTRE_PhoenixTools.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_7e088be21e2bdda8f923bc62ecaad733/linux/athena/shared/libCTRE_Phoenix6.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_81a5430337abfd0d8ae3bcf0e43e8e10/linux/athena/shared/libStudicaDriver.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_880efb96b9da0aae195ffc5016220280/linux/athena/shared/libntcore.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_880efb96b9da0aae195ffc5016220280/linux/athena/shared/libntcorejni.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_8b38fd862ef0081cbe800b1694f78e7b/linux/athena/shared/libwpinet.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_8b38fd862ef0081cbe800b1694f78e7b/linux/athena/shared/libwpinetjni.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_b19d48afc47b5be9ee2412025cb6c61f/linux/athena/shared/libapriltag.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_b19d48afc47b5be9ee2412025cb6c61f/linux/athena/shared/libapriltagjni.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_bdfdd1e931422bfc800823e757533fd8/linux/athena/shared/libwpiutil.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_bdfdd1e931422bfc800823e757533fd8/linux/athena/shared/libwpiutiljni.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_e1e45b4f6a13e0c22963275523e0a9ce/linux/athena/shared/libcscore.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_e1e45b4f6a13e0c22963275523e0a9ce/linux/athena/shared/libcscorejni.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_ecb3c86879fc1cc2aacb22e25a0c4a4a/linux/athena/shared/libwpimath.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/.cache/expanded/zip_ecb3c86879fc1cc2aacb22e25a0c4a4a/linux/athena/shared/libwpimathjni.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Robot.class.uniqueId1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/New Path.path" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
@@ -22,8 +80,23 @@
       <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/libs/robot.jar" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/libs/robot.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/2-Source.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/2-Source.path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/3-Source.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/3-Source.path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source to South Coral L.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source to South Coral L.path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source to South Coral R.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source to South Coral R.path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source to South East Coral L.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source to South East Coral L.path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source-1.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source-1.path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source-2.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source-2.path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South Coral R to Source.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South Coral R to Source.path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South East Coral L to Source.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South East Coral L to Source.path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South East Coral R to Source.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South East Coral R to Source.path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Starting line to North L.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Starting line to North L.path" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Starting line to South East Coral R.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Starting line to South East Coral R.path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/TopStart-3.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/TopStart-3.path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/TopStart-6.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/TopStart-6.path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/DriveLooped.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/DriveLooped.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Drivetrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Drivetrain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Tuning.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Tuning.java" afterDir="false" />
@@ -118,32 +191,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.Reefscape2025 [buildDependents].executor": "Run",
-    "Gradle.Reefscape2025 [dependencies].executor": "Run",
-    "Gradle.Reefscape2025:framework [build].executor": "Run",
-    "Gradle.Reefscape2025:robot [build].executor": "Run",
-    "Gradle.Reefscape2025:robot [deploy].executor": "Run",
-    "Gradle.Reefscape2025:robot [deployfrcJavaroborio].executor": "Run",
-    "Gradle.Viridian-Framework [build].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Swerve",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Reefscape2025 [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Reefscape2025 [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Reefscape2025:framework [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Reefscape2025:robot [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Reefscape2025:robot [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Reefscape2025:robot [deployfrcJavaroborio].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Viridian-Framework [build].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Swerve&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\antho\IdeaProjects\Reefscape2025\robot\src\main\deploy\pathplanner\autos" />
+      <recent name="C:\Users\antho\IdeaProjects\Reefscape2025\robot\src\main\deploy\pathplanner\paths" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.Reefscape2025:robot [deploy]">
     <configuration name="Reefscape2025:framework [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -312,7 +391,13 @@
       <workItem from="1736367431506" duration="585000" />
       <workItem from="1736375588692" duration="6281000" />
       <workItem from="1736441650393" duration="4367000" />
-      <workItem from="1736453459732" duration="4821000" />
+      <workItem from="1736453459732" duration="15079000" />
+      <workItem from="1736529874061" duration="2656000" />
+      <workItem from="1736541939078" duration="4402000" />
+      <workItem from="1736555305552" duration="3430000" />
+      <workItem from="1736565056000" duration="2233000" />
+      <workItem from="1736570042082" duration="1068000" />
+      <workItem from="1736614503011" duration="685000" />
     </task>
     <task id="LOCAL-00001" summary="Changed package name from Viridian to Reefscape">
       <option name="closed" value="true" />
@@ -426,7 +511,39 @@
       <option name="project" value="LOCAL" />
       <updated>1736364845759</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Working swerve drivetrain and added auto stuff">
+      <option name="closed" value="true" />
+      <created>1736482186308</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1736482186308</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Ben's W autos">
+      <option name="closed" value="true" />
+      <created>1736490328477</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1736490328477</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Ben's W autos">
+      <option name="closed" value="true" />
+      <created>1736490947944</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1736490947944</updated>
+    </task>
+    <task id="LOCAL-00018" summary="optimized some of the paths a little further">
+      <option name="closed" value="true" />
+      <created>1736491596217</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1736491596217</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,9 +566,14 @@
     <MESSAGE value=":see_no_evil: Functioning swerve code" />
     <MESSAGE value="Uhhh auto shit" />
     <MESSAGE value="Added gyro stuff and added field oriented drive and things to prepare for Auto code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added gyro stuff and added field oriented drive and things to prepare for Auto code" />
+    <MESSAGE value="Working swerve drivetrain and added auto stuff" />
+    <MESSAGE value="Ben's W autos" />
+    <MESSAGE value="optimized some of the paths a little further" />
+    <MESSAGE value="working" />
+    <MESSAGE value="we ball" />
+    <option name="LAST_COMMIT_MESSAGE" value="we ball" />
   </component>
   <component name="WpiLibVersionService">
-    <option name="lastChecked" value="20250109131106" />
+    <option name="lastChecked" value="20250111095506" />
   </component>
 </project>

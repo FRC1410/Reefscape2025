@@ -32,9 +32,11 @@ public class DriveLooped extends Command {
 
     @Override
     public void execute() {
-        var xVelocity = SWERVE_DRIVE_MAX_SPEED.times(-this.xAxis.get());
+        var xVelocity = SWERVE_DRIVE_MAX_SPEED.times(this.xAxis.get());
         var yVelocity = SWERVE_DRIVE_MAX_SPEED.times(-this.yAxis.get());
         var angularVelocity = SWERVE_DRIVE_MAX_ANGULAR_VELOCITY.times(-this.rotationAxis.get());
+
+//        drivetrain.drive(new ChassisSpeeds(xVelocity, yVelocity, angularVelocity));
 
         if(robotRelativeTrigger.button().isActive()) {
             drivetrain.drive(new ChassisSpeeds(xVelocity, yVelocity, angularVelocity));
@@ -46,6 +48,7 @@ public class DriveLooped extends Command {
                             angularVelocity.in(RadiansPerSecond)
                     )
             );
+            System.out.println(new ChassisSpeeds(xVelocity, yVelocity, angularVelocity));
         }
     }
 

@@ -9,6 +9,8 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.networktables.StringPublisher;
+import edu.wpi.first.networktables.StringSubscriber;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import org.frc1410.framework.AutoSelector;
@@ -21,28 +23,25 @@ import org.frc1410.reefscape2025.util.NetworkTables;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.nio.file.Path;
 
 import static org.frc1410.reefscape2025.util.IDs.*;
 import static org.frc1410.reefscape2025.util.Constants.*;
 
 public final class Robot extends PhaseDrivenRobot {
-	private final NetworkTableInstance nt = NetworkTableInstance.getDefault();
-	private final NetworkTable table = this.nt.getTable("Auto");
+	public Robot() {
 
-	private final Controller driverController = new Controller(this.scheduler, DRIVER_CONTROLLER, 0.1);
-	private final Controller operatorController = new Controller(this.scheduler, OPERATOR_CONTROLLER, 0.1);
+		try {
+			this.robotConfig = RobotConfig.fromGUISettings();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-	// Subsystems
-	private final Drivetrain drivetrain = subsystems.track(new Drivetrain(this.subsystems));
-
-	RobotConfig robotConfig = RobotConfig.fromGUISettings();
-
-	public Robot() throws IOException, ParseException {
 		AutoBuilder.configure(
 				this.drivetrain::getEstimatedPosition,
 				this.drivetrain::resetPose,
 				this.drivetrain::getChassisSpeeds,
-                this.drivetrain::drive,
+				this.drivetrain::drive,
 				HOLONOMIC_AUTO_CONFIG,
 				robotConfig,
 				() -> {
@@ -57,9 +56,19 @@ public final class Robot extends PhaseDrivenRobot {
 		);
 	}
 
+	private final Controller driverController = new Controller(this.scheduler, DRIVER_CONTROLLER, 0.1);
+	private final Controller operatorController = new Controller(this.scheduler, OPERATOR_CONTROLLER, 0.1);
+
+	// Subsystems
+	private final Drivetrain drivetrain = subsystems.track(new Drivetrain(this.subsystems));
+
+	private final NetworkTableInstance nt = NetworkTableInstance.getDefault();
+	private final NetworkTable table = this.nt.getTable("Auto");
+	private RobotConfig robotConfig;
+
+
 	private final AutoSelector autoSelector = new AutoSelector()
-			.add("0", () -> new InstantCommand())
-			.add("1", () -> new PathPlannerAuto("1 coral"));
+			.add("1L", () -> new PathPlannerAuto("1 Coral"));
 
 	{
 		var profiles = new String[this.autoSelector.getProfiles().size()];
@@ -71,15 +80,26 @@ public final class Robot extends PhaseDrivenRobot {
 		autoChoicesPub.accept(profiles);
 	}
 
+	private final StringPublisher autoPublisher = NetworkTables.PublisherFactory(this.table, "Profile",
+			this.autoSelector.getProfiles().isEmpty() ? "0" : this.autoSelector.getProfiles().get(0).name());
+
+	private final StringSubscriber autoSubscriber = NetworkTables.SubscriberFactory(this.table, this.autoPublisher.getTopic());
+
 		@Override
-		public void autonomousSequence () {}
+		public void autonomousSequence () {
+			NetworkTables.SetPersistence(this.autoPublisher.getTopic(), true);
+			String autoProfile = this.autoSubscriber.get();
+			var autoCommand = this.autoSelector.select(autoProfile);
+
+			this.scheduler.scheduleAutoCommand(autoCommand);
+		}
 
 		@Override
 		public void teleopSequence () {
 		this.scheduler.scheduleDefaultCommand(new DriveLooped(
 				this.drivetrain,
-				this.driverController.LEFT_Y_AXIS,
 				this.driverController.LEFT_X_AXIS,
+				this.driverController.LEFT_Y_AXIS,
 				this.driverController.RIGHT_X_AXIS,
 				this.driverController.LEFT_TRIGGER
 		), TaskPersistence.EPHEMERAL);

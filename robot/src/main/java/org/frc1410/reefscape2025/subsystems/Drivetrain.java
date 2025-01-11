@@ -15,7 +15,6 @@ import edu.wpi.first.networktables.StructPublisher;
 import edu.wpi.first.units.measure.AngularVelocity;
 import edu.wpi.first.units.measure.Voltage;
 import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj.SerialPort;
 import org.frc1410.framework.scheduler.subsystem.SubsystemStore;
 import org.frc1410.framework.scheduler.subsystem.TickedSubsystem;
 import org.frc1410.reefscape2025.util.NetworkTables;
@@ -152,6 +151,9 @@ public class Drivetrain implements TickedSubsystem {
                 chassisSpeeds.omegaRadiansPerSecond,
                 0.02
         );
+
+        System.out.println(discretizedChassisSpeeds);
+
         var swerveModuleStates = SWERVE_DRIVE_KINEMATICS.toSwerveModuleStates(discretizedChassisSpeeds);
 
 //        var swerveModuleStates = SWERVE_DRIVE_KINEMATICS.toSwerveModuleStates(chassisSpeeds);
@@ -244,8 +246,6 @@ public class Drivetrain implements TickedSubsystem {
         this.yaw.set(this.getGyroYaw().getDegrees());
         this.pitch.set(this.gyro.getPitch());
         this.roll.set(this.gyro.getRoll());
-
-        System.out.println(this.gyro.getYaw() + " This is the gyro Yaw");
 
         this.posePublisher.set(this.getEstimatedPosition());
         this.encoderOnlyPosePublisher.set(new Pose2d(new Translation2d(4, 4), this.getGyroYaw()));
