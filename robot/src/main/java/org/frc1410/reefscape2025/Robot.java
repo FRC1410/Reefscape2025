@@ -18,6 +18,7 @@ import org.frc1410.framework.PhaseDrivenRobot;
 import org.frc1410.framework.control.Controller;
 import org.frc1410.framework.scheduler.task.TaskPersistence;
 import org.frc1410.reefscape2025.commands.DriveLooped;
+import org.frc1410.reefscape2025.commands.FeedForwardCharacterization;
 import org.frc1410.reefscape2025.subsystems.Drivetrain;
 import org.frc1410.reefscape2025.util.NetworkTables;
 import org.json.simple.parser.ParseException;
@@ -25,6 +26,8 @@ import org.json.simple.parser.ParseException;
 import java.io.IOException;
 import java.nio.file.Path;
 
+import static edu.wpi.first.units.Units.RotationsPerSecond;
+import static edu.wpi.first.units.Units.Volts;
 import static org.frc1410.reefscape2025.util.IDs.*;
 import static org.frc1410.reefscape2025.util.Constants.*;
 
@@ -87,11 +90,24 @@ public final class Robot extends PhaseDrivenRobot {
 
 		@Override
 		public void autonomousSequence () {
-			NetworkTables.SetPersistence(this.autoPublisher.getTopic(), true);
-			String autoProfile = this.autoSubscriber.get();
-			var autoCommand = this.autoSelector.select(autoProfile);
+//			NetworkTables.SetPersistence(this.autoPublisher.getTopic(), true);
+//			String autoProfile = this.autoSubscriber.get();
+//			var autoCommand = this.autoSelector.select(autoProfile);
+
+			var autoCommand = new FeedForwardCharacterization(
+					drivetrain,
+					true,
+					new FeedForwardCharacterization.FeedForwardCharacterizationData("drive"),
+					(volts) -> drivetrain.drive(Volts.of(volts)),
+					() -> drivetrain.getAverageDriveAngularVelocity().in(RotationsPerSecond)
+					);
+
+
 
 			this.scheduler.scheduleAutoCommand(autoCommand);
+
+
+
 		}
 
 		@Override

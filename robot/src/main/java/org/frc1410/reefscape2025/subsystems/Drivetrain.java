@@ -12,8 +12,9 @@ import edu.wpi.first.networktables.DoublePublisher;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.networktables.StructPublisher;
+import edu.wpi.first.units.Measure;
 import edu.wpi.first.units.measure.AngularVelocity;
-import edu.wpi.first.units.measure.Voltage;
+import edu.wpi.first.units.VoltageUnit;
 import edu.wpi.first.wpilibj.DriverStation;
 import org.frc1410.framework.scheduler.subsystem.SubsystemStore;
 import org.frc1410.framework.scheduler.subsystem.TickedSubsystem;
@@ -65,6 +66,7 @@ public class Drivetrain implements TickedSubsystem {
 
     private final StructPublisher<Pose2d> encoderOnlyPosePublisher = NetworkTableInstance.getDefault()
             .getStructTopic("encoderOnlyPose", Pose2d.struct).publish();
+
 
     private final SwerveModule frontLeftModule;
     private final SwerveModule frontRightModule;
@@ -165,6 +167,14 @@ public class Drivetrain implements TickedSubsystem {
         this.backRightModule.setDesiredState(swerveModuleStates[3]);
     }
 
+    public void drive(Measure<VoltageUnit> voltage) {
+        characterizationVolts.set(voltage.in(Volts));
+        frontLeftModule.drive(voltage);
+        frontRightModule.drive(voltage);
+        backLeftModule.drive(voltage);
+        backRightModule.drive(voltage);
+    }
+
     public void fieldOrientedDrive(ChassisSpeeds chassisSpeeds) {
         Rotation2d robotAngle = this.getGyroYaw().minus(this.fieldRelativeOffset);
         if (DriverStation.getAlliance().equals(Optional.of(DriverStation.Alliance.Red))) {
@@ -176,14 +186,14 @@ public class Drivetrain implements TickedSubsystem {
         this.drive(robotRelativeChassisSpeeds);
     }
 
-    public void driveV(Voltage voltage) {
-        this.characterizationVolts.set(voltage.in(Volts));
-
-        frontLeftModule.drive(voltage);
-        frontRightModule.drive(voltage);
-        backLeftModule.drive(voltage);
-        backRightModule.drive(voltage);
-    }
+//    public void driveV(Voltage voltage) {
+//        this.characterizationVolts.set(voltage.in(Volts));
+//
+//        frontLeftModule.drive(voltage);
+//        frontRightModule.drive(voltage);
+//        backLeftModule.drive(voltage);
+//        backRightModule.drive(voltage);
+//    }
 
     public Pose2d getEstimatedPosition() {
         return this.poseEstimator.getEstimatedPosition();
@@ -250,4 +260,7 @@ public class Drivetrain implements TickedSubsystem {
         this.posePublisher.set(this.getEstimatedPosition());
         this.encoderOnlyPosePublisher.set(new Pose2d(new Translation2d(4, 4), this.getGyroYaw()));
     }
+
+
+
 }
