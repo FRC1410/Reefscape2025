@@ -1,6 +1,5 @@
 package org.frc1410.reefscape2025.subsystems;
 
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.signals.InvertedValue;
@@ -10,12 +9,12 @@ import edu.wpi.first.wpilibj2.command.Subsystem;
 import static org.frc1410.reefscape2025.util.IDs.*;
 import static org.frc1410.reefscape2025.util.Tuning.*;
 
-public class Elevator implements Subsystem {
+public class Barroon implements Subsystem {
 
     private final TalonFX leftMotor;
     private final TalonFX rightMotor;
 
-    public Elevator() {
+    public Barroon() {
         this.leftMotor = new TalonFX(LEFT_ELEVATOR_MOTOR);
         var leftMotorConfig = new TalonFXConfiguration();
         leftMotorConfig.CurrentLimits.SupplyCurrentLimit = 40;
