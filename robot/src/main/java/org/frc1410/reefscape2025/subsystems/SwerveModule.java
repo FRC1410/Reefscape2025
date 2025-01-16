@@ -48,6 +48,7 @@ public class SwerveModule implements TickedSubsystem {
 
     private final DoublePublisher actualVelocity;
     private final DoublePublisher actualAngle;
+    private final DoublePublisher error;
 
     public SwerveModule(
             int driveMotorID,
@@ -59,7 +60,8 @@ public class SwerveModule implements TickedSubsystem {
             DoublePublisher desiredVelocity,
             DoublePublisher desiredAngle,
             DoublePublisher actualVelocity,
-            DoublePublisher actualAngle
+            DoublePublisher actualAngle,
+            DoublePublisher error
     ) {
 
         // Drive config
@@ -115,6 +117,8 @@ public class SwerveModule implements TickedSubsystem {
 
         this.actualVelocity = actualVelocity;
         this.actualAngle = actualAngle;
+
+        this.error = error;
     }
 
     private Rotation2d getSteerPosition() {
@@ -182,5 +186,7 @@ public class SwerveModule implements TickedSubsystem {
 
         this.actualVelocity.set(this.getDriveVelocity().in(Units.MetersPerSecond));
         this.actualAngle.set(this.getSteerPosition().getDegrees());
+
+        this.error.set(Math.abs(this.desiredState.angle.getDegrees()) - Math.abs(this.getSteerPosition().getDegrees()));
     }
 }

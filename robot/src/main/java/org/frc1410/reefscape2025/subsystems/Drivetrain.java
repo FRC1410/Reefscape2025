@@ -1,5 +1,10 @@
 package org.frc1410.reefscape2025.subsystems;
 
+import com.ctre.phoenix6.configs.MountPoseConfigs;
+import com.ctre.phoenix6.configs.Pigeon2Configuration;
+import com.ctre.phoenix6.configs.Pigeon2Configurator;
+import com.ctre.phoenix6.hardware.DeviceIdentifier;
+import com.ctre.phoenix6.hardware.Pigeon2;
 import com.studica.frc.AHRS;
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
 import edu.wpi.first.math.geometry.Pose2d;
@@ -50,6 +55,11 @@ public class Drivetrain implements TickedSubsystem {
     private final DoublePublisher backLeftObservedAngle = NetworkTables.PublisherFactory(this.table, "Back Left Observed Angle", 0);
     private final DoublePublisher backRightObservedAngle = NetworkTables.PublisherFactory(this.table, "Back Right Observed Angle", 0);
 
+    private final DoublePublisher frontLeftError = NetworkTables.PublisherFactory(this.table, "Front Left Error", 0);
+    private final DoublePublisher frontRightError = NetworkTables.PublisherFactory(this.table, "Front Right Error", 0);
+    private final DoublePublisher backLeftError = NetworkTables.PublisherFactory(this.table, "Back Left Error", 0);
+    private final DoublePublisher backRightError = NetworkTables.PublisherFactory(this.table, "Back Right Error", 0);
+
     private final DoublePublisher poseX = NetworkTables.PublisherFactory(this.table, "X position", 0);
     private final DoublePublisher poseY = NetworkTables.PublisherFactory(this.table, "y position", 0);
     private final DoublePublisher heading = NetworkTables.PublisherFactory(this.table, "Heading", 0);
@@ -67,13 +77,13 @@ public class Drivetrain implements TickedSubsystem {
     private final StructPublisher<Pose2d> encoderOnlyPosePublisher = NetworkTableInstance.getDefault()
             .getStructTopic("encoderOnlyPose", Pose2d.struct).publish();
 
-
     private final SwerveModule frontLeftModule;
     private final SwerveModule frontRightModule;
     private final SwerveModule backLeftModule;
     private final SwerveModule backRightModule;
 
     private final AHRS gyro = new AHRS(AHRS.NavXComType.kMXP_SPI);
+//    private final Pigeon2 gyro = new Pigeon2(GYRO_ID);
 
     private final SwerveDrivePoseEstimator poseEstimator;
 
@@ -94,7 +104,8 @@ public class Drivetrain implements TickedSubsystem {
                 this.frontLeftVelocitySetpoint,
                 this.frontLeftAngleSetpoint,
                 this.frontLeftObservedVelocity,
-                this.frontLeftObservedAngle
+                this.frontLeftObservedAngle,
+                this.frontLeftError
         ));
 
         this.frontRightModule = subsystems.track(new SwerveModule(
@@ -107,7 +118,8 @@ public class Drivetrain implements TickedSubsystem {
                 this.frontRightVelocitySetpoint,
                 this.frontRightAngleSetpoint,
                 this.frontRightObservedVelocity,
-                this.frontRightObservedAngle
+                this.frontRightObservedAngle,
+                this.frontRightError
         ));
 
         this.backLeftModule = subsystems.track(new SwerveModule(
@@ -120,7 +132,8 @@ public class Drivetrain implements TickedSubsystem {
                 this.backLeftVelocitySetpoint,
                 this.backLeftAngleSetpoint,
                 this.backLeftObservedVelocity,
-                this.backLeftObservedAngle
+                this.backLeftObservedAngle,
+                this.backLeftError
         ));
 
         this.backRightModule = subsystems.track(new SwerveModule(
@@ -133,7 +146,8 @@ public class Drivetrain implements TickedSubsystem {
                 this.backRightVelocitySetpoint,
                 this.backRightAngleSetpoint,
                 this.backRightObservedVelocity,
-                this.backRightObservedAngle
+                this.backRightObservedAngle,
+                this.backRightError
         ));
 
         this.poseEstimator = new SwerveDrivePoseEstimator(
@@ -142,6 +156,11 @@ public class Drivetrain implements TickedSubsystem {
                 this.getSwerveModulePositions(),
                 new Pose2d()
         );
+
+        DeviceIdentifier y = new DeviceIdentifier();
+        Pigeon2Configurator x = new Pigeon2Configurator(y);
+
+        Pigeon2Configuration z = new Pigeon2Configuration();
 
         gyro.reset();
     }
@@ -153,8 +172,6 @@ public class Drivetrain implements TickedSubsystem {
                 chassisSpeeds.omegaRadiansPerSecond,
                 0.02
         );
-
-        System.out.println(discretizedChassisSpeeds);
 
         var swerveModuleStates = SWERVE_DRIVE_KINEMATICS.toSwerveModuleStates(discretizedChassisSpeeds);
 

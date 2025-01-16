@@ -17,7 +17,7 @@ import java.util.function.Supplier;
 public class FeedForwardCharacterization extends Command {
     private static final double startDelaySecs = 2.0;
     private static final double rampRateVoltsPerSec = 1;
-    private static final double maxVolts = 6.5;
+    private static final double maxVolts = 7.5;
 
     private final boolean forwards;
     private final boolean isDrive;

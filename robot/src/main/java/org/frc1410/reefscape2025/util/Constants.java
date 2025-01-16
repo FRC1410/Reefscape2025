@@ -22,15 +22,15 @@ public final class Constants {
     public static final Measure<DistanceUnit> TRACKWIDTH_METERS = Meters.of(0.6032627);
 
     // Drive constants
-    public static final Angle FRONT_LEFT_STEER_ENCODER_OFFSET = Degrees.of(141.503906);
-    public static final Angle FRONT_RIGHT_STEER_ENCODER_OFFSET = Degrees.of(322.031250);
-    public static final Angle BACK_LEFT_STEER_ENCODER_OFFSET = Degrees.of(269.033203);
-    public static final Angle BACK_RIGHT_STEER_ENCODER_OFFSET = Degrees.of(333.544922);
+    public static final Angle FRONT_LEFT_STEER_ENCODER_OFFSET = Degrees.of(141.064453);
+    public static final Angle FRONT_RIGHT_STEER_ENCODER_OFFSET = Degrees.of(320.976562);
+    public static final Angle BACK_LEFT_STEER_ENCODER_OFFSET = Degrees.of(269.472656);
+    public static final Angle BACK_RIGHT_STEER_ENCODER_OFFSET = Degrees.of(153.632812);
 
     public static final boolean FRONT_LEFT_DRIVE_MOTOR_INVERTED = false;
     public static final boolean FRONT_RIGHT_DRIVE_MOTOR_INVERTED = true;
     public static final boolean BACK_LEFT_DRIVE_MOTOR_INVERTED = false;
-    public static final boolean BACK_RIGHT_DRIVE_MOTOR_INVERTED = true;
+    public static final boolean BACK_RIGHT_DRIVE_MOTOR_INVERTED = false;
 
     public static final boolean FRONT_LEFT_STEER_MOTOR_INVERTED = true;
     public static final boolean FRONT_RIGHT_STEER_MOTOR_INVERTED = false;
@@ -54,7 +54,7 @@ public final class Constants {
             BACK_RIGHT_SWERVE_MODULE_LOCATION
     );
 
-    public static final double slowMultiplier = 0.36;
+    public static final double slowMultiplier = 0.54;
     public static final LinearVelocity SWERVE_DRIVE_MAX_SPEED = MetersPerSecond.of(5.5 * slowMultiplier);
     public static final AngularVelocity SWERVE_DRIVE_MAX_ANGULAR_VELOCITY = DegreesPerSecond.of(570 * slowMultiplier);
 

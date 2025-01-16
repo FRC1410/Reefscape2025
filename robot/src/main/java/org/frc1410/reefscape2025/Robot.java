@@ -71,6 +71,7 @@ public final class Robot extends PhaseDrivenRobot {
 
 
 	private final AutoSelector autoSelector = new AutoSelector()
+			.add("2Coral", () -> new PathPlannerAuto("3Coral"))
 			.add("1L", () -> new PathPlannerAuto("1 Coral"));
 
 	{
@@ -90,23 +91,19 @@ public final class Robot extends PhaseDrivenRobot {
 
 		@Override
 		public void autonomousSequence () {
-//			NetworkTables.SetPersistence(this.autoPublisher.getTopic(), true);
-//			String autoProfile = this.autoSubscriber.get();
-//			var autoCommand = this.autoSelector.select(autoProfile);
+			NetworkTables.SetPersistence(this.autoPublisher.getTopic(), true);
+			String autoProfile = this.autoSubscriber.get();
+			var autoCommand = this.autoSelector.select(autoProfile);
 
-			var autoCommand = new FeedForwardCharacterization(
-					drivetrain,
-					true,
-					new FeedForwardCharacterization.FeedForwardCharacterizationData("drive"),
-					(volts) -> drivetrain.drive(Volts.of(volts)),
-					() -> drivetrain.getAverageDriveAngularVelocity().in(RotationsPerSecond)
-					);
-
-
+//			var autoCommand = new FeedForwardCharacterization(
+//					drivetrain,
+//					true,
+//					new FeedForwardCharacterization.FeedForwardCharacterizationData("drive"),
+//					(volts) -> drivetrain.drive(Volts.of(volts)),
+//					() -> drivetrain.getAverageDriveAngularVelocity().in(RotationsPerSecond)
+//					);
 
 			this.scheduler.scheduleAutoCommand(autoCommand);
-
-
 
 		}
 
