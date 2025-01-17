@@ -187,6 +187,6 @@ public class SwerveModule implements TickedSubsystem {
         this.actualVelocity.set(this.getDriveVelocity().in(Units.MetersPerSecond));
         this.actualAngle.set(this.getSteerPosition().getDegrees());
 
-        this.error.set(Math.abs(this.desiredState.angle.getDegrees()) - Math.abs(this.getSteerPosition().getDegrees()));
+        this.error.set(Math.abs(this.desiredState.angle.getDegrees() - this.getSteerPosition().getDegrees()));
     }
 }

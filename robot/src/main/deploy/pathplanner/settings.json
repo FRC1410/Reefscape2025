@@ -2,7 +2,9 @@
   "robotWidth": 0.91,
   "robotLength": 0.91,
   "holonomicMode": true,
-  "pathFolders": [],
+  "pathFolders": [
+    "Auto Align"
+  ],
   "autoFolders": [],
   "defaultMaxVel": 2.0,
   "defaultMaxAccel": 2.484,
