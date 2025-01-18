@@ -1,11 +1,17 @@
 package org.frc1410.reefscape2025.commands;
 
+import com.revrobotics.ColorSensorV3;
+import edu.wpi.first.wpilibj.I2C;
+import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj2.command.Command;
 import org.frc1410.reefscape2025.subsystems.LBozo;
 
 
 public class LBozoLooped extends Command {
     private final LBozo lBozo;
+
+    private final I2C.Port i2cPort = I2C.Port.kOnboard;
+    private final ColorSensorV3 m_colorSensor = new ColorSensorV3(i2cPort);
 
     public LBozoLooped(LBozo lBozo) {
         this.lBozo = lBozo;
@@ -21,7 +27,6 @@ public class LBozoLooped extends Command {
     public void initialize() {
         this.lBozo.RunLBozo(0.2);
     }
-
     /**
      * The main body of a command.  Called repeatedly while the command is scheduled.
      * (That is, it is called repeatedly until {@link #isFinished()}) returns true.)
@@ -48,6 +53,10 @@ public class LBozoLooped extends Command {
     @Override
     public boolean isFinished() {
         // TODO: Make this return true when this Command no longer needs to run execute()
+        Color detectedColor = m_colorSensor.getColor();
+        if (detectedColor(0) >=100)
+
+        //For Color Sensor: If White "return true" if Black "return false"
         return false;
     }
 
@@ -60,7 +69,6 @@ public class LBozoLooped extends Command {
      * @param interrupted whether the command was interrupted/canceled
      */
     @Override
-    public void end(boolean interrupted) {
-        this.lBozo.RunLBozo(0);
+    public void end(boolean interrupted) {this.lBozo.RunLBozo(0);
     }
 }
