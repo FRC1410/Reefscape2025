@@ -1,10 +1,12 @@
 package org.frc1410.reefscape2025.subsystems;
 
+import com.revrobotics.ColorSensorV3;
 import com.revrobotics.spark.SparkBase;
 import com.revrobotics.spark.SparkLowLevel;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.config.SparkBaseConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
+import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj2.command.Subsystem;
 
 import static org.frc1410.reefscape2025.util.IDs.*;
