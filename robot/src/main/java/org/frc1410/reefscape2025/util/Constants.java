@@ -10,6 +10,8 @@ import edu.wpi.first.units.measure.Angle;
 import edu.wpi.first.units.measure.AngularVelocity;
 import edu.wpi.first.units.measure.LinearVelocity;
 
+import java.util.List;
+
 import static edu.wpi.first.units.Units.*;
 import static org.frc1410.reefscape2025.util.Tuning.*;
 
@@ -65,4 +67,7 @@ public final class Constants {
             PATH_AUTO_TRANSLATION_CONSTRAINTS,
             PATH_AUTO_ROTATION_CONSTRAINTS
     );
+
+    public static final List<ScoringPath> SCORING_POSITIONS_BLUE = List.of();
+    public static final List<ScoringPath> SCORING_POSITIONS_RED = SCORING_POSITIONS_BLUE.stream().map((position) -> new ScoringPath()).toList();
 }

@@ -62,6 +62,6 @@
     }
   },
   "resetOdom": true,
-  "folder": "Just Drive",
+  "folder": null,
   "choreoAuto": false
 }
