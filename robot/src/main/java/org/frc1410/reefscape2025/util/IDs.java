@@ -5,4 +5,7 @@ public final class IDs {
 	public static final int DRIVER_CONTROLLER = 0;
 	public static final int OPERATOR_CONTROLLER = 1;
 
+	public static final int HUG_LEFT_MOTOR_ID = 11;
+	public static final int HUG_RIGHT_MOTOR_ID = 40;
+
 }

@@ -5,38 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="This time its the actual init commit frfr">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/SuperSenior.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/vendordeps/WPILibNewCommands.json" beforeDir="false" afterPath="$PROJECT_DIR$/framework/vendordeps/WPILibNewCommands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/IDs.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/IDs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/libs/robot.jar" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/libs/robot.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/tmp/jar/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/vendordeps/NavX.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/vendordeps/PathplannerLib.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/vendordeps/PathplannerLib.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/vendordeps/Phoenix.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/vendordeps/Phoenix6-frc2025-latest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/vendordeps/Phoenix5.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/vendordeps/Phoenix5-frc2025-latest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/vendordeps/REVLib.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/vendordeps/REVLib-2025.0.0.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/vendordeps/WPILibNewCommands.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/vendordeps/WPILibNewCommands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/vendordeps/photonlib.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/IDs.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/IDs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,28 +55,7 @@
                 <item name="Reefscape2025" type="f1a62948:ProjectNode" />
                 <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
-                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
-                <item name="framework" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
-                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
-                <item name="framework" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
-                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
-                <item name="framework" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
+                <item name="deployutils" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -133,6 +84,13 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -167,7 +125,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "android.gradle.sync.needed": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Climber",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -177,10 +135,11 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.Reefscape2025:robot [build]">
+  <component name="RunManager" selected="Gradle.Build &amp; Deploy Robot">
     <configuration name="Reefscape2025 [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -291,6 +250,22 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Gradle.Build &amp; Deploy Robot" />
+      <item itemvalue="Gradle.Build &amp; Deploy Robot for Debugging" />
+      <item itemvalue="Gradle.Build Robot" />
+      <item itemvalue="Gradle.Clean" />
+      <item itemvalue="Gradle.Clean Build &amp; Deploy Robot" />
+      <item itemvalue="Gradle.Clean Build &amp; Deploy Robot for Debugging" />
+      <item itemvalue="Gradle.Clean Build Robot" />
+      <item itemvalue="Gradle.Reefscape2025 [buildDependents]" />
+      <item itemvalue="Gradle.Reefscape2025 [dependencies]" />
+      <item itemvalue="Gradle.Reefscape2025:framework [build]" />
+      <item itemvalue="Gradle.Reefscape2025:robot [build]" />
+      <item itemvalue="Gradle.Viridian-Framework [build]" />
+      <item itemvalue="Remote JVM Debug.Debug Robot via IP" />
+      <item itemvalue="Remote JVM Debug.Debug Robot via USB" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Reefscape2025:robot [build]" />
