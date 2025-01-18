@@ -1,18 +1,17 @@
 package org.frc1410.reefscape2025;
 
 import com.pathplanner.lib.auto.NamedCommands;
-import edu.wpi.first.wpilibj2.command.Command;
 import org.frc1410.framework.PhaseDrivenRobot;
 import org.frc1410.framework.control.Controller;
 import org.frc1410.framework.scheduler.task.TaskPersistence;
-import org.frc1410.reefscape2025.commands.LBozoLooped;
+import org.frc1410.reefscape2025.commands.LBozoIntakeCoral;
 import org.frc1410.reefscape2025.subsystems.LBozo;
 
 import static org.frc1410.reefscape2025.util.IDs.*;
 
 public final class Robot extends PhaseDrivenRobot {
 	public Robot() {
-		NamedCommands.registerCommand("LBozoLooped", new LBozoLooped(lBozo));
+		NamedCommands.registerCommand("LBozoLooped", new LBozoIntakeCoral(lBozo));
 	}
 
 	private final Controller driverController = new Controller(this.scheduler, DRIVER_CONTROLLER, 0.1);
@@ -25,7 +24,7 @@ public final class Robot extends PhaseDrivenRobot {
 
 	@Override
 	public void teleopSequence() {
-		this.operatorController.X.whileHeld(new LBozoLooped(lBozo), TaskPersistence.GAMEPLAY);
+		this.operatorController.X.whileHeld(new LBozoIntakeCoral(lBozo), TaskPersistence.GAMEPLAY);
 	}
 
 
