@@ -4,10 +4,10 @@ import edu.wpi.first.wpilibj2.command.Command;
 import org.frc1410.reefscape2025.subsystems.LBozo;
 
 
-public class LBozoOuttakeCoral extends Command {
+public class OuttakeCoral extends Command {
     private final LBozo lBozo;
 
-    public LBozoOuttakeCoral(LBozo lBozo) {
+    public OuttakeCoral(LBozo lBozo) {
         this.lBozo = lBozo;
         // each subsystem used by the command must be passed into the
         // addRequirements() method (which takes a vararg of Subsystem)
