@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import org.frc1410.reefscape2025.subsystems.Drivetrain;
 import org.frc1410.reefscape2025.util.ScoringPath;
 import org.json.simple.parser.ParseException;
+import static org.frc1410.reefscape2025.util.Constants.*;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -21,6 +22,8 @@ public class AutoAlignToReef extends Command {
     private Command pathFollowingCommand = null;
     private PathPlannerPath path = null;
 
+    boolean end = false;
+
 
     public AutoAlignToReef(Drivetrain drivetrain) {
         this.drivetrain = drivetrain;
@@ -30,11 +33,13 @@ public class AutoAlignToReef extends Command {
 
 
 
+
+
+
+
     @Override
     public void initialize() {
-        var scorePositions = DriverStation.getAlliance().equals(Optional.of(DriverStation.Alliance.Blue)); // Scoring Pose red or blue
-
-        Pose2d currentpose = this.drivetrain.getEstimatedPosition();
+        var scorePositions = DriverStation.getAlliance().equals(Optional.of(DriverStation.Alliance.Blue)) ? SCORING_POSITIONS_BLUE : SCORING_POSITIONS_RED;
 
         ScoringPath nearestPath = null;
         double smallestDistance = Double.MAX_VALUE;
@@ -44,15 +49,23 @@ public class AutoAlignToReef extends Command {
 //        }
 
 
-        PathPlannerPath path = null;
+        
         try {
             path = PathPlannerPath.fromPathFile("AlignPath1");
         } catch (IOException e) {
             throw new RuntimeException(e);
+        
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        //TODO Find out why it needs a try catch
+
+        if(path == null) {
+            this.end = true;
+            System.out.println(" ");
+            System.out.println("NO PATH FOUND");
+            System.out.println(" ");
+        }
+    
 
         //TODO ADD MULTIPLE SCORING POSITIONS
 
@@ -65,13 +78,11 @@ public class AutoAlignToReef extends Command {
         );
 
 
-
-
-        Command pathFollowingCommand = AutoBuilder.pathfindThenFollowPath(
+        this.pathFollowingCommand = AutoBuilder.pathfindThenFollowPath(
                 path,
                 pathConstraints
         );
-
+      
         pathFollowingCommand.initialize();
     }
 
@@ -79,18 +90,20 @@ public class AutoAlignToReef extends Command {
 
     @Override
     public void execute() {
-        if(!this.pathFollowingCommand.isFinished()) {
-            if(this.pathFollowingCommand != null) {
+        if(this.pathFollowingCommand != null) {
+            if(!this.pathFollowingCommand.isFinished()) {
                 this.pathFollowingCommand.execute();
             }
+        } else {
+            System.out.println("pathFollowingCommand is NULL");
         }
+       
     }
-
 
     @Override
     public boolean isFinished() {
-
-        return false;
+        return end;
+        //TODO Make return true when we get to desired pos / score coral
     }
 
 

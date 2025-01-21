@@ -68,6 +68,6 @@ public final class Constants {
             PATH_AUTO_ROTATION_CONSTRAINTS
     );
 
-    public static final List<ScoringPath> SCORING_POSITIONS_BLUE = List.of();
-    public static final List<ScoringPath> SCORING_POSITIONS_RED = SCORING_POSITIONS_BLUE.stream().map((position) -> new ScoringPath()).toList();
+   public static final List<ScoringPath> SCORING_POSITIONS_BLUE = List.of();
+   public static final List<ScoringPath> SCORING_POSITIONS_RED = SCORING_POSITIONS_BLUE.stream().map((position) -> new ScoringPath()).toList();
 }
