@@ -38,7 +38,6 @@ public class LBozo implements Subsystem {
     public void RunLBozo(double speed) {
         this.lBozoFrontMotor.set(speed);
         this.lBozoBackMotor.set(speed);
-        this.lBozoFrontMotor.setInverted(true);
     }
 
 }
