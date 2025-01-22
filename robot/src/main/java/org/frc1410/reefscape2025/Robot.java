@@ -2,34 +2,22 @@ package org.frc1410.reefscape2025;
 
 import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.commands.PathPlannerAuto;
-import com.pathplanner.lib.config.PIDConstants;
-import com.pathplanner.lib.config.RobotConfig;
-import com.pathplanner.lib.controllers.PPHolonomicDriveController;
-import com.pathplanner.lib.pathfinding.Pathfinding;
 import edu.wpi.first.math.geometry.Rotation2d;
-import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.networktables.StringPublisher;
 import edu.wpi.first.networktables.StringSubscriber;
 import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import org.frc1410.framework.AutoSelector;
 import org.frc1410.framework.PhaseDrivenRobot;
 import org.frc1410.framework.control.Controller;
 import org.frc1410.framework.scheduler.task.TaskPersistence;
 import org.frc1410.framework.scheduler.task.lock.LockPriority;
-import org.frc1410.reefscape2025.commands.AutoAlignToPoint;
 import org.frc1410.reefscape2025.commands.AutoAlignToReef;
 import org.frc1410.reefscape2025.commands.DriveLooped;
 import org.frc1410.reefscape2025.subsystems.Drivetrain;
 import org.frc1410.reefscape2025.util.NetworkTables;
-import org.frc1410.reefscape2025.util.ScoringPath;
-import org.json.simple.parser.ParseException;
-
-import java.io.IOException;
-import java.nio.file.Path;
 
 import static org.frc1410.reefscape2025.util.IDs.*;
 import static org.frc1410.reefscape2025.util.Constants.*;
@@ -37,20 +25,13 @@ import static org.frc1410.reefscape2025.util.Constants.*;
 public final class Robot extends PhaseDrivenRobot {
 	public Robot() {
 
-
-		try {
-			this.robotConfig = RobotConfig.fromGUISettings();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
 		AutoBuilder.configure(
 				this.drivetrain::getEstimatedPosition,
 				this.drivetrain::resetPose,
 				this.drivetrain::getChassisSpeeds,
 				this.drivetrain::drive,
 				HOLONOMIC_AUTO_CONFIG,
-				robotConfig,
+				ROBOT_CONFIG,
 				() -> {
 					var alliance = DriverStation.getAlliance();
 
@@ -61,10 +42,6 @@ public final class Robot extends PhaseDrivenRobot {
 				},
 				drivetrain
 		);
-
-		
-
-		
 	}
 
 	private final Controller driverController = new Controller(this.scheduler, DRIVER_CONTROLLER, 0.1);
@@ -75,11 +52,10 @@ public final class Robot extends PhaseDrivenRobot {
 
 	private final NetworkTableInstance nt = NetworkTableInstance.getDefault();
 	private final NetworkTable table = this.nt.getTable("Auto");
-	private RobotConfig robotConfig;
 
 
 	private final AutoSelector autoSelector = new AutoSelector()
-			.add("1L", () -> new PathPlannerAuto("1 Coral"));
+			.add("2L", () -> new PathPlannerAuto("2Coral"));
 
 	{
 		var profiles = new String[this.autoSelector.getProfiles().size()];
@@ -126,7 +102,7 @@ public final class Robot extends PhaseDrivenRobot {
 			), TaskPersistence.GAMEPLAY);
 
 
-			this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new AutoAlignToPoint(
+			this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new AutoAlignToReef(
 					this.drivetrain
 					), TaskPersistence.GAMEPLAY, LockPriority.HIGHEST
 			);

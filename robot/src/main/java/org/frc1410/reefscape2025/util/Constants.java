@@ -1,21 +1,33 @@
 package org.frc1410.reefscape2025.util;
 
+import com.pathplanner.lib.config.RobotConfig;
 import com.pathplanner.lib.controllers.PPHolonomicDriveController;
+import com.pathplanner.lib.path.PathConstraints;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.units.DistanceUnit;
 import edu.wpi.first.units.Measure;
 import edu.wpi.first.units.Units;
-import edu.wpi.first.units.measure.Angle;
-import edu.wpi.first.units.measure.AngularVelocity;
-import edu.wpi.first.units.measure.LinearVelocity;
+import edu.wpi.first.units.measure.*;
 
 import java.util.List;
 
 import static edu.wpi.first.units.Units.*;
 import static org.frc1410.reefscape2025.util.Tuning.*;
+import static org.frc1410.reefscape2025.util.ReefPaths.*;
 
 public final class Constants {
+
+    public static RobotConfig ROBOT_CONFIG;
+
+    public Constants() {
+        try {
+            ROBOT_CONFIG = RobotConfig.fromGUISettings();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     // Robot constants
     public static final double DRIVE_GEAR_RATIO = (50.0 / 16.0) * (17.0 / 27.0) * (45.0 / 15.0);
 //    public static final double DRIVE_L_TWO_GEAR_RATIO = (50.0 / 14.0) * (17.0 / 27.0) * (45.0 / 15.0);
@@ -59,6 +71,8 @@ public final class Constants {
     public static final double slowMultiplier = 0.36;
     public static final LinearVelocity SWERVE_DRIVE_MAX_SPEED = MetersPerSecond.of(5.5 * slowMultiplier);
     public static final AngularVelocity SWERVE_DRIVE_MAX_ANGULAR_VELOCITY = DegreesPerSecond.of(570 * slowMultiplier);
+    public static final LinearAcceleration SWERVE_DRIVE_MAX_ACCELERATION = MetersPerSecondPerSecond.of(6.9 * slowMultiplier);
+    public static final AngularAcceleration SWERVE_DRIVE_MAX_ANGULAR_ACCELERATION = DegreesPerSecondPerSecond.of(1214 * slowMultiplier);
 
     public static final double DRIVE_MOTOR_CURRENT_LIMIT = 40;
     public static final int STEER_MOTOR_CURRENT_LIMIT = 30;
@@ -68,6 +82,27 @@ public final class Constants {
             PATH_AUTO_ROTATION_CONSTRAINTS
     );
 
+    public static PathConstraints PATH_FINDING_CONSTRAINTS = new PathConstraints(
+            SWERVE_DRIVE_MAX_SPEED,
+            SWERVE_DRIVE_MAX_ACCELERATION,
+            SWERVE_DRIVE_MAX_ANGULAR_VELOCITY,
+            SWERVE_DRIVE_MAX_ANGULAR_ACCELERATION
+    );
+
+    public static PPHolonomicDriveController PATH_FOLLOWING_CONTROLLER = new PPHolonomicDriveController(
+            PATH_FOLLOWING_TRANSLATION_CONSTRAINTS,
+            PATH_FOLLOWING_ROTATION_CONSTRAINTS
+    );
+
    public static final List<ScoringPath> SCORING_POSITIONS_BLUE = List.of();
    public static final List<ScoringPath> SCORING_POSITIONS_RED = SCORING_POSITIONS_BLUE.stream().map((position) -> new ScoringPath()).toList();
+
+    public static final List<ReefSides> BLUE_REEF = List.of(
+            BLUE_NORTH_REEF,
+            BLUE_NORTH_WEST_REEF,
+            BLUE_SOUTH_REEF,
+            BLUE_SOUTH_WEST_REEF
+    );
+
+    public static final List<ReefSides> RED_REEF = List.of();
 }

@@ -1,5 +1,6 @@
 package org.frc1410.reefscape2025.subsystems;
 
+import com.pathplanner.lib.util.DriveFeedforwards;
 import com.studica.frc.AHRS;
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
 import edu.wpi.first.math.geometry.Pose2d;
@@ -152,8 +153,6 @@ public class Drivetrain implements TickedSubsystem {
                 0.02
         );
 
-        System.out.println(discretizedChassisSpeeds);
-
         var swerveModuleStates = SWERVE_DRIVE_KINEMATICS.toSwerveModuleStates(discretizedChassisSpeeds);
 
 //        var swerveModuleStates = SWERVE_DRIVE_KINEMATICS.toSwerveModuleStates(chassisSpeeds);
@@ -164,6 +163,27 @@ public class Drivetrain implements TickedSubsystem {
         this.backLeftModule.setDesiredState(swerveModuleStates[2]);
         this.backRightModule.setDesiredState(swerveModuleStates[3]);
     }
+
+//    public void drive(ChassisSpeeds chassisSpeeds, DriveFeedforwards feedforwards) {
+//        var discretizedChassisSpeeds = ChassisSpeeds.discretize(
+//                chassisSpeeds.vxMetersPerSecond,
+//                chassisSpeeds.vyMetersPerSecond,
+//                chassisSpeeds.omegaRadiansPerSecond,
+//                0.02
+//        );
+//
+//        var swerveModuleStates = SWERVE_DRIVE_KINEMATICS.toSwerveModuleStates(discretizedChassisSpeeds);
+//
+////        var swerveModuleStates = SWERVE_DRIVE_KINEMATICS.toSwerveModuleStates(chassisSpeeds);
+//        SwerveDriveKinematics.desaturateWheelSpeeds(swerveModuleStates, SWERVE_DRIVE_MAX_SPEED.in(MetersPerSecond));
+//
+//        this.frontLeftModule.
+//
+//        this.frontLeftModule.setDesiredState(swerveModuleStates[0]);
+//        this.frontRightModule.setDesiredState(swerveModuleStates[1]);
+//        this.backLeftModule.setDesiredState(swerveModuleStates[2]);
+//        this.backRightModule.setDesiredState(swerveModuleStates[3]);
+//    }
 
     public void fieldOrientedDrive(ChassisSpeeds chassisSpeeds) {
         Rotation2d robotAngle = this.getGyroYaw().minus(this.fieldRelativeOffset);

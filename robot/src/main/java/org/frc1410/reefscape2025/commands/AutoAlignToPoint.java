@@ -22,8 +22,6 @@ import static org.frc1410.reefscape2025.util.Constants.HOLONOMIC_AUTO_CONFIG;
 public class AutoAlignToPoint extends Command{
    private final Drivetrain drivetrain;
 
-   private RobotConfig robotConfig;
-
    private Command goToPoint = null;
 
    

@@ -21,4 +21,7 @@ public final class Tuning {
     // Path following
     public static final PIDConstants PATH_AUTO_TRANSLATION_CONSTRAINTS = new PIDConstants(3.6, 0, 0);
     public static final PIDConstants PATH_AUTO_ROTATION_CONSTRAINTS = new PIDConstants(0.6, 0, 0.05);
+
+    public static final PIDConstants PATH_FOLLOWING_TRANSLATION_CONSTRAINTS = new PIDConstants(3.6, 0, 0);
+    public static final PIDConstants PATH_FOLLOWING_ROTATION_CONSTRAINTS = new PIDConstants(0.6, 0, 0.05);
 }

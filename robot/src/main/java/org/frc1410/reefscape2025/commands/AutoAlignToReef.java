@@ -31,12 +31,6 @@ public class AutoAlignToReef extends Command {
         addRequirements();
     }
 
-
-
-
-
-
-
     @Override
     public void initialize() {
         var scorePositions = DriverStation.getAlliance().equals(Optional.of(DriverStation.Alliance.Blue)) ? SCORING_POSITIONS_BLUE : SCORING_POSITIONS_RED;
@@ -52,11 +46,9 @@ public class AutoAlignToReef extends Command {
         
         try {
             path = PathPlannerPath.fromPathFile("AlignPath1");
-        } catch (IOException e) {
+        } catch (IOException | ParseException e) {
             throw new RuntimeException(e);
         
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
         }
 
         if(path == null) {
