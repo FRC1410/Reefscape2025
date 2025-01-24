@@ -14,6 +14,7 @@ import org.frc1410.framework.PhaseDrivenRobot;
 import org.frc1410.framework.control.Controller;
 import org.frc1410.framework.scheduler.task.TaskPersistence;
 import org.frc1410.framework.scheduler.task.lock.LockPriority;
+import org.frc1410.reefscape2025.commands.AutoAlign;
 import org.frc1410.reefscape2025.commands.AutoAlignToReef;
 import org.frc1410.reefscape2025.commands.DriveLooped;
 import org.frc1410.reefscape2025.subsystems.Drivetrain;
@@ -102,9 +103,10 @@ public final class Robot extends PhaseDrivenRobot {
 			), TaskPersistence.GAMEPLAY);
 
 
-			this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new AutoAlignToReef(
-					this.drivetrain
-					), TaskPersistence.GAMEPLAY, LockPriority.HIGHEST
+			this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new AutoAlign(
+					this.drivetrain,
+					this.driverController.LEFT_BUMPER.isActive()
+				), TaskPersistence.GAMEPLAY
 			);
 	}
 

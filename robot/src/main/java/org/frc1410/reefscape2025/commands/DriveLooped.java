@@ -48,7 +48,6 @@ public class DriveLooped extends Command {
                             angularVelocity.in(RadiansPerSecond)
                     )
             );
-            System.out.println(new ChassisSpeeds(xVelocity, yVelocity, angularVelocity));
         }
     }
 

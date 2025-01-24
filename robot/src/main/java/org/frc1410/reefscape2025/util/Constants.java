@@ -3,13 +3,21 @@ package org.frc1410.reefscape2025.util;
 import com.pathplanner.lib.config.RobotConfig;
 import com.pathplanner.lib.controllers.PPHolonomicDriveController;
 import com.pathplanner.lib.path.PathConstraints;
+import edu.wpi.first.apriltag.AprilTagFieldLayout;
+import edu.wpi.first.apriltag.AprilTagFields;
+import edu.wpi.first.math.geometry.Rotation3d;
+import edu.wpi.first.math.geometry.Transform3d;
 import edu.wpi.first.math.geometry.Translation2d;
+import edu.wpi.first.math.geometry.Translation3d;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.units.DistanceUnit;
 import edu.wpi.first.units.Measure;
 import edu.wpi.first.units.Units;
 import edu.wpi.first.units.measure.*;
+import edu.wpi.first.wpilibj.DriverStation;
+import org.json.simple.parser.ParseException;
 
+import java.io.IOException;
 import java.util.List;
 
 import static edu.wpi.first.units.Units.*;
@@ -20,11 +28,11 @@ public final class Constants {
 
     public static RobotConfig ROBOT_CONFIG;
 
-    public Constants() {
+    static {
         try {
             ROBOT_CONFIG = RobotConfig.fromGUISettings();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException | ParseException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -105,4 +113,10 @@ public final class Constants {
     );
 
     public static final List<ReefSides> RED_REEF = List.of();
+
+    public static final String REEF_CAMERA = "Arducam_OV9281_USB_Camera";
+    public static final String SOURCE_CAMERA = "Arducam_OV9281_USB_Camera 2";
+
+    public static final AprilTagFieldLayout APRIL_TAG_FIELD_LAYOUT = AprilTagFieldLayout.loadField(AprilTagFields.kDefaultField);
+    public static final Transform3d CAMERA_POSE = new Transform3d(new Translation3d(0,0,0), new Rotation3d(0,0,0));
 }

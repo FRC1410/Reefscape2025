@@ -52,6 +52,8 @@ public class AutoAlign extends Command {
             path = this.closestReefSide.leftPath();
         }
 
+        System.out.println(this.closestReefSide + " " + path);
+
         this.findThenFollowPath = AutoBuilder.pathfindThenFollowPath(
                 path,
                 PATH_FINDING_CONSTRAINTS

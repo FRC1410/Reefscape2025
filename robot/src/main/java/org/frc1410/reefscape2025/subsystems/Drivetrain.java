@@ -19,6 +19,7 @@ import edu.wpi.first.wpilibj.DriverStation;
 import org.frc1410.framework.scheduler.subsystem.SubsystemStore;
 import org.frc1410.framework.scheduler.subsystem.TickedSubsystem;
 import org.frc1410.reefscape2025.util.NetworkTables;
+import org.photonvision.EstimatedRobotPose;
 
 import java.util.Optional;
 
@@ -76,10 +77,11 @@ public class Drivetrain implements TickedSubsystem {
 
     private final SwerveDrivePoseEstimator poseEstimator;
 
-    private double previousPipelineTimestamp = 0;
-
     private Rotation2d fieldRelativeOffset = new Rotation2d();
 
+    private final Camera camera;
+    private final boolean tempVal = true;
+    private double previousPipelineTimestamp = 0;
     private boolean hasSeenAprilTag = false;
 
     public Drivetrain(SubsystemStore subsystems) {
@@ -142,7 +144,9 @@ public class Drivetrain implements TickedSubsystem {
                 new Pose2d()
         );
 
-        gyro.reset();
+        this.gyro.reset();
+
+        this.camera = new Camera();
     }
 
     public void drive(ChassisSpeeds chassisSpeeds) {
@@ -258,6 +262,19 @@ public class Drivetrain implements TickedSubsystem {
                 this.getGyroYaw(),
                 this.getSwerveModulePositions()
         );
+
+        var estimatedPose = this.camera.getEstimatedPose();
+
+        if(estimatedPose.isPresent()) {
+            if(this.tempVal) {
+                var resultTimeStamp = estimatedPose.get().timestampSeconds;
+
+                if(resultTimeStamp != this.previousPipelineTimestamp) {
+                    this.previousPipelineTimestamp = resultTimeStamp;
+                    this.poseEstimator.addVisionMeasurement(estimatedPose.get().estimatedPose.toPose2d(), resultTimeStamp);
+                }
+            }
+        }
 
         this.poseX.set(this.getEstimatedPosition().getX());
         this.poseY.set(this.getEstimatedPosition().getY());
