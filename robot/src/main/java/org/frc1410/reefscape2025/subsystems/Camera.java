@@ -23,14 +23,8 @@ public class Camera implements Subsystem {
     }
 
     public Optional<EstimatedRobotPose> getEstimatedPose() {
-        if(!this.photonCamera.getAllUnreadResults().isEmpty()) {
-            System.out.println(this.photonCamera.getAllUnreadResults());
-            var pose = this.photonPoseEstimator.update(
-                    new PhotonPipelineResult(
-                            this.photonCamera.getAllUnreadResults().getFirst().metadata,
-                            this.photonCamera.getAllUnreadResults().getFirst().targets,
-                            this.photonCamera.getAllUnreadResults().getFirst().multitagResult)
-            );
+        if(this.photonCamera.getAllUnreadResults().getFirst().hasTargets()) {
+            var pose = this.photonPoseEstimator.update(this.photonCamera.getAllUnreadResults().getFirst());
             return pose;
         } else {
             return Optional.empty();
