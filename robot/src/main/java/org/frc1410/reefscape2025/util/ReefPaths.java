@@ -15,6 +15,18 @@ public class ReefPaths {
             new Pose2d(6.2, 4, Rotation2d.fromDegrees(180))
     );
 
+    public static final ReefSides BLUE_NORTH_EAST = new ReefSides(
+            new PathLoader("North East Left").getPath(),
+            new PathLoader("North East Right").getPath(),
+            new Pose2d(5.250, 2.775, Rotation2d.fromDegrees(120))
+    );
+
+    public static final ReefSides BLUE_SOUTH_EAST = new ReefSides(
+            new PathLoader("South East Left").getPath(),
+            new PathLoader("South East Right").getPath(),
+            new Pose2d(3.715, 2.835, Rotation2d.fromDegrees(60))
+    );
+
     public static final ReefSides BLUE_SOUTH_REEF = new ReefSides(
             new PathLoader("South Left").getPath(),
             new PathLoader("South Right").getPath(),
