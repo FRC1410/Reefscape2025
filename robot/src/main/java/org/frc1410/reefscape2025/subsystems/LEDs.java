@@ -4,11 +4,12 @@ import com.ctre.phoenix.led.CANdle;
 import com.ctre.phoenix.led.CANdleConfiguration;
 import com.ctre.phoenix.led.RainbowAnimation;
 import com.ctre.phoenix.led.StrobeAnimation;
+import edu.wpi.first.wpilibj2.command.Subsystem;
 
 import static org.frc1410.reefscape2025.util.Constants.LED_BRIGHTNESS;
 import static org.frc1410.reefscape2025.util.IDs.*;
 
-public class LEDs {
+public class LEDs implements Subsystem {
     private CANdle candle = new CANdle(LED_ID);
     public LEDs () {
         CANdleConfiguration config = new CANdleConfiguration();
