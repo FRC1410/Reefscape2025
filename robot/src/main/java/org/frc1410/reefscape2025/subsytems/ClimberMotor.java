@@ -8,30 +8,49 @@ import com.revrobotics.spark.config.SparkMaxConfig;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj2.command.Subsystem;
 
-import static org.frc1410.reefscape2025.util.IDs.CLIMBER_MOTOR;
-import static org.frc1410.reefscape2025.util.Constants.CLIMBER_MOTOR_IS_INVERTED;
-import static org.frc1410.reefscape2025.util.IDs.CLIMB_LIMIT_SWITCH;
+import static org.frc1410.reefscape2025.util.Constants.*;
+import static org.frc1410.reefscape2025.util.IDs.*;
 
 public class ClimberMotor implements Subsystem {
-    private final SparkMax climberMotor = new SparkMax(CLIMBER_MOTOR, SparkLowLevel.MotorType.kBrushless);
+
+    //Motor init and config
+
+    private final SparkMax climberMotorOne = new SparkMax(CLIMBER_MOTOR_ONE, SparkLowLevel.MotorType.kBrushless);
+
+    private final SparkMax climberMotorTwo = new SparkMax(CLIMBER_MOTOR_TWO, SparkLowLevel.MotorType.kBrushless);
+
+    public ClimberMotor() {
+        var climberMotorConfigOne = new SparkMaxConfig();
+
+        climberMotorConfigOne.smartCurrentLimit(40);
+        climberMotorConfigOne.idleMode(SparkBaseConfig.IdleMode.kBrake);
+        climberMotorConfigOne.inverted(CLIMBER_MOTOR_ONE_IS_INVERTED);
+        this.climberMotorOne.configure(climberMotorConfigOne, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
+
+
+        var climberMotorConfigTwo = new SparkMaxConfig();
+
+        climberMotorConfigTwo.smartCurrentLimit(40);
+        climberMotorConfigTwo.idleMode(SparkBaseConfig.IdleMode.kBrake);
+        climberMotorConfigTwo.inverted(CLIMBER_MOTOR_TWO_IS_INVERTED);
+        this.climberMotorTwo.configure(climberMotorConfigTwo, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
+    }
+
+    //Motor run
+
+    public void RunClimberMotor(double speed) {
+        this.climberMotorOne.set(speed);
+        this.climberMotorTwo.set(speed);
+    }
+
+    //Limit Switch
 
     DigitalInput climbLimitSwitch = new DigitalInput(CLIMB_LIMIT_SWITCH);
 
+    //Lim switch call
+
     public boolean GetClimbLimitSwitch() {
         return(climbLimitSwitch.get());
-    }
-
-    public ClimberMotor() {
-        var climberMotorConfig = new SparkMaxConfig();
-
-        climberMotorConfig.smartCurrentLimit(40);
-        climberMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
-        climberMotorConfig.inverted(CLIMBER_MOTOR_IS_INVERTED);
-        this.climberMotor.configure(climberMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
-    }
-
-    public void RunClimberMotor(double speed) {
-        this.climberMotor.set(speed);
     }
 
 }

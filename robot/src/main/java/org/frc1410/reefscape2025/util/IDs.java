@@ -5,8 +5,9 @@ public final class IDs {
 	public static final int DRIVER_CONTROLLER = 0;
 	public static final int OPERATOR_CONTROLLER = 1;
 
-	public static final int CLIMBER_MOTOR = 5;
+	public static final int CLIMBER_MOTOR_ONE = 5;
+	public static final int CLIMBER_MOTOR_TWO = 6;
 
 	// Limit Switch
-	public static final int CLIMB_LIMIT_SWITCH = 6;
+	public static final int CLIMB_LIMIT_SWITCH = 8;
 }
