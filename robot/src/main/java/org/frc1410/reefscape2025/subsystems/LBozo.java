@@ -1,12 +1,11 @@
 package org.frc1410.reefscape2025.subsystems;
 
-import com.revrobotics.ColorSensorV3;
 import com.revrobotics.spark.SparkBase;
 import com.revrobotics.spark.SparkLowLevel;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.config.SparkBaseConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
-import edu.wpi.first.wpilibj.I2C;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj2.command.Subsystem;
 
 import static org.frc1410.reefscape2025.util.IDs.*;
@@ -14,30 +13,37 @@ import static org.frc1410.reefscape2025.util.Constants.*;
 
 public class LBozo implements Subsystem {
 
-    private final SparkMax lBozoFrontMotor = new SparkMax(LBOZO_FRONT_MOTOR, SparkLowLevel.MotorType.kBrushless);
-    private final SparkMax lBozoBackMotor = new SparkMax(LBOZO_BACK_MOTOR, SparkLowLevel.MotorType.kBrushless);
+    private final SparkMax lBozoTopMotor = new SparkMax(LBOZO_FRONT_MOTOR, SparkLowLevel.MotorType.kBrushless);
+    private final SparkMax lBozoBottomMotor = new SparkMax(LBOZO_BACK_MOTOR, SparkLowLevel.MotorType.kBrushless);
 
     public LBozo() {
-        var FrontMotorConfig = new SparkMaxConfig();
+        var topMotorConfig = new SparkMaxConfig();
 
-        FrontMotorConfig.smartCurrentLimit(30);
-        FrontMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
-        FrontMotorConfig.inverted(LBOZO_FRONT_MOTOR_IS_INVERTED);
-        this.lBozoFrontMotor.configure(FrontMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
+        topMotorConfig.smartCurrentLimit(30);
+        topMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
+        topMotorConfig.inverted(LBOZO_FRONT_MOTOR_IS_INVERTED);
+        this.lBozoTopMotor.configure(topMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
 
+        var bottomMotorConfig = new SparkMaxConfig();
 
-
-        var BackMotorConfig = new SparkMaxConfig();
-
-        BackMotorConfig.smartCurrentLimit(30);
-        BackMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
-        BackMotorConfig.inverted(LBOZO_BACK_MOTOR_IS_INVERTED);
-        this.lBozoBackMotor.configure(FrontMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
+        bottomMotorConfig.smartCurrentLimit(30);
+        bottomMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
+        bottomMotorConfig.inverted(LBOZO_BACK_MOTOR_IS_INVERTED);
+        this.lBozoBottomMotor.configure(topMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
     }
 
-    public void RunLBozo(double speed) {
-        this.lBozoFrontMotor.set(speed);
-        this.lBozoBackMotor.set(speed);
+    public void setLBozoSpeed(double speed) {
+        this.lBozoTopMotor.set(speed);
+        this.lBozoBottomMotor.set(speed);
+    }
+
+    public boolean getCoral(){
+        try (DigitalInput lineBreakSensor = new DigitalInput(LBOZO_LINE_BREAK_SENSOR)) {
+            return lineBreakSensor.get();
+        } catch (Exception e){
+            System.out.println("Caught");
+            return false;
+        }
     }
 
 }
