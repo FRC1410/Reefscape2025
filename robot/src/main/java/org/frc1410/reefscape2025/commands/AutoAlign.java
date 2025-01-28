@@ -2,6 +2,7 @@ package org.frc1410.reefscape2025.commands;
 
 import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.commands.FollowPathCommand;
+import com.pathplanner.lib.commands.PathfindThenFollowPath;
 import com.pathplanner.lib.path.PathPlannerPath;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.wpilibj.DriverStation;
@@ -52,8 +53,6 @@ public class AutoAlign extends Command {
         } else {
             path = this.closestReefSide.leftPath();
         }
-
-        System.out.println("Closest Reef: " + this.closestReefSide + " selected path: " + path);
 
         this.findThenFollowPath = AutoBuilder.pathfindThenFollowPath(
                 path,

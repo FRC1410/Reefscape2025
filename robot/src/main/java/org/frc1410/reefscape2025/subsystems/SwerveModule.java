@@ -2,11 +2,13 @@ package org.frc1410.reefscape2025.subsystems;
 
 import com.ctre.phoenix6.configs.CANcoderConfiguration;
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
+import com.ctre.phoenix6.controls.TorqueCurrentFOC;
 import com.ctre.phoenix6.controls.VelocityVoltage;
 import com.ctre.phoenix6.hardware.CANcoder;
 import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
+import com.pathplanner.lib.util.DriveFeedforwards;
 import com.revrobotics.spark.SparkBase;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.SparkMax;
@@ -40,8 +42,6 @@ public class SwerveModule implements TickedSubsystem {
             SWERVE_STEER_I,
             SWERVE_STEER_D
     );
-
-    public SwerveModuleState swerveModuleState = new SwerveModuleState();
 
     private final DoublePublisher desiredVelocity;
     private final DoublePublisher desiredAngle;
@@ -122,12 +122,8 @@ public class SwerveModule implements TickedSubsystem {
     }
 
     public void setDesiredState(SwerveModuleState desiredState) {
-//        SwerveModuleState optimizedState = SwerveModuleState.optimize(desiredState, this.getSteerPosition());
-//
-//        this.desiredState = optimizedState;
 
         desiredState.optimize(this.getSteerPosition());
-
         this.desiredState = desiredState;
 
         var request = new VelocityVoltage(

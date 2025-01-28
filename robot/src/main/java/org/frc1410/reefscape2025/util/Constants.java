@@ -54,15 +54,15 @@ public final class Constants {
     public static final boolean BACK_LEFT_DRIVE_MOTOR_INVERTED = false;
     public static final boolean BACK_RIGHT_DRIVE_MOTOR_INVERTED = true;
 
-    public static final boolean FRONT_LEFT_STEER_MOTOR_INVERTED = true;
-    public static final boolean FRONT_RIGHT_STEER_MOTOR_INVERTED = false;
-    public static final boolean BACK_LEFT_STEER_MOTOR_INVERTED = true;
+    public static final boolean FRONT_LEFT_STEER_MOTOR_INVERTED = false;
+    public static final boolean FRONT_RIGHT_STEER_MOTOR_INVERTED = true;
+    public static final boolean BACK_LEFT_STEER_MOTOR_INVERTED = false;
     public static final boolean BACK_RIGHT_STEER_MOTOR_INVERTED = true;
 
-    public static final Translation2d FRONT_LEFT_SWERVE_MODULE_LOCATION = new Translation2d(-0.301625, 0.301625);
-    public static final Translation2d FRONT_RIGHT_SWERVE_MODULE_LOCATION = new Translation2d(0.301625, 0.301625);
-    public static final Translation2d BACK_LEFT_SWERVE_MODULE_LOCATION = new Translation2d(-0.301625, -0.301625);
-    public static final Translation2d BACK_RIGHT_SWERVE_MODULE_LOCATION = new Translation2d(0.301625, -0.301625);
+    public static final Translation2d FRONT_LEFT_SWERVE_MODULE_LOCATION = new Translation2d(0.301625, 0.301625);
+    public static final Translation2d FRONT_RIGHT_SWERVE_MODULE_LOCATION = new Translation2d(0.301625, -0.301625);
+    public static final Translation2d BACK_LEFT_SWERVE_MODULE_LOCATION = new Translation2d(-0.301625, 0.301625);
+    public static final Translation2d BACK_RIGHT_SWERVE_MODULE_LOCATION = new Translation2d(-0.301625, -0.301625);
 
 //    public static final Translation2d FRONT_LEFT_SWERVE_MODULE_LOCATION = new Translation2d(0.301625, 0.301625);
 //    public static final Translation2d FRONT_RIGHT_SWERVE_MODULE_LOCATION = new Translation2d(0.301625, -0.301625);
@@ -76,11 +76,11 @@ public final class Constants {
             BACK_RIGHT_SWERVE_MODULE_LOCATION
     );
 
-    public static final double slowMultiplier = 0.36;
+    public static final double slowMultiplier = 0.5;
     public static final LinearVelocity SWERVE_DRIVE_MAX_SPEED = MetersPerSecond.of(5.5 * slowMultiplier);
     public static final AngularVelocity SWERVE_DRIVE_MAX_ANGULAR_VELOCITY = DegreesPerSecond.of(570 * slowMultiplier);
-    public static final LinearAcceleration SWERVE_DRIVE_MAX_ACCELERATION = MetersPerSecondPerSecond.of(6.9 * slowMultiplier);
-    public static final AngularAcceleration SWERVE_DRIVE_MAX_ANGULAR_ACCELERATION = DegreesPerSecondPerSecond.of(1214 * slowMultiplier);
+    public static final LinearAcceleration SWERVE_DRIVE_MAX_ACCELERATION = MetersPerSecondPerSecond.of(6 * slowMultiplier);
+    public static final AngularAcceleration SWERVE_DRIVE_MAX_ANGULAR_ACCELERATION = DegreesPerSecondPerSecond.of(1062 * slowMultiplier);
 
     public static final double DRIVE_MOTOR_CURRENT_LIMIT = 40;
     public static final int STEER_MOTOR_CURRENT_LIMIT = 30;
@@ -118,5 +118,8 @@ public final class Constants {
     public static final String SOURCE_CAMERA = "Arducam_OV9281_USB_Camera 2";
 
     public static final AprilTagFieldLayout APRIL_TAG_FIELD_LAYOUT = AprilTagFieldLayout.loadField(AprilTagFields.kDefaultField);
-    public static final Transform3d CAMERA_POSE = new Transform3d(new Translation3d(0,0,0), new Rotation3d(0,0,0));
+    public static final Transform3d CAMERA_POSE = new Transform3d(
+            new Translation3d(-0.0762,0.0127,0.22225),
+            new Rotation3d(0,0,0)
+    );
 }

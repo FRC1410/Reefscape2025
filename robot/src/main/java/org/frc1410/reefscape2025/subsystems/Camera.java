@@ -4,17 +4,18 @@ import edu.wpi.first.wpilibj2.command.Subsystem;
 import org.photonvision.EstimatedRobotPose;
 import org.photonvision.PhotonCamera;
 import org.photonvision.PhotonPoseEstimator;
-import org.photonvision.targeting.PhotonPipelineResult;
 
 import java.util.Optional;
 
 import static org.frc1410.reefscape2025.util.Constants.*;
 
 public class Camera implements Subsystem {
-    private final PhotonCamera photonCamera = new PhotonCamera(REEF_CAMERA);
+    private final PhotonCamera photonCamera;
     private final PhotonPoseEstimator photonPoseEstimator;
 
-    public Camera() {
+    public Camera(String cameraName) {
+         photonCamera = new PhotonCamera(cameraName);
+
         photonPoseEstimator = new PhotonPoseEstimator(
                 APRIL_TAG_FIELD_LAYOUT,
                 PhotonPoseEstimator.PoseStrategy.MULTI_TAG_PNP_ON_COPROCESSOR,
@@ -23,8 +24,8 @@ public class Camera implements Subsystem {
     }
 
     public Optional<EstimatedRobotPose> getEstimatedPose() {
-        if(this.photonCamera.getAllUnreadResults().getFirst().hasTargets()) {
-            var pose = this.photonPoseEstimator.update(this.photonCamera.getAllUnreadResults().getFirst());
+        if(this.photonCamera.getLatestResult().hasTargets()) {
+            var pose = this.photonPoseEstimator.update(this.photonCamera.getLatestResult());
             return pose;
         } else {
             return Optional.empty();

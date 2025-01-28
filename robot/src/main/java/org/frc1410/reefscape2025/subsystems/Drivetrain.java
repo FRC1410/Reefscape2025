@@ -1,6 +1,5 @@
 package org.frc1410.reefscape2025.subsystems;
 
-import com.pathplanner.lib.util.DriveFeedforwards;
 import com.studica.frc.AHRS;
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
 import edu.wpi.first.math.geometry.Pose2d;
@@ -16,12 +15,11 @@ import edu.wpi.first.networktables.StructPublisher;
 import edu.wpi.first.units.measure.AngularVelocity;
 import edu.wpi.first.units.measure.Voltage;
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.Timer;
 import org.frc1410.framework.scheduler.subsystem.SubsystemStore;
 import org.frc1410.framework.scheduler.subsystem.TickedSubsystem;
 import org.frc1410.reefscape2025.util.NetworkTables;
-import org.photonvision.EstimatedRobotPose;
 
-import java.util.List;
 import java.util.Optional;
 
 import static edu.wpi.first.units.Units.MetersPerSecond;
@@ -80,7 +78,7 @@ public class Drivetrain implements TickedSubsystem {
 
     private Rotation2d fieldRelativeOffset = new Rotation2d();
 
-    private final Camera camera;
+    private final Camera reefCamera;
     private final boolean tempVal = true;
     private double previousPipelineTimestamp = 0;
     private boolean hasSeenAprilTag = false;
@@ -138,6 +136,8 @@ public class Drivetrain implements TickedSubsystem {
                 this.backRightObservedAngle
         ));
 
+        this.gyro.reset();
+
         this.poseEstimator = new SwerveDrivePoseEstimator(
                 SWERVE_DRIVE_KINEMATICS,
                 this.getGyroYaw(),
@@ -145,17 +145,18 @@ public class Drivetrain implements TickedSubsystem {
                 new Pose2d()
         );
 
-        this.gyro.reset();
-
-        this.camera = new Camera();
+        this.reefCamera = new Camera(REEF_CAMERA);
     }
 
     public void drive(ChassisSpeeds chassisSpeeds) {
+        double lastTimeStamp = Timer.getFPGATimestamp();
+        double dt = Timer.getFPGATimestamp() - lastTimeStamp;
+
         var discretizedChassisSpeeds = ChassisSpeeds.discretize(
                 chassisSpeeds.vxMetersPerSecond,
                 chassisSpeeds.vyMetersPerSecond,
                 chassisSpeeds.omegaRadiansPerSecond,
-                0.02
+                dt
         );
 
         var swerveModuleStates = SWERVE_DRIVE_KINEMATICS.toSwerveModuleStates(discretizedChassisSpeeds);
@@ -167,10 +168,6 @@ public class Drivetrain implements TickedSubsystem {
         this.frontRightModule.setDesiredState(swerveModuleStates[1]);
         this.backLeftModule.setDesiredState(swerveModuleStates[2]);
         this.backRightModule.setDesiredState(swerveModuleStates[3]);
-    }
-
-    public void drive(ChassisSpeeds chassisSpeeds, List<DriveFeedforwards> driveFeedforwards) {
-
     }
 
     public void fieldOrientedDrive(ChassisSpeeds chassisSpeeds) {
@@ -247,7 +244,7 @@ public class Drivetrain implements TickedSubsystem {
                 this.getSwerveModulePositions()
         );
 
-        var estimatedPose = this.camera.getEstimatedPose();
+        var estimatedPose = this.reefCamera.getEstimatedPose();
 
         if(estimatedPose.isPresent()) {
             if(this.tempVal) {
