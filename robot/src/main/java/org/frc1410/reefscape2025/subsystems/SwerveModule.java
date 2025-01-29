@@ -103,7 +103,7 @@ public class SwerveModule implements TickedSubsystem {
         var steerEncoderConfig = new CANcoderConfiguration();
 
         steerEncoderConfig.MagnetSensor.MagnetOffset = angleOffset.unaryMinus().in(Units.Rotation);
-        steerEncoderConfig.MagnetSensor.AbsoluteSensorDiscontinuityPoint = 1;
+        steerEncoderConfig.MagnetSensor.AbsoluteSensorDiscontinuityPoint = 0.5;
 
         configurator.apply(steerEncoderConfig);
 
@@ -149,7 +149,7 @@ public class SwerveModule implements TickedSubsystem {
     }
 
     public AngularVelocity getAngularVelocity() {
-        return Units.RotationsPerSecond.of(this.driveMotor.getVelocity().getValueAsDouble());
+        return Units.RotationsPerSecond.of(this.driveMotor.getVelocity().getValue().in(Units.RotationsPerSecond));
     }
 
     private static AngularVelocity moduleVelocityToMotorAngularVelocity(Measure<LinearVelocityUnit> linearVelocity) {

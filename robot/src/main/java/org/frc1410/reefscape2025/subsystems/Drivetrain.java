@@ -156,7 +156,7 @@ public class Drivetrain implements TickedSubsystem {
                 chassisSpeeds.vxMetersPerSecond,
                 chassisSpeeds.vyMetersPerSecond,
                 chassisSpeeds.omegaRadiansPerSecond,
-                dt
+                0.02
         );
 
         var swerveModuleStates = SWERVE_DRIVE_KINEMATICS.toSwerveModuleStates(discretizedChassisSpeeds);

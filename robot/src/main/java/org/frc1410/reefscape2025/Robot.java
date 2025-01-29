@@ -15,7 +15,6 @@ import org.frc1410.framework.control.Controller;
 import org.frc1410.framework.scheduler.task.TaskPersistence;
 import org.frc1410.framework.scheduler.task.lock.LockPriority;
 import org.frc1410.reefscape2025.commands.AutoAlign;
-import org.frc1410.reefscape2025.commands.AutoAlignToReef;
 import org.frc1410.reefscape2025.commands.DriveLooped;
 import org.frc1410.reefscape2025.subsystems.Drivetrain;
 import org.frc1410.reefscape2025.util.NetworkTables;
@@ -86,11 +85,11 @@ public final class Robot extends PhaseDrivenRobot {
 		public void teleopSequence () {
 			this.scheduler.scheduleDefaultCommand(new DriveLooped(
 				this.drivetrain,
-				this.driverController.LEFT_X_AXIS,
 				this.driverController.LEFT_Y_AXIS,
+				this.driverController.LEFT_X_AXIS,
 				this.driverController.RIGHT_X_AXIS,
 				this.driverController.LEFT_TRIGGER
-			), TaskPersistence.EPHEMERAL);
+			), TaskPersistence.EPHEMERAL, LockPriority.HIGH);
 
 			this.driverController.Y.whenPressed(new InstantCommand(
 					() -> {
@@ -101,7 +100,6 @@ public final class Robot extends PhaseDrivenRobot {
 						}
 					}
 			), TaskPersistence.GAMEPLAY);
-
 
 			this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new AutoAlign(
 					this.drivetrain,
