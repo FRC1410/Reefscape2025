@@ -4,17 +4,35 @@ import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
+import com.revrobotics.spark.SparkMax;
+
+import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.Subsystem;
 
 import static org.frc1410.reefscape2025.util.IDs.*;
 import static org.frc1410.reefscape2025.util.Tuning.*;
+import static org.frc1410.reefscape2025.util.Constants.*;
 
 public class Barroon implements Subsystem {
 
     private final TalonFX leftMotor;
     private final TalonFX rightMotor;
+    private final SparkMax intakeAngleMotor;
+    private final Encoder intakeAngleEncoder = new Encoder(INTAKE_ANGLE_ENCODER_CHANNEL_A, INTAKE_ANGLE_ENCODER_CHANNEL_B, true);
+    private final PIDController elevatorController = new PIDController(LEFT_ELEVATOR_MOTOR_P, LEFT_ELEVATOR_MOTOR_I, LEFT_ELEVATOR_MOTOR_D);
+    private ElevatorState currentElevatorState;
+    private ElevatorState desiredElevatorState;
+    private double elevatorheight;
+    private double intakeAngle;
 
-    public Barroon() {
+
+
+
+    public Barroon(SparkMax intakeAngleMotor) {
+        this.intakeAngleMotor = intakeAngleMotor;
+
         this.leftMotor = new TalonFX(LEFT_ELEVATOR_MOTOR);
         var leftMotorConfig = new TalonFXConfiguration();
         leftMotorConfig.CurrentLimits.SupplyCurrentLimit = 40;
@@ -22,11 +40,10 @@ public class Barroon implements Subsystem {
 
         leftMotorConfig.MotorOutput.NeutralMode = NeutralModeValue.Brake;
         leftMotorConfig.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
-
         leftMotorConfig.Slot0.kP = LEFT_ELEVATOR_MOTOR_P;
         leftMotorConfig.Slot0.kI = LEFT_ELEVATOR_MOTOR_I;
         leftMotorConfig.Slot0.kD = LEFT_ELEVATOR_MOTOR_D;
-
+        
         this.leftMotor.getConfigurator().apply(leftMotorConfig);
 
         this.rightMotor = new TalonFX(RIGHT_ELEVATOR_MOTOR);
@@ -41,7 +58,29 @@ public class Barroon implements Subsystem {
         rightMotorConfig.Slot0.kP = RIGHT_ELEVATOR_MOTOR_P;
         rightMotorConfig.Slot0.kI = RIGHT_ELEVATOR_MOTOR_I;
         rightMotorConfig.Slot0.kD = RIGHT_ELEVATOR_MOTOR_D;
-
         this.rightMotor.getConfigurator().apply(rightMotorConfig);
+
+        
     }
+
+    public ElevatorState getElevatorState() {
+        return this.currentElevatorState;
+    }
+
+    public void toElevatorState (double speed){
+        this.currentElevatorState = desiredElevatorState;
+    }
+    // public void setElevatorState(ElevatorState desiredState) {
+    //     this.currentElevatorState = desiredElevatorState;
+    //     switch(this.elevatorState) {
+    //         case LEVEL_ONE: 
+    //     }
+    // }
+
+
+    
+
+
+
+
 }
