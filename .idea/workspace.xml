@@ -4,33 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="Soren made me commit my changes... Hes lowkey a meanie">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="Empuje el codigo para automaticamente agliniar me con el &quot;reef&quot; y borre el codigo de soren porque soy yo mejor que el #packwatch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/DriveLooped.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/DriveLooped.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Drivetrain.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Drivetrain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/SwerveModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/SwerveModule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/libs/robot.jar" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/libs/robot.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/DriveLooped.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/DriveLooped.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Drivetrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Drivetrain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/SwerveModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/SwerveModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Tuning.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Tuning.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -408,6 +385,8 @@
       <workItem from="1738088886599" duration="28000" />
       <workItem from="1738099587051" duration="9184000" />
       <workItem from="1738179298007" duration="3599000" />
+      <workItem from="1738191780482" duration="3457000" />
+      <workItem from="1738264658365" duration="566000" />
     </task>
     <task id="LOCAL-00001" summary="Changed package name from Viridian to Reefscape">
       <option name="closed" value="true" />
@@ -593,7 +572,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738026129511</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Empuje el codigo para automaticamente agliniar me con el &quot;reef&quot; y borre el codigo de soren porque soy yo mejor que el #packwatch">
+      <option name="closed" value="true" />
+      <created>1738193500509</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1738193500509</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,10 +614,11 @@
     <MESSAGE value="Auto align code that includes picking the closest reef side" />
     <MESSAGE value="Added the rest of the missing blue reef paths" />
     <MESSAGE value="Soren made me commit my changes... Hes lowkey a meanie" />
-    <option name="LAST_COMMIT_MESSAGE" value="Soren made me commit my changes... Hes lowkey a meanie" />
+    <MESSAGE value="Empuje el codigo para automaticamente agliniar me con el &quot;reef&quot; y borre el codigo de soren porque soy yo mejor que el #packwatch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Empuje el codigo para automaticamente agliniar me con el &quot;reef&quot; y borre el codigo de soren porque soy yo mejor que el #packwatch" />
   </component>
   <component name="WpiLibVersionService">
-    <option name="lastChecked" value="20250129123457" />
+    <option name="lastChecked" value="20250130121752" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
