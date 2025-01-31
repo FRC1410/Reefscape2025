@@ -145,7 +145,7 @@ public class Drivetrain implements TickedSubsystem {
                 new Pose2d()
         );
 
-        this.reefCamera = new Camera(REEF_CAMERA);
+        this.reefCamera = new Camera(REEF_CAMERA, REEF_CAMERA_POSE);
     }
 
     public void drive(ChassisSpeeds chassisSpeeds) {

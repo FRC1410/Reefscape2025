@@ -14,7 +14,6 @@ import edu.wpi.first.units.DistanceUnit;
 import edu.wpi.first.units.Measure;
 import edu.wpi.first.units.Units;
 import edu.wpi.first.units.measure.*;
-import edu.wpi.first.wpilibj.DriverStation;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
@@ -117,7 +116,8 @@ public final class Constants {
     public static final String SOURCE_CAMERA = "Arducam_OV9281_USB_Camera 2";
 
     public static final AprilTagFieldLayout APRIL_TAG_FIELD_LAYOUT = AprilTagFieldLayout.loadField(AprilTagFields.kDefaultField);
-    public static final Transform3d CAMERA_POSE = new Transform3d(
+
+    public static final Transform3d REEF_CAMERA_POSE = new Transform3d(
             new Translation3d(-0.0762,0.0127,0.22225),
             new Rotation3d(0,0,0)
     );
