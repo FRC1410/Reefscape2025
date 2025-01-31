@@ -13,31 +13,38 @@ import static org.frc1410.reefscape2025.util.IDs.*;
 
 public class Climber implements Subsystem {
 
-    private final SparkMax climberMotorOne = new SparkMax(CLIMBER_MOTOR_ONE, SparkLowLevel.MotorType.kBrushless);
-    private final SparkMax climberMotorTwo = new SparkMax(CLIMBER_MOTOR_TWO, SparkLowLevel.MotorType.kBrushless);
+    private final SparkMax topClimbMotor = new SparkMax(TOP_CLIMB_MOTOR_ID, SparkLowLevel.MotorType.kBrushless);
+    private final SparkMax bottomClimbMotor = new SparkMax(BOTTOM_CLIMB_MOTOR_ID, SparkLowLevel.MotorType.kBrushless);
 
-    DigitalInput climbLimitSwitch = new DigitalInput(CLIMB_LIMIT_SWITCH);
+    private final DigitalInput climbLimitSwitch = new DigitalInput(CLIMB_LIMIT_SWITCH);
 
     public Climber() {
-        var climberMotorConfigOne = new SparkMaxConfig();
+        var topClimbMotorConfig = new SparkMaxConfig();
 
-        climberMotorConfigOne.smartCurrentLimit(40);
-        climberMotorConfigOne.idleMode(SparkBaseConfig.IdleMode.kBrake);
-        climberMotorConfigOne.inverted(CLIMBER_MOTOR_ONE_IS_INVERTED);
-        this.climberMotorOne.configure(climberMotorConfigOne, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
+        topClimbMotorConfig.smartCurrentLimit(40);
+        topClimbMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
+        topClimbMotorConfig.inverted(CLIMBER_MOTOR_ONE_IS_INVERTED);
+        this.topClimbMotor.configure(
+                topClimbMotorConfig,
+                SparkBase.ResetMode.kNoResetSafeParameters,
+                SparkBase.PersistMode.kNoPersistParameters
+        );
 
+        var bottomClimbMotorConfig = new SparkMaxConfig();
 
-        var climberMotorConfigTwo = new SparkMaxConfig();
-
-        climberMotorConfigTwo.smartCurrentLimit(40);
-        climberMotorConfigTwo.idleMode(SparkBaseConfig.IdleMode.kBrake);
-        climberMotorConfigTwo.inverted(CLIMBER_MOTOR_TWO_IS_INVERTED);
-        this.climberMotorTwo.configure(climberMotorConfigTwo, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
+        bottomClimbMotorConfig.smartCurrentLimit(40);
+        bottomClimbMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
+        bottomClimbMotorConfig.inverted(CLIMBER_MOTOR_TWO_IS_INVERTED);
+        this.bottomClimbMotor.configure(
+                bottomClimbMotorConfig,
+                SparkBase.ResetMode.kNoResetSafeParameters,
+                SparkBase.PersistMode.kNoPersistParameters
+        );
     }
 
     public void setClimberSpeed(double speed) {
-        this.climberMotorOne.set(speed);
-        this.climberMotorTwo.set(speed);
+        this.topClimbMotor.set(speed);
+        this.bottomClimbMotor.set(speed);
     }
 
     public boolean getLimitSwitch() {

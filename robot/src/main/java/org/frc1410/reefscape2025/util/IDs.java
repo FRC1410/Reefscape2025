@@ -8,10 +8,10 @@ public final class IDs {
 	//L'Bozo
 	public static final int LBOZO_TOP_MOTOR = 30;
 	public static final int LBOZO_BOTTOM_MOTOR = 31;
-  public static final int LBOZO_LINE_BREAK_SENSOR = 20;
+	public static final int LBOZO_LINE_BREAK_SENSOR = 20;
   
   //Climber
-  public static final int CLIMBER_MOTOR_ONE = 32;
-	public static final int CLIMBER_MOTOR_TWO = 33;
-  public static final int CLIMB_LIMIT_SWITCH = 21;
+	public static final int BOTTOM_CLIMB_MOTOR_ID = 31;
+	public static final int TOP_CLIMB_MOTOR_ID = 32;
+	public static final int CLIMB_LIMIT_SWITCH = 21;
 }
