@@ -1,52 +1,119 @@
 package org.frc1410.reefscape2025.subsystems;
 
-import com.ctre.phoenix.led.CANdle;
-import com.ctre.phoenix.led.CANdleConfiguration;
-import com.ctre.phoenix.led.RainbowAnimation;
-import com.ctre.phoenix.led.StrobeAnimation;
+import com.ctre.phoenix.led.*;
 import edu.wpi.first.wpilibj2.command.Subsystem;
 
+import static com.ctre.phoenix.led.LarsonAnimation.*;
+import static com.ctre.phoenix.led.ColorFlowAnimation.*;
+import static com.ctre.phoenix.led.TwinkleOffAnimation.*;
 import static org.frc1410.reefscape2025.util.Constants.LED_BRIGHTNESS;
 import static org.frc1410.reefscape2025.util.IDs.*;
 
 public class LEDs implements Subsystem {
-    private CANdle candle = new CANdle(LED_ID);
+
+    private final CANdle candle = new CANdle(LED_ID);
+    private final int numLed = 100000;
+    private int r;
+    private int g;
+    private int b;
+
     public LEDs () {
         CANdleConfiguration config = new CANdleConfiguration();
-        config.stripType = CANdle.LEDStripType.RGB;
+        config.stripType = CANdle.LEDStripType.BRG;
+        config.v5Enabled = true;
         config.brightnessScalar = LED_BRIGHTNESS;
 
         this.candle.configLOSBehavior(true);
         this.candle.configAllSettings(config);
-
-        this.setColor(Color.OCEAN_BREEZE);
     }
 
-    public void setColor(Color color) {
+    public void setRGB(Color color) {
         switch (color) {
-            case GOT_PIECE_GREEN -> this.candle.setLEDs(10,247,2);
-            case LEVEL_ONE_PINK -> this.candle.setLEDs(247,2,174);
-            case LEVEL_TWO_VIOLET -> this.candle.setLEDs(146,28,189);
-            case LEVEL_THREE_CYAN -> this.candle.setLEDs(30, 250, 224);
-            case LEVEL_FOUR_YELLOW -> this.candle.setLEDs(250, 239, 30);
-            case LEVEL_FIVE_DEEP_BLUE -> this.candle.setLEDs(24, 24, 214);
-            case STOLEN_LIFEBLOOD_RED -> this.candle.animate(new StrobeAnimation(255,18,26));
-            case CLIMBING_RAINBOW_ANIMATION -> this.candle.animate(new RainbowAnimation());
-            case OCEAN_BREEZE -> this.candle.setLEDs(30, 100, 250);
+            case BLUE:
+                this.r = 2;
+                this.g = 2;
+                this.b = 171;
+                break;
+
+            case GREEN:
+                this.candle.setLEDs(2,245,11);
+                this.r = 2;
+                this.g = 245;
+                this.b = 11;
+                break;
+
+            case YELLOW:
+                this.r = 245;
+                this.g = 225;
+                this.b = 2;
+                break;
+
+            case RED:
+                this.r = 255;
+                this.g = 0;
+                this.b = 0;
+                break;
+
+            case PINK:
+                this.r = 247;
+                this.g = 171;
+                this.b = 246;
+                break;
+
+            case NULL:
+                this.r = 0;
+                this.g = 0;
+                this.b = 0;
+                break;
         }
     }
 
-    public enum Color {
-        GOT_PIECE_GREEN,
-        LEVEL_ONE_PINK,
-        LEVEL_TWO_VIOLET,
-        LEVEL_THREE_CYAN,
-        LEVEL_FOUR_YELLOW,
-        LEVEL_FIVE_DEEP_BLUE,
-        STOLEN_LIFEBLOOD_RED,
-        OCEAN_BREEZE,
-        CLIMBING_RAINBOW_ANIMATION,
+    public void setColor(Color color) {
+        this.setRGB(color);
+        this.candle.setLEDs(this.r, this.g, this.b);
     }
 
+    /**
+     *
+     * @param animation Animation you want from the Animation enum
+     * @param color Color you want for the animation from the color enum
+     * @param speed How fast the animation is [0,1]
+     *
+     */
 
+    public void setAnimation(Animation animation, Color color, double speed) {
+        this.setRGB(color);
+
+        switch (animation) {
+            case RAINBOW -> this.candle.animate(new RainbowAnimation(1, speed, this.numLed));
+            case BOUNCE -> this.candle.animate(new LarsonAnimation(
+                    this.r, this.g, this.b, 0, speed, this.numLed, BounceMode.Front, 4, 0));
+            case STROBE -> this.candle.animate(new StrobeAnimation(
+                    this.r, this.g, this.b, 0, speed, this.numLed));
+            case GRADUAL_FILL -> this.candle.animate(new ColorFlowAnimation(
+                    this.r, this.g, this.b, 0, speed, numLed, Direction.Forward));
+            case FADE_IN_OUT -> this.candle.animate(
+                    new SingleFadeAnimation(this.r, this.g, this.b, 0, speed, numLed));
+            case TWINKLE -> this.candle.animate(new TwinkleOffAnimation(
+                    this.r, this.g, this.b, 0, speed, numLed, TwinkleOffPercent.Percent64));
+        }
+    }
+
+    public enum Animation {
+        RAINBOW,
+        BOUNCE,
+        STROBE,
+        GRADUAL_FILL,
+        FADE_IN_OUT,
+        TWINKLE
+    }
+
+    public enum Color {
+        BLUE,
+        RED,
+        GREEN,
+        YELLOW,
+        PINK,
+        NULL
+    }
 }
