@@ -13,8 +13,8 @@ import static org.frc1410.reefscape2025.util.Constants.*;
 
 public class LBozo implements Subsystem {
 
-    private final SparkMax lBozoTopMotor = new SparkMax(LBOZO_FRONT_MOTOR, SparkLowLevel.MotorType.kBrushless);
-    private final SparkMax lBozoBottomMotor = new SparkMax(LBOZO_BACK_MOTOR, SparkLowLevel.MotorType.kBrushless);
+    private final SparkMax lBozoTopMotor = new SparkMax(LBOZO_TOP_MOTOR, SparkLowLevel.MotorType.kBrushless);
+    private final SparkMax lBozoBottomMotor = new SparkMax(LBOZO_BOTTOM_MOTOR, SparkLowLevel.MotorType.kBrushless);
 
     public LBozo() {
         var topMotorConfig = new SparkMaxConfig();
