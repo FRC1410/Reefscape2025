@@ -4,39 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="This time its the actual init commit frfr">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="I think git is losing it">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/vendordeps/WPILibNewCommands.json" beforeDir="false" afterPath="$PROJECT_DIR$/framework/vendordeps/WPILibNewCommands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/IDs.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/IDs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/libs/robot.jar" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/libs/robot.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/tmp/jar/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/vendordeps/NavX.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/vendordeps/PathplannerLib.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/vendordeps/PathplannerLib.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/vendordeps/Phoenix.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/vendordeps/Phoenix6-frc2025-latest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/vendordeps/Phoenix5.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/vendordeps/Phoenix5-frc2025-latest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/vendordeps/REVLib.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/vendordeps/REVLib-2025.0.0.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/vendordeps/WPILibNewCommands.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/vendordeps/WPILibNewCommands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/vendordeps/photonlib.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +60,13 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Reefscape2025" type="f1a62948:ProjectNode" />
                 <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="deployutils" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
+                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
                 <item name="framework" type="2d1252cf:ModuleNode" />
               </path>
               <path>
@@ -134,7 +112,19 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -143,12 +133,12 @@
     &quot;assignee&quot;: &quot;Soren6&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/FRC1410/Reefscape2025.git&quot;,
-    &quot;accountId&quot;: &quot;7bdae63d-d5d1-40a7-a1b3-50cdcfdc7eca&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/FRC1410/Reefscape2025.git",
+    "accountId": "7bdae63d-d5d1-40a7-a1b3-50cdcfdc7eca"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -167,8 +157,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "android.gradle.sync.needed": "true",
-    "git-widget-placeholder": "main",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "#1 on L'Bozo",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/benja/Documents/GitHub/Crescendo2024",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -177,32 +169,11 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.Reefscape2025:robot [build]">
-    <configuration name="Reefscape2025 [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="buildDependents" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.Reefscape2025 [deploy]">
     <configuration name="Reefscape2025 [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -215,6 +186,28 @@
         <option name="taskNames">
           <list>
             <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Reefscape2025 [deploy]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="deploy" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -291,21 +284,28 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Gradle.Reefscape2025 [deploy]" />
+      <item itemvalue="Gradle.Reefscape2025 [dependencies]" />
+      <item itemvalue="Gradle.Reefscape2025:framework [build]" />
+      <item itemvalue="Gradle.Reefscape2025:robot [build]" />
+      <item itemvalue="Gradle.Viridian-Framework [build]" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Viridian-Framework [build]" />
         <item itemvalue="Gradle.Reefscape2025:robot [build]" />
         <item itemvalue="Gradle.Reefscape2025:framework [build]" />
-        <item itemvalue="Gradle.Viridian-Framework [build]" />
         <item itemvalue="Gradle.Reefscape2025 [dependencies]" />
-        <item itemvalue="Gradle.Reefscape2025 [buildDependents]" />
+        <item itemvalue="Gradle.Reefscape2025 [deploy]" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.117" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.117" />
       </set>
     </attachedChunks>
   </component>
@@ -321,6 +321,7 @@
       <workItem from="1735944080088" duration="2986000" />
       <workItem from="1735967625300" duration="1194000" />
       <workItem from="1736145742653" duration="1334000" />
+      <workItem from="1738340545658" duration="344000" />
     </task>
     <task id="LOCAL-00001" summary="Changed package name from Viridian to Reefscape">
       <option name="closed" value="true" />
@@ -362,7 +363,23 @@
       <option name="project" value="LOCAL" />
       <updated>1735943600799</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Changed the LED code to allow us to easily change the Animation color, and speed easily. Added two commands to cycle through the colors and the different Animations. Added documentation to the LED setAnimation method">
+      <option name="closed" value="true" />
+      <created>1738305403454</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1738305403454</updated>
+    </task>
+    <task id="LOCAL-00007" summary="I think git is losing it">
+      <option name="closed" value="true" />
+      <created>1738305850026</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1738305850026</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,9 +393,11 @@
     <MESSAGE value="got rid of old 2024 paths" />
     <MESSAGE value="test webhook" />
     <MESSAGE value="This time its the actual init commit frfr" />
-    <option name="LAST_COMMIT_MESSAGE" value="This time its the actual init commit frfr" />
+    <MESSAGE value="Changed the LED code to allow us to easily change the Animation color, and speed easily. Added two commands to cycle through the colors and the different Animations. Added documentation to the LED setAnimation method" />
+    <MESSAGE value="I think git is losing it" />
+    <option name="LAST_COMMIT_MESSAGE" value="I think git is losing it" />
   </component>
   <component name="WpiLibVersionService">
-    <option name="lastChecked" value="20250105234227" />
+    <option name="lastChecked" value="20250131092234" />
   </component>
 </project>
