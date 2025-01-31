@@ -1,27 +1,23 @@
 package org.frc1410.reefscape2025.util;
 
-import com.pathplanner.lib.path.PathPlannerPath;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
-import org.json.simple.parser.ParseException;
-
-import java.io.IOException;
 
 public class ReefPaths {
-
+    //Blue reef
     public static final ReefSides BLUE_NORTH_REEF = new ReefSides(
             new PathLoader("North Left").getPath(),
             new PathLoader("North Right").getPath(),
             new Pose2d(6.2, 4, Rotation2d.fromDegrees(180))
     );
 
-    public static final ReefSides BLUE_NORTH_EAST = new ReefSides(
+    public static final ReefSides BLUE_NORTH_EAST_REEF = new ReefSides(
             new PathLoader("North East Left").getPath(),
             new PathLoader("North East Right").getPath(),
             new Pose2d(5.250, 2.775, Rotation2d.fromDegrees(120))
     );
 
-    public static final ReefSides BLUE_SOUTH_EAST = new ReefSides(
+    public static final ReefSides BLUE_SOUTH_EAST_REEF = new ReefSides(
             new PathLoader("South East Left").getPath(),
             new PathLoader("South East Right").getPath(),
             new Pose2d(3.715, 2.835, Rotation2d.fromDegrees(60))
@@ -44,4 +40,6 @@ public class ReefPaths {
             new PathLoader("North West Right").getPath(),
             new Pose2d(5.245, 5.3, Rotation2d.fromDegrees(-120))
     );
+
+    //Red reef
 }

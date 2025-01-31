@@ -105,9 +105,11 @@ public final class Constants {
 
     public static final List<ReefSides> BLUE_REEF = List.of(
             BLUE_NORTH_REEF,
-            BLUE_NORTH_WEST_REEF,
+            BLUE_NORTH_EAST_REEF,
+            BLUE_SOUTH_EAST_REEF,
             BLUE_SOUTH_REEF,
-            BLUE_SOUTH_WEST_REEF
+            BLUE_SOUTH_WEST_REEF,
+            BLUE_NORTH_WEST_REEF
     );
 
     public static final List<ReefSides> RED_REEF = List.of();
