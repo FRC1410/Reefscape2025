@@ -3,7 +3,6 @@ package org.frc1410.reefscape2025.commands;
 import edu.wpi.first.wpilibj2.command.Command;
 import org.frc1410.reefscape2025.subsystems.LBozo;
 
-
 public class OuttakeCoral extends Command {
     private final LBozo lBozo;
 
@@ -14,7 +13,7 @@ public class OuttakeCoral extends Command {
 
     @Override
     public void initialize() {
-        this.lBozo.setLBozoSpeed(-0.2);
+        this.lBozo.setLBozoSpeed(-0.4);
     }
 
     @Override
@@ -24,11 +23,7 @@ public class OuttakeCoral extends Command {
 
     @Override
     public boolean isFinished() {
-        if(this.lBozo.getCoral()) {
-            return true;
-        }else {
-            return false;
-        }
+        return this.lBozo.hasCoral();
     }
 
     @Override

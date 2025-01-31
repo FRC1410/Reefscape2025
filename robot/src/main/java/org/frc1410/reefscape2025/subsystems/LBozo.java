@@ -29,7 +29,7 @@ public class LBozo implements Subsystem {
         bottomMotorConfig.smartCurrentLimit(30);
         bottomMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
         bottomMotorConfig.inverted(LBOZO_BACK_MOTOR_IS_INVERTED);
-        this.lBozoBottomMotor.configure(topMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
+        this.lBozoBottomMotor.configure(bottomMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
     }
 
     public void setLBozoSpeed(double speed) {
@@ -37,11 +37,11 @@ public class LBozo implements Subsystem {
         this.lBozoBottomMotor.set(speed);
     }
 
-    public boolean getCoral(){
+    public boolean hasCoral(){
         try (DigitalInput lineBreakSensor = new DigitalInput(LBOZO_LINE_BREAK_SENSOR)) {
             return lineBreakSensor.get();
         } catch (Exception e){
-            System.out.println("Caught");
+            System.out.println("Error: " + e.getMessage());
             return false;
         }
     }
