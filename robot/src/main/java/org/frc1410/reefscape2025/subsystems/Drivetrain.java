@@ -149,9 +149,6 @@ public class Drivetrain implements TickedSubsystem {
     }
 
     public void drive(ChassisSpeeds chassisSpeeds) {
-        double lastTimeStamp = Timer.getFPGATimestamp();
-        double dt = Timer.getFPGATimestamp() - lastTimeStamp;
-
         var discretizedChassisSpeeds = ChassisSpeeds.discretize(
                 chassisSpeeds.vxMetersPerSecond,
                 chassisSpeeds.vyMetersPerSecond,
