@@ -1,4 +1,4 @@
-package org.frc1410.reefscape2025.subsytems;
+package org.frc1410.reefscape2025.subsystems;
 
 import com.revrobotics.spark.SparkBase;
 import com.revrobotics.spark.SparkLowLevel;
@@ -11,15 +11,14 @@ import edu.wpi.first.wpilibj2.command.Subsystem;
 import static org.frc1410.reefscape2025.util.Constants.*;
 import static org.frc1410.reefscape2025.util.IDs.*;
 
-public class ClimberMotor implements Subsystem {
-
-    //Motor init and config
+public class Climber implements Subsystem {
 
     private final SparkMax climberMotorOne = new SparkMax(CLIMBER_MOTOR_ONE, SparkLowLevel.MotorType.kBrushless);
-
     private final SparkMax climberMotorTwo = new SparkMax(CLIMBER_MOTOR_TWO, SparkLowLevel.MotorType.kBrushless);
 
-    public ClimberMotor() {
+    DigitalInput climbLimitSwitch = new DigitalInput(CLIMB_LIMIT_SWITCH);
+
+    public Climber() {
         var climberMotorConfigOne = new SparkMaxConfig();
 
         climberMotorConfigOne.smartCurrentLimit(40);
@@ -36,20 +35,12 @@ public class ClimberMotor implements Subsystem {
         this.climberMotorTwo.configure(climberMotorConfigTwo, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
     }
 
-    //Motor run
-
-    public void RunClimberMotor(double speed) {
+    public void setClimberSpeed(double speed) {
         this.climberMotorOne.set(speed);
         this.climberMotorTwo.set(speed);
     }
 
-    //Limit Switch
-
-    DigitalInput climbLimitSwitch = new DigitalInput(CLIMB_LIMIT_SWITCH);
-
-    //Lim switch call
-
-    public boolean GetClimbLimitSwitch() {
+    public boolean getLimitSwitch() {
         return(climbLimitSwitch.get());
     }
 

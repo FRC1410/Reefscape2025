@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="I think git is losing it">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="Changed the Lbozo motor ID names to match the motor names inside of their class">
+      <change afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/climber/UnClimb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/ClimbCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/climber/ClimbCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/IntakeCoral.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Lbozo/IntakeCoral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/OuttakeCoral.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Lbozo/OuttakeCoral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsytems/ClimberMotor.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/ClimberMotor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,12 +138,12 @@
     &quot;assignee&quot;: &quot;Soren6&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/FRC1410/Reefscape2025.git",
-    "accountId": "7bdae63d-d5d1-40a7-a1b3-50cdcfdc7eca"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/FRC1410/Reefscape2025.git&quot;,
+    &quot;accountId&quot;: &quot;7bdae63d-d5d1-40a7-a1b3-50cdcfdc7eca&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -158,7 +163,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "android.gradle.sync.needed": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "#1 on L'Bozo",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/benja/Documents/GitHub/Crescendo2024",
     "node.js.detected.package.eslint": "true",
@@ -173,6 +178,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.frc1410.reefscape2025.commands" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.Reefscape2025 [deploy]">
     <configuration name="Reefscape2025 [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -379,7 +389,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738305850026</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Changed the Lbozo motor ID names to match the motor names inside of their class">
+      <option name="closed" value="true" />
+      <created>1738342330647</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1738342330647</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,7 +413,8 @@
     <MESSAGE value="This time its the actual init commit frfr" />
     <MESSAGE value="Changed the LED code to allow us to easily change the Animation color, and speed easily. Added two commands to cycle through the colors and the different Animations. Added documentation to the LED setAnimation method" />
     <MESSAGE value="I think git is losing it" />
-    <option name="LAST_COMMIT_MESSAGE" value="I think git is losing it" />
+    <MESSAGE value="Changed the Lbozo motor ID names to match the motor names inside of their class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the Lbozo motor ID names to match the motor names inside of their class" />
   </component>
   <component name="WpiLibVersionService">
     <option name="lastChecked" value="20250131092234" />
