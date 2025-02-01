@@ -14,9 +14,15 @@ public final class Tuning {
     public static double ELEVEATOR_I = 1;
     public static double ELEVEATOR_D = 1;
 
-    public static double ELEVEATOR_HOLD_P = 1;
-    public static double ELEVEATOR_HOLD_I = 1;
-    public static double ELEVEATOR_HOLD_D = 1;
-
     public static double ELEVATOR_TOLERANCE = 1;
+    
+    
+    public static double INTAKE_P = 1;
+    public static double INTAKE_I = 1;
+    public static double INTAKE_D = 1;
+    
+    public static double INTAKE_TOLERANCE = 1;
+
+
+
 }

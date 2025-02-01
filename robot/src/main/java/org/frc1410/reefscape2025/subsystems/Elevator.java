@@ -17,7 +17,7 @@ import static org.frc1410.reefscape2025.util.IDs.*;
 import static org.frc1410.reefscape2025.util.Tuning.*;
 import static org.frc1410.reefscape2025.util.Constants.*;
 
-public class Barroon implements TickedSubsystem {
+public class Elevator implements TickedSubsystem {
 
     private final TalonFX leftMotor;
     private final TalonFX rightMotor;
@@ -29,12 +29,13 @@ public class Barroon implements TickedSubsystem {
 
     private int currentElevatorState;
     private int desiredElevatorState = 0;
-    private double elevatorheight;
-    private double intakeAngle;
+
+    private int currentIntakeRotation;
+    private int desiredIntakeRotation = 0;
 
 
 
-    public Barroon() {
+    public Elevator() {
 
 
         this.leftMotor = new TalonFX(LEFT_ELEVATOR_MOTOR);
@@ -81,13 +82,27 @@ public class Barroon implements TickedSubsystem {
         return desiredElevatorState;
     }
 
+    public void configureDesiredIntakeRotation(int desiredRotation) {
+        this.desiredIntakeRotation = desiredRotation;
+    }
 
+    public int getDesiredIntakeRotation() {
+        return this.desiredIntakeRotation;
+    }
 
+    public void elevatorSpeed(double speed) {
+        leftMotor.set(speed);
+        rightMotor.set(speed);
+    }
 
-
+    public void intakeSpeed(double speed) {
+        intakeAngleMotor.set(speed);
+    }
 
     @Override
     public void periodic() {
         currentElevatorState = barroonEncoder.get();
     }
+
+
 }
