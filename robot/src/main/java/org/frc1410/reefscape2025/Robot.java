@@ -3,6 +3,7 @@ package org.frc1410.reefscape2025;
 import org.frc1410.framework.PhaseDrivenRobot;
 import org.frc1410.framework.control.Controller;
 import org.frc1410.framework.scheduler.task.TaskPersistence;
+import org.frc1410.reefscape2025.commands.Actual;
 import org.frc1410.reefscape2025.commands.ChangeAnimation;
 import org.frc1410.reefscape2025.commands.ChangeLEDColor;
 import org.frc1410.reefscape2025.subsystems.LEDs;
@@ -22,7 +23,7 @@ public final class Robot extends PhaseDrivenRobot {
 
 	@Override
 	public void teleopSequence() {
-		driverController.DPAD_UP_LEFT.whenPressed(new ChangeAnimation(leds), TaskPersistence.GAMEPLAY);
+		driverController.DPAD_UP.whenPressed(new Actual(leds), TaskPersistence.GAMEPLAY);
 		driverController.Y.whenPressed(new ChangeLEDColor(leds), TaskPersistence.GAMEPLAY);
 	}
 
@@ -32,6 +33,6 @@ public final class Robot extends PhaseDrivenRobot {
 
 	@Override
 	protected void disabledSequence() {
-		leds.setAnimation(LEDs.Animation.RAINBOW, LEDs.Color.NULL, 0.5);
+
 	}
 }

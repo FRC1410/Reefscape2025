@@ -12,7 +12,7 @@ import static org.frc1410.reefscape2025.util.IDs.*;
 public class LEDs implements Subsystem {
 
     private final CANdle candle = new CANdle(LED_ID);
-    private final int numLed = 100000;
+    private final int numLed = 75;
     private int r;
     private int g;
     private int b;
@@ -25,6 +25,7 @@ public class LEDs implements Subsystem {
 
         this.candle.configLOSBehavior(true);
         this.candle.configAllSettings(config);
+        this.setAnimation(Animation.RAINBOW, Color.NULL, 0.5);
     }
 
     public void setRGB(Color color) {
@@ -35,7 +36,7 @@ public class LEDs implements Subsystem {
                 this.b = 171;
                 break;
 
-            case GREEN:
+            case TEAL:
                 this.candle.setLEDs(2,245,11);
                 this.r = 2;
                 this.g = 245;
@@ -54,9 +55,9 @@ public class LEDs implements Subsystem {
                 this.b = 0;
                 break;
 
-            case PINK:
-                this.r = 247;
-                this.g = 171;
+            case PURPLE:
+                this.r = 252;
+                this.g = 2;
                 this.b = 246;
                 break;
 
@@ -65,10 +66,28 @@ public class LEDs implements Subsystem {
                 this.g = 0;
                 this.b = 0;
                 break;
+
+            case LIGHT_BLUE:
+                this.r = 3;
+                this.g = 252;
+                this.b = 194;
+                break;
+
+            case GREEN:
+                this.r = 0;
+                this.g = 255;
+                this.b = 0;
+                break;
+
+            case ORANGE:
+                this.r = 225;
+                this.g = 15;
+                this.b = 0;
         }
     }
 
     public void setColor(Color color) {
+        this.candle.clearAnimation(0);
         this.setRGB(color);
         this.candle.setLEDs(this.r, this.g, this.b);
     }
@@ -87,7 +106,7 @@ public class LEDs implements Subsystem {
         switch (animation) {
             case RAINBOW -> this.candle.animate(new RainbowAnimation(1, speed, this.numLed));
             case BOUNCE -> this.candle.animate(new LarsonAnimation(
-                    this.r, this.g, this.b, 0, speed, this.numLed, BounceMode.Front, 4, 0));
+                    this.r, this.g, this.b, 0, speed, this.numLed, BounceMode.Front, 7, 0));
             case STROBE -> this.candle.animate(new StrobeAnimation(
                     this.r, this.g, this.b, 0, speed, this.numLed));
             case GRADUAL_FILL -> this.candle.animate(new ColorFlowAnimation(
@@ -95,7 +114,9 @@ public class LEDs implements Subsystem {
             case FADE_IN_OUT -> this.candle.animate(
                     new SingleFadeAnimation(this.r, this.g, this.b, 0, speed, numLed));
             case TWINKLE -> this.candle.animate(new TwinkleOffAnimation(
-                    this.r, this.g, this.b, 0, speed, numLed, TwinkleOffPercent.Percent64));
+                    this.r, this.g, this.b, 0, speed, numLed, TwinkleOffPercent.Percent100));
+            case FIRE -> this.candle.animate(new FireAnimation(LED_BRIGHTNESS, speed, numLed, 0.2, 0.1));
+            case RGB_FADE -> this.candle.animate(new RgbFadeAnimation(LED_BRIGHTNESS, speed, numLed));
         }
     }
 
@@ -105,15 +126,26 @@ public class LEDs implements Subsystem {
         STROBE,
         GRADUAL_FILL,
         FADE_IN_OUT,
-        TWINKLE
+        TWINKLE,
+        FIRE,
+        RGB_FADE
     }
+
+    //IDLE: RAINBOW
+    //No Coral: PURPLE
+    //Coral: LIGHT_BLUE
+    //Auto align: FIRE - sparking 0.2 ,0.1 cooling, speed: 0.6
+
 
     public enum Color {
         BLUE,
+        LIGHT_BLUE,
         RED,
         GREEN,
+        TEAL,
         YELLOW,
-        PINK,
+        PURPLE,
+        ORANGE,
         NULL
     }
 }

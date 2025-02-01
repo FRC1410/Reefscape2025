@@ -14,22 +14,26 @@ public class ChangeLEDColor extends Command {
 
     @Override
     public void initialize() {
-        if(colorCounter > 5) {
-            colorCounter = 1;
+        if(colorCounter >= 9) {
+            colorCounter = 0;
         } else {
             colorCounter++;
+        }
+
+        switch (colorCounter) {
+            case 1 -> leds.setColor(LEDs.Color.BLUE);
+            case 2 -> leds.setColor(LEDs.Color.RED);
+            case 3 -> leds.setColor(LEDs.Color.YELLOW);
+            case 4 -> leds.setColor(LEDs.Color.TEAL);
+            case 5 -> leds.setColor(LEDs.Color.PURPLE);
+            case 6 -> leds.setColor(LEDs.Color.LIGHT_BLUE);
+            case 7 -> leds.setColor(LEDs.Color.GREEN);
+            case 8 -> leds.setColor(LEDs.Color.ORANGE);
         }
     }
 
     @Override
     public void execute() {
-        switch (colorCounter) {
-            case 1 -> leds.setColor(LEDs.Color.BLUE);
-            case 2 -> leds.setColor(LEDs.Color.RED);
-            case 3 -> leds.setColor(LEDs.Color.YELLOW);
-            case 4 -> leds.setColor(LEDs.Color.GREEN);
-            case 5 -> leds.setColor(LEDs.Color.PINK);
-        }
     }
 
     @Override
