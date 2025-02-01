@@ -11,4 +11,12 @@ public final class IDs {
 	// Elevator
 	public static final int LEFT_ELEVATOR_MOTOR = 9;
 	public static final int RIGHT_ELEVATOR_MOTOR = 10;
+
+	public static int INTAKE_ANGLE_ENCODER_CHANNEL_A = 1;
+	public static int INTAKE_ANGLE_ENCODER_CHANNEL_B = 2;
+
+	public static int ELEVATOR_HEIGHT_ENCODER_CHANNEL_A = 1;
+	public static int ELEVATOR_HEIGHT_ENCODER_CHANNEL_B = 2;
+
+	public static final int INTAKE_ROTATION_MOTOR = 57;
 }

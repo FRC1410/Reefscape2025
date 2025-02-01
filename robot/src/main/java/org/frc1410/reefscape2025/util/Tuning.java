@@ -9,4 +9,14 @@ public final class Tuning {
     public static double RIGHT_ELEVATOR_MOTOR_P = 1;
     public static double RIGHT_ELEVATOR_MOTOR_I = 0;
     public static double RIGHT_ELEVATOR_MOTOR_D = 0;
+
+    public static double ELEVEATOR_P = 1;
+    public static double ELEVEATOR_I = 1;
+    public static double ELEVEATOR_D = 1;
+
+    public static double ELEVEATOR_HOLD_P = 1;
+    public static double ELEVEATOR_HOLD_I = 1;
+    public static double ELEVEATOR_HOLD_D = 1;
+
+    public static double ELEVATOR_TOLERANCE = 1;
 }

@@ -4,34 +4,38 @@ import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
+import com.revrobotics.spark.SparkLowLevel;
 import com.revrobotics.spark.SparkMax;
 
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.Subsystem;
+import org.frc1410.framework.scheduler.subsystem.TickedSubsystem;
 
 import static org.frc1410.reefscape2025.util.IDs.*;
 import static org.frc1410.reefscape2025.util.Tuning.*;
 import static org.frc1410.reefscape2025.util.Constants.*;
 
-public class Barroon implements Subsystem {
+public class Barroon implements TickedSubsystem {
 
     private final TalonFX leftMotor;
     private final TalonFX rightMotor;
-    private final SparkMax intakeAngleMotor;
+    private final SparkMax intakeAngleMotor = new SparkMax(INTAKE_ROTATION_MOTOR, SparkLowLevel.MotorType.kBrushless);
     private final Encoder intakeAngleEncoder = new Encoder(INTAKE_ANGLE_ENCODER_CHANNEL_A, INTAKE_ANGLE_ENCODER_CHANNEL_B, true);
+    private final Encoder barroonEncoder = new Encoder(ELEVATOR_HEIGHT_ENCODER_CHANNEL_A, ELEVATOR_HEIGHT_ENCODER_CHANNEL_B, true);
+
     private final PIDController elevatorController = new PIDController(LEFT_ELEVATOR_MOTOR_P, LEFT_ELEVATOR_MOTOR_I, LEFT_ELEVATOR_MOTOR_D);
-    private ElevatorState currentElevatorState;
-    private ElevatorState desiredElevatorState;
+
+    private int currentElevatorState;
+    private int desiredElevatorState = 0;
     private double elevatorheight;
     private double intakeAngle;
 
 
 
+    public Barroon() {
 
-    public Barroon(SparkMax intakeAngleMotor) {
-        this.intakeAngleMotor = intakeAngleMotor;
 
         this.leftMotor = new TalonFX(LEFT_ELEVATOR_MOTOR);
         var leftMotorConfig = new TalonFXConfiguration();
@@ -59,28 +63,31 @@ public class Barroon implements Subsystem {
         rightMotorConfig.Slot0.kI = RIGHT_ELEVATOR_MOTOR_I;
         rightMotorConfig.Slot0.kD = RIGHT_ELEVATOR_MOTOR_D;
         this.rightMotor.getConfigurator().apply(rightMotorConfig);
+    }
 
+    public void resetPosition(double baroonBalue) {
         
     }
 
-    public ElevatorState getElevatorState() {
-        return this.currentElevatorState;
+    public int reciveDesiredElevatorState() {
+        return currentElevatorState;
     }
 
-    public void toElevatorState (double speed){
-        this.currentElevatorState = desiredElevatorState;
+    public void configureDesiredElevatorState(int desiredHeight) {
+        this.desiredElevatorState = desiredHeight;
     }
-    // public void setElevatorState(ElevatorState desiredState) {
-    //     this.currentElevatorState = desiredElevatorState;
-    //     switch(this.elevatorState) {
-    //         case LEVEL_ONE: 
-    //     }
-    // }
 
-
-    
+    public Integer getDesiredElevatorState() {
+        return desiredElevatorState;
+    }
 
 
 
 
+
+
+    @Override
+    public void periodic() {
+        currentElevatorState = barroonEncoder.get();
+    }
 }

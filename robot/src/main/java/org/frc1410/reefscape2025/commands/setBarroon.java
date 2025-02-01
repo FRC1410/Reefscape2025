@@ -3,14 +3,12 @@ import edu.wpi.first.wpilibj2.command.Command;
 import org.frc1410.reefscape2025.subsystems.Barroon;
 import org.frc1410.reefscape2025.subsystems.ElevatorState;
 
-import static org.frc1410.reefscape2025.util.Constants.*;
-
-public class SetHeight extends Command {
+public class setBarroon extends Command {
     private final ElevatorState elevatorState;
     private final Barroon barroon;
     private String BREAD;
 
-    public SetHeight(ElevatorState elevatorState, Barroon barroon, String bread) {
+    public setBarroon(ElevatorState elevatorState, Barroon barroon, String bread) {
         this.elevatorState = elevatorState;
         this.barroon = barroon;
         this.BREAD = bread;
