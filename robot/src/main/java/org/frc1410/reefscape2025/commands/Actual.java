@@ -8,6 +8,8 @@ import static org.frc1410.reefscape2025.subsystems.LEDs.Color.*;
 
 public class Actual extends Command {
 
+    // THIS CLASS IS TEMPORARY AND IS ONLY TO KEEP TRACK OF THE LED ACTIONS
+    // TODO: Get rid of this class once LED's have been fully implemented with all the code
     private final LEDs leds;
     private int animationCounter = 0;
 

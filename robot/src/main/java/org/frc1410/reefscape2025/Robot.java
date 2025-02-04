@@ -3,9 +3,6 @@ package org.frc1410.reefscape2025;
 import org.frc1410.framework.PhaseDrivenRobot;
 import org.frc1410.framework.control.Controller;
 import org.frc1410.framework.scheduler.task.TaskPersistence;
-import org.frc1410.reefscape2025.commands.Actual;
-import org.frc1410.reefscape2025.commands.ChangeAnimation;
-import org.frc1410.reefscape2025.commands.ChangeLEDColor;
 import org.frc1410.reefscape2025.subsystems.LEDs;
 import org.frc1410.reefscape2025.commands.Lbozo.IntakeCoral;
 import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoral;
@@ -23,7 +20,7 @@ public final class Robot extends PhaseDrivenRobot {
 
 	private final LBozo lBozo = subsystems.track(new LBozo());
 	private final Climber climber = subsystems.track(new Climber());
-  private final LEDs leds = new LEDs();
+	private final LEDs leds = subsystems.track(new LEDs());
 
 
 	@Override
@@ -32,8 +29,8 @@ public final class Robot extends PhaseDrivenRobot {
 	@Override
 	public void teleopSequence() {
     // this needs to be updated with the correct control scheme
-		this.operatorController.X.whileHeld(new IntakeCoral(lBozo), TaskPersistence.GAMEPLAY);
-		this.operatorController.Y.whileHeld(new OuttakeCoral(lBozo), TaskPersistence.GAMEPLAY);
+		this.operatorController.X.whileHeld(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
+		this.operatorController.Y.whileHeld(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 	}
 
 
