@@ -14,4 +14,7 @@ public final class IDs {
 	public static final int BOTTOM_CLIMB_MOTOR_ID = 12;
 	public static final int TOP_CLIMB_MOTOR_ID = 11;
 	public static final int CLIMB_LIMIT_SWITCH = 21; //TBD
+
+  //LED's
+	public static final int LED_ID = 4;
 }
