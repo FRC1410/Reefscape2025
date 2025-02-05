@@ -3,7 +3,16 @@ package org.frc1410.reefscape2025;
 import org.frc1410.framework.PhaseDrivenRobot;
 import org.frc1410.framework.control.Controller;
 import org.frc1410.framework.scheduler.task.TaskPersistence;
-import org.frc1410.reefscape2025.commands.ElevatorManual;
+import org.frc1410.reefscape2025.commands.Elevator.ConfigureHeight;
+import org.frc1410.reefscape2025.commands.Elevator.ElevatorManual;
+import org.frc1410.reefscape2025.commands.Elevator.GoToState;
+import org.frc1410.reefscape2025.commands.Elevator.HomeElevator;
+import org.frc1410.reefscape2025.commands.Lbozo.IntakeCoral;
+import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoral;
+import org.frc1410.reefscape2025.subsystems.Climber;
+import org.frc1410.reefscape2025.subsystems.Elevator;
+import org.frc1410.reefscape2025.subsystems.LBozo;
+import org.frc1410.reefscape2025.subsystems.LEDs;
 
 import static org.frc1410.reefscape2025.util.IDs.*;
 

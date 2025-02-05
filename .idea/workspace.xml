@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="got rid of some tuning values *I think* we dont need">
-      <change afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/HomeElevator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors15c80wxji7qdhvcsteytc58m6.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors15c80wxji7qdhvcsteytc58m6.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors16h8i8yvcoyu6adqodek0vazl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors16h8i8yvcoyu6adqodek0vazl.kt" afterDir="false" />
@@ -103,16 +100,27 @@
       <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/local-state/build-history.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/pluginDescriptors/org.frc1410.tooling.build.java.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/pluginDescriptors/org.frc1410.tooling.build.java.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/resources/main/META-INF/gradle-plugins/org.frc1410.tooling.build.java.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/resources/main/META-INF/gradle-plugins/org.frc1410.tooling.build.java.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2343710774575522716/.gradle/8.8/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2343710774575522716/.gradle/8.8/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2343710774575522716/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2343710774575522716/.gradle/8.8/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2343710774575522716/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2343710774575522716/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2343710774575522716/.gradle/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2343710774575522716/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors13125721795823313026/.gradle/8.8/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors13125721795823313026/.gradle/8.8/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors13125721795823313026/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors13125721795823313026/.gradle/8.8/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors13125721795823313026/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors13125721795823313026/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors13125721795823313026/.gradle/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors13125721795823313026/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14689588682349996030/.gradle/8.8/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14689588682349996030/.gradle/8.8/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14689588682349996030/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14689588682349996030/.gradle/8.8/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14689588682349996030/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14689588682349996030/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14689588682349996030/.gradle/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14689588682349996030/.gradle/vcs-1/gc.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/ConfigureHeight.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Elevator/ConfigureHeight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/ElevatorManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Elevator/ElevatorManual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/GoToState.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Elevator/GoToState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/HomeElevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Elevator/HomeElevator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,6 +246,17 @@
     &quot;assignee&quot;: &quot;Soren6&quot;
   }
 }</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDONljZ4c6KGAZa&quot;,
+        &quot;number&quot;: 4
+      },
+      &quot;lastSeen&quot;: 1738795442599
+    }
+  ]
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/FRC1410/Reefscape2025.git&quot;,
@@ -264,31 +283,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Reefscape2025 [buildDependents].executor": "Run",
-    "Gradle.Reefscape2025:framework [build].executor": "Run",
-    "Gradle.Reefscape2025:robot [build].executor": "Run",
-    "Gradle.Viridian-Framework [build].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Elevator",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/samuelrojas/Documents/Coding/Reefscape2025",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Reefscape2025 [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Reefscape2025:framework [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Reefscape2025:robot [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Viridian-Framework [build].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/samuelrojas/Documents/Coding/Reefscape2025&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Gradle.Viridian-Framework [build]">
     <configuration name="Reefscape2025 [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -442,6 +461,7 @@
       <workItem from="1738190916715" duration="669000" />
       <workItem from="1738725913128" duration="12629000" />
       <workItem from="1738774610215" duration="1726000" />
+      <workItem from="1738797092775" duration="44000" />
     </task>
     <task id="LOCAL-00001" summary="Changed package name from Viridian to Reefscape">
       <option name="closed" value="true" />
@@ -553,9 +573,10 @@
     <MESSAGE value="Job Security" />
     <MESSAGE value="Soren's code is based asf (I made it take angles and shit... also made PID work (: )" />
     <MESSAGE value="got rid of some tuning values *I think* we dont need" />
-    <option name="LAST_COMMIT_MESSAGE" value="got rid of some tuning values *I think* we dont need" />
+    <MESSAGE value="PLEASE WORK" />
+    <option name="LAST_COMMIT_MESSAGE" value="PLEASE WORK" />
   </component>
   <component name="WpiLibVersionService">
-    <option name="lastChecked" value="20250205095657" />
+    <option name="lastChecked" value="20250205161136" />
   </component>
 </project>

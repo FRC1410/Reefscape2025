@@ -1,16 +1,12 @@
-package org.frc1410.reefscape2025.commands;
-
+package org.frc1410.reefscape2025.commands.Elevator;
 import edu.wpi.first.wpilibj2.command.Command;
-import org.frc1410.framework.control.Axis;
 import org.frc1410.reefscape2025.subsystems.Elevator;
 
-public class ElevatorManual extends Command {
-    private Elevator elevator;
-    private Axis axis;
+public class GoToState extends Command {
+    private final Elevator elevator;
 
-    public ElevatorManual(Elevator elevator, Axis axis) {
+    public GoToState(Elevator elevator) {
         this.elevator = elevator;
-        this.axis = axis;
         addRequirements(elevator);
     }
 
@@ -21,8 +17,9 @@ public class ElevatorManual extends Command {
 
     @Override
     public void execute() {
-        double speed = axis.getRaw();
-        this.elevator.setManualSpeed(speed);
+        this.elevator.goToDesiredHeight();
+        this.elevator.goToDesiredAngle();
+
     }
 
     @Override
@@ -34,4 +31,5 @@ public class ElevatorManual extends Command {
     public void end(boolean interrupted) {
         this.elevator.setManualSpeed(0);
     }
+
 }

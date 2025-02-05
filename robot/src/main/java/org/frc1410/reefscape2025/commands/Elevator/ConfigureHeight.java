@@ -1,4 +1,4 @@
-package org.frc1410.reefscape2025.commands;
+package org.frc1410.reefscape2025.commands.Elevator;
 import edu.wpi.first.wpilibj2.command.Command;
 import org.frc1410.reefscape2025.subsystems.Elevator;
 
