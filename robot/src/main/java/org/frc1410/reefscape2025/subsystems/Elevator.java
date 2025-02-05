@@ -104,21 +104,21 @@ public class Elevator implements TickedSubsystem {
     }
 
     public void goToDesiredHeight() {
-        var motorOutput = this.elevatorPIDController.calculate(
+        var motorVoltage = this.elevatorPIDController.calculate(
                 this.getCurrentElevatorDistance().baseUnitMagnitude(),
                 this.desiredElevatorHeight.baseUnitMagnitude());
 
-        this.leftMotor.setVoltage(motorOutput);
-        this.rightMotor.setVoltage(motorOutput);
+        this.leftMotor.setVoltage(motorVoltage);
+        this.rightMotor.setVoltage(motorVoltage);
     }
 
     public void goToDesiredAngle() {
-        var motorOutput = this.intakeAnglePIDController.calculate(
+        var motorVoltage = this.intakeAnglePIDController.calculate(
                 this.getCurrentIntakeAngle().baseUnitMagnitude(),
                 this.desiredElevatorAngle.baseUnitMagnitude()
         );
 
-        this.intakeAngleMotor.setVoltage(motorOutput);
+        this.intakeAngleMotor.setVoltage(motorVoltage);
     }
 
     public Distance getCurrentElevatorDistance() {

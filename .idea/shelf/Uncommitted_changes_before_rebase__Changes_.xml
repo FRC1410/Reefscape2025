@@ -1,0 +1,101 @@
+<changelist name="Uncommitted_changes_before_rebase_[Changes]" date="1738795581536" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2343710774575522716/.gradle/8.8/checksums/checksums.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/.gradle/8.8/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value="build-logic/.gradle/8.8/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/executionHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/checksums/sha1-checksums.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.8/checksums/sha1-checksums.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/sha1-checksums.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/file-system.probe" />
+    <option name="AFTER_PATH" value=".gradle/file-system.probe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/file-system.probe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i" />
+    <option name="AFTER_PATH" value="build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/source-to-output.tab_i" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.8/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/.gradle/8.8/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value="build-logic/.gradle/8.8/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/executionHistory.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2343710774575522716/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" />
+    <option name="AFTER_PATH" value="build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/source-to-output.tab" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/.gradle/buildOutputCleanup/outputFiles.bin" />
+    <option name="AFTER_PATH" value="build-logic/.gradle/buildOutputCleanup/outputFiles.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/outputFiles.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/.gradle/file-system.probe" />
+    <option name="AFTER_PATH" value="build-logic/.gradle/file-system.probe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/file-system1.probe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" />
+    <option name="AFTER_PATH" value="build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/source-to-output.tab.values.at" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/build/kotlin/compileKotlin/cacheable/last-build.bin" />
+    <option name="AFTER_PATH" value="build-logic/build/kotlin/compileKotlin/cacheable/last-build.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/last-build.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/build/kotlin/compileKotlin/local-state/build-history.bin" />
+    <option name="AFTER_PATH" value="build-logic/build/kotlin/compileKotlin/local-state/build-history.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/build-history.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/checksums/checksums.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.8/checksums/checksums.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/checksums.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value="build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/checksums/md5-checksums.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.8/checksums/md5-checksums.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/md5-checksums.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream" />
+    <option name="AFTER_PATH" value="build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/source-to-output.tab.keystream" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.8/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2343710774575522716/.gradle/8.8/fileHashes/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2343710774575522716/.gradle/file-system.probe" />
+  </binary>
+</changelist>
