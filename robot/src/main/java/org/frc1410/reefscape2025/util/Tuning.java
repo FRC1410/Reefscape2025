@@ -14,7 +14,4 @@ public final class Tuning {
     public static double INTAKE_ANGLE_D = 1;
     
     public static double INTAKE_TOLERANCE = 1;
-
-
-
 }

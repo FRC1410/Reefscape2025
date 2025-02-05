@@ -50,7 +50,6 @@ public class Elevator implements TickedSubsystem {
 
     private final DoublePublisher desiredHeightPub = NetworkTables.PublisherFactory(this.table, "Desired Height", 0);
     private final DoublePublisher desiredAnglePub = NetworkTables.PublisherFactory(this.table, "Desired Angle", 0);
-
     private final DoublePublisher actualElevatorHeightPub = NetworkTables.PublisherFactory(this.table, "Actual Elevator Height", 0);
     private final DoublePublisher actualElevatorAnglePub = NetworkTables.PublisherFactory(this.table, "Actual Elevator Angle", 0);
 

@@ -19,6 +19,7 @@ public class GoToState extends Command {
     public void execute() {
         this.elevator.goToDesiredHeight();
         this.elevator.goToDesiredAngle();
+
     }
 
     @Override

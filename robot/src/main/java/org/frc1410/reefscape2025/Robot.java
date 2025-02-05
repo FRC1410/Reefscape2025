@@ -13,7 +13,9 @@ import org.frc1410.reefscape2025.subsystems.Elevator;
 import static org.frc1410.reefscape2025.util.IDs.*;
 
 public final class Robot extends PhaseDrivenRobot {
-	public Robot() {}
+	public Robot() {
+
+	}
 
 	private final Controller driverController = new Controller(this.scheduler, DRIVER_CONTROLLER, 0.1);
 	private final Controller operatorController = new Controller(this.scheduler, OPERATOR_CONTROLLER,  0.1);

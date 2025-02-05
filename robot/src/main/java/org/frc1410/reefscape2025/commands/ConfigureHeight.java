@@ -15,6 +15,7 @@ public class ConfigureHeight extends Command {
     @Override
     public void initialize() {
         this.elevator.setDesiredElevatorState(desiredElevatorState);
+
     }
     
     @Override

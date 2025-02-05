@@ -6,7 +6,6 @@ import edu.wpi.first.units.measure.Distance;
 
 public final class Constants {
     //99 TO 1 gear ratio of the intake angle motor
-
     public static boolean INTAKE_ANGLE_ROTATION_MOTOR_INVERTED = false;
 
     public static Distance ENCODER_SHAFT_RADIUS = Units.Inch.of(0.25);

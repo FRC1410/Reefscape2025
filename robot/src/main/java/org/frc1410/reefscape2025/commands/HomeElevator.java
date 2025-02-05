@@ -20,6 +20,7 @@ public class HomeElevator extends Command {
     public void execute() {
         this.elevator.goToDesiredHeight();
         this.elevator.goToDesiredAngle();
+
     }
 
     @Override
