@@ -15,11 +15,10 @@ public final class Tuning {
     public static double ELEVEATOR_D = 1;
 
     public static double ELEVATOR_TOLERANCE = 1;
-    
-    
-    public static double INTAKE_P = 1;
-    public static double INTAKE_I = 1;
-    public static double INTAKE_D = 1;
+
+    public static double INTAKE_ANGLE_P = 1;
+    public static double INTAKE_ANGLE_I = 1;
+    public static double INTAKE_ANGLE_D = 1;
     
     public static double INTAKE_TOLERANCE = 1;
 
