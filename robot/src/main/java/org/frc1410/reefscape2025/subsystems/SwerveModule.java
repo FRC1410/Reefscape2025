@@ -63,7 +63,7 @@ public class SwerveModule implements TickedSubsystem {
     ) {
 
         // Drive config
-        this.driveMotor = new TalonFX(driveMotorID);
+        this.driveMotor = new TalonFX(driveMotorID, "CTRE");
         var driveMotorConfig = new TalonFXConfiguration();
 
         driveMotorConfig.Slot0.kS = DRIVE_KS;
@@ -157,11 +157,11 @@ public class SwerveModule implements TickedSubsystem {
     }
 
     private LinearVelocity getDriveVelocity() {
-        return Units.MetersPerSecond.of(this.driveMotor.getVelocity().getValueAsDouble() * WHEEL_CIRCUMFERENCE.in(Units.Meters)).div(DRIVE_GEAR_RATIO);
+        return Units.MetersPerSecond.of(this.driveMotor.getVelocity().getValue().baseUnitMagnitude() * WHEEL_CIRCUMFERENCE.in(Units.Meters)).div(DRIVE_GEAR_RATIO);
     }
 
     private Distance getDrivePosition() {
-        return Units.Meters.of(this.driveMotor.getPosition().getValueAsDouble() * WHEEL_CIRCUMFERENCE.in(Units.Meters)).div(DRIVE_GEAR_RATIO);
+        return Units.Meters.of(this.driveMotor.getPosition().getValue().baseUnitMagnitude() * WHEEL_CIRCUMFERENCE.in(Units.Meters)).div(DRIVE_GEAR_RATIO);
     }
 
     @Override

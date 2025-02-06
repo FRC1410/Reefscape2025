@@ -1,5 +1,6 @@
 package org.frc1410.reefscape2025.subsystems;
 
+import com.ctre.phoenix6.hardware.Pigeon2;
 import com.studica.frc.AHRS;
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
 import edu.wpi.first.math.geometry.Pose2d;
@@ -72,7 +73,8 @@ public class Drivetrain implements TickedSubsystem {
     private final SwerveModule backLeftModule;
     private final SwerveModule backRightModule;
 
-    private final AHRS gyro = new AHRS(AHRS.NavXComType.kMXP_SPI);
+//    private final AHRS gyro = new AHRS(AHRS.NavXComType.kMXP_SPI);
+    private final Pigeon2 gyro = new Pigeon2(PIGEON_ID, "CTRE");
 
     private final SwerveDrivePoseEstimator poseEstimator;
 
@@ -223,7 +225,7 @@ public class Drivetrain implements TickedSubsystem {
     }
 
     private Rotation2d getGyroYaw() {
-        return Rotation2d.fromDegrees(-this.gyro.getYaw());
+        return Rotation2d.fromDegrees(-this.gyro.getYaw().getValue().baseUnitMagnitude());
     }
 
     public AngularVelocity getAverageDriveAngularVelocity() {
@@ -259,8 +261,8 @@ public class Drivetrain implements TickedSubsystem {
         this.heading.set(this.getEstimatedPosition().getRotation().getDegrees());
 
         this.yaw.set(this.getGyroYaw().getDegrees());
-        this.pitch.set(this.gyro.getPitch());
-        this.roll.set(this.gyro.getRoll());
+        this.pitch.set(this.gyro.getPitch().getValue().baseUnitMagnitude());
+        this.roll.set(this.gyro.getRoll().getValue().baseUnitMagnitude());
 
         this.posePublisher.set(this.getEstimatedPosition());
         this.encoderOnlyPosePublisher.set(new Pose2d(new Translation2d(4, 4), this.getGyroYaw()));
