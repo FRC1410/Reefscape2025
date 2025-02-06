@@ -7,6 +7,8 @@ import com.ctre.phoenix6.signals.NeutralModeValue;
 import com.revrobotics.spark.SparkBase;
 import com.revrobotics.spark.SparkLowLevel;
 import com.revrobotics.spark.SparkMax;
+import com.revrobotics.spark.SparkMaxAlternateEncoder;
+import com.revrobotics.spark.config.AlternateEncoderConfig;
 import com.revrobotics.spark.config.SparkBaseConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
 import edu.wpi.first.math.controller.PIDController;
@@ -28,6 +30,7 @@ public class Elevator implements TickedSubsystem {
     private final TalonFX leftMotor;
     private final TalonFX rightMotor;
     private final SparkMax intakeAngleMotor;
+
     private final Encoder intakeAngleEncoder;
     private final Encoder barroonEncoder;
 
@@ -99,6 +102,10 @@ public class Elevator implements TickedSubsystem {
     public void setManualSpeed(double speed) {
         this.leftMotor.set(speed);
         this.rightMotor.set(speed);
+    }
+
+    public void setIntakeAngleSpeed(double speed) {
+        this.intakeAngleMotor.set(speed);
     }
 
     public void setDesiredElevatorState(ELEVATOR_STATE desiredElevatorState) {

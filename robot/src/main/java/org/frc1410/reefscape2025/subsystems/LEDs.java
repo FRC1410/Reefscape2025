@@ -37,7 +37,6 @@ public class LEDs implements Subsystem {
                 break;
 
             case TEAL:
-                this.candle.setLEDs(2,245,11);
                 this.r = 2;
                 this.g = 245;
                 this.b = 11;
@@ -130,12 +129,6 @@ public class LEDs implements Subsystem {
         FIRE,
         RGB_FADE
     }
-
-    //IDLE: RAINBOW
-    //No Coral: PURPLE
-    //Coral: LIGHT_BLUE
-    //Auto align: FIRE - sparking 0.2 ,0.1 cooling, speed: 0.6
-
 
     public enum Color {
         BLUE,

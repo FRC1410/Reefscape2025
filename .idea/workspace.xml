@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="alksdjfja'sdfjkadsfs">
+    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="More random stuff">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Elevator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,54 +169,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Reefscape2025 [buildDependents].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Reefscape2025:framework [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Reefscape2025:robot [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Viridian-Framework [build].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/samuelrojas/Documents/Coding/Reefscape2025&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Reefscape2025 [buildDependents].executor": "Run",
+    "Gradle.Reefscape2025 [deploy].executor": "Run",
+    "Gradle.Reefscape2025:framework [build].executor": "Run",
+    "Gradle.Reefscape2025:robot [build].executor": "Run",
+    "Gradle.Viridian-Framework [build].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/samuelrojas/Documents/Coding/Reefscape2025",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Gradle.Viridian-Framework [build]">
-    <configuration name="Reefscape2025 [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="buildDependents" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
+}]]></component>
+  <component name="RunManager" selected="Gradle.Reefscape2025 [deploy]">
     <configuration name="Reefscape2025 [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -228,6 +208,28 @@
         <option name="taskNames">
           <list>
             <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Reefscape2025 [deploy]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="deploy" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -305,7 +307,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.Reefscape2025 [buildDependents]" />
+      <item itemvalue="Gradle.Reefscape2025 [deploy]" />
       <item itemvalue="Gradle.Reefscape2025 [dependencies]" />
       <item itemvalue="Gradle.Reefscape2025:framework [build]" />
       <item itemvalue="Gradle.Reefscape2025:robot [build]" />
@@ -313,11 +315,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Reefscape2025 [deploy]" />
         <item itemvalue="Gradle.Viridian-Framework [build]" />
         <item itemvalue="Gradle.Reefscape2025:robot [build]" />
         <item itemvalue="Gradle.Reefscape2025:framework [build]" />
         <item itemvalue="Gradle.Reefscape2025 [dependencies]" />
-        <item itemvalue="Gradle.Reefscape2025 [buildDependents]" />
       </list>
     </recent_temporary>
   </component>
@@ -346,7 +348,7 @@
       <workItem from="1738190916715" duration="669000" />
       <workItem from="1738725913128" duration="12629000" />
       <workItem from="1738774610215" duration="1726000" />
-      <workItem from="1738797092775" duration="433000" />
+      <workItem from="1738797092775" duration="2350000" />
     </task>
     <task id="LOCAL-00001" summary="Changed package name from Viridian to Reefscape">
       <option name="closed" value="true" />
@@ -436,7 +438,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738797386838</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="More random stuff">
+      <option name="closed" value="true" />
+      <created>1738797639704</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1738797639704</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,7 +478,8 @@
     <MESSAGE value="got rid of some tuning values *I think* we dont need" />
     <MESSAGE value="PLEASE WORK" />
     <MESSAGE value="alksdjfja'sdfjkadsfs" />
-    <option name="LAST_COMMIT_MESSAGE" value="alksdjfja'sdfjkadsfs" />
+    <MESSAGE value="More random stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="More random stuff" />
   </component>
   <component name="WpiLibVersionService">
     <option name="lastChecked" value="20250205161136" />
