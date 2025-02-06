@@ -15,20 +15,23 @@ public class ConfigureHeight extends Command {
     @Override
     public void initialize() {
         this.elevator.setDesiredElevatorState(desiredElevatorState);
-
+        
     }
     
     @Override
     public void execute() {
+        this.elevator.goToDesiredAngle();
         // TODO: LED code in here
     }
 
     @Override
     public boolean isFinished() {
-        return false;
+        return this.elevator.IntakeRotationAtSetpoint();
     }
 
     @Override
-    public void end(boolean interrupted) {}
+    public void end(boolean interrupted) {
+        this.elevator.setIntakeRotationVolatgeToZero();
+    }
 
 }

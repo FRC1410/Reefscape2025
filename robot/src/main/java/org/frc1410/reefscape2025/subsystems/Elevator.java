@@ -91,6 +91,9 @@ public class Elevator implements TickedSubsystem {
 
         this.barroonEncoder = new Encoder(ELEVATOR_HEIGHT_ENCODER_CHANNEL_A, ELEVATOR_HEIGHT_ENCODER_CHANNEL_B, true);
         this.barroonEncoder.reset();
+
+        this.intakeAnglePIDController.setTolerance(INTAKE_TOLERANCE);
+        this.elevatorPIDController.setTolerance(ELEVATOR_TOLERANCE);
     }
 
     public void setManualSpeed(double speed) {
@@ -121,6 +124,14 @@ public class Elevator implements TickedSubsystem {
         this.intakeAngleMotor.setVoltage(motorVoltage);
     }
 
+    public Boolean IntakeRotationAtSetpoint() {
+        return intakeAnglePIDController.atSetpoint();
+    }
+
+    public Boolean ElevatorHeightAtSetpoint() {
+        return elevatorPIDController.atSetpoint();
+    }
+
     public Distance getCurrentElevatorDistance() {
         var totalCounts = this.barroonEncoder.get();
         return Units.Meters.of(totalCounts / (8192 * ELEVATOR_GEAR_RATIO) * ENCODER_SHAFT_CIRCUMFERENCE.in(Units.Meters));
@@ -129,6 +140,15 @@ public class Elevator implements TickedSubsystem {
     public Angle getCurrentIntakeAngle() {
         var totalCounts = this.intakeAngleEncoder.get();
         return Units.Degree.of(totalCounts / (8192 * INTAKE_ANGLE_GEAR_RATIO) * 360);
+    }
+
+    public void setIntakeRotationVolatgeToZero() {
+        this.intakeAngleMotor.setVoltage(0);
+    }
+
+    public void setElevatorVolatgeToZero() {
+        this.leftMotor.setVoltage(0);
+        this.rightMotor.setVoltage(0);
     }
 
     public enum ELEVATOR_STATE {

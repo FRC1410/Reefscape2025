@@ -1,35 +1,15 @@
 package org.frc1410.reefscape2025.commands.Elevator;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+
 import org.frc1410.reefscape2025.subsystems.Elevator;
 
-public class HomeElevator extends Command {
-    private final Elevator elevator;
-
+public class HomeElevator extends SequentialCommandGroup {
     public HomeElevator(Elevator elevator) {
-        this.elevator = elevator;
-        addRequirements(elevator);
-    }
-
-    @Override
-    public void initialize() {
-        this.elevator.setDesiredElevatorState(Elevator.ELEVATOR_STATE.HOME);
-    }
-
-    @Override
-    public void execute() {
-        this.elevator.goToDesiredHeight();
-        this.elevator.goToDesiredAngle();
-
-    }
-
-    @Override
-    public void end(boolean interrupted) {
-        this.elevator.setManualSpeed(0);
-    }
-
-    @Override
-    public boolean isFinished() {
-        return false;
+        super(
+            new ConfigureHeight(elevator, Elevator.ELEVATOR_STATE.HOME),
+            new SetElevatorHeight(elevator)
+        );
     }
 }

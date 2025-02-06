@@ -7,6 +7,7 @@ import org.frc1410.reefscape2025.commands.Elevator.ConfigureHeight;
 import org.frc1410.reefscape2025.commands.Elevator.ElevatorManual;
 import org.frc1410.reefscape2025.commands.Elevator.GoToState;
 import org.frc1410.reefscape2025.commands.Elevator.HomeElevator;
+import org.frc1410.reefscape2025.commands.Elevator.SetElevatorHeight;
 import org.frc1410.reefscape2025.commands.Lbozo.IntakeCoral;
 import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoral;
 import org.frc1410.reefscape2025.subsystems.Climber;
@@ -43,7 +44,7 @@ public final class Robot extends PhaseDrivenRobot {
 		this.operatorController.A.whenPressed(new ConfigureHeight(elevator, Elevator.ELEVATOR_STATE.L2), TaskPersistence.GAMEPLAY);
 		this.operatorController.X.whenPressed(new ConfigureHeight(elevator, Elevator.ELEVATOR_STATE.L1), TaskPersistence.GAMEPLAY);
 
-		this.operatorController.DPAD_UP.whenPressed(new GoToState(elevator), TaskPersistence.GAMEPLAY);
+		this.operatorController.DPAD_UP.whenPressed(new SetElevatorHeight(elevator), TaskPersistence.GAMEPLAY);
 		this.operatorController.DPAD_DOWN.whenPressed(new HomeElevator(elevator), TaskPersistence.GAMEPLAY);
 	}
 
