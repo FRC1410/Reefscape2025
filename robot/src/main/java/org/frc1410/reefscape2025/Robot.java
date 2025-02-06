@@ -73,7 +73,7 @@ public final class Robot extends PhaseDrivenRobot {
 	private final StringSubscriber autoSubscriber = NetworkTables.SubscriberFactory(this.table, this.autoPublisher.getTopic());
 
 		@Override
-		public void autonomousSequence () {
+		public void autonomousSequence() {
 			NetworkTables.SetPersistence(this.autoPublisher.getTopic(), true);
 			String autoProfile = this.autoSubscriber.get();
 			var autoCommand = this.autoSelector.select(autoProfile);
@@ -82,7 +82,7 @@ public final class Robot extends PhaseDrivenRobot {
 		}
 
 		@Override
-		public void teleopSequence () {
+		public void teleopSequence() {
 			this.scheduler.scheduleDefaultCommand(new DriveLooped(
 				this.drivetrain,
 				this.driverController.LEFT_Y_AXIS,
@@ -109,8 +109,8 @@ public final class Robot extends PhaseDrivenRobot {
 	}
 
 		@Override
-		public void testSequence () {}
+		public void testSequence() {}
 
 		@Override
-		protected void disabledSequence () {}
+		protected void disabledSequence() {}
 }
