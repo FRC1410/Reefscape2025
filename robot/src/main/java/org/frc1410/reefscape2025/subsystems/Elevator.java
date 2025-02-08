@@ -7,7 +7,6 @@ import com.ctre.phoenix6.signals.NeutralModeValue;
 import com.revrobotics.spark.SparkBase;
 import com.revrobotics.spark.SparkLowLevel;
 import com.revrobotics.spark.SparkMax;
-import com.revrobotics.spark.SparkMaxAlternateEncoder;
 import com.revrobotics.spark.config.AlternateEncoderConfig;
 import com.revrobotics.spark.config.SparkBaseConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
@@ -15,9 +14,7 @@ import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.networktables.DoublePublisher;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
-import edu.wpi.first.units.Units;
-import edu.wpi.first.units.measure.Angle;
-import edu.wpi.first.units.measure.Distance;
+import edu.wpi.first.wpilibj.CounterBase;
 import edu.wpi.first.wpilibj.Encoder;
 import org.frc1410.framework.scheduler.subsystem.TickedSubsystem;
 import org.frc1410.reefscape2025.util.NetworkTables;
@@ -31,7 +28,6 @@ public class Elevator implements TickedSubsystem {
     private final TalonFX rightMotor;
     private final SparkMax intakeAngleMotor;
 
-    private final Encoder intakeAngleEncoder;
     private final Encoder barroonEncoder;
 
     private final PIDController elevatorPIDController = new PIDController(
@@ -46,8 +42,8 @@ public class Elevator implements TickedSubsystem {
             INTAKE_ANGLE_D
     );
 
-    private Distance desiredElevatorHeight;
-    private Angle desiredElevatorAngle;
+    private int desiredElevatorHeight = HOME_HEIGHT;
+    private double desiredElevatorAngle = HOME_ANGLE;
 
     private final NetworkTable table = NetworkTableInstance.getDefault().getTable("Elevator");
 
@@ -55,13 +51,15 @@ public class Elevator implements TickedSubsystem {
     private final DoublePublisher desiredAnglePub = NetworkTables.PublisherFactory(this.table, "Desired Angle", 0);
     private final DoublePublisher actualElevatorHeightPub = NetworkTables.PublisherFactory(this.table, "Actual Elevator Height", 0);
     private final DoublePublisher actualElevatorAnglePub = NetworkTables.PublisherFactory(this.table, "Actual Elevator Angle", 0);
+    private final DoublePublisher IntakeRotation_P = NetworkTables.PublisherFactory(this.table, "Intake Rotation P", 0);
+    private final DoublePublisher intakePIDSetpoint = NetworkTables.PublisherFactory(this.table, "Intake PID Setpoint", 0);
 
     public Elevator() {
-        this.leftMotor = new TalonFX(LEFT_ELEVATOR_MOTOR);
-        this.rightMotor = new TalonFX(RIGHT_ELEVATOR_MOTOR);
+        this.leftMotor = new TalonFX(LEFT_ELEVATOR_MOTOR, "CTRE");
+        this.rightMotor = new TalonFX(RIGHT_ELEVATOR_MOTOR, "CTRE");
 
         var leftMotorConfig = new TalonFXConfiguration();
-        leftMotorConfig.CurrentLimits.SupplyCurrentLimit = 40;
+        leftMotorConfig.CurrentLimits.SupplyCurrentLimit = 20;
         leftMotorConfig.CurrentLimits.SupplyCurrentLimitEnable = true;
 
         leftMotorConfig.MotorOutput.NeutralMode = NeutralModeValue.Brake;
@@ -69,7 +67,7 @@ public class Elevator implements TickedSubsystem {
         this.leftMotor.getConfigurator().apply(leftMotorConfig);
 
         var rightMotorConfig = new TalonFXConfiguration();
-        rightMotorConfig.CurrentLimits.SupplyCurrentLimit = 40;
+        rightMotorConfig.CurrentLimits.SupplyCurrentLimit = 20;
         rightMotorConfig.CurrentLimits.SupplyCurrentLimitEnable = true;
 
         rightMotorConfig.MotorOutput.NeutralMode = NeutralModeValue.Brake;
@@ -82,17 +80,19 @@ public class Elevator implements TickedSubsystem {
 
         intakeAngleMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
         intakeAngleMotorConfig.smartCurrentLimit(30);
-        intakeAngleMotorConfig.inverted(INTAKE_ANGLE_ROTATION_MOTOR_INVERTED);
+
+        intakeAngleMotorConfig.inverted(true);
+
+        var alternateEncoderConfig = new AlternateEncoderConfig();
+        alternateEncoderConfig.inverted(true);
+        intakeAngleMotorConfig.alternateEncoder.apply(alternateEncoderConfig);
 
         this.intakeAngleMotor.configure(
                 intakeAngleMotorConfig,
                 SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters
         );
 
-        this.intakeAngleEncoder = new Encoder(INTAKE_ANGLE_ENCODER_CHANNEL_A, INTAKE_ANGLE_ENCODER_CHANNEL_B, true);
-        this.intakeAngleEncoder.reset();
-
-        this.barroonEncoder = new Encoder(ELEVATOR_HEIGHT_ENCODER_CHANNEL_A, ELEVATOR_HEIGHT_ENCODER_CHANNEL_B, true);
+        this.barroonEncoder = new Encoder(ELEVATOR_HEIGHT_ENCODER_CHANNEL_A, ELEVATOR_HEIGHT_ENCODER_CHANNEL_B, false, CounterBase.EncodingType.k4X);
         this.barroonEncoder.reset();
 
         this.intakeAnglePIDController.setTolerance(INTAKE_TOLERANCE);
@@ -115,8 +115,8 @@ public class Elevator implements TickedSubsystem {
 
     public void goToDesiredHeight() {
         var motorVoltage = this.elevatorPIDController.calculate(
-                this.getCurrentElevatorDistance().baseUnitMagnitude(),
-                this.desiredElevatorHeight.baseUnitMagnitude());
+                this.getCurrentElevatorDistance(),
+                this.desiredElevatorHeight);
 
         this.leftMotor.setVoltage(motorVoltage);
         this.rightMotor.setVoltage(motorVoltage);
@@ -124,8 +124,8 @@ public class Elevator implements TickedSubsystem {
 
     public void goToDesiredAngle() {
         var motorVoltage = this.intakeAnglePIDController.calculate(
-                this.getCurrentIntakeAngle().baseUnitMagnitude(),
-                this.desiredElevatorAngle.baseUnitMagnitude()
+                this.getCurrentIntakeAngle(),
+                this.desiredElevatorAngle
         );
 
         this.intakeAngleMotor.setVoltage(motorVoltage);
@@ -139,14 +139,12 @@ public class Elevator implements TickedSubsystem {
         return elevatorPIDController.atSetpoint();
     }
 
-    public Distance getCurrentElevatorDistance() {
-        var totalCounts = this.barroonEncoder.get();
-        return Units.Meters.of(totalCounts / (8192 * ELEVATOR_GEAR_RATIO) * ENCODER_SHAFT_CIRCUMFERENCE.in(Units.Meters));
+    public int getCurrentElevatorDistance() {
+        return this.barroonEncoder.get();
     }
 
-    public Angle getCurrentIntakeAngle() {
-        var totalCounts = this.intakeAngleEncoder.get();
-        return Units.Degree.of(totalCounts / (8192 * INTAKE_ANGLE_GEAR_RATIO) * 360);
+    public double getCurrentIntakeAngle() {
+        return this.intakeAngleMotor.getAlternateEncoder().getPosition();
     }
 
     public void setIntakeRotationVolatgeToZero() {
@@ -166,28 +164,32 @@ public class Elevator implements TickedSubsystem {
         INTAKE(INTAKE_HEIGHT, INTAKE_ANGLE),
         HOME(HOME_HEIGHT, HOME_ANGLE);
 
-        private final Distance elevatorDistance;
-        private final Angle elevatorAngle;
+        private final int elevatorDistance;
+        private final double elevatorAngle;
 
-        ELEVATOR_STATE(Distance elevatorDistance, Angle elevatorAngle) {
+        ELEVATOR_STATE(int elevatorDistance, double elevatorAngle) {
             this.elevatorDistance = elevatorDistance;
             this.elevatorAngle = elevatorAngle;
         }
 
-        public Distance getElevatorDistance() {
+        public int getElevatorDistance() {
             return elevatorDistance;
         }
-        public Angle getElevatorAngle() {
+        public double getElevatorAngle() {
             return elevatorAngle;
         }
     }
 
+
     @Override
     public void periodic() {
-        this.desiredHeightPub.set(this.desiredElevatorHeight.baseUnitMagnitude());
-        this.desiredAnglePub.set(this.desiredElevatorAngle.baseUnitMagnitude());
+        this.desiredHeightPub.set(this.desiredElevatorHeight);
+        this.desiredAnglePub.set(this.desiredElevatorAngle);
 
-        this.actualElevatorHeightPub.set(this.getCurrentElevatorDistance().baseUnitMagnitude());
-        this.actualElevatorAnglePub.set(this.getCurrentIntakeAngle().baseUnitMagnitude());
+        this.actualElevatorHeightPub.set(this.getCurrentElevatorDistance());
+        this.actualElevatorAnglePub.set(this.getCurrentIntakeAngle());
+
+        this.IntakeRotation_P.set(this.intakeAnglePIDController.getError());
+        this.intakePIDSetpoint.set(this.intakeAnglePIDController.getSetpoint());
     }
 }

@@ -21,7 +21,7 @@ public class IntakeAngleManual extends Command {
 
     @Override
     public void execute() {
-        double speed = axis.getRaw();
+        double speed = axis.get();
         this.elevator.setIntakeAngleSpeed(speed);
     }
 
@@ -33,5 +33,6 @@ public class IntakeAngleManual extends Command {
     @Override
     public void end(boolean interrupted) {
         this.elevator.setManualSpeed(0);
+
     }
 }

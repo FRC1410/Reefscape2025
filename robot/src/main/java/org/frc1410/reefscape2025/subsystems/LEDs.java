@@ -11,7 +11,7 @@ import static org.frc1410.reefscape2025.util.IDs.*;
 
 public class LEDs implements Subsystem {
 
-    private final CANdle candle = new CANdle(LED_ID);
+    private final CANdle candle = new CANdle(LED_ID, "CTRE");
     private final int numLed = 75;
     private int r;
     private int g;
@@ -89,6 +89,23 @@ public class LEDs implements Subsystem {
         this.candle.clearAnimation(0);
         this.setRGB(color);
         this.candle.setLEDs(this.r, this.g, this.b);
+    }
+
+    public void getStateColor(Elevator.ELEVATOR_STATE elevatorState) {
+        switch (elevatorState) {
+            case L1:
+                break;
+            case L2:
+                break;
+            case L3:
+                break;
+            case L4:
+                break;
+            case INTAKE:
+                break;
+            case HOME:
+                break;
+        }
     }
 
     /**
