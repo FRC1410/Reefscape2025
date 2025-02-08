@@ -76,7 +76,7 @@ public class SwerveModule implements TickedSubsystem {
         driveMotorConfig.CurrentLimits.SupplyCurrentLimit = DRIVE_MOTOR_CURRENT_LIMIT;
         driveMotorConfig.CurrentLimits.SupplyCurrentLimitEnable = true;
 
-        driveMotorConfig.MotorOutput.NeutralMode = NeutralModeValue.Coast; //TODO UNCOAST
+        driveMotorConfig.MotorOutput.NeutralMode = NeutralModeValue.Brake; 
         driveMotorConfig.MotorOutput.Inverted =
                 driveInverted ? InvertedValue.Clockwise_Positive : InvertedValue.CounterClockwise_Positive;
 
@@ -86,7 +86,7 @@ public class SwerveModule implements TickedSubsystem {
         var sparkConfig = new SparkMaxConfig();
 
         sparkConfig.smartCurrentLimit(STEER_MOTOR_CURRENT_LIMIT);
-        sparkConfig.idleMode(SparkBaseConfig.IdleMode.kCoast); //TODO UNCOAST
+        sparkConfig.idleMode(SparkBaseConfig.IdleMode.kBrake); 
         sparkConfig.inverted(steerInverted);
 
         this.steerMotor = new SparkMax(steerMotorID, MotorType.kBrushless);
