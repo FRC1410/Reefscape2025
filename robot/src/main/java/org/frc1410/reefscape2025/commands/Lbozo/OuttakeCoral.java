@@ -21,7 +21,6 @@ public class OuttakeCoral extends Command {
         } else {
             this.leds.setColor(LEDs.Color.ORANGE);
         }
-
     }
 
     @Override

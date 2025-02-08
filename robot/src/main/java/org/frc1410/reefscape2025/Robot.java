@@ -47,6 +47,7 @@ public final class Robot extends PhaseDrivenRobot {
 
 		this.operatorController.RIGHT_BUMPER.whileHeldOnce(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.LEFT_BUMPER.whileHeldOnce(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
+
 	}
 
 	@Override
