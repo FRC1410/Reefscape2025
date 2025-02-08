@@ -34,16 +34,22 @@ public final class Robot extends PhaseDrivenRobot {
 //		this.operatorController.X.whileHeld(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 //		this.operatorController.Y.whileHeld(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 
-		this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
-		this.scheduler.scheduleDefaultCommand(new IntakeAngleManual(elevator, this.operatorController.RIGHT_Y_AXIS), TaskPersistence.GAMEPLAY);
+		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
+		// this.scheduler.scheduleDefaultCommand(new IntakeAngleManual(elevator, this.operatorController.RIGHT_Y_AXIS), TaskPersistence.GAMEPLAY);
 
-		this.operatorController.Y.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L4), TaskPersistence.GAMEPLAY);
-		this.operatorController.B.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L3), TaskPersistence.GAMEPLAY);
-		this.operatorController.A.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L2), TaskPersistence.GAMEPLAY);
-		this.operatorController.X.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L1), TaskPersistence.GAMEPLAY);
+		// this.operatorController.Y.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L4), TaskPersistence.GAMEPLAY);
+		// this.operatorController.B.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L3), TaskPersistence.GAMEPLAY);
+		// this.operatorController.A.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L2), TaskPersistence.GAMEPLAY);
+		// this.operatorController.X.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L1), TaskPersistence.GAMEPLAY);
 
-		this.operatorController.DPAD_UP.whenPressed(new ConfigureElevatorHeight(elevator), TaskPersistence.GAMEPLAY);
-		this.operatorController.DPAD_DOWN.whenPressed(new HomeElevator(elevator), TaskPersistence.GAMEPLAY);
+		// this.operatorController.DPAD_UP.whenPressed(new ConfigureElevatorHeight(elevator), TaskPersistence.GAMEPLAY);
+		
+		//this.operatorController.DPAD_DOWN.whenPressed(new HomeElevator(elevator), TaskPersistence.GAMEPLAY);
+
+		//this.scheduler.scheduleDefaultCommand(new HoldElevatorPID(elevator), TaskPersistence.GAMEPLAY);
+
+		
+	
 	}
 
 	@Override

@@ -16,6 +16,7 @@ import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.CounterBase;
 import edu.wpi.first.wpilibj.Encoder;
+
 import org.frc1410.framework.scheduler.subsystem.TickedSubsystem;
 import org.frc1410.reefscape2025.util.NetworkTables;
 
@@ -42,8 +43,7 @@ public class Elevator implements TickedSubsystem {
             INTAKE_ANGLE_D
     );
 
-    private int desiredElevatorHeight = HOME_HEIGHT;
-    private double desiredElevatorAngle = HOME_ANGLE;
+    
 
     private final NetworkTable table = NetworkTableInstance.getDefault().getTable("Elevator");
 
@@ -53,6 +53,9 @@ public class Elevator implements TickedSubsystem {
     private final DoublePublisher actualElevatorAnglePub = NetworkTables.PublisherFactory(this.table, "Actual Elevator Angle", 0);
     private final DoublePublisher IntakeRotation_P = NetworkTables.PublisherFactory(this.table, "Intake Rotation P", 0);
     private final DoublePublisher intakePIDSetpoint = NetworkTables.PublisherFactory(this.table, "Intake PID Setpoint", 0);
+
+    private int desiredElevatorHeight = 1;
+    private double desiredElevatorAngle = 0;
 
     public Elevator() {
         this.leftMotor = new TalonFX(LEFT_ELEVATOR_MOTOR, "CTRE");
@@ -91,6 +94,9 @@ public class Elevator implements TickedSubsystem {
                 intakeAngleMotorConfig,
                 SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters
         );
+
+        intakeAngleMotor.getAlternateEncoder().setPosition(0);
+        
 
         this.barroonEncoder = new Encoder(ELEVATOR_HEIGHT_ENCODER_CHANNEL_A, ELEVATOR_HEIGHT_ENCODER_CHANNEL_B, true, CounterBase.EncodingType.k4X);
         this.barroonEncoder.reset();
@@ -162,6 +168,9 @@ public class Elevator implements TickedSubsystem {
         this.leftMotor.setVoltage(0);
         this.rightMotor.setVoltage(0);
     }
+    
+
+    
 
     
 
@@ -187,6 +196,21 @@ public class Elevator implements TickedSubsystem {
         public double getElevatorAngle() {
             return elevatorAngle;
         }
+
+    }
+
+    public double getDesiredElevatorState() {
+        return desiredElevatorHeight;
+    }
+
+
+    public void resetEncoders() {
+        barroonEncoder.reset();
+        intakeAngleMotor.getAlternateEncoder().setPosition(0);
+    }
+
+    public void resetElevatorEncoder() {
+        this.barroonEncoder.reset();
     }
 
 
