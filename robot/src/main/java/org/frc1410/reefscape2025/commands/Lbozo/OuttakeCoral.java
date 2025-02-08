@@ -22,12 +22,11 @@ public class OuttakeCoral extends Command {
             this.leds.setColor(LEDs.Color.ORANGE);
         }
 
-        this.lBozo.setLBozoSpeed(-0.4);
     }
 
     @Override
     public void execute() {
-
+        this.lBozo.setLBozoSpeed(-0.4);
     }
 
     @Override

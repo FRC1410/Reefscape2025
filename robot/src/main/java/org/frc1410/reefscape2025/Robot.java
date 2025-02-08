@@ -44,6 +44,9 @@ public final class Robot extends PhaseDrivenRobot {
 
 		this.operatorController.DPAD_UP.whenPressed(new SetElevatorHeight(elevator), TaskPersistence.GAMEPLAY);
 		this.operatorController.DPAD_DOWN.whenPressed(new HomeElevator(elevator), TaskPersistence.GAMEPLAY);
+
+		this.operatorController.RIGHT_BUMPER.whileHeldOnce(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
+		this.operatorController.LEFT_BUMPER.whileHeldOnce(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 	}
 
 	@Override
