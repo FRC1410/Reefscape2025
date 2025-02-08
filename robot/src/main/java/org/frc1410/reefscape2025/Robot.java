@@ -6,6 +6,7 @@ import org.frc1410.framework.scheduler.task.TaskPersistence;
 import org.frc1410.reefscape2025.commands.Elevator.*;
 import org.frc1410.reefscape2025.commands.Lbozo.IntakeCoral;
 import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoral;
+import org.frc1410.reefscape2025.commands.climber.ClimbCommand;
 import org.frc1410.reefscape2025.subsystems.Climber;
 import org.frc1410.reefscape2025.subsystems.Elevator;
 import org.frc1410.reefscape2025.subsystems.LBozo;
@@ -48,6 +49,8 @@ public final class Robot extends PhaseDrivenRobot {
 		this.operatorController.RIGHT_BUMPER.whileHeldOnce(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.LEFT_BUMPER.whileHeldOnce(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 
+		this.operatorController.DPAD_RIGHT.whileHeld(new ClimbCommand(climber), TaskPersistence.GAMEPLAY);
+		this.operatorController.DPAD_LEFT.whileHeld(new ClimbCommand(climber), TaskPersistence.GAMEPLAY);
 	}
 
 	@Override

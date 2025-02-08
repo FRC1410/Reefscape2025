@@ -25,7 +25,7 @@ public class ClimbCommand extends Command {
 
     @Override
     public boolean isFinished() {
-        return this.climber.getLimitSwitch();
+        return false; // need to make conditional for finishing maybe
     }
 
     @Override
