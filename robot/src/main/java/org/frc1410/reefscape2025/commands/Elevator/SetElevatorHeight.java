@@ -6,11 +6,11 @@ import edu.wpi.first.wpilibj2.command.Command;
 
 public class SetElevatorHeight extends Command{
     private final Elevator elevator;
-   
-   public SetElevatorHeight(Elevator elevator) {
+
+    public SetElevatorHeight(Elevator elevator) {
         this.elevator = elevator;
-   }
-   
+    }
+
     @Override
     public void initialize() {
        
@@ -24,7 +24,7 @@ public class SetElevatorHeight extends Command{
 
     @Override
     public boolean isFinished() {
-        return this.elevator.ElevatorHeightAtSetpoint();
+        return this.elevator.elevatorHeightAtSetpoint();
     }
 
     @Override

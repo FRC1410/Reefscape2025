@@ -20,8 +20,8 @@ public final class Constants {
     public static int HOME_HEIGHT = 0;
 
     public static double L1_ANGLE = 0.595;
-    public static double L2_ANGLE = -0.553;
-    public static double L3_ANGLE = -0.553;
+    public static double L2_ANGLE = 0.553;
+    public static double L3_ANGLE = 0.553;
     public static double L4_ANGLE = 0.674;
     public static double INTAKE_ANGLE = 0;
     public static double HOME_ANGLE = 0;

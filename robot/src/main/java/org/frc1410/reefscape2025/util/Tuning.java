@@ -9,7 +9,7 @@ public final class Tuning {
 
     public static double ELEVATOR_TOLERANCE = 100;
 
-    public static double INTAKE_ANGLE_P = 1;
+    public static double INTAKE_ANGLE_P = 9;
     public static double INTAKE_ANGLE_I = 0;
     public static double INTAKE_ANGLE_D = 0;
     

@@ -92,7 +92,7 @@ public class Elevator implements TickedSubsystem {
                 SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters
         );
 
-        this.barroonEncoder = new Encoder(ELEVATOR_HEIGHT_ENCODER_CHANNEL_A, ELEVATOR_HEIGHT_ENCODER_CHANNEL_B, false, CounterBase.EncodingType.k4X);
+        this.barroonEncoder = new Encoder(ELEVATOR_HEIGHT_ENCODER_CHANNEL_A, ELEVATOR_HEIGHT_ENCODER_CHANNEL_B, true, CounterBase.EncodingType.k4X);
         this.barroonEncoder.reset();
 
         this.intakeAnglePIDController.setTolerance(INTAKE_TOLERANCE);
@@ -111,6 +111,9 @@ public class Elevator implements TickedSubsystem {
     public void setDesiredElevatorState(ELEVATOR_STATE desiredElevatorState) {
         this.desiredElevatorHeight = desiredElevatorState.getElevatorDistance();
         this.desiredElevatorAngle = desiredElevatorState.getElevatorAngle();
+
+        this.intakeAnglePIDController.setSetpoint(-desiredElevatorAngle);
+        this.elevatorPIDController.setSetpoint(-desiredElevatorAngle);
     }
 
     public void goToDesiredHeight() {
@@ -131,11 +134,11 @@ public class Elevator implements TickedSubsystem {
         this.intakeAngleMotor.setVoltage(motorVoltage);
     }
 
-    public Boolean IntakeRotationAtSetpoint() {
+    public Boolean intakeRotationAtSetpoint() {
         return intakeAnglePIDController.atSetpoint();
     }
 
-    public Boolean ElevatorHeightAtSetpoint() {
+    public Boolean elevatorHeightAtSetpoint() {
         return elevatorPIDController.atSetpoint();
     }
 
