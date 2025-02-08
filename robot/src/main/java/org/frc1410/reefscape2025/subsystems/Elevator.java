@@ -108,13 +108,17 @@ public class Elevator implements TickedSubsystem {
         this.intakeAngleMotor.set(speed);
     }
 
-    public void setDesiredElevatorState(ELEVATOR_STATE desiredElevatorState) {
-        this.desiredElevatorHeight = desiredElevatorState.getElevatorDistance();
-        this.desiredElevatorAngle = desiredElevatorState.getElevatorAngle();
-
-        this.intakeAnglePIDController.setSetpoint(-desiredElevatorAngle);
-        this.elevatorPIDController.setSetpoint(-desiredElevatorAngle);
+    public void setDesiredElevatorState() {
+        this.elevatorPIDController.setSetpoint(desiredElevatorHeight);
     }
+
+    public void setDesiredIntakeState(ELEVATOR_STATE desriedIntakeState) {
+        this.desiredElevatorAngle = desriedIntakeState.getElevatorAngle();
+        this.desiredElevatorHeight = desriedIntakeState.getElevatorDistance();
+
+        this.intakeAnglePIDController.setSetpoint(desiredElevatorAngle);
+    }
+
 
     public void goToDesiredHeight() {
         var motorVoltage = this.elevatorPIDController.calculate(
@@ -158,6 +162,8 @@ public class Elevator implements TickedSubsystem {
         this.leftMotor.setVoltage(0);
         this.rightMotor.setVoltage(0);
     }
+
+    
 
     public enum ELEVATOR_STATE {
         L1(L_1_HEIGHT, L1_ANGLE),

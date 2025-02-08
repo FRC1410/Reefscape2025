@@ -8,7 +8,8 @@ import org.frc1410.reefscape2025.subsystems.Elevator;
 public class HomeElevator extends SequentialCommandGroup {
     public HomeElevator(Elevator elevator) {
         super(
-            new ConfigureHeight(elevator, Elevator.ELEVATOR_STATE.HOME),
+            new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.HOME),
+            new ConfigureElevatorHeight(elevator),
             new SetElevatorHeight(elevator)
         );
     }
