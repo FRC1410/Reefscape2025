@@ -12,13 +12,14 @@ public class HoldElevatorPID extends Command{
 
     @Override
     public void initialize() {
-        this.elevator.resetEncoders();
+        this.elevator.resetElevatorEncoder();
+        this.elevator.resetIntakeRotationEncoder();
     }
     
     @Override
     public void execute() {
-        if(this.elevator.getDesiredElevatorState() != 1) {
-            //this.elevator.goToDesiredHeight();
+        if(this.elevator.getDesiredElevatorState() != 1) { //Shitty code to tell it not to immediatly go to position, need to make safer
+            this.elevator.goToDesiredHeight();
             //this.elevator.goToDesiredAngle();
         } else {
             this.elevator.setElevatorVolatgeToZero();

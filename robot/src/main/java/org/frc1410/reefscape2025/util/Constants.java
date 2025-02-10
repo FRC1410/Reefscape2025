@@ -12,7 +12,7 @@ public final class Constants {
     public static Distance ENCODER_SHAFT_RADIUS = Units.Inches.of(0.8755);
     public static Distance ENCODER_SHAFT_CIRCUMFERENCE = Units.Inches.of(ENCODER_SHAFT_RADIUS.times(2 * Math.PI).in(Units.Inches));
 
-    public static int L_1_HEIGHT = 1790;
+    public static int L_1_HEIGHT = 1790; //1790
     public static int L_2_HEIGHT = 3500;
     public static int L_3_HEIGHT = 6118;
     public static int L_4_HEIGHT = 10680;

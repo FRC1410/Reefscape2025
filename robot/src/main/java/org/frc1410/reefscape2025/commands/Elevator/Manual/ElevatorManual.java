@@ -1,4 +1,4 @@
-package org.frc1410.reefscape2025.commands.Elevator;
+package org.frc1410.reefscape2025.commands.Elevator.Manual;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import org.frc1410.framework.control.Axis;
@@ -21,7 +21,7 @@ public class ElevatorManual extends Command {
 
     @Override
     public void execute() {
-        double speed = axis.getRaw();
+        double speed = axis.get();
         this.elevator.setManualSpeed(speed);
     }
 

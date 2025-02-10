@@ -51,10 +51,15 @@ public class Elevator implements TickedSubsystem {
     private final DoublePublisher desiredAnglePub = NetworkTables.PublisherFactory(this.table, "Desired Angle", 0);
     private final DoublePublisher actualElevatorHeightPub = NetworkTables.PublisherFactory(this.table, "Actual Elevator Height", 0);
     private final DoublePublisher actualElevatorAnglePub = NetworkTables.PublisherFactory(this.table, "Actual Elevator Angle", 0);
-    private final DoublePublisher IntakeRotation_P = NetworkTables.PublisherFactory(this.table, "Intake Rotation P", 0);
+    private final DoublePublisher intakeRotationError = NetworkTables.PublisherFactory(this.table, "Intake Rotation Error", 0);
     private final DoublePublisher intakePIDSetpoint = NetworkTables.PublisherFactory(this.table, "Intake PID Setpoint", 0);
+    private final DoublePublisher elevatorPIDSetpoint = NetworkTables.PublisherFactory(this.table, "Elevator PID Setpoint", 0);
+
+    private final DoublePublisher elevatorVolts = NetworkTables.PublisherFactory(this.table, "Elevator Volts", 0);
+    private final DoublePublisher intakeVolts = NetworkTables.PublisherFactory(this.table, "Intake Volts", 0);
 
     private int desiredElevatorHeight = 1;
+    private int desiredElevatorHeightConfirmed = 1;
     private double desiredElevatorAngle = 0;
 
     public Elevator() {
@@ -84,7 +89,7 @@ public class Elevator implements TickedSubsystem {
         intakeAngleMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
         intakeAngleMotorConfig.smartCurrentLimit(30);
 
-        intakeAngleMotorConfig.inverted(true);
+        intakeAngleMotorConfig.inverted(false);
 
         var alternateEncoderConfig = new AlternateEncoderConfig();
         alternateEncoderConfig.inverted(true);
@@ -98,79 +103,12 @@ public class Elevator implements TickedSubsystem {
         intakeAngleMotor.getAlternateEncoder().setPosition(0);
         
 
-        this.barroonEncoder = new Encoder(ELEVATOR_HEIGHT_ENCODER_CHANNEL_A, ELEVATOR_HEIGHT_ENCODER_CHANNEL_B, true, CounterBase.EncodingType.k4X);
+        this.barroonEncoder = new Encoder(ELEVATOR_HEIGHT_ENCODER_CHANNEL_A, ELEVATOR_HEIGHT_ENCODER_CHANNEL_B, false, CounterBase.EncodingType.k4X);
         this.barroonEncoder.reset();
 
         this.intakeAnglePIDController.setTolerance(INTAKE_TOLERANCE);
         this.elevatorPIDController.setTolerance(ELEVATOR_TOLERANCE);
     }
-
-    public void setManualSpeed(double speed) {
-        this.leftMotor.set(speed);
-        this.rightMotor.set(speed);
-    }
-
-    public void setIntakeAngleSpeed(double speed) {
-        this.intakeAngleMotor.set(speed);
-    }
-
-    public void setDesiredElevatorState() {
-        this.elevatorPIDController.setSetpoint(desiredElevatorHeight);
-    }
-
-    public void setDesiredIntakeState(ELEVATOR_STATE desriedIntakeState) {
-        this.desiredElevatorAngle = desriedIntakeState.getElevatorAngle();
-        this.desiredElevatorHeight = desriedIntakeState.getElevatorDistance();
-
-        this.intakeAnglePIDController.setSetpoint(desiredElevatorAngle);
-    }
-
-
-    public void goToDesiredHeight() {
-        var motorVoltage = this.elevatorPIDController.calculate(
-                this.getCurrentElevatorDistance(),
-                this.desiredElevatorHeight);
-
-        this.leftMotor.setVoltage(motorVoltage);
-        this.rightMotor.setVoltage(motorVoltage);
-    }
-
-    public void goToDesiredAngle() {
-        var motorVoltage = this.intakeAnglePIDController.calculate(
-                this.getCurrentIntakeAngle(),
-                this.desiredElevatorAngle
-        );
-
-        this.intakeAngleMotor.setVoltage(motorVoltage);
-    }
-
-    public Boolean intakeRotationAtSetpoint() {
-        return intakeAnglePIDController.atSetpoint();
-    }
-
-    public Boolean elevatorHeightAtSetpoint() {
-        return elevatorPIDController.atSetpoint();
-    }
-
-    public int getCurrentElevatorDistance() {
-        return this.barroonEncoder.get();
-    }
-
-    public double getCurrentIntakeAngle() {
-        return this.intakeAngleMotor.getAlternateEncoder().getPosition();
-    }
-
-    public void setIntakeRotationVolatgeToZero() {
-        this.intakeAngleMotor.setVoltage(0);
-    }
-
-    public void setElevatorVolatgeToZero() {
-        this.leftMotor.setVoltage(0);
-        this.rightMotor.setVoltage(0);
-    }
-    
-
-    
 
     
 
@@ -199,19 +137,98 @@ public class Elevator implements TickedSubsystem {
 
     }
 
+
+    // Manual control for elevator and intake rotation
+    public void setManualSpeed(double speed) {
+        this.leftMotor.set(speed);
+        this.rightMotor.set(speed);
+    }
+
+    public void setIntakeAngleSpeed(double speed) {
+        this.intakeAngleMotor.set(speed);
+    }
+
+
+
+
+    public void setDesiredElevatorState() {
+        this.desiredElevatorHeightConfirmed = this.desiredElevatorHeight;
+        this.elevatorPIDController.setSetpoint(desiredElevatorHeightConfirmed);
+    }
+
+    public void setDesiredIntakeState(ELEVATOR_STATE desriedIntakeState) {
+        this.desiredElevatorAngle = desriedIntakeState.getElevatorAngle();
+        this.desiredElevatorHeight = desriedIntakeState.getElevatorDistance();
+
+        this.intakeAnglePIDController.setSetpoint(desiredElevatorAngle);
+    }
+
+
+    public void goToDesiredHeight() {
+        var motorVoltage = this.elevatorPIDController.calculate(
+                this.getCurrentElevatorDistance(),
+                this.desiredElevatorHeightConfirmed);
+
+        this.elevatorVolts.set(motorVoltage);
+        
+        this.leftMotor.setVoltage(-motorVoltage);
+        this.rightMotor.setVoltage(-motorVoltage);
+    }
+
+    public void goToDesiredAngle() {
+        var motorVoltage = this.intakeAnglePIDController.calculate(
+                this.getCurrentIntakeAngle(),
+                this.desiredElevatorAngle
+        );
+
+        //this.intakeAngleMotor.setVoltage(motorVoltage);
+    }
+
+
+
+    public boolean intakeRotationAtSetpoint() {
+        return intakeAnglePIDController.atSetpoint();
+    }
+
+    public boolean elevatorHeightAtSetpoint() {
+        return elevatorPIDController.atSetpoint();
+    }
+
+
+
+
+    public int getCurrentElevatorDistance() {return this.barroonEncoder.get();}
+
+    public double getCurrentIntakeAngle() {return this.intakeAngleMotor.getAlternateEncoder().getPosition();}
+
+
+
+
+    public void setIntakeRotationVolatgeToZero() {
+        this.intakeAngleMotor.setVoltage(0);
+    }
+
+    public void setElevatorVolatgeToZero() {
+        this.leftMotor.setVoltage(0);
+        this.rightMotor.setVoltage(0);
+    }
+
+    
+    
+
     public double getDesiredElevatorState() {
         return desiredElevatorHeight;
     }
 
 
-    public void resetEncoders() {
-        barroonEncoder.reset();
-        intakeAngleMotor.getAlternateEncoder().setPosition(0);
-    }
-
     public void resetElevatorEncoder() {
         this.barroonEncoder.reset();
     }
+
+    public void resetIntakeRotationEncoder() {
+        this.intakeAngleMotor.getAlternateEncoder().setPosition(0);
+    }
+
 
 
     @Override
@@ -222,7 +239,9 @@ public class Elevator implements TickedSubsystem {
         this.actualElevatorHeightPub.set(this.getCurrentElevatorDistance());
         this.actualElevatorAnglePub.set(this.getCurrentIntakeAngle());
 
-        this.IntakeRotation_P.set(this.intakeAnglePIDController.getError());
+        this.intakeRotationError.set(this.intakeAnglePIDController.getError());
         this.intakePIDSetpoint.set(this.intakeAnglePIDController.getSetpoint());
+        this.elevatorPIDSetpoint.set(this.elevatorPIDController.getSetpoint());
+      
     }
 }
