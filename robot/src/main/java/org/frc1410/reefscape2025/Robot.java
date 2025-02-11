@@ -38,8 +38,8 @@ public final class Robot extends PhaseDrivenRobot {
 //		this.operatorController.X.whileHeld(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 //		this.operatorController.Y.whileHeld(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 
-		this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
-		this.scheduler.scheduleDefaultCommand(new IntakeAngleManual(elevator, this.operatorController.RIGHT_Y_AXIS), TaskPersistence.GAMEPLAY);
+		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
+		// this.scheduler.scheduleDefaultCommand(new IntakeAngleManual(elevator, this.operatorController.RIGHT_Y_AXIS), TaskPersistence.GAMEPLAY);
 
 		this.operatorController.Y.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L4), TaskPersistence.GAMEPLAY);
 		this.operatorController.B.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L3), TaskPersistence.GAMEPLAY);

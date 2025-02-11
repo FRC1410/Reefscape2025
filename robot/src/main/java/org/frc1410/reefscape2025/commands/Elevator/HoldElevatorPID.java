@@ -20,10 +20,10 @@ public class HoldElevatorPID extends Command{
     public void execute() {
         if(this.elevator.getDesiredElevatorState() != 1) { //Shitty code to tell it not to immediatly go to position, need to make safer
             this.elevator.goToDesiredHeight();
-            //this.elevator.goToDesiredAngle();
+            //this.elevator.goToDesiredAngle(); // uncomment when intake rotation mech is working again
         } else {
-            this.elevator.setElevatorVolatgeToZero();
-            this.elevator.setIntakeRotationVolatgeToZero();
+            // this.elevator.setElevatorVolatgeToZero();
+            // this.elevator.setIntakeRotationVolatgeToZero();
         }
         
     }

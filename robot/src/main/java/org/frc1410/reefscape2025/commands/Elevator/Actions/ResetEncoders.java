@@ -20,11 +20,11 @@ public class ResetEncoders extends Command{
     public void initialize() {
         if(this.resetElevatorEncoder) {
             this.elevator.resetElevatorEncoder();
-            elevator.setElevatorVolatgeToZero();
+            //elevator.setElevatorVolatgeToZero();
         }
         if (this.resetIntakeRotationEncoder) {
             this.elevator.resetElevatorEncoder();
-            elevator.setIntakeRotationVolatgeToZero();
+            //elevator.setIntakeRotationVolatgeToZero();
         }
     }
 

@@ -46,16 +46,20 @@ public class Elevator implements TickedSubsystem {
     
 
     private final NetworkTable table = NetworkTableInstance.getDefault().getTable("Elevator");
+    private final NetworkTable intakeTable = NetworkTableInstance.getDefault().getTable("IntakeRotation");
 
     private final DoublePublisher desiredHeightPub = NetworkTables.PublisherFactory(this.table, "Desired Height", 0);
     private final DoublePublisher desiredAnglePub = NetworkTables.PublisherFactory(this.table, "Desired Angle", 0);
     private final DoublePublisher actualElevatorHeightPub = NetworkTables.PublisherFactory(this.table, "Actual Elevator Height", 0);
     private final DoublePublisher actualElevatorAnglePub = NetworkTables.PublisherFactory(this.table, "Actual Elevator Angle", 0);
-    private final DoublePublisher intakeRotationError = NetworkTables.PublisherFactory(this.table, "Intake Rotation Error", 0);
-    private final DoublePublisher intakePIDSetpoint = NetworkTables.PublisherFactory(this.table, "Intake PID Setpoint", 0);
+    private final DoublePublisher intakeRotationError = NetworkTables.PublisherFactory(this.intakeTable, "Intake Rotation Error", 0);
+    private final DoublePublisher intakePIDSetpoint = NetworkTables.PublisherFactory(this.intakeTable, "Intake PID Setpoint", 0);
     private final DoublePublisher elevatorPIDSetpoint = NetworkTables.PublisherFactory(this.table, "Elevator PID Setpoint", 0);
 
-    private final DoublePublisher elevatorVolts = NetworkTables.PublisherFactory(this.table, "Elevator Volts", 0);
+    private final DoublePublisher elevatorCurrent = NetworkTables.PublisherFactory(this.table, "Elevator Curren", 0);
+    private final DoublePublisher actualRightElevatorVolts = NetworkTables.PublisherFactory(this.table, "Actual Right Elevator Volts", 0);
+    private final DoublePublisher actualLeftElevatorVolts = NetworkTables.PublisherFactory(this.table, "Actual Left Elevator Volts", 0);
+    private final DoublePublisher outputElevatorVolts = NetworkTables.PublisherFactory(this.table, "Desired Elevator Volts", 0);
     private final DoublePublisher intakeVolts = NetworkTables.PublisherFactory(this.table, "Intake Volts", 0);
 
     private int desiredElevatorHeight = 1;
@@ -67,7 +71,7 @@ public class Elevator implements TickedSubsystem {
         this.rightMotor = new TalonFX(RIGHT_ELEVATOR_MOTOR, "CTRE");
 
         var leftMotorConfig = new TalonFXConfiguration();
-        leftMotorConfig.CurrentLimits.SupplyCurrentLimit = 20;
+        leftMotorConfig.CurrentLimits.SupplyCurrentLimit = 40;
         leftMotorConfig.CurrentLimits.SupplyCurrentLimitEnable = true;
 
         leftMotorConfig.MotorOutput.NeutralMode = NeutralModeValue.Brake;
@@ -75,7 +79,7 @@ public class Elevator implements TickedSubsystem {
         this.leftMotor.getConfigurator().apply(leftMotorConfig);
 
         var rightMotorConfig = new TalonFXConfiguration();
-        rightMotorConfig.CurrentLimits.SupplyCurrentLimit = 20;
+        rightMotorConfig.CurrentLimits.SupplyCurrentLimit = 40;
         rightMotorConfig.CurrentLimits.SupplyCurrentLimitEnable = true;
 
         rightMotorConfig.MotorOutput.NeutralMode = NeutralModeValue.Brake;
@@ -108,6 +112,8 @@ public class Elevator implements TickedSubsystem {
 
         this.intakeAnglePIDController.setTolerance(INTAKE_TOLERANCE);
         this.elevatorPIDController.setTolerance(ELEVATOR_TOLERANCE);
+
+        elevatorPIDController.setSetpoint(1);
     }
 
     
@@ -150,7 +156,7 @@ public class Elevator implements TickedSubsystem {
 
 
 
-
+    // setting setpoints and PID methods to run 
     public void setDesiredElevatorState() {
         this.desiredElevatorHeightConfirmed = this.desiredElevatorHeight;
         this.elevatorPIDController.setSetpoint(desiredElevatorHeightConfirmed);
@@ -169,7 +175,7 @@ public class Elevator implements TickedSubsystem {
                 this.getCurrentElevatorDistance(),
                 this.desiredElevatorHeightConfirmed);
 
-        this.elevatorVolts.set(motorVoltage);
+        this.outputElevatorVolts.set(motorVoltage);
         
         this.leftMotor.setVoltage(-motorVoltage);
         this.rightMotor.setVoltage(-motorVoltage);
@@ -182,10 +188,11 @@ public class Elevator implements TickedSubsystem {
         );
 
         //this.intakeAngleMotor.setVoltage(motorVoltage);
+        //TODO uncommet when intake rotation mechanims is working again
     }
 
 
-
+    // Checking encoder values
     public boolean intakeRotationAtSetpoint() {
         return intakeAnglePIDController.atSetpoint();
     }
@@ -194,16 +201,13 @@ public class Elevator implements TickedSubsystem {
         return elevatorPIDController.atSetpoint();
     }
 
-
-
-
     public int getCurrentElevatorDistance() {return this.barroonEncoder.get();}
 
     public double getCurrentIntakeAngle() {return this.intakeAngleMotor.getAlternateEncoder().getPosition();}
 
 
 
-
+    // set voltage to zero for end commands and saftey
     public void setIntakeRotationVolatgeToZero() {
         this.intakeAngleMotor.setVoltage(0);
     }
@@ -214,13 +218,13 @@ public class Elevator implements TickedSubsystem {
     }
 
     
-    
+
 
     public double getDesiredElevatorState() {
-        return desiredElevatorHeight;
+        return elevatorPIDController.getSetpoint();
     }
 
-
+    // reset encoders
     public void resetElevatorEncoder() {
         this.barroonEncoder.reset();
     }
@@ -230,6 +234,15 @@ public class Elevator implements TickedSubsystem {
     }
 
 
+
+
+    public double driveAccelerationProportionalLimitation() {
+        driveAccelerationProportionalLimitationMultiplier = 
+            (slopeCalculationDriveAcceleration *
+            (Math.abs(getCurrentElevatorDistance()) + 1)) //+ 1 so that it != zero
+            + 1;
+        return driveAccelerationProportionalLimitationMultiplier;
+    }
 
     @Override
     public void periodic() {
@@ -241,7 +254,28 @@ public class Elevator implements TickedSubsystem {
 
         this.intakeRotationError.set(this.intakeAnglePIDController.getError());
         this.intakePIDSetpoint.set(this.intakeAnglePIDController.getSetpoint());
-        this.elevatorPIDSetpoint.set(this.elevatorPIDController.getSetpoint());
-      
+        this.elevatorPIDSetpoint.set(this.elevatorPIDController.getSetpoint()); 
+
+
+        this.actualRightElevatorVolts.set(-rightMotor.getMotorVoltage().getValueAsDouble());
+        this.actualLeftElevatorVolts.set(-rightMotor.getMotorVoltage().getValueAsDouble());
+
+        this.elevatorCurrent.set(rightMotor.getStatorCurrent().getValueAsDouble());
+
+        //this.driveAccelerationProportionalLimitation(); //we always want this to be updating
+
+
+        getCurrentElevatorDistance();
+        getCurrentIntakeAngle();
+
+        // if(this.getDesiredElevatorState() != 1) { //Shitty code to tell it not to immediatly go to position, need to make safer
+        //     this.goToDesiredHeight();
+        //     //this.elevator.goToDesiredAngle(); // uncomment when intake rotation mech is working again
+        // } else {
+        //     this.setElevatorVolatgeToZero();
+        //     this.setIntakeRotationVolatgeToZero();
+        // }
     }
+
+    
 }
