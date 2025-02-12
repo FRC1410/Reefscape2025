@@ -18,14 +18,16 @@ public class HoldElevatorPID extends Command{
     
     @Override
     public void execute() {
-        if(this.elevator.getDesiredElevatorState() != 1) { //Shitty code to tell it not to immediatly go to position, need to make safer
+//        if(this.elevator.getDesiredElevatorState() != 10) { //Shitty code to tell it not to immediatly go to position, need to make safer
+//            this.elevator.goToDesiredHeight();
+//            this.elevator.goToDesiredAngle(); // uncomment when intake rotation mech is working again
+//        } else {
+//            this.elevator.setElevatorVolatgeToZero();
+//            this.elevator.setIntakeRotationVolatgeToZero();
+//        }
+
             this.elevator.goToDesiredHeight();
-            //this.elevator.goToDesiredAngle(); // uncomment when intake rotation mech is working again
-        } else {
-            // this.elevator.setElevatorVolatgeToZero();
-            // this.elevator.setIntakeRotationVolatgeToZero();
-        }
-        
+            this.elevator.goToDesiredAngle(); // uncomment when intake rotation mech is working again
     }
 
     @Override

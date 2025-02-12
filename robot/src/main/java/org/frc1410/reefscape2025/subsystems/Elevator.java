@@ -2,6 +2,7 @@ package org.frc1410.reefscape2025.subsystems;
 
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.ctre.phoenix6.hardware.TalonFX;
+import com.ctre.phoenix6.signals.GravityTypeValue;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
 import com.revrobotics.spark.SparkBase;
@@ -43,8 +44,6 @@ public class Elevator implements TickedSubsystem {
             INTAKE_ANGLE_D
     );
 
-    
-
     private final NetworkTable table = NetworkTableInstance.getDefault().getTable("Elevator");
     private final NetworkTable intakeTable = NetworkTableInstance.getDefault().getTable("IntakeRotation");
 
@@ -71,19 +70,21 @@ public class Elevator implements TickedSubsystem {
         this.rightMotor = new TalonFX(RIGHT_ELEVATOR_MOTOR, "CTRE");
 
         var leftMotorConfig = new TalonFXConfiguration();
-        leftMotorConfig.CurrentLimits.SupplyCurrentLimit = 40;
+        leftMotorConfig.CurrentLimits.SupplyCurrentLimit = 30;
         leftMotorConfig.CurrentLimits.SupplyCurrentLimitEnable = true;
 
         leftMotorConfig.MotorOutput.NeutralMode = NeutralModeValue.Brake;
         leftMotorConfig.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
+        leftMotorConfig.Slot0.withGravityType(GravityTypeValue.Elevator_Static);
         this.leftMotor.getConfigurator().apply(leftMotorConfig);
 
         var rightMotorConfig = new TalonFXConfiguration();
-        rightMotorConfig.CurrentLimits.SupplyCurrentLimit = 40;
+        rightMotorConfig.CurrentLimits.SupplyCurrentLimit = 30;
         rightMotorConfig.CurrentLimits.SupplyCurrentLimitEnable = true;
 
         rightMotorConfig.MotorOutput.NeutralMode = NeutralModeValue.Brake;
         rightMotorConfig.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
+        rightMotorConfig.Slot0.withGravityType(GravityTypeValue.Elevator_Static);
         this.rightMotor.getConfigurator().apply(rightMotorConfig);
 
         this.intakeAngleMotor = new SparkMax(INTAKE_ROTATION_MOTOR, SparkLowLevel.MotorType.kBrushless);
@@ -113,10 +114,8 @@ public class Elevator implements TickedSubsystem {
         this.intakeAnglePIDController.setTolerance(INTAKE_TOLERANCE);
         this.elevatorPIDController.setTolerance(ELEVATOR_TOLERANCE);
 
-        elevatorPIDController.setSetpoint(1);
+        elevatorPIDController.setSetpoint(0);
     }
-
-    
 
     public enum ELEVATOR_STATE {
         L1(L_1_HEIGHT, L1_ANGLE),
@@ -137,12 +136,12 @@ public class Elevator implements TickedSubsystem {
         public int getElevatorDistance() {
             return elevatorDistance;
         }
+
         public double getElevatorAngle() {
             return elevatorAngle;
         }
 
     }
-
 
     // Manual control for elevator and intake rotation
     public void setManualSpeed(double speed) {
@@ -153,8 +152,6 @@ public class Elevator implements TickedSubsystem {
     public void setIntakeAngleSpeed(double speed) {
         this.intakeAngleMotor.set(speed);
     }
-
-
 
     // setting setpoints and PID methods to run 
     public void setDesiredElevatorState() {
@@ -169,11 +166,11 @@ public class Elevator implements TickedSubsystem {
         this.intakeAnglePIDController.setSetpoint(desiredElevatorAngle);
     }
 
-
     public void goToDesiredHeight() {
         var motorVoltage = this.elevatorPIDController.calculate(
                 this.getCurrentElevatorDistance(),
-                this.desiredElevatorHeightConfirmed);
+                this.desiredElevatorHeightConfirmed
+        );
 
         this.outputElevatorVolts.set(motorVoltage);
         
@@ -187,10 +184,8 @@ public class Elevator implements TickedSubsystem {
                 this.desiredElevatorAngle
         );
 
-        //this.intakeAngleMotor.setVoltage(motorVoltage);
-        //TODO uncommet when intake rotation mechanims is working again
+        this.intakeAngleMotor.setVoltage(motorVoltage);
     }
-
 
     // Checking encoder values
     public boolean intakeRotationAtSetpoint() {
@@ -205,8 +200,6 @@ public class Elevator implements TickedSubsystem {
 
     public double getCurrentIntakeAngle() {return this.intakeAngleMotor.getAlternateEncoder().getPosition();}
 
-
-
     // set voltage to zero for end commands and saftey
     public void setIntakeRotationVolatgeToZero() {
         this.intakeAngleMotor.setVoltage(0);
@@ -216,9 +209,6 @@ public class Elevator implements TickedSubsystem {
         this.leftMotor.setVoltage(0);
         this.rightMotor.setVoltage(0);
     }
-
-    
-
 
     public double getDesiredElevatorState() {
         return elevatorPIDController.getSetpoint();
@@ -232,9 +222,6 @@ public class Elevator implements TickedSubsystem {
     public void resetIntakeRotationEncoder() {
         this.intakeAngleMotor.getAlternateEncoder().setPosition(0);
     }
-
-
-
 
     public double driveAccelerationProportionalLimitation() {
         driveAccelerationProportionalLimitationMultiplier = 
@@ -265,16 +252,8 @@ public class Elevator implements TickedSubsystem {
         //this.driveAccelerationProportionalLimitation(); //we always want this to be updating
 
 
-        getCurrentElevatorDistance();
-        getCurrentIntakeAngle();
-
-        // if(this.getDesiredElevatorState() != 1) { //Shitty code to tell it not to immediatly go to position, need to make safer
-        //     this.goToDesiredHeight();
-        //     //this.elevator.goToDesiredAngle(); // uncomment when intake rotation mech is working again
-        // } else {
-        //     this.setElevatorVolatgeToZero();
-        //     this.setIntakeRotationVolatgeToZero();
-        // }
+        this.getCurrentElevatorDistance();
+        this.getCurrentIntakeAngle();
     }
 
     

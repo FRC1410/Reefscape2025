@@ -6,6 +6,7 @@ import org.frc1410.framework.scheduler.task.TaskPersistence;
 import org.frc1410.reefscape2025.commands.Elevator.*;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.ConfigureElevatorHeight;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.ConfigureIntakeAngle;
+import org.frc1410.reefscape2025.commands.Elevator.Actions.HomeElevator;
 import org.frc1410.reefscape2025.commands.Elevator.Manual.ElevatorManual;
 import org.frc1410.reefscape2025.commands.Elevator.Manual.IntakeAngleManual;
 import org.frc1410.reefscape2025.commands.Lbozo.IntakeCoral;
@@ -38,7 +39,7 @@ public final class Robot extends PhaseDrivenRobot {
 //		this.operatorController.X.whileHeld(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 //		this.operatorController.Y.whileHeld(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 
-		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
+//		 this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
 		// this.scheduler.scheduleDefaultCommand(new IntakeAngleManual(elevator, this.operatorController.RIGHT_Y_AXIS), TaskPersistence.GAMEPLAY);
 
 		this.operatorController.Y.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L4), TaskPersistence.GAMEPLAY);
@@ -47,11 +48,11 @@ public final class Robot extends PhaseDrivenRobot {
 		this.operatorController.X.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L1), TaskPersistence.GAMEPLAY);
 
 		this.operatorController.DPAD_UP.whenPressed(new ConfigureElevatorHeight(elevator), TaskPersistence.GAMEPLAY);
+		this.operatorController.DPAD_DOWN.whenPressed(new HomeElevator(elevator), TaskPersistence.GAMEPLAY);
+
 
 
 		this.scheduler.scheduleDefaultCommand(new HoldElevatorPID(elevator), TaskPersistence.GAMEPLAY);
-
-		
 	
 	}
 
