@@ -44,22 +44,26 @@ public class Elevator implements TickedSubsystem {
             INTAKE_ANGLE_D
     );
 
+
+    
     private final NetworkTable table = NetworkTableInstance.getDefault().getTable("Elevator");
     private final NetworkTable intakeTable = NetworkTableInstance.getDefault().getTable("IntakeRotation");
 
-    private final DoublePublisher desiredHeightPub = NetworkTables.PublisherFactory(this.table, "Desired Height", 0);
-    private final DoublePublisher desiredAnglePub = NetworkTables.PublisherFactory(this.table, "Desired Angle", 0);
-    private final DoublePublisher actualElevatorHeightPub = NetworkTables.PublisherFactory(this.table, "Actual Elevator Height", 0);
-    private final DoublePublisher actualElevatorAnglePub = NetworkTables.PublisherFactory(this.table, "Actual Elevator Angle", 0);
     private final DoublePublisher intakeRotationError = NetworkTables.PublisherFactory(this.intakeTable, "Intake Rotation Error", 0);
     private final DoublePublisher intakePIDSetpoint = NetworkTables.PublisherFactory(this.intakeTable, "Intake PID Setpoint", 0);
-    private final DoublePublisher elevatorPIDSetpoint = NetworkTables.PublisherFactory(this.table, "Elevator PID Setpoint", 0);
+    private final DoublePublisher desiredAnglePub = NetworkTables.PublisherFactory(this.intakeTable, "Desired Angle", 0);
+    private final DoublePublisher actualElevatorAnglePub = NetworkTables.PublisherFactory(this.intakeTable, "Actual Elevator Angle", 0);
+    private final DoublePublisher intakeVolts = NetworkTables.PublisherFactory(this.intakeTable, "Intake Volts", 0);
 
-    private final DoublePublisher elevatorCurrent = NetworkTables.PublisherFactory(this.table, "Elevator Curren", 0);
+    private final DoublePublisher desiredHeightPub = NetworkTables.PublisherFactory(this.table, "Desired Height", 0);
+    private final DoublePublisher actualElevatorHeightPub = NetworkTables.PublisherFactory(this.table, "Actual Elevator Height", 0);
+    private final DoublePublisher elevatorPIDSetpoint = NetworkTables.PublisherFactory(this.table, "Elevator PID Setpoint", 0);
+    private final DoublePublisher elevatorRightCurrent = NetworkTables.PublisherFactory(this.table, "Right Elevator Current", 0);
+    private final DoublePublisher elevatorLeftCurrent = NetworkTables.PublisherFactory(this.table, "Left Elevator Current", 0);
     private final DoublePublisher actualRightElevatorVolts = NetworkTables.PublisherFactory(this.table, "Actual Right Elevator Volts", 0);
     private final DoublePublisher actualLeftElevatorVolts = NetworkTables.PublisherFactory(this.table, "Actual Left Elevator Volts", 0);
     private final DoublePublisher outputElevatorVolts = NetworkTables.PublisherFactory(this.table, "Desired Elevator Volts", 0);
-    private final DoublePublisher intakeVolts = NetworkTables.PublisherFactory(this.table, "Intake Volts", 0);
+    
 
     private int desiredElevatorHeight = 1;
     private int desiredElevatorHeightConfirmed = 1;
@@ -118,6 +122,7 @@ public class Elevator implements TickedSubsystem {
     }
 
     public enum ELEVATOR_STATE {
+        Saftey(SAFE_HEIGHT, SAFE_ANGLE),
         L1(L_1_HEIGHT, L1_ANGLE),
         L2(L_2_HEIGHT, L2_ANGLE),
         L3(L_3_HEIGHT, L3_ANGLE),
@@ -174,8 +179,8 @@ public class Elevator implements TickedSubsystem {
 
         this.outputElevatorVolts.set(motorVoltage);
         
-        this.leftMotor.setVoltage(-motorVoltage);
-        this.rightMotor.setVoltage(-motorVoltage);
+        this.leftMotor.setVoltage(-motorVoltage -0.56);
+        this.rightMotor.setVoltage(-motorVoltage -0.56);
     }
 
     public void goToDesiredAngle() {
@@ -184,7 +189,9 @@ public class Elevator implements TickedSubsystem {
                 this.desiredElevatorAngle
         );
 
-        this.intakeAngleMotor.setVoltage(motorVoltage);
+        this.intakeVolts.set(motorVoltage);
+
+        this.intakeAngleMotor.setVoltage(-motorVoltage);
     }
 
     // Checking encoder values
@@ -247,7 +254,9 @@ public class Elevator implements TickedSubsystem {
         this.actualRightElevatorVolts.set(-rightMotor.getMotorVoltage().getValueAsDouble());
         this.actualLeftElevatorVolts.set(-rightMotor.getMotorVoltage().getValueAsDouble());
 
-        this.elevatorCurrent.set(rightMotor.getStatorCurrent().getValueAsDouble());
+        this.elevatorRightCurrent.set(rightMotor.getStatorCurrent().getValueAsDouble());
+        this.elevatorLeftCurrent.set(leftMotor.getStatorCurrent().getValueAsDouble());
+        
 
         //this.driveAccelerationProportionalLimitation(); //we always want this to be updating
 
