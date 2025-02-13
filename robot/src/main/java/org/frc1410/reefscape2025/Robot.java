@@ -15,6 +15,7 @@ import org.frc1410.reefscape2025.subsystems.Climber;
 import org.frc1410.reefscape2025.subsystems.Elevator;
 import org.frc1410.reefscape2025.subsystems.LBozo;
 import org.frc1410.reefscape2025.subsystems.LEDs;
+import org.frc1410.reefscape2025.subsystems.Elevator.ELEVATOR_STATE;
 
 import static org.frc1410.reefscape2025.util.IDs.*;
 
@@ -40,16 +41,17 @@ public final class Robot extends PhaseDrivenRobot {
 //		this.operatorController.Y.whileHeld(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 
 //		 this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
-		// this.scheduler.scheduleDefaultCommand(new IntakeAngleManual(elevator, this.operatorController.RIGHT_Y_AXIS), TaskPersistence.GAMEPLAY);
+		//this.scheduler.scheduleDefaultCommand(new IntakeAngleManual(elevator, this.operatorController.RIGHT_Y_AXIS), TaskPersistence.GAMEPLAY);
 
 		this.operatorController.Y.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L4), TaskPersistence.GAMEPLAY);
 		this.operatorController.B.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L3), TaskPersistence.GAMEPLAY);
 		this.operatorController.A.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L2), TaskPersistence.GAMEPLAY);
 		this.operatorController.X.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L1), TaskPersistence.GAMEPLAY);
 
-		this.operatorController.DPAD_UP.whenPressed(new ConfigureElevatorHeight(elevator), TaskPersistence.GAMEPLAY);
-		this.operatorController.DPAD_DOWN.whenPressed(new HomeElevator(elevator), TaskPersistence.GAMEPLAY);
-
+		//this.operatorController.DPAD_UP.whenPressed(new ConfigureElevatorHeight(elevator), TaskPersistence.GAMEPLAY);
+		//this.operatorController.DPAD_DOWN.whenPressed(new HomeElevator(elevator), TaskPersistence.GAMEPLAY);
+		
+		this.operatorController.RIGHT_BUMPER.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.INTAKE), TaskPersistence.GAMEPLAY);
 
 
 		this.scheduler.scheduleDefaultCommand(new HoldElevatorPID(elevator), TaskPersistence.GAMEPLAY);
