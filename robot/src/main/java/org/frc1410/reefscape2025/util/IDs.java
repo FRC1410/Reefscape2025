@@ -27,5 +27,5 @@ public final class IDs {
 	public static int ELEVATOR_HEIGHT_ENCODER_CHANNEL_B = 1;
 
 	//LED's
-	public static final int LED_ID = 4;
+	public static final int LED_ID = 17;
 }

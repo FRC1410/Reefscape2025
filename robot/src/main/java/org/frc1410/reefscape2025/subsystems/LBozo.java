@@ -45,5 +45,4 @@ public class LBozo implements Subsystem {
             return false;
         }
     }
-
 }

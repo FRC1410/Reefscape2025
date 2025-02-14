@@ -6,12 +6,6 @@ import edu.wpi.first.units.measure.Angle;
 import edu.wpi.first.units.measure.Distance;
 
 public final class Constants {
-    //99 TO 1 gear ratio of the intake angle motor
-    public static boolean INTAKE_ANGLE_ROTATION_MOTOR_INVERTED = false;
-
-    public static Distance ENCODER_SHAFT_RADIUS = Units.Inches.of(0.8755);
-    public static Distance ENCODER_SHAFT_CIRCUMFERENCE = Units.Inches.of(ENCODER_SHAFT_RADIUS.times(2 * Math.PI).in(Units.Inches));
-
     public static int SAFE_HEIGHT = 1;
     public static int L_1_HEIGHT = 1790;
     public static int L_2_HEIGHT = 3500;
@@ -35,11 +29,12 @@ public final class Constants {
     public static final boolean LBOZO_BACK_MOTOR_IS_INVERTED = true;
 
     //Climb
-    public static final double CLIMBER_MOTOR_MAX_SPEED = 0;
-    public static final double CLIMBER_MOTOR_INVERTED_MAX_SPEED = -1.0;
+    public static final double CLIMBER_MOTOR_MAX_SPEED = 1;
+    public static final double CLIMBER_MOTOR_INVERTED_MAX_SPEED = -1;
     public static final boolean CLIMBER_MOTOR_ONE_IS_INVERTED = false;
     public static final boolean CLIMBER_MOTOR_TWO_IS_INVERTED = false;
 
+    //LED's
     public static final double LED_BRIGHTNESS = 1.0;
 
     //Drivetrain
