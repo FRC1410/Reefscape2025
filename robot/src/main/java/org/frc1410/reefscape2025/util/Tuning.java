@@ -9,7 +9,7 @@ public final class Tuning {
     public static final double SWERVE_DRIVE_I = 0;
     public static final double SWERVE_DRIVE_D = 0;
 
-    public static final double SWERVE_STEER_P = 5.3;
+    public static final double SWERVE_STEER_P = 4.3;
     public static final double SWERVE_STEER_I = 0.0;
     public static final double SWERVE_STEER_D = 0.05;
 

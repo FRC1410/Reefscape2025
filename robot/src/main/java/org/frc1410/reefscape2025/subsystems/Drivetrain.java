@@ -1,5 +1,7 @@
 package org.frc1410.reefscape2025.subsystems;
 
+import com.ctre.phoenix6.configs.Pigeon2Configurator;
+import com.ctre.phoenix6.hardware.DeviceIdentifier;
 import com.ctre.phoenix6.hardware.Pigeon2;
 import com.studica.frc.AHRS;
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
@@ -13,6 +15,7 @@ import edu.wpi.first.networktables.DoublePublisher;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.networktables.StructPublisher;
+import edu.wpi.first.units.Units;
 import edu.wpi.first.units.measure.AngularVelocity;
 import edu.wpi.first.units.measure.Voltage;
 import edu.wpi.first.wpilibj.DriverStation;
@@ -23,8 +26,7 @@ import org.frc1410.reefscape2025.util.NetworkTables;
 
 import java.util.Optional;
 
-import static edu.wpi.first.units.Units.MetersPerSecond;
-import static edu.wpi.first.units.Units.Volts;
+import static edu.wpi.first.units.Units.*;
 import static org.frc1410.reefscape2025.util.Constants.*;
 import static org.frc1410.reefscape2025.util.IDs.*;
 
@@ -58,6 +60,8 @@ public class Drivetrain implements TickedSubsystem {
     private final DoublePublisher yaw = NetworkTables.PublisherFactory(this.table, "yaw", 0);
     private final DoublePublisher pitch = NetworkTables.PublisherFactory(this.table, "pitch", 0);
     private final DoublePublisher roll = NetworkTables.PublisherFactory(this.table, "roll", 0);
+
+    private final DoublePublisher rawPidgionVal = NetworkTables.PublisherFactory(this.table, "Pidgion Val", 0);
 
     private final DoublePublisher characterizationVolts = NetworkTables.PublisherFactory(this.table,
             "characterization volts", 0);
@@ -225,7 +229,7 @@ public class Drivetrain implements TickedSubsystem {
     }
 
     private Rotation2d getGyroYaw() {
-        return Rotation2d.fromDegrees(-this.gyro.getYaw().getValue().baseUnitMagnitude());
+        return Rotation2d.fromDegrees(this.gyro.getYaw().getValue().in(Degrees));
     }
 
     public AngularVelocity getAverageDriveAngularVelocity() {
@@ -261,8 +265,8 @@ public class Drivetrain implements TickedSubsystem {
         this.heading.set(this.getEstimatedPosition().getRotation().getDegrees());
 
         this.yaw.set(this.getGyroYaw().getDegrees());
-        this.pitch.set(this.gyro.getPitch().getValue().baseUnitMagnitude());
-        this.roll.set(this.gyro.getRoll().getValue().baseUnitMagnitude());
+        this.pitch.set(this.gyro.getPitch().getValue().in(Units.Degrees));
+        this.roll.set(this.gyro.getRoll().getValue().in(Units.Degrees));
 
         this.posePublisher.set(this.getEstimatedPosition());
         this.encoderOnlyPosePublisher.set(new Pose2d(new Translation2d(4, 4), this.getGyroYaw()));

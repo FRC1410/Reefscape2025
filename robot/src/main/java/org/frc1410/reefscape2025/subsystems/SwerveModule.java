@@ -118,7 +118,7 @@ public class SwerveModule implements TickedSubsystem {
     }
 
     private Rotation2d getSteerPosition() {
-        return Rotation2d.fromRotations(this.steerEncoder.getAbsolutePosition().getValue().in(Units.Rotation));
+        return Rotation2d.fromRotations(this.steerEncoder.getAbsolutePosition().getValue().magnitude());
     }
 
     public void setDesiredState(SwerveModuleState desiredState) {
@@ -149,7 +149,7 @@ public class SwerveModule implements TickedSubsystem {
     }
 
     public AngularVelocity getAngularVelocity() {
-        return Units.RotationsPerSecond.of(this.driveMotor.getVelocity().getValue().in(Units.RotationsPerSecond));
+        return Units.RotationsPerSecond.of(this.driveMotor.getVelocity().getValue().magnitude());
     }
 
     private static AngularVelocity moduleVelocityToMotorAngularVelocity(Measure<LinearVelocityUnit> linearVelocity) {
@@ -157,11 +157,11 @@ public class SwerveModule implements TickedSubsystem {
     }
 
     private LinearVelocity getDriveVelocity() {
-        return Units.MetersPerSecond.of(this.driveMotor.getVelocity().getValue().baseUnitMagnitude() * WHEEL_CIRCUMFERENCE.in(Units.Meters)).div(DRIVE_GEAR_RATIO);
+        return Units.MetersPerSecond.of(this.driveMotor.getVelocity().getValue().magnitude() * WHEEL_CIRCUMFERENCE.in(Units.Meters)).div(DRIVE_GEAR_RATIO);
     }
 
     private Distance getDrivePosition() {
-        return Units.Meters.of(this.driveMotor.getPosition().getValue().baseUnitMagnitude() * WHEEL_CIRCUMFERENCE.in(Units.Meters)).div(DRIVE_GEAR_RATIO);
+        return Units.Meters.of(this.driveMotor.getPosition().getValue().magnitude() * WHEEL_CIRCUMFERENCE.in(Units.Meters)).div(DRIVE_GEAR_RATIO);
     }
 
     @Override
