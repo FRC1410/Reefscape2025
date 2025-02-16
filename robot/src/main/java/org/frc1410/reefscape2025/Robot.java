@@ -7,6 +7,7 @@ import org.frc1410.reefscape2025.commands.Elevator.*;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.ConfigureElevatorHeight;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.ConfigureIntakeAngle;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.HomeElevator;
+import org.frc1410.reefscape2025.commands.Elevator.Manual.ElevatorManual;
 import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoral;
 import org.frc1410.reefscape2025.commands.climber.ClimbCommand;
 import org.frc1410.reefscape2025.subsystems.Climber;
@@ -39,6 +40,8 @@ public final class Robot extends PhaseDrivenRobot {
 //		this.operatorController.X.whileHeldOnce(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 		this.driverController.LEFT_BUMPER.whileHeld(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 
+		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
+
 		this.operatorController.Y.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L4, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.B.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L3, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.A.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L2, leds), TaskPersistence.GAMEPLAY);
@@ -52,7 +55,7 @@ public final class Robot extends PhaseDrivenRobot {
 		this.scheduler.scheduleDefaultCommand(new HoldElevatorPID(elevator), TaskPersistence.GAMEPLAY);
 
 		// Climber
-		this.scheduler.scheduleDefaultCommand(new ClimbCommand(this.climber, this.operatorController.RIGHT_TRIGGER, this.operatorController.LEFT_TRIGGER), TaskPersistence.GAMEPLAY);
+		//this.scheduler.scheduleDefaultCommand(new ClimbCommand(this.climber, this.operatorController.RIGHT_TRIGGER, this.operatorController.LEFT_TRIGGER), TaskPersistence.GAMEPLAY);
 //		this.scheduler.scheduleDefaultCommand(new UnClimb(this.climber, this.operatorController.LEFT_TRIGGER), TaskPersistence.GAMEPLAY);
 	}
 

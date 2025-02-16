@@ -3,7 +3,7 @@ package org.frc1410.reefscape2025.util;
 public final class Tuning {
     // Elevator
 
-    public static double ELEVEATOR_P = 0.0029; //.002
+    public static double ELEVEATOR_P = 0.0012; //.002
     public static double ELEVEATOR_I = 0;
     public static double ELEVEATOR_D = 0;
 
