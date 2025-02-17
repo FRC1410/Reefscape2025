@@ -23,7 +23,9 @@ public class ConfigureIntakeAngle extends Command{
 
     @Override
     public void initialize() {
-//        this.elevator.setDesiredIntakeState(desiredElevatorState);
+        this.elevator.setDesiredIntakeState(desiredElevatorState);
+
+        this.elevator.goToDesiredAngle();
 
         switch (desiredElevatorState) {
             case HOME -> this.leds.setAnimation(RAINBOW, NULL, 0.3);
@@ -35,5 +37,7 @@ public class ConfigureIntakeAngle extends Command{
     }
 
     @Override
-    public boolean isFinished() {return true;}
+    public boolean isFinished() {
+        return true;
+    }
 }

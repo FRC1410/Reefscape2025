@@ -109,7 +109,7 @@ public class Elevator implements TickedSubsystem {
                 SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters
         );
 
-        intakeAngleMotor.getAlternateEncoder().setPosition(0);
+        intakeAngleMotor.getAlternateEncoder().setPosition(0.0);
         
 
         this.barroonEncoder = new Encoder(ELEVATOR_HEIGHT_ENCODER_CHANNEL_A, ELEVATOR_HEIGHT_ENCODER_CHANNEL_B, false, CounterBase.EncodingType.k4X);

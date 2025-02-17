@@ -7,6 +7,7 @@ import org.frc1410.reefscape2025.commands.Elevator.*;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.ConfigureElevatorHeight;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.ConfigureIntakeAngle;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.HomeElevator;
+import org.frc1410.reefscape2025.commands.Elevator.Manual.ElevatorManual;
 import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoral;
 import org.frc1410.reefscape2025.commands.climber.ClimbCommand;
 import org.frc1410.reefscape2025.subsystems.Climber;
@@ -50,6 +51,7 @@ public final class Robot extends PhaseDrivenRobot {
 		this.operatorController.RIGHT_BUMPER.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.INTAKE, leds), TaskPersistence.GAMEPLAY);
 
 		this.scheduler.scheduleDefaultCommand(new HoldElevatorPID(elevator), TaskPersistence.GAMEPLAY);
+//		this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, driverController.RIGHT_Y_AXIS), TaskPersistence.GAMEPLAY);
 
 		// Climber
 		this.scheduler.scheduleDefaultCommand(new ClimbCommand(this.climber, this.operatorController.RIGHT_TRIGGER, this.operatorController.LEFT_TRIGGER), TaskPersistence.GAMEPLAY);
