@@ -26,8 +26,8 @@ import static org.frc1410.reefscape2025.util.Tuning.*;
 import static org.frc1410.reefscape2025.util.Constants.*;
 
 public class Elevator implements TickedSubsystem {
-    private final TalonFX leftMotor;
-    private final TalonFX rightMotor;
+    private final SparkMax leftMotor;
+    private final SparkMax rightMotor;
     private final SparkMax intakeAngleMotor;
 
     private final Encoder barroonEncoder;
@@ -70,26 +70,37 @@ public class Elevator implements TickedSubsystem {
     private double desiredElevatorAngle = 0;
 
     public Elevator() {
-        this.leftMotor = new TalonFX(LEFT_ELEVATOR_MOTOR, "CTRE");
-        this.rightMotor = new TalonFX(RIGHT_ELEVATOR_MOTOR, "CTRE");
+        this.leftMotor = new SparkMax(LEFT_ELEVATOR_MOTOR, SparkLowLevel.MotorType.kBrushless);
+        
+        var leftMotorConfig = new SparkMaxConfig();
 
-        var leftMotorConfig = new TalonFXConfiguration();
-        leftMotorConfig.CurrentLimits.SupplyCurrentLimit = 30;
-        leftMotorConfig.CurrentLimits.SupplyCurrentLimitEnable = true;
+        leftMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
+        leftMotorConfig.smartCurrentLimit(30);
 
-        leftMotorConfig.MotorOutput.NeutralMode = NeutralModeValue.Brake;
-        leftMotorConfig.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
-        leftMotorConfig.Slot0.withGravityType(GravityTypeValue.Elevator_Static);
-        this.leftMotor.getConfigurator().apply(leftMotorConfig);
+        leftMotorConfig.inverted(false);
 
-        var rightMotorConfig = new TalonFXConfiguration();
-        rightMotorConfig.CurrentLimits.SupplyCurrentLimit = 30;
-        rightMotorConfig.CurrentLimits.SupplyCurrentLimitEnable = true;
+        this.leftMotor.configure(
+            leftMotorConfig,
+            SparkBase.ResetMode.kResetSafeParameters,
+            SparkBase.PersistMode.kNoPersistParameters
+        );
 
-        rightMotorConfig.MotorOutput.NeutralMode = NeutralModeValue.Brake;
-        rightMotorConfig.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
-        rightMotorConfig.Slot0.withGravityType(GravityTypeValue.Elevator_Static);
-        this.rightMotor.getConfigurator().apply(rightMotorConfig);
+        this.rightMotor = new SparkMax(RIGHT_ELEVATOR_MOTOR, SparkLowLevel.MotorType.kBrushless);
+        
+        var rightMotorConfig = new SparkMaxConfig();
+
+        rightMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
+        rightMotorConfig.smartCurrentLimit(30);
+
+        rightMotorConfig.inverted(true);
+
+        this.rightMotor.configure(
+            leftMotorConfig,
+            SparkBase.ResetMode.kResetSafeParameters,
+            SparkBase.PersistMode.kNoPersistParameters
+        );
+
+
 
         this.intakeAngleMotor = new SparkMax(INTAKE_ROTATION_MOTOR, SparkLowLevel.MotorType.kBrushless);
 
@@ -149,9 +160,11 @@ public class Elevator implements TickedSubsystem {
     }
 
     // Manual control for elevator and intake rotation
-    public void setManualSpeed(double speed) {
-        this.leftMotor.set(speed);
-        this.rightMotor.set(speed);
+    public void setManualSpeed(double input) {
+        this.leftMotor.setVoltage(input * 12);
+        this.rightMotor.setVoltage(input * 12);
+
+        this.outputElevatorVolts.set(input * 12);
     }
 
     public void setIntakeAngleSpeed(double speed) {
@@ -179,8 +192,8 @@ public class Elevator implements TickedSubsystem {
 
         this.outputElevatorVolts.set(motorVoltage);
         
-        this.leftMotor.setVoltage(-motorVoltage -0.56);
-        this.rightMotor.setVoltage(-motorVoltage -0.56);
+        this.leftMotor.setVoltage(motorVoltage + 0.793);
+        this.rightMotor.setVoltage(motorVoltage + 0.793);
     }
 
     public void goToDesiredAngle() {
@@ -249,13 +262,6 @@ public class Elevator implements TickedSubsystem {
         this.intakeRotationError.set(this.intakeAnglePIDController.getError());
         this.intakePIDSetpoint.set(this.intakeAnglePIDController.getSetpoint());
         this.elevatorPIDSetpoint.set(this.elevatorPIDController.getSetpoint()); 
-
-
-        this.actualRightElevatorVolts.set(-rightMotor.getMotorVoltage().getValueAsDouble());
-        this.actualLeftElevatorVolts.set(-rightMotor.getMotorVoltage().getValueAsDouble());
-
-        this.elevatorRightCurrent.set(rightMotor.getStatorCurrent().getValueAsDouble());
-        this.elevatorLeftCurrent.set(leftMotor.getStatorCurrent().getValueAsDouble());
         
 
         //this.driveAccelerationProportionalLimitation(); //we always want this to be updating

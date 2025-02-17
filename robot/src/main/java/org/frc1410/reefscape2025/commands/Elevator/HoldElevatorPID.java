@@ -32,7 +32,7 @@ public class HoldElevatorPID extends Command{
        } else {
            this.elevator.setElevatorVolatgeToZero();
        }
-//       this.elevator.goToDesiredAngle();// uncomment when intake rotation mech is working again
+      this.elevator.goToDesiredAngle();// uncomment when intake rotation mech is working again
     }
 
     @Override

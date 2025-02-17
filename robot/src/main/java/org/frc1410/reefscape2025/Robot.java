@@ -40,6 +40,8 @@ public final class Robot extends PhaseDrivenRobot {
 //		this.operatorController.X.whileHeldOnce(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 		this.driverController.LEFT_BUMPER.whileHeld(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 
+		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
+
 		this.operatorController.Y.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L4, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.B.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L3, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.A.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L2, leds), TaskPersistence.GAMEPLAY);
@@ -54,7 +56,7 @@ public final class Robot extends PhaseDrivenRobot {
 //		this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, driverController.RIGHT_Y_AXIS), TaskPersistence.GAMEPLAY);
 
 		// Climber
-		this.scheduler.scheduleDefaultCommand(new ClimbCommand(this.climber, this.operatorController.RIGHT_TRIGGER, this.operatorController.LEFT_TRIGGER), TaskPersistence.GAMEPLAY);
+		//this.scheduler.scheduleDefaultCommand(new ClimbCommand(this.climber, this.operatorController.RIGHT_TRIGGER, this.operatorController.LEFT_TRIGGER), TaskPersistence.GAMEPLAY);
 //		this.scheduler.scheduleDefaultCommand(new UnClimb(this.climber, this.operatorController.LEFT_TRIGGER), TaskPersistence.GAMEPLAY);
 	}
 
