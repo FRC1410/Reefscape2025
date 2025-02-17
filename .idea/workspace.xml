@@ -579,8 +579,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.Reefscape2025 [deploy]" />
       <item itemvalue="Gradle.Reefscape2025 [dependencies]" />
+      <item itemvalue="Gradle.Reefscape2025 [deploy]" />
       <item itemvalue="Gradle.Reefscape2025:framework [build]" />
       <item itemvalue="Gradle.Reefscape2025:robot [build]" />
       <item itemvalue="Gradle.Viridian-Framework [build]" />
@@ -594,14 +594,6 @@
         <item itemvalue="Gradle.Reefscape2025:framework [build]" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.117" />
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.117" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

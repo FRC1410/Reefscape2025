@@ -75,7 +75,7 @@ public class Elevator implements TickedSubsystem {
         var leftMotorConfig = new SparkMaxConfig();
 
         leftMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
-        leftMotorConfig.smartCurrentLimit(30);
+        leftMotorConfig.smartCurrentLimit(40);
 
         leftMotorConfig.inverted(false);
 
@@ -90,7 +90,7 @@ public class Elevator implements TickedSubsystem {
         var rightMotorConfig = new SparkMaxConfig();
 
         rightMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
-        rightMotorConfig.smartCurrentLimit(30);
+        rightMotorConfig.smartCurrentLimit(40);
 
         rightMotorConfig.inverted(true);
 
@@ -190,10 +190,15 @@ public class Elevator implements TickedSubsystem {
                 this.desiredElevatorHeightConfirmed
         );
 
-        this.outputElevatorVolts.set(motorVoltage);
-        
-        this.leftMotor.setVoltage(motorVoltage + 0.793);
-        this.rightMotor.setVoltage(motorVoltage + 0.793);
+        if(motorVoltage >12) {
+            this.outputElevatorVolts.set(12);
+            this.leftMotor.setVoltage(12);
+            this.rightMotor.setVoltage(12);
+        } else {
+            this.outputElevatorVolts.set(motorVoltage);
+            this.leftMotor.setVoltage(motorVoltage);
+            this.rightMotor.setVoltage(motorVoltage);
+        }
     }
 
     public void goToDesiredAngle() {
@@ -266,6 +271,7 @@ public class Elevator implements TickedSubsystem {
 
         //this.driveAccelerationProportionalLimitation(); //we always want this to be updating
 
+        this.elevatorLeftCurrent.set(this.leftMotor.getOutputCurrent());
 
         this.getCurrentElevatorDistance();
         this.getCurrentIntakeAngle();
