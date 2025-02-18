@@ -248,9 +248,9 @@ public class Elevator implements TickedSubsystem {
         this.intakeAngleMotor.getAlternateEncoder().setPosition(0);
     }
 
-    public double driveAccelerationProportionalLimitation() {
+    public double driveAccelerationLimitation() {
         driveAccelerationProportionalLimitationMultiplier = 
-            (slopeCalculationDriveAcceleration *
+            (elevatorAccelerationCalculation *
             (Math.abs(getCurrentElevatorDistance()) + 1)) //+ 1 so that it != zero
             + 1;
         return driveAccelerationProportionalLimitationMultiplier;
