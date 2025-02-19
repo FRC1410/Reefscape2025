@@ -29,7 +29,7 @@ public final class IDs {
 	public static final int INTAKE_ROTATION_MOTOR = 13;
 	public static final int LBOZO_BOTTOM_MOTOR = 14;
 	public static final int LBOZO_TOP_MOTOR = 15;
-	public static final int LBOZO_LINE_BREAK_SENSOR = 20; //TBD
+	public static final int LBOZO_LINE_BREAK_SENSOR = 2; //TBD
 
 	//Climber
 	public static final int BOTTOM_CLIMB_MOTOR_ID = 12;

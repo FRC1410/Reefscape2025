@@ -43,8 +43,6 @@ public class Elevator implements TickedSubsystem {
             INTAKE_ANGLE_I,
             INTAKE_ANGLE_D
     );
-
-
     
     private final NetworkTable table = NetworkTableInstance.getDefault().getTable("Elevator");
     private final NetworkTable intakeTable = NetworkTableInstance.getDefault().getTable("IntakeRotation");

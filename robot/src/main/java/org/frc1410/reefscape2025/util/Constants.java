@@ -117,7 +117,7 @@ public final class Constants {
             BACK_RIGHT_SWERVE_MODULE_LOCATION
     );
 
-    public static final double slowMultiplier = 0.5;
+    public static final double slowMultiplier = 1;
     public static final LinearVelocity SWERVE_DRIVE_MAX_SPEED = MetersPerSecond.of(5.5 * slowMultiplier);
     public static final AngularVelocity SWERVE_DRIVE_MAX_ANGULAR_VELOCITY = DegreesPerSecond.of(570 * slowMultiplier);
     public static final LinearAcceleration SWERVE_DRIVE_MAX_ACCELERATION = MetersPerSecondPerSecond.of(6 * slowMultiplier);

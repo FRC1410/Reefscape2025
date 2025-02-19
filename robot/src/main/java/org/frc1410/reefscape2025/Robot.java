@@ -11,7 +11,9 @@ import org.frc1410.reefscape2025.commands.Elevator.*;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.ConfigureElevatorHeight;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.ConfigureIntakeAngle;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.HomeElevator;
+import org.frc1410.reefscape2025.commands.Elevator.Actions.IntakeAction;
 import org.frc1410.reefscape2025.commands.Elevator.Manual.ElevatorManual;
+import org.frc1410.reefscape2025.commands.Lbozo.IntakeCoral;
 import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoral;
 import org.frc1410.reefscape2025.commands.climber.ClimbCommand;
 import org.frc1410.reefscape2025.subsystems.Climber;
@@ -37,7 +39,7 @@ import static org.frc1410.reefscape2025.util.Constants.*;
 
 public final class Robot extends PhaseDrivenRobot {
 
-	private final Controller driverController = new Controller(this.scheduler, DRIVER_CONTROLLER, 0.1);
+	private final Controller driverController = new Controller(this.scheduler, DRIVER_CONTROLLER, 0.05);
 	private final Controller operatorController = new Controller(this.scheduler, OPERATOR_CONTROLLER,  0.1);
 
 	private final Drivetrain drivetrain = subsystems.track(new Drivetrain(this.subsystems));
@@ -102,8 +104,8 @@ public final class Robot extends PhaseDrivenRobot {
 
 	@Override
 	public void teleopSequence() {
-//		this.operatorController.X.whileHeldOnce(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
-		this.driverController.LEFT_BUMPER.whileHeld(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
+		this.operatorController.RIGHT_BUMPER.whileHeldOnce(new IntakeAction(elevator, lBozo, leds), TaskPersistence.GAMEPLAY);
+		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 
 		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
 
@@ -142,7 +144,7 @@ public final class Robot extends PhaseDrivenRobot {
 							}
 					), TaskPersistence.GAMEPLAY);
 
-					this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new AutoAlign(
+					this.driverController.RIGHT_BUMPER.whileHeldOnce(new AutoAlign(
 							this.drivetrain,
 							this.driverController.LEFT_BUMPER.isActive()
 						), TaskPersistence.GAMEPLAY
