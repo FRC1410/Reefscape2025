@@ -44,7 +44,7 @@ public class DriveLooped extends Command {
 
         switch (elevator.desiredElevatorHeightConfirmed) {
             case 1890, 3600, 6218 -> DRIVE_MULTIPLIER = 0.25;
-            case 11080 -> DRIVE_MULTIPLIER = 0.2;
+            case 12080 -> DRIVE_MULTIPLIER = 0.1;
             default -> DRIVE_MULTIPLIER = 1.0;
         }
 

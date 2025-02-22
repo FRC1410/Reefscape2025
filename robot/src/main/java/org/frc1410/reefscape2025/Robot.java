@@ -1,21 +1,16 @@
 package org.frc1410.reefscape2025;
 
-import edu.wpi.first.wpilibj2.command.Command;
+import com.pathplanner.lib.auto.NamedCommands;
 import org.frc1410.framework.AutoSelector;
 import org.frc1410.framework.PhaseDrivenRobot;
 import org.frc1410.framework.control.Controller;
-import org.frc1410.framework.scheduler.task.Task;
 import org.frc1410.framework.scheduler.task.TaskPersistence;
-import org.frc1410.framework.scheduler.task.impl.CommandTask;
 import org.frc1410.framework.scheduler.task.lock.LockPriority;
 import org.frc1410.reefscape2025.commands.Drivetrain.AutoAlign;
 import org.frc1410.reefscape2025.commands.Drivetrain.DriveLooped;
 import org.frc1410.reefscape2025.commands.Drivetrain.ToggleSlowmode;
 import org.frc1410.reefscape2025.commands.Elevator.*;
-import org.frc1410.reefscape2025.commands.Elevator.Actions.ConfigureElevatorHeight;
-import org.frc1410.reefscape2025.commands.Elevator.Actions.ConfigureIntakeAngle;
-import org.frc1410.reefscape2025.commands.Elevator.Actions.HomeElevator;
-import org.frc1410.reefscape2025.commands.Elevator.Actions.IntakeAction;
+import org.frc1410.reefscape2025.commands.Elevator.Actions.*;
 import org.frc1410.reefscape2025.commands.Lbozo.IntakeCoral;
 import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoral;
 import org.frc1410.reefscape2025.commands.climber.ClimbCommand;
@@ -36,6 +31,8 @@ import edu.wpi.first.networktables.StringPublisher;
 import edu.wpi.first.networktables.StringSubscriber;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
+
+import javax.naming.Name;
 
 import static org.frc1410.reefscape2025.util.IDs.*;
 import static org.frc1410.reefscape2025.util.Constants.*;
@@ -68,6 +65,16 @@ public final class Robot extends PhaseDrivenRobot {
 	}
 
 	public Robot() {
+		NamedCommands.registerCommand("Hold PID", new HoldElevatorPID(this.elevator));
+		NamedCommands.registerCommand("Prime Elevator", new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L4, leds));
+		NamedCommands.registerCommand("Go to height", new ConfigureElevatorHeight(elevator));
+
+		NamedCommands.registerCommand("Go to state", new AutoScore(elevator, lBozo, Elevator.ELEVATOR_STATE.L4, leds));
+
+		NamedCommands.registerCommand("Run Intake", new IntakeAction(elevator, lBozo, leds));
+		NamedCommands.registerCommand("Outtake", new OuttakeCoral(lBozo, leds));
+
+		NamedCommands.registerCommand("Home Elevator", new HomeElevatorA(elevator));
 		
 		AutoBuilder.configure(
 				this.drivetrain::getEstimatedPosition,
@@ -86,7 +93,6 @@ public final class Robot extends PhaseDrivenRobot {
 				},
 				drivetrain
 		);
-
 	}
 
 	private final StringPublisher autoPublisher = NetworkTables.PublisherFactory(this.table, "Profile",

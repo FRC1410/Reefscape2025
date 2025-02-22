@@ -1,5 +1,6 @@
 package org.frc1410.reefscape2025.subsystems;
 
+import com.ctre.phoenix6.configs.Pigeon2Configuration;
 import com.ctre.phoenix6.hardware.Pigeon2;
 import com.studica.frc.AHRS;
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
@@ -76,8 +77,9 @@ public class Drivetrain implements TickedSubsystem {
     private final SwerveModule backLeftModule;
     private final SwerveModule backRightModule;
 
-//    private final AHRS gyro = new AHRS(AHRS.NavXComType.kMXP_SPI);
-    private final Pigeon2 gyro = new Pigeon2(PIGEON_ID, "CTRE");
+//    p
+//    rivate final AHRS gyro = new AHRS(AHRS.NavXComType.kMXP_SPI);
+    private final Pigeon2 gyro = new Pigeon2(PIGEON_ID);
 
     private final SwerveDrivePoseEstimator poseEstimator;
 
@@ -144,6 +146,13 @@ public class Drivetrain implements TickedSubsystem {
         ));
 
         this.gyro.reset();
+
+        final Pigeon2Configuration bird = new Pigeon2Configuration();
+        bird.MountPose.MountPosePitch = 90;
+        bird.MountPose.MountPoseRoll = 0;
+        bird.MountPose.MountPoseYaw = -180;
+
+        this.gyro.getConfigurator().apply(bird);
 
         this.poseEstimator = new SwerveDrivePoseEstimator(
                 SWERVE_DRIVE_KINEMATICS,

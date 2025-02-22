@@ -105,7 +105,7 @@ public class Elevator implements TickedSubsystem {
         var intakeAngleMotorConfig = new SparkMaxConfig();
 
         intakeAngleMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
-        intakeAngleMotorConfig.smartCurrentLimit(30);
+        intakeAngleMotorConfig.smartCurrentLimit(25);
 
         intakeAngleMotorConfig.inverted(false);
 
@@ -173,6 +173,15 @@ public class Elevator implements TickedSubsystem {
     public void setDesiredElevatorState() {
         this.desiredElevatorHeightConfirmed = this.desiredElevatorHeight;
         this.elevatorPIDController.setSetpoint(desiredElevatorHeightConfirmed);
+    }
+
+    public void setDesiredIntakeStateAuto(ELEVATOR_STATE desriedIntakeState) {
+        this.desiredElevatorAngle = desriedIntakeState.getElevatorAngle();
+        this.desiredElevatorHeight = desriedIntakeState.getElevatorDistance();
+    }
+
+    public void setIntakeAngleMotorSetpoint() {
+        this.intakeAngleMotor.set(desiredElevatorAngle);
     }
 
     public void setDesiredIntakeState(ELEVATOR_STATE desriedIntakeState) {
