@@ -1,18 +1,21 @@
 package org.frc1410.reefscape2025;
 
+import edu.wpi.first.wpilibj2.command.Command;
 import org.frc1410.framework.AutoSelector;
 import org.frc1410.framework.PhaseDrivenRobot;
 import org.frc1410.framework.control.Controller;
+import org.frc1410.framework.scheduler.task.Task;
 import org.frc1410.framework.scheduler.task.TaskPersistence;
+import org.frc1410.framework.scheduler.task.impl.CommandTask;
 import org.frc1410.framework.scheduler.task.lock.LockPriority;
 import org.frc1410.reefscape2025.commands.Drivetrain.AutoAlign;
 import org.frc1410.reefscape2025.commands.Drivetrain.DriveLooped;
+import org.frc1410.reefscape2025.commands.Drivetrain.ToggleSlowmode;
 import org.frc1410.reefscape2025.commands.Elevator.*;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.ConfigureElevatorHeight;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.ConfigureIntakeAngle;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.HomeElevator;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.IntakeAction;
-import org.frc1410.reefscape2025.commands.Elevator.Manual.ElevatorManual;
 import org.frc1410.reefscape2025.commands.Lbozo.IntakeCoral;
 import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoral;
 import org.frc1410.reefscape2025.commands.climber.ClimbCommand;
@@ -39,11 +42,11 @@ import static org.frc1410.reefscape2025.util.Constants.*;
 
 public final class Robot extends PhaseDrivenRobot {
 
-	private final Controller driverController = new Controller(this.scheduler, DRIVER_CONTROLLER, 0.05);
+	private final Controller driverController = new Controller(this.scheduler, DRIVER_CONTROLLER, 0.2);
 	private final Controller operatorController = new Controller(this.scheduler, OPERATOR_CONTROLLER,  0.1);
 
-	private final Drivetrain drivetrain = subsystems.track(new Drivetrain(this.subsystems));
 	private final Elevator elevator = subsystems.track(new Elevator());
+	private final Drivetrain drivetrain = subsystems.track(new Drivetrain(this.subsystems));
 	private final LBozo lBozo = subsystems.track(new LBozo());
 	private final Climber climber = subsystems.track(new Climber());
 	private final LEDs leds = subsystems.track(new LEDs());
@@ -63,7 +66,6 @@ public final class Robot extends PhaseDrivenRobot {
 		autoChoicesPub.accept(profiles);
 		}
 	}
-
 
 	public Robot() {
 		
@@ -105,6 +107,7 @@ public final class Robot extends PhaseDrivenRobot {
 	@Override
 	public void teleopSequence() {
 		this.operatorController.RIGHT_BUMPER.whileHeldOnce(new IntakeAction(elevator, lBozo, leds), TaskPersistence.GAMEPLAY);
+		this.operatorController.LEFT_BUMPER.whileHeldOnce(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 
 		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
@@ -128,27 +131,39 @@ public final class Robot extends PhaseDrivenRobot {
 
 		this.scheduler.scheduleDefaultCommand(new DriveLooped(
 						this.drivetrain,
+						this.elevator,
 						this.driverController.LEFT_Y_AXIS,
 						this.driverController.LEFT_X_AXIS,
 						this.driverController.RIGHT_X_AXIS,
 						this.driverController.LEFT_TRIGGER
-					), TaskPersistence.EPHEMERAL, LockPriority.HIGH);
+					), TaskPersistence.EPHEMERAL, LockPriority.HIGH
+		);
 
-					this.driverController.Y.whenPressed(new InstantCommand(
-							() -> {
-								if (DriverStation.getAlliance().get() == DriverStation.Alliance.Blue) {
-									this.drivetrain.setYaw(Rotation2d.fromDegrees(180));
-								} else {
-									this.drivetrain.setYaw(Rotation2d.fromDegrees(0));
-								}
-							}
-					), TaskPersistence.GAMEPLAY);
+		this.driverController.A.whenPressed(new ToggleSlowmode(drivetrain), TaskPersistence.GAMEPLAY);
 
-					this.driverController.RIGHT_BUMPER.whileHeldOnce(new AutoAlign(
-							this.drivetrain,
-							this.driverController.LEFT_BUMPER.isActive()
-						), TaskPersistence.GAMEPLAY
-					);
+		this.driverController.Y.whenPressed(new InstantCommand(
+				() -> {
+					if (DriverStation.getAlliance().get() == DriverStation.Alliance.Blue) {
+						this.drivetrain.setYaw(Rotation2d.fromDegrees(180));
+					} else {
+						this.drivetrain.setYaw(Rotation2d.fromDegrees(0));
+					}
+				}
+				), TaskPersistence.GAMEPLAY
+		);
+
+		this.driverController.RIGHT_BUMPER.whileHeldOnce(new AutoAlign(
+				this.drivetrain,
+						true
+				), TaskPersistence.GAMEPLAY
+		);
+
+		this.driverController.LEFT_BUMPER.whileHeldOnce(new AutoAlign(
+				this.drivetrain,
+				false
+				), TaskPersistence.GAMEPLAY
+		);
+
 
 	}
 

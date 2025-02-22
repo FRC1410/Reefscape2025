@@ -1,7 +1,5 @@
 package org.frc1410.reefscape2025.subsystems;
 
-import com.ctre.phoenix6.configs.Pigeon2Configurator;
-import com.ctre.phoenix6.hardware.DeviceIdentifier;
 import com.ctre.phoenix6.hardware.Pigeon2;
 import com.studica.frc.AHRS;
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
@@ -29,6 +27,7 @@ import java.util.Optional;
 import static edu.wpi.first.units.Units.*;
 import static org.frc1410.reefscape2025.util.Constants.*;
 import static org.frc1410.reefscape2025.util.IDs.*;
+import static org.frc1410.reefscape2025.util.Tuning.*;
 
 public class Drivetrain implements TickedSubsystem {
     private final NetworkTable table = NetworkTableInstance.getDefault().getTable("Drivetrain");
@@ -88,6 +87,8 @@ public class Drivetrain implements TickedSubsystem {
     private final boolean tempVal = true;
     private double previousPipelineTimestamp = 0;
     private boolean hasSeenAprilTag = false;
+
+    private boolean slowmode = false;
 
     public Drivetrain(SubsystemStore subsystems) {
         this.frontLeftModule = subsystems.track(new SwerveModule(
@@ -238,6 +239,18 @@ public class Drivetrain implements TickedSubsystem {
                 .plus(this.backLeftModule.getAngularVelocity())
                 .plus(this.backRightModule.getAngularVelocity())
                 .div(4);
+    }
+
+    public void switchSlowmode() {
+        if(!slowmode) {
+            slowmode = true;
+        } else {
+            slowmode = false;
+        }
+    }
+
+    public boolean isSlowModeEnabled() {
+        return slowmode;
     }
 
     @Override

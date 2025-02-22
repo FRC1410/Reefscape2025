@@ -64,7 +64,7 @@ public class Elevator implements TickedSubsystem {
     
 
     private int desiredElevatorHeight = 1;
-    private int desiredElevatorHeightConfirmed = 1;
+    public int desiredElevatorHeightConfirmed = 1;
     private double desiredElevatorAngle = 0;
 
     public Elevator() {

@@ -34,17 +34,18 @@ import static org.frc1410.reefscape2025.util.ReefPaths.*;
 public final class Constants {
     public static int SAFE_HEIGHT = 1;
     public static int L_1_HEIGHT = 1790;
-    public static int L_2_HEIGHT = 3500;
-    public static int L_3_HEIGHT = 6118;
-    public static int L_4_HEIGHT = 10680;
+    public static int L_2_HEIGHT = 3600;
+    public static int L_3_HEIGHT = 6218;
+    public static int L_4_HEIGHT = 11080;
     public static int INTAKE_HEIGHT = 0;
     public static int HOME_HEIGHT = 0;  
 
     public static double SAFE_ANGLE = 0;
-    public static double L1_ANGLE = 0.595;
-    public static double L2_ANGLE = 0.553;
-    public static double L3_ANGLE = 0.553;
-    public static double L4_ANGLE = 0.674;
+    public static double L1_ANGLE = 0.6; //0.564453
+    public static double L2_ANGLE = 0.6;
+    public static double L3_ANGLE = 0.6;
+    public static double L4_ANGLE = 0.674; //0.447021
+
     public static double INTAKE_ANGLE = 1.808;
     public static double HOME_ANGLE = 0;
 
@@ -142,8 +143,6 @@ public final class Constants {
             PATH_FOLLOWING_TRANSLATION_CONSTRAINTS,
             PATH_FOLLOWING_ROTATION_CONSTRAINTS
     );
-    public static final List<ScoringPath> SCORING_POSITIONS_BLUE = List.of();
-    public static final List<ScoringPath> SCORING_POSITIONS_RED = SCORING_POSITIONS_BLUE.stream().map((position) -> new ScoringPath()).toList();
 
     public static final List<ReefSides> BLUE_REEF = List.of(
             BLUE_NORTH_REEF,

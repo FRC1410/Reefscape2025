@@ -5,15 +5,15 @@ import com.pathplanner.lib.config.PIDConstants;
 public final class Tuning {
     // Elevator
 
-    public static double ELEVEATOR_P = 0.004; //.0012
+    public static double ELEVEATOR_P = 0.004; //0.004
     public static double ELEVEATOR_I = 0;
     public static double ELEVEATOR_D = 0;
 
     public static double ELEVATOR_TOLERANCE = 50;
 
-    public static double INTAKE_ANGLE_P = 10;
-    public static double INTAKE_ANGLE_I = 0.5;
-    public static double INTAKE_ANGLE_D = 0.8;
+    public static double INTAKE_ANGLE_P = 10; //10
+    public static double INTAKE_ANGLE_I = 0.5; //0.5
+    public static double INTAKE_ANGLE_D = 0.8; //0.8
     
     public static double INTAKE_TOLERANCE = 0.05;
 
@@ -33,6 +33,8 @@ public final class Tuning {
 
     public static final double DRIVE_KS = 0.36498;
     public static final double DRIVE_KV = 0.11769;
+
+    public static double DRIVE_MULTIPLIER = 1.0;
 
     // Path following
     public static final PIDConstants PATH_AUTO_TRANSLATION_CONSTRAINTS = new PIDConstants(3.6, 0, 0);

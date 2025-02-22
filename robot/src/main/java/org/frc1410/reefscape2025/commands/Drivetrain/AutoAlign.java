@@ -82,6 +82,4 @@ public class AutoAlign extends Command {
             this.findThenFollowPath.end(interrupted);
         }
     }
-
-
 }
