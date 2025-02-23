@@ -14,9 +14,9 @@ public class AutoScore extends SequentialCommandGroup {
                 new InstantCommand(() -> elevator.setDesiredIntakeStateAuto(elevatorState)),
                 new InstantCommand(elevator::setDesiredElevatorState),
                 new InstantCommand(elevator::goToDesiredHeight),
-                new WaitCommand(0.5),
-                new InstantCommand(elevator::setIntakeAngleMotorSetpoint),
-                new WaitCommand(1)
+                new WaitCommand(1),
+                new InstantCommand(() -> elevator.setIntakeAngleMotorSetpoint(elevatorState)),
+                new WaitCommand(0.7)
         );
     }
 }

@@ -6,23 +6,28 @@ import org.frc1410.reefscape2025.subsystems.Elevator;
 
 public class IntakeAngleManual extends Command {
     private Elevator elevator;
-    private Axis axis;
+    private boolean isInverted;
 
-    public IntakeAngleManual(Elevator elevator, Axis axis) {
+    public IntakeAngleManual(Elevator elevator, boolean isInverted) {
         this.elevator = elevator;
-        this.axis = axis;
+        this.isInverted = isInverted;
         addRequirements(elevator);
     }
 
     @Override
     public void initialize() {
+        
+       
 
     }
 
     @Override
     public void execute() {
-        double speed = axis.get();
-        this.elevator.setIntakeAngleSpeed(speed);
+        if (isInverted) {
+            this.elevator.setIntakeAngleSetpoint(-.3);
+        } else {
+            this.elevator.setIntakeAngleSetpoint(0.3);
+        }
     }
 
     @Override
@@ -32,7 +37,10 @@ public class IntakeAngleManual extends Command {
 
     @Override
     public void end(boolean interrupted) {
-        this.elevator.setManualSpeed(0);
-
+        if(!this.isInverted) {
+            this.elevator.resetIntakeRotationEncoder();
+            this.elevator.setIntakeAngleSetpoint(0);
+        }
+        
     }
 }

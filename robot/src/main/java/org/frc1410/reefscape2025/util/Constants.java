@@ -161,7 +161,7 @@ public final class Constants {
     public static final AprilTagFieldLayout APRIL_TAG_FIELD_LAYOUT = AprilTagFieldLayout.loadField(AprilTagFields.kDefaultField);
 
     public static final Transform3d REEF_CAMERA_POSE = new Transform3d(
-            new Translation3d(-0.0762,0.0127,0.22225),
+            new Translation3d(0.19,0,0.198685),
             new Rotation3d(0,0,0)
     );
 }

@@ -11,6 +11,7 @@ import org.frc1410.reefscape2025.commands.Drivetrain.DriveLooped;
 import org.frc1410.reefscape2025.commands.Drivetrain.ToggleSlowmode;
 import org.frc1410.reefscape2025.commands.Elevator.*;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.*;
+import org.frc1410.reefscape2025.commands.Elevator.Manual.IntakeAngleManual;
 import org.frc1410.reefscape2025.commands.Lbozo.IntakeCoral;
 import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoral;
 import org.frc1410.reefscape2025.commands.climber.ClimbCommand;
@@ -144,6 +145,10 @@ public final class Robot extends PhaseDrivenRobot {
 						this.driverController.LEFT_TRIGGER
 					), TaskPersistence.EPHEMERAL, LockPriority.HIGH
 		);
+
+
+		this.operatorController.START.whileHeldOnce(new IntakeAngleManual(elevator, true), TaskPersistence.GAMEPLAY);
+		this.operatorController.LEFT_STICK.whileHeldOnce(new IntakeAngleManual(elevator, false), TaskPersistence.GAMEPLAY);
 
 		this.driverController.A.whenPressed(new ToggleSlowmode(drivetrain), TaskPersistence.GAMEPLAY);
 

@@ -42,11 +42,7 @@ public class DriveLooped extends Command {
         LinearVelocity yVelocity;
         AngularVelocity angularVelocity;
 
-        switch (elevator.desiredElevatorHeightConfirmed) {
-            case 1890, 3600, 6218 -> DRIVE_MULTIPLIER = 0.25;
-            case 12080 -> DRIVE_MULTIPLIER = 0.1;
-            default -> DRIVE_MULTIPLIER = 1.0;
-        }
+        
 
         if(this.drivetrain.isSlowModeEnabled()) {
             xVelocity = SWERVE_DRIVE_MAX_SPEED.times(-this.xAxis.get() * 0.6);
@@ -68,7 +64,7 @@ public class DriveLooped extends Command {
                             xVelocity.in(MetersPerSecond),
                             yVelocity.in(MetersPerSecond),
                             angularVelocity.in(RadiansPerSecond)
-                    ).times(DRIVE_MULTIPLIER)
+                    ).times(this.elevator.driveAccelerationLimitation())
             );
         }
     }
