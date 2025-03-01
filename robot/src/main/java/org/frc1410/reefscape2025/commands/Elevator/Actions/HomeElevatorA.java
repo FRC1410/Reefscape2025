@@ -11,7 +11,7 @@ public class HomeElevatorA extends SequentialCommandGroup {
                 new InstantCommand(() -> elevator.setDesiredIntakeState(Elevator.ELEVATOR_STATE.HOME)),
                 new WaitCommand(0.5),
                 new InstantCommand(elevator::setDesiredElevatorState),
-                new WaitCommand(0.7)
+                new WaitCommand(0)
         );
     }
 }

@@ -137,7 +137,8 @@ public class Elevator implements TickedSubsystem {
         L3(L_3_HEIGHT, L3_ANGLE),
         L4(L_4_HEIGHT, L4_ANGLE),
         INTAKE(INTAKE_HEIGHT, INTAKE_ANGLE),
-        HOME(HOME_HEIGHT, HOME_ANGLE);
+        HOME(HOME_HEIGHT, HOME_ANGLE),
+       L1TEMP(HOME_HEIGHT, TempL1);
 
         private final int elevatorDistance;
         private final double elevatorAngle;
@@ -165,6 +166,11 @@ public class Elevator implements TickedSubsystem {
         this.outputElevatorVolts.set(input * 12);
     }
 
+    public void setElevatorSetPoint(double subtract) {
+        this.desiredElevatorAngle = this.getCurrentElevatorDistance() - subtract;
+        this.intakeAnglePIDController.setSetpoint(desiredElevatorAngle);
+    }
+
     public void setIntakeAngleSpeed(double speed) {
         this.intakeAngleMotor.set(speed);
     }
@@ -183,6 +189,10 @@ public class Elevator implements TickedSubsystem {
     public void setIntakeAngleMotorSetpoint(ELEVATOR_STATE desiredIntakeState) {
         this.desiredElevatorAngle = desiredIntakeState.getElevatorAngle();
         this.intakeAnglePIDController.setSetpoint(desiredElevatorAngle);
+    }
+
+    public double getDesiredElevatorAngleSetpoint() {
+        return this.intakeAnglePIDController.getSetpoint();
     }
 
     public void setDesiredIntakeState(ELEVATOR_STATE desriedIntakeState) {

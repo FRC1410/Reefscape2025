@@ -10,22 +10,15 @@ public class ResetEncoders extends Command{
     private boolean resetElevatorEncoder;
     private boolean resetIntakeRotationEncoder;
 
-    public ResetEncoders(Elevator elevator, boolean resetElevatorEncoder, boolean resetIntakeRotationEncoder) {
+    public ResetEncoders(Elevator elevator) {
         this.elevator = elevator;
         this.resetElevatorEncoder = resetElevatorEncoder;
-        this.resetIntakeRotationEncoder = resetElevatorEncoder;
+     
     }
     
     @Override
     public void initialize() {
-        if(this.resetElevatorEncoder) {
-            this.elevator.resetElevatorEncoder();
-            //elevator.setElevatorVolatgeToZero();
-        }
-        if (this.resetIntakeRotationEncoder) {
-            this.elevator.resetElevatorEncoder();
-            //elevator.setIntakeRotationVolatgeToZero();
-        }
+        this.elevator.resetElevatorEncoder();
     }
 
 

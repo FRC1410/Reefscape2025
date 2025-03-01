@@ -33,10 +33,10 @@ import static org.frc1410.reefscape2025.util.ReefPaths.*;
 
 public final class Constants {
     public static int SAFE_HEIGHT = 1;
-    public static int L_1_HEIGHT = 1790;
-    public static int L_2_HEIGHT = 3600;
-    public static int L_3_HEIGHT = 6218;
-    public static int L_4_HEIGHT = 11280;
+    public static int L_1_HEIGHT = 1790 + 250; //1790
+    public static int L_2_HEIGHT = 3600 + 250; //3600
+    public static int L_3_HEIGHT = 6218 + 250; //6218
+    public static int L_4_HEIGHT = 11280 + 250; //11280
     public static int INTAKE_HEIGHT = 0;
     public static int HOME_HEIGHT = 0;  
 
@@ -44,10 +44,12 @@ public final class Constants {
     public static double L1_ANGLE = 0.6; //0.564453
     public static double L2_ANGLE = 0.6;
     public static double L3_ANGLE = 0.6;
-    public static double L4_ANGLE = 0.604; //0.447021
+    public static double L4_ANGLE = 0.46002; //0.447021
 
     public static double INTAKE_ANGLE = 1.808;
     public static double HOME_ANGLE = 0;
+    public static double TempL1 = 1.15;
+
 
     public static final double elevatorAccelerationCalculation = -1/(L_4_HEIGHT/.8);
 
@@ -88,12 +90,12 @@ public final class Constants {
     // Drive constants
     public static final Angle FRONT_LEFT_STEER_ENCODER_OFFSET = Degrees.of(+14.589844);
     public static final Angle FRONT_RIGHT_STEER_ENCODER_OFFSET = Degrees.of(-179.648438);
-    public static final Angle BACK_LEFT_STEER_ENCODER_OFFSET = Degrees.of(-49.130859);
+    public static final Angle BACK_LEFT_STEER_ENCODER_OFFSET = Degrees.of(154.863281); //-49.130859
     public static final Angle BACK_RIGHT_STEER_ENCODER_OFFSET = Degrees.of(-27.861328);
 
     public static final boolean FRONT_LEFT_DRIVE_MOTOR_INVERTED = true;
     public static final boolean FRONT_RIGHT_DRIVE_MOTOR_INVERTED = false;
-    public static final boolean BACK_LEFT_DRIVE_MOTOR_INVERTED = false;
+    public static final boolean BACK_LEFT_DRIVE_MOTOR_INVERTED = true;
     public static final boolean BACK_RIGHT_DRIVE_MOTOR_INVERTED = false;
 
     public static final boolean FRONT_LEFT_STEER_MOTOR_INVERTED = true;

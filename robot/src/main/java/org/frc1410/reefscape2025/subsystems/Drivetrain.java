@@ -61,6 +61,8 @@ public class Drivetrain implements TickedSubsystem {
     private final DoublePublisher pitch = NetworkTables.PublisherFactory(this.table, "pitch", 0);
     private final DoublePublisher roll = NetworkTables.PublisherFactory(this.table, "roll", 0);
 
+    private final DoublePublisher pose = NetworkTables.PublisherFactory(this.table, "Pose", 0);
+
     private final DoublePublisher rawPidgionVal = NetworkTables.PublisherFactory(this.table, "Pidgion Val", 0);
 
     private final DoublePublisher characterizationVolts = NetworkTables.PublisherFactory(this.table,
@@ -282,15 +284,17 @@ public class Drivetrain implements TickedSubsystem {
             }
         }
 
-        this.poseX.set(this.getEstimatedPosition().getX());
-        this.poseY.set(this.getEstimatedPosition().getY());
-        this.heading.set(this.getEstimatedPosition().getRotation().getDegrees());
+        // this.poseX.set(this.getEstimatedPosition().getX());
+        // this.poseY.set(this.getEstimatedPosition().getY());
+        // this.heading.set(this.getEstimatedPosition().getRotation().getDegrees());
 
-        this.yaw.set(this.getGyroYaw().getDegrees());
-        this.pitch.set(this.gyro.getPitch().getValue().in(Units.Degrees));
-        this.roll.set(this.gyro.getRoll().getValue().in(Units.Degrees));
+        // this.yaw.set(this.getGyroYaw().getDegrees());
+        // this.pitch.set(this.gyro.getPitch().getValue().in(Units.Degrees));
+        // this.roll.set(this.gyro.getRoll().getValue().in(Units.Degrees));
 
         this.posePublisher.set(this.getEstimatedPosition());
         this.encoderOnlyPosePublisher.set(new Pose2d(new Translation2d(4, 4), this.getGyroYaw()));
+
+        
     }
 }

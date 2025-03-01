@@ -8,26 +8,21 @@ import static org.frc1410.reefscape2025.util.Constants.*;
 
 public class ClimbCommand extends Command {
     private final Climber climber;
-    private final Axis rightaxis;
-    private final Axis leftaxis;
 
-    public ClimbCommand(Climber climber, Axis rightaxis, Axis Leftaxis) {
+    public ClimbCommand(Climber climber) {
         this.climber = climber;
-        this.rightaxis = rightaxis;
-        this.leftaxis = Leftaxis;
+     
         addRequirements(climber);
     }
 
     @Override
     public void initialize() {
-
+        this.climber.setClimberSpeed(1);
     }
 
     @Override
     public void execute() {
-        double rightTrigger = this.rightaxis.get();
-        double leftTrigger = this.leftaxis.get();
-        this.climber.setClimberSpeed((rightTrigger - leftTrigger) * CLIMBER_MOTOR_MAX_SPEED);
+        
     }
 
     @Override
