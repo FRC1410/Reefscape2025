@@ -16,8 +16,10 @@ import org.frc1410.reefscape2025.commands.Lbozo.IntakeCoral;
 import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoral;
 import org.frc1410.reefscape2025.commands.climber.ClimbCommand;
 import org.frc1410.reefscape2025.subsystems.Climber;
+import org.frc1410.reefscape2025.subsystems.CoralRotation;
 import org.frc1410.reefscape2025.subsystems.Drivetrain;
 import org.frc1410.reefscape2025.subsystems.Elevator;
+import org.frc1410.reefscape2025.subsystems.ElevatorStates;
 import org.frc1410.reefscape2025.subsystems.LBozo;
 import org.frc1410.reefscape2025.subsystems.LEDs;
 import org.frc1410.reefscape2025.util.NetworkTables;
@@ -44,6 +46,7 @@ public final class Robot extends PhaseDrivenRobot {
 	private final Controller operatorController = new Controller(this.scheduler, OPERATOR_CONTROLLER,  0.1);
 
 	private final Elevator elevator = subsystems.track(new Elevator());
+	private final CoralRotation coralRotation = subsystems.track(new CoralRotation());
 	private final Drivetrain drivetrain = subsystems.track(new Drivetrain(this.subsystems));
 	private final LBozo lBozo = subsystems.track(new LBozo());
 	private final Climber climber = subsystems.track(new Climber());
@@ -66,16 +69,18 @@ public final class Robot extends PhaseDrivenRobot {
 	}
 
 	public Robot() {
-		NamedCommands.registerCommand("Hold PID", new HoldElevatorPID(this.elevator));
-		NamedCommands.registerCommand("Prime Elevator", new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L4, leds));
-		NamedCommands.registerCommand("Go to height", new ConfigureElevatorHeight(elevator));
 
-		NamedCommands.registerCommand("Go to state", new AutoScore(elevator, lBozo, Elevator.ELEVATOR_STATE.L4, leds));
+		NamedCommands.registerCommand("Go to L4", new AutoScore(elevator, coralRotation, lBozo, ElevatorStates.L4, leds));
+		NamedCommands.registerCommand("Go to L3", new AutoScore(elevator, coralRotation, lBozo, ElevatorStates.L3, leds));
+		NamedCommands.registerCommand("Go to L2", new AutoScore(elevator, coralRotation, lBozo, ElevatorStates.L2, leds));
+		NamedCommands.registerCommand("Go to L1", new AutoScore(elevator, coralRotation, lBozo, ElevatorStates.L1, leds));
 
-		NamedCommands.registerCommand("Run Intake", new IntakeAction(elevator, lBozo, leds));
+		NamedCommands.registerCommand("Go to Home", new AutoScore(elevator, coralRotation, lBozo, ElevatorStates.HOME, leds));
+
+		NamedCommands.registerCommand("Run Intake", new IntakeCoral(lBozo, leds));
 		NamedCommands.registerCommand("Outtake", new OuttakeCoral(lBozo, leds));
 
-		NamedCommands.registerCommand("Home Elevator", new HomeElevatorA(elevator));
+		
 		
 		AutoBuilder.configure(
 				this.drivetrain::getEstimatedPosition,
@@ -113,23 +118,19 @@ public final class Robot extends PhaseDrivenRobot {
 
 	@Override
 	public void teleopSequence() {
-		this.operatorController.RIGHT_BUMPER.whileHeldOnce(new IntakeAction(elevator, lBozo, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.LEFT_BUMPER.whileHeldOnce(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 
 		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
 
-		this.operatorController.Y.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L4, leds), TaskPersistence.GAMEPLAY);
-		this.operatorController.B.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L3, leds), TaskPersistence.GAMEPLAY);
-		this.operatorController.A.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L2, leds), TaskPersistence.GAMEPLAY);
-		this.operatorController.X.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L1, leds), TaskPersistence.GAMEPLAY);
+		this.operatorController.Y.whenPressed(new ConfigureLevel(elevator, coralRotation, ElevatorStates.L4), TaskPersistence.GAMEPLAY);
+		this.operatorController.B.whenPressed(new ConfigureLevel(elevator, coralRotation, ElevatorStates.L3), TaskPersistence.GAMEPLAY);
+		this.operatorController.A.whenPressed(new ConfigureLevel(elevator, coralRotation, ElevatorStates.L2), TaskPersistence.GAMEPLAY);
+		this.operatorController.X.whenPressed(new ConfigureLevel(elevator, coralRotation, ElevatorStates.L1), TaskPersistence.GAMEPLAY);
 
-		this.operatorController.DPAD_UP.whenPressed(new ConfigureElevatorHeight(elevator), TaskPersistence.GAMEPLAY);
-		this.operatorController.DPAD_DOWN.whenPressed(new HomeElevator(elevator), TaskPersistence.GAMEPLAY);
 		
-		this.operatorController.RIGHT_BUMPER.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.INTAKE, leds), TaskPersistence.GAMEPLAY);
-
-		this.scheduler.scheduleDefaultCommand(new HoldElevatorPID(elevator), TaskPersistence.GAMEPLAY);
+		this.operatorController.DPAD_DOWN.whenPressed(new ConfigureLevel(elevator, coralRotation, ElevatorStates.HOME), TaskPersistence.GAMEPLAY);
+	
 //		this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, driverController.RIGHT_Y_AXIS), TaskPersistence.GAMEPLAY);
 
 		// Climber
@@ -147,8 +148,8 @@ public final class Robot extends PhaseDrivenRobot {
 		);
 
 
-		this.operatorController.START.whileHeldOnce(new IntakeAngleManual(elevator, true), TaskPersistence.GAMEPLAY);
-		this.operatorController.LEFT_STICK.whileHeldOnce(new IntakeAngleManual(elevator, false), TaskPersistence.GAMEPLAY);
+		this.operatorController.START.whileHeldOnce(new IntakeAngleManual(coralRotation, true), TaskPersistence.GAMEPLAY);
+		this.operatorController.LEFT_STICK.whileHeldOnce(new IntakeAngleManual(coralRotation, false), TaskPersistence.GAMEPLAY);
 
 		this.driverController.A.whenPressed(new ToggleSlowmode(drivetrain), TaskPersistence.GAMEPLAY);
 

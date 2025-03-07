@@ -64,7 +64,7 @@ public class DriveLooped extends Command {
                             xVelocity.in(MetersPerSecond),
                             yVelocity.in(MetersPerSecond),
                             angularVelocity.in(RadiansPerSecond)
-                    ).times(this.elevator.driveAccelerationLimitation())
+                    ).times(this.elevator.driveSpeedLimit())
             );
         }
     }

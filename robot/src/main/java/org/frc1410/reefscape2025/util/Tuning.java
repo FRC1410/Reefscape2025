@@ -15,7 +15,7 @@ public final class Tuning {
     public static double INTAKE_ANGLE_I = 0.5; //0.5
     public static double INTAKE_ANGLE_D = 0.8; //0.8
     
-    public static double INTAKE_TOLERANCE = 0.05;
+    public static double CORAL_ANGLE_TOLERANCE = 0.05;
 
 
     // Drivetrain

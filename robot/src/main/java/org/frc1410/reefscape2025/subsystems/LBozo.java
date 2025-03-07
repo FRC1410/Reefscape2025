@@ -15,6 +15,7 @@ public class LBozo implements Subsystem {
 
     private final SparkMax lBozoTopMotor = new SparkMax(LBOZO_TOP_MOTOR, SparkLowLevel.MotorType.kBrushless);
     private final SparkMax lBozoBottomMotor = new SparkMax(LBOZO_BOTTOM_MOTOR, SparkLowLevel.MotorType.kBrushless);
+    private final SparkMax outtakeMotor = new SparkMax(LBOZO_BOTTOM_MOTOR, SparkLowLevel.MotorType.kBrushless);
 
     public LBozo() {
         var topMotorConfig = new SparkMaxConfig();
@@ -30,11 +31,17 @@ public class LBozo implements Subsystem {
         bottomMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
         bottomMotorConfig.inverted(LBOZO_BACK_MOTOR_IS_INVERTED);
         this.lBozoBottomMotor.configure(bottomMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
+
+        this.outtakeMotor.configure(bottomMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
     }
 
     public void setLBozoSpeed(double speed) {
         this.lBozoTopMotor.set(speed);
         this.lBozoBottomMotor.set(speed);
+    }
+
+    public void outtake() {
+        this.outtakeMotor.set(0.4);
     }
 
     public boolean hasCoral(){

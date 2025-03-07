@@ -2,16 +2,17 @@ package org.frc1410.reefscape2025.commands.Elevator.Manual;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import org.frc1410.framework.control.Axis;
+import org.frc1410.reefscape2025.subsystems.CoralRotation;
 import org.frc1410.reefscape2025.subsystems.Elevator;
 
 public class IntakeAngleManual extends Command {
-    private Elevator elevator;
+    private CoralRotation coralRotation;
     private boolean isInverted;
 
-    public IntakeAngleManual(Elevator elevator, boolean isInverted) {
-        this.elevator = elevator;
+    public IntakeAngleManual(CoralRotation coralRotation, boolean isInverted) {
+        this.coralRotation = coralRotation;
         this.isInverted = isInverted;
-        addRequirements(elevator);
+        addRequirements(coralRotation);
     }
 
     @Override
@@ -24,9 +25,9 @@ public class IntakeAngleManual extends Command {
     @Override
     public void execute() {
         if (isInverted) {
-            this.elevator.setIntakeAngleSetpoint(-.3);
+            this.coralRotation.setCoralAngleManually(-0.3);
         } else {
-            this.elevator.setIntakeAngleSetpoint(0.3);
+            this.coralRotation.setCoralAngleManually(0.3);
         }
     }
 
@@ -38,8 +39,8 @@ public class IntakeAngleManual extends Command {
     @Override
     public void end(boolean interrupted) {
         if(!this.isInverted) {
-            this.elevator.resetIntakeRotationEncoder();
-            this.elevator.setIntakeAngleSetpoint(0);
+            this.coralRotation.resetAngleEncoder();
+            this.coralRotation.setCoralAngleManually(0);
         }
         
     }

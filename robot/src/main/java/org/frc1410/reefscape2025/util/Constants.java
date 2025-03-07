@@ -65,7 +65,7 @@ public final class Constants {
     public static final double LED_BRIGHTNESS = 1.0;
 
     //Drivetrain
-    public static double driveAccelerationProportionalLimitationMultiplier = 0;
+    public static double limiter = 0;
 
     public static RobotConfig ROBOT_CONFIG;
 

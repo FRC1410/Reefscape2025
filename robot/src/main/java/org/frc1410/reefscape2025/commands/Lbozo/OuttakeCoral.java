@@ -23,6 +23,7 @@ public class OuttakeCoral extends Command {
         }
 
         this.lBozo.setLBozoSpeed(-0.4);
+        this.lBozo.outtake();
     }
 
     @Override

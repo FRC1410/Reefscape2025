@@ -91,7 +91,7 @@ public class LEDs implements Subsystem {
         this.candle.setLEDs(this.r, this.g, this.b);
     }
 
-    public void getStateColor(Elevator.ELEVATOR_STATE elevatorState) {
+    public void getStateColor(ElevatorStates elevatorState) {
         switch (elevatorState) {
             case L1:
                 break;
