@@ -14,6 +14,7 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.Subsystem;
 
 import static org.frc1410.reefscape2025.util.Constants.*;
+import static org.frc1410.reefscape2025.util.IDs.INTAKE_ROTATION_MOTOR;
 import static org.frc1410.reefscape2025.util.Tuning.*;
 
 public class CoralRotation implements TickedSubsystem{
@@ -38,7 +39,7 @@ public class CoralRotation implements TickedSubsystem{
 
 
     public CoralRotation() {
-        this.coralRotationMotor = new SparkMax(1, SparkLowLevel.MotorType.kBrushless);
+        this.coralRotationMotor = new SparkMax(INTAKE_ROTATION_MOTOR, SparkLowLevel.MotorType.kBrushless);
 
         var coralRotationMotorConfig = new SparkMaxConfig();
 

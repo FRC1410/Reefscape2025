@@ -15,7 +15,7 @@ public class LBozo implements Subsystem {
 
     private final SparkMax lBozoTopMotor = new SparkMax(LBOZO_TOP_MOTOR, SparkLowLevel.MotorType.kBrushless);
     private final SparkMax lBozoBottomMotor = new SparkMax(LBOZO_BOTTOM_MOTOR, SparkLowLevel.MotorType.kBrushless);
-    private final SparkMax outtakeMotor = new SparkMax(LBOZO_BOTTOM_MOTOR, SparkLowLevel.MotorType.kBrushless);
+    private final SparkMax outtakeMotor = new SparkMax(LBOZO_OUTTAKE_MOTOR, SparkLowLevel.MotorType.kBrushless);
 
     public LBozo() {
         var topMotorConfig = new SparkMaxConfig();
@@ -40,15 +40,15 @@ public class LBozo implements Subsystem {
         this.lBozoBottomMotor.set(speed);
     }
 
-    public void outtake() {
-        this.outtakeMotor.set(0.4);
+    public void outtake(double speed) {
+        this.outtakeMotor.set(speed);
+
     }
 
     public boolean hasCoral(){
         try (DigitalInput lineBreakSensor = new DigitalInput(LBOZO_LINE_BREAK_SENSOR)) {
-            return lineBreakSensor.get();
+            return !(lineBreakSensor.get());
         } catch (Exception e){
-            System.out.println("Error: " + e.getMessage());
             return false;
         }
     }

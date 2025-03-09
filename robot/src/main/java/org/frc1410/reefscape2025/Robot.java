@@ -15,7 +15,7 @@ import org.frc1410.reefscape2025.commands.Elevator.Manual.IntakeAngleManual;
 import org.frc1410.reefscape2025.commands.Lbozo.IntakeCoral;
 import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoral;
 import org.frc1410.reefscape2025.commands.climber.ClimbCommand;
-import org.frc1410.reefscape2025.subsystems.Climber;
+//import org.frc1410.reefscape2025.subsystems.Climber;
 import org.frc1410.reefscape2025.subsystems.CoralRotation;
 import org.frc1410.reefscape2025.subsystems.Drivetrain;
 import org.frc1410.reefscape2025.subsystems.Elevator;
@@ -49,7 +49,7 @@ public final class Robot extends PhaseDrivenRobot {
 	private final CoralRotation coralRotation = subsystems.track(new CoralRotation());
 	private final Drivetrain drivetrain = subsystems.track(new Drivetrain(this.subsystems));
 	private final LBozo lBozo = subsystems.track(new LBozo());
-	private final Climber climber = subsystems.track(new Climber());
+//	private final Climber climber = subsystems.track(new Climber());
 	private final LEDs leds = subsystems.track(new LEDs());
 
 	private final NetworkTableInstance nt = NetworkTableInstance.getDefault();
@@ -134,7 +134,7 @@ public final class Robot extends PhaseDrivenRobot {
 //		this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, driverController.RIGHT_Y_AXIS), TaskPersistence.GAMEPLAY);
 
 		// Climber
-		this.scheduler.scheduleDefaultCommand(new ClimbCommand(this.climber, this.operatorController.RIGHT_TRIGGER, this.operatorController.LEFT_TRIGGER), TaskPersistence.GAMEPLAY);
+//		this.scheduler.scheduleDefaultCommand(new ClimbCommand(this.climber, this.operatorController.RIGHT_TRIGGER, this.operatorController.LEFT_TRIGGER), TaskPersistence.GAMEPLAY);
 //		this.scheduler.scheduleDefaultCommand(new UnClimb(this.climber, this.operatorController.LEFT_TRIGGER), TaskPersistence.GAMEPLAY);
 
 		this.scheduler.scheduleDefaultCommand(new DriveLooped(
