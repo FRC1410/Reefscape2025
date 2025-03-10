@@ -32,7 +32,12 @@ public class LBozo implements Subsystem {
         bottomMotorConfig.inverted(LBOZO_BACK_MOTOR_IS_INVERTED);
         this.lBozoBottomMotor.configure(bottomMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
 
-        this.outtakeMotor.configure(bottomMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
+        var outtakeMotorConfig = new SparkMaxConfig();
+
+        outtakeMotorConfig.smartCurrentLimit(30);
+        outtakeMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
+        outtakeMotorConfig.inverted(false);
+        this.outtakeMotor.configure(outtakeMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
     }
 
     public void setLBozoSpeed(double speed) {

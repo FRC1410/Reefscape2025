@@ -7,10 +7,14 @@ import org.frc1410.reefscape2025.subsystems.LEDs;
 public class IntakeCoral extends Command {
     private final LBozo lBozo;
     private final LEDs leds;
+    private int direction;
 
-    public IntakeCoral(LBozo lBozo, LEDs leds) {
+
+    public IntakeCoral(LBozo lBozo, LEDs leds, int direction) {
         this.lBozo = lBozo;
         this.leds = leds;
+        this.direction = direction;
+
         addRequirements(this.lBozo);
     }
 
@@ -21,8 +25,8 @@ public class IntakeCoral extends Command {
 
     @Override
     public void execute() {
-        this.lBozo.setLBozoSpeed(-0.5);
-        this.lBozo.outtake(0.4);
+        this.lBozo.setLBozoSpeed(-0.5 * direction);
+        this.lBozo.outtake(0.4 * direction);
     }
 
     @Override

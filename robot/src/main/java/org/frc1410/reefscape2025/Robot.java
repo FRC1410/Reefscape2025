@@ -77,7 +77,7 @@ public final class Robot extends PhaseDrivenRobot {
 
 		NamedCommands.registerCommand("Go to Home", new AutoScore(elevator, coralRotation, lBozo, ElevatorStates.HOME, leds));
 
-		NamedCommands.registerCommand("Run Intake", new IntakeCoral(lBozo, leds));
+		NamedCommands.registerCommand("Run Intake", new IntakeCoral(lBozo, leds, 1));
 		NamedCommands.registerCommand("Outtake", new OuttakeCoral(lBozo, leds));
 
 		
@@ -99,6 +99,8 @@ public final class Robot extends PhaseDrivenRobot {
 				},
 				drivetrain
 		);
+
+		
 	}
 
 	private final StringPublisher autoPublisher = NetworkTables.PublisherFactory(this.table, "Profile",
@@ -118,18 +120,23 @@ public final class Robot extends PhaseDrivenRobot {
 
 	@Override
 	public void teleopSequence() {
-		this.operatorController.LEFT_BUMPER.whileHeldOnce(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
+		this.operatorController.LEFT_BUMPER.whileHeldOnce(new IntakeCoral(lBozo, leds, 1), TaskPersistence.GAMEPLAY);
+		this.driverController.DPAD_RIGHT.whenPressed(new IntakeCoral(lBozo, leds, -1), TaskPersistence.GAMEPLAY);
 		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 
 		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
 
-		this.operatorController.Y.whenPressed(new ConfigureLevel(elevator, coralRotation, ElevatorStates.L4), TaskPersistence.GAMEPLAY);
-		this.operatorController.B.whenPressed(new ConfigureLevel(elevator, coralRotation, ElevatorStates.L3), TaskPersistence.GAMEPLAY);
+		// this.operatorController.Y.whenPressed(new ConfigureLevel(elevator, coralRotation, ElevatorStates.L4), TaskPersistence.GAMEPLAY);
+		// this.operatorController.B.whenPressed(new ConfigureLevel(elevator, coralRotation, ElevatorStates.L3), TaskPersistence.GAMEPLAY);
 		this.operatorController.A.whenPressed(new ConfigureLevel(elevator, coralRotation, ElevatorStates.L2), TaskPersistence.GAMEPLAY);
 		this.operatorController.X.whenPressed(new ConfigureLevel(elevator, coralRotation, ElevatorStates.L1), TaskPersistence.GAMEPLAY);
 
+		this.operatorController.Y.whenPressed(new Test(coralRotation), TaskPersistence.GAMEPLAY);
+
 		
 		this.operatorController.DPAD_DOWN.whenPressed(new ConfigureLevel(elevator, coralRotation, ElevatorStates.HOME), TaskPersistence.GAMEPLAY);
+
+		this.scheduler.scheduleDefaultCommand(new HoldPID(elevator, coralRotation), TaskPersistence.GAMEPLAY);
 	
 //		this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, driverController.RIGHT_Y_AXIS), TaskPersistence.GAMEPLAY);
 

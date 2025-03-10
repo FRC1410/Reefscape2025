@@ -6,6 +6,7 @@ import static org.frc1410.reefscape2025.util.IDs.LEFT_ELEVATOR_MOTOR;
 import static org.frc1410.reefscape2025.util.IDs.RIGHT_ELEVATOR_MOTOR;
 
 import org.frc1410.framework.scheduler.subsystem.TickedSubsystem;
+import org.frc1410.reefscape2025.util.NetworkTables;
 
 import com.revrobotics.spark.SparkBase;
 import com.revrobotics.spark.SparkLowLevel;
@@ -14,6 +15,9 @@ import com.revrobotics.spark.config.SparkBaseConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
 
 import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.networktables.DoublePublisher;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.CounterBase;
 import edu.wpi.first.wpilibj.Encoder;
 
@@ -37,12 +41,23 @@ public class Elevator implements TickedSubsystem {
             ELEVEATOR_D
     );
 
+    private final NetworkTable table = NetworkTableInstance.getDefault().getTable("Elevator");
+
+    private final DoublePublisher desiredElevatorHeightPub = NetworkTables.PublisherFactory(this.table, "Desired Height", 0);
+    private final DoublePublisher actualElevatorHeightPub = NetworkTables.PublisherFactory(this.table, "Actual Elevator Height", 0);
+    private final DoublePublisher elevatorPIDSetpoint = NetworkTables.PublisherFactory(this.table, "Elevator PID Setpoint", 0);
+    private final DoublePublisher elevatorRightCurrent = NetworkTables.PublisherFactory(this.table, "Right Elevator Current", 0);
+    private final DoublePublisher elevatorLeftCurrent = NetworkTables.PublisherFactory(this.table, "Left Elevator Current", 0);
+    private final DoublePublisher actualRightElevatorVolts = NetworkTables.PublisherFactory(this.table, "Actual Right Elevator Volts", 0);
+    private final DoublePublisher actualLeftElevatorVolts = NetworkTables.PublisherFactory(this.table, "Actual Left Elevator Volts", 0);
+    private final DoublePublisher outputElevatorVolts = NetworkTables.PublisherFactory(this.table, "Desired Elevator Volts", 0);
+
     public Elevator() {
         this.leftMotor = new SparkMax(LEFT_ELEVATOR_MOTOR, SparkLowLevel.MotorType.kBrushless);
         
         var leftMotorConfig = new SparkMaxConfig();
 
-        leftMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
+        leftMotorConfig.idleMode(SparkBaseConfig.IdleMode.kCoast);
         leftMotorConfig.smartCurrentLimit(40);
 
         leftMotorConfig.inverted(false);
@@ -57,7 +72,7 @@ public class Elevator implements TickedSubsystem {
         
         var rightMotorConfig = new SparkMaxConfig();
 
-        rightMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
+        rightMotorConfig.idleMode(SparkBaseConfig.IdleMode.kCoast);
         rightMotorConfig.smartCurrentLimit(40);
 
         rightMotorConfig.inverted(true);
@@ -88,6 +103,8 @@ public class Elevator implements TickedSubsystem {
                 this.getCurrentElevatorDistance(),
                 this.desiredElevatorHeight
         );
+
+        this.outputElevatorVolts.set(motorVoltage);
 
         if(motorVoltage >12) {
             this.leftMotor.setVoltage(12);
@@ -124,7 +141,10 @@ public class Elevator implements TickedSubsystem {
     @Override
     public void periodic() {
         driveSpeedLimit();
-        this.goToDesiredHeight();
+
+        this.actualElevatorHeightPub.set(this.getCurrentElevatorDistance());
+        this.desiredElevatorHeightPub.set(this.elevatorPIDController.getSetpoint());
+        // this.goToDesiredHeight();
     }
     
 

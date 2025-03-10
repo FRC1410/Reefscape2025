@@ -5,6 +5,7 @@ import org.frc1410.reefscape2025.util.NetworkTables;
 
 import com.revrobotics.spark.*;
 import com.revrobotics.spark.config.SparkMaxConfig;
+import com.revrobotics.spark.config.AlternateEncoderConfig;
 import com.revrobotics.spark.config.SparkBaseConfig;
 
 import edu.wpi.first.math.controller.PIDController;
@@ -14,19 +15,19 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.Subsystem;
 
 import static org.frc1410.reefscape2025.util.Constants.*;
-import static org.frc1410.reefscape2025.util.IDs.INTAKE_ROTATION_MOTOR;
+import static org.frc1410.reefscape2025.util.IDs.CORAL_ROTATION_MOTOR;
 import static org.frc1410.reefscape2025.util.Tuning.*;
 
 public class CoralRotation implements TickedSubsystem{
 
     private final SparkMax coralRotationMotor;
 
-    private double desiredAngle;
+    private double desiredAngle = 0;
 
     private final PIDController coralPIDController = new PIDController(
-            INTAKE_ANGLE_P,
-            INTAKE_ANGLE_I,
-            INTAKE_ANGLE_D
+            CORAL_ANGLE_P,
+            CORAL_ANGLE_I,
+            CORAL_ANGLE_D
     );
 
     private final NetworkTable table = NetworkTableInstance.getDefault().getTable("Coral Rotation");
@@ -34,12 +35,12 @@ public class CoralRotation implements TickedSubsystem{
     private final DoublePublisher coralRotationError = NetworkTables.PublisherFactory(this.table, "Coral Rotation Error", 0);
     private final DoublePublisher coralPIDSetpointPub = NetworkTables.PublisherFactory(this.table, "Coral PID Setpoint", 0);
     private final DoublePublisher desiredCoralAnglePub = NetworkTables.PublisherFactory(this.table, "Desired Coral Angle", 0);
-    private final DoublePublisher actualElevatorAnglePub = NetworkTables.PublisherFactory(this.table, "Actual Coral Angle", 0);
+    private final DoublePublisher acutalCoralAnglePub = NetworkTables.PublisherFactory(this.table, "Actual Coral Angle", 0);
     private final DoublePublisher coralVolts = NetworkTables.PublisherFactory(this.table, "Coral Volts", 0);
 
 
     public CoralRotation() {
-        this.coralRotationMotor = new SparkMax(INTAKE_ROTATION_MOTOR, SparkLowLevel.MotorType.kBrushless);
+        this.coralRotationMotor = new SparkMax(CORAL_ROTATION_MOTOR, SparkLowLevel.MotorType.kBrushless);
 
         var coralRotationMotorConfig = new SparkMaxConfig();
 
@@ -48,15 +49,22 @@ public class CoralRotation implements TickedSubsystem{
 
         coralRotationMotorConfig.inverted(true);
 
+        var alternateEncoderConfig = new AlternateEncoderConfig();
+        alternateEncoderConfig.inverted(true);
+        coralRotationMotorConfig.alternateEncoder.apply(alternateEncoderConfig);
+
         this.coralRotationMotor.configure(
             coralRotationMotorConfig,
             SparkBase.ResetMode.kResetSafeParameters,
             SparkBase.PersistMode.kNoPersistParameters
         );
-
-        coralRotationMotor.getAlternateEncoder();
+        
+        this.coralRotationMotor.getAlternateEncoder().setPosition(0.0);
 
         this.coralPIDController.setTolerance(CORAL_ANGLE_TOLERANCE);
+
+
+        this.coralPIDController.setSetpoint(ElevatorStates.HOME.getDesiredCoralAngle());
     }
 
     public double getCurrentCoralAngle() {
@@ -65,6 +73,10 @@ public class CoralRotation implements TickedSubsystem{
 
     public double getCoralSetPoint() {
         return this.coralPIDController.getSetpoint();
+    }
+
+    public void setCoralSetPoint() {
+        this.coralPIDController.setSetpoint(0);
     }
 
 
@@ -105,6 +117,9 @@ public class CoralRotation implements TickedSubsystem{
     @Override
     public void periodic() {
         this.coralPIDSetpointPub.set(this.coralPIDController.getSetpoint());
+        this.acutalCoralAnglePub.set(this.getCurrentCoralAngle());
+
+
         this.goToDesiredAngle();
     }
     

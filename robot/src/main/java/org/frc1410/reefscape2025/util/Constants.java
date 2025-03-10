@@ -32,21 +32,20 @@ import static org.frc1410.reefscape2025.util.Tuning.*;
 import static org.frc1410.reefscape2025.util.ReefPaths.*;
 
 public final class Constants {
-    public static int SAFE_HEIGHT = 1;
-    public static int L_1_HEIGHT = 1790;
-    public static int L_2_HEIGHT = 3600;
-    public static int L_3_HEIGHT = 6218;
-    public static int L_4_HEIGHT = 11280;
+    public static int SAFE_HEIGHT = 0;
+    public static int L_1_HEIGHT = 0;
+    public static int L_2_HEIGHT = 0;
+    public static int L_3_HEIGHT = 0;
+    public static int L_4_HEIGHT = 0;
     public static int INTAKE_HEIGHT = 0;
     public static int HOME_HEIGHT = 0;  
 
     public static double SAFE_ANGLE = 0;
-    public static double L1_ANGLE = 0.6; //0.564453
-    public static double L2_ANGLE = 0.6;
-    public static double L3_ANGLE = 0.6;
-    public static double L4_ANGLE = 0.604; //0.447021
-
-    public static double INTAKE_ANGLE = 1.808;
+    public static double L1_ANGLE = 0; //0.564453
+    public static double L2_ANGLE = 0;
+    public static double L3_ANGLE = 0;
+    public static double L4_ANGLE = 0; //0.447021
+    public static double INTAKE_ANGLE = 0.327637;
     public static double HOME_ANGLE = 0;
 
     public static final double elevatorAccelerationCalculation = -1/(L_4_HEIGHT/.8);
