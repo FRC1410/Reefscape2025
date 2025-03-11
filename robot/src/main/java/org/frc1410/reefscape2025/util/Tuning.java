@@ -11,7 +11,7 @@ public final class Tuning {
 
     public static double ELEVATOR_TOLERANCE = 50;
 
-    public static double CORAL_ANGLE_P = 6; //10
+    public static double CORAL_ANGLE_P = /*Anthony*/6; //6//10
     public static double CORAL_ANGLE_I = 0; //0.5
     public static double CORAL_ANGLE_D = 0; //0.8
     

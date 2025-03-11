@@ -36,7 +36,7 @@ public class LBozo implements Subsystem {
 
         outtakeMotorConfig.smartCurrentLimit(30);
         outtakeMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
-        outtakeMotorConfig.inverted(false);
+        outtakeMotorConfig.inverted(true);
         this.outtakeMotor.configure(outtakeMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
     }
 

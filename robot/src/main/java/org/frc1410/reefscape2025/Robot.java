@@ -37,6 +37,7 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 
 import javax.naming.Name;
 
+import static org.frc1410.reefscape2025.subsystems.LEDs.Animation.RAINBOW;
 import static org.frc1410.reefscape2025.util.IDs.*;
 import static org.frc1410.reefscape2025.util.Constants.*;
 
@@ -120,9 +121,12 @@ public final class Robot extends PhaseDrivenRobot {
 
 	@Override
 	public void teleopSequence() {
-		this.operatorController.LEFT_BUMPER.whileHeldOnce(new IntakeCoral(lBozo, leds, 1), TaskPersistence.GAMEPLAY);
-		this.driverController.DPAD_RIGHT.whenPressed(new IntakeCoral(lBozo, leds, -1), TaskPersistence.GAMEPLAY);
-		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
+		this.operatorController.RIGHT_STICK.whenPressed(new InstantCommand(() -> leds.setAnimation(RAINBOW, LEDs.Color.NULL, 0.4)), TaskPersistence.GAMEPLAY);
+
+
+		this.operatorController.RIGHT_TRIGGER.button().whileHeldOnce(new IntakeCoral(lBozo, leds, 1), TaskPersistence.GAMEPLAY);
+		this.operatorController.LEFT_TRIGGER.button().whileHeldOnce/*Soren*/(new IntakeCoral(lBozo, leds, -1), TaskPersistence.GAMEPLAY);
+		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce/*Craig*/(new OuttakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
 
 		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
 

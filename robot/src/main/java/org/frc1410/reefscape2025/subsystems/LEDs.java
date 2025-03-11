@@ -21,6 +21,7 @@ public class LEDs implements Subsystem {
         CANdleConfiguration config = new CANdleConfiguration();
         config.stripType = CANdle.LEDStripType.BRG;
         config.v5Enabled = true;
+        //Camera angle needs to be changed by 55 degrees in order for the camera to be 55 degrees
         config.brightnessScalar = LED_BRIGHTNESS;
 
         this.candle.configLOSBehavior(true);

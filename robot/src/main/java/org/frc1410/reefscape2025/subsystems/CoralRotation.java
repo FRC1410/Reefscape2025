@@ -12,9 +12,7 @@ import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.networktables.DoublePublisher;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
-import edu.wpi.first.wpilibj2.command.Subsystem;
 
-import static org.frc1410.reefscape2025.util.Constants.*;
 import static org.frc1410.reefscape2025.util.IDs.CORAL_ROTATION_MOTOR;
 import static org.frc1410.reefscape2025.util.Tuning.*;
 
@@ -35,7 +33,7 @@ public class CoralRotation implements TickedSubsystem{
     private final DoublePublisher coralRotationError = NetworkTables.PublisherFactory(this.table, "Coral Rotation Error", 0);
     private final DoublePublisher coralPIDSetpointPub = NetworkTables.PublisherFactory(this.table, "Coral PID Setpoint", 0);
     private final DoublePublisher desiredCoralAnglePub = NetworkTables.PublisherFactory(this.table, "Desired Coral Angle", 0);
-    private final DoublePublisher acutalCoralAnglePub = NetworkTables.PublisherFactory(this.table, "Actual Coral Angle", 0);
+    private final DoublePublisher actualCoralAnglePub = NetworkTables.PublisherFactory(this.table, "Actual Coral Angle", 0);
     private final DoublePublisher coralVolts = NetworkTables.PublisherFactory(this.table, "Coral Volts", 0);
 
 
@@ -117,7 +115,7 @@ public class CoralRotation implements TickedSubsystem{
     @Override
     public void periodic() {
         this.coralPIDSetpointPub.set(this.coralPIDController.getSetpoint());
-        this.acutalCoralAnglePub.set(this.getCurrentCoralAngle());
+        this.actualCoralAnglePub.set(this.getCurrentCoralAngle());
 
 
         this.goToDesiredAngle();

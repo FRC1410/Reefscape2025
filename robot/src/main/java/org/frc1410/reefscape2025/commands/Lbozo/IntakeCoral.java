@@ -26,7 +26,7 @@ public class IntakeCoral extends Command {
     @Override
     public void execute() {
         this.lBozo.setLBozoSpeed(-0.5 * direction);
-        this.lBozo.outtake(0.4 * direction);
+        this.lBozo.outtake(0.2 * direction);
     }
 
     @Override
