@@ -11,7 +11,7 @@ public final class Tuning {
 
     public static double ELEVATOR_TOLERANCE = 50;
 
-    public static double INTAKE_ANGLE_P = 10; //10
+    public static double INTAKE_ANGLE_P = 7.8; //10
     public static double INTAKE_ANGLE_I = 0.5; //0.5
     public static double INTAKE_ANGLE_D = 0.8; //0.8
     
