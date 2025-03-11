@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="we need to add the correct camera poses and calibrate the cameras">
+    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="I hate :(">
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Lbozo/IntakeCoral.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Lbozo/IntakeCoral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Elevator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,57 +153,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build &amp; Deploy Robot.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Reefscape2025 [buildDependents].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Reefscape2025 [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Reefscape2025:framework [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Reefscape2025:robot [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Viridian-Framework [build].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Before-Colorado&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/samuelrojas/Documents/Coding/Reefscape2025&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build & Deploy Robot.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.Reefscape2025 [buildDependents].executor": "Run",
+    "Gradle.Reefscape2025 [deploy].executor": "Run",
+    "Gradle.Reefscape2025 [deployfrcJavaroborio].executor": "Run",
+    "Gradle.Reefscape2025:framework [build].executor": "Run",
+    "Gradle.Reefscape2025:robot [build].executor": "Run",
+    "Gradle.Viridian-Framework [build].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "Before-Colorado",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/samuelrojas/Documents/Coding/Reefscape2025",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Gradle.Build &amp; Deploy Robot">
-    <configuration name="Reefscape2025 [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="dependencies" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="Reefscape2025 [deploy]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -212,6 +195,28 @@
         <option name="taskNames">
           <list>
             <option value="deploy" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Reefscape2025 [deployfrcJavaroborio]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="deployfrcJavaroborio" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -296,7 +301,7 @@
       <item itemvalue="Gradle.Clean Build &amp; Deploy Robot" />
       <item itemvalue="Gradle.Clean Build &amp; Deploy Robot for Debugging" />
       <item itemvalue="Gradle.Clean Build Robot" />
-      <item itemvalue="Gradle.Reefscape2025 [dependencies]" />
+      <item itemvalue="Gradle.Reefscape2025 [deployfrcJavaroborio]" />
       <item itemvalue="Gradle.Reefscape2025 [deploy]" />
       <item itemvalue="Gradle.Reefscape2025:framework [build]" />
       <item itemvalue="Gradle.Reefscape2025:robot [build]" />
@@ -306,10 +311,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Reefscape2025 [deployfrcJavaroborio]" />
         <item itemvalue="Gradle.Reefscape2025:framework [build]" />
         <item itemvalue="Gradle.Viridian-Framework [build]" />
         <item itemvalue="Gradle.Reefscape2025:robot [build]" />
-        <item itemvalue="Gradle.Reefscape2025 [deploy]" />
         <item itemvalue="Gradle.Reefscape2025 [deploy]" />
       </list>
     </recent_temporary>
@@ -354,7 +359,7 @@
       <workItem from="1741655842822" duration="5855000" />
       <workItem from="1741702513329" duration="347000" />
       <workItem from="1741702880620" duration="743000" />
-      <workItem from="1741730419266" duration="1684000" />
+      <workItem from="1741730419266" duration="2607000" />
     </task>
     <task id="LOCAL-00001" summary="Changed package name from Viridian to Reefscape">
       <option name="closed" value="true" />
@@ -500,7 +505,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741706915560</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="I hate :(">
+      <option name="closed" value="true" />
+      <created>1741732208524</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1741732208524</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,7 +552,8 @@
     <MESSAGE value="I cant pay electric bill" />
     <MESSAGE value="Big happy, big sad, very sad just like my 4-0-1" />
     <MESSAGE value="we need to add the correct camera poses and calibrate the cameras" />
-    <option name="LAST_COMMIT_MESSAGE" value="we need to add the correct camera poses and calibrate the cameras" />
+    <MESSAGE value="I hate :(" />
+    <option name="LAST_COMMIT_MESSAGE" value="I hate :(" />
   </component>
   <component name="WpiLibVersionService">
     <option name="lastChecked" value="20250311160028" />

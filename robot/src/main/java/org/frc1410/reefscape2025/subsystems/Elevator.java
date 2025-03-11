@@ -299,6 +299,4 @@ public class Elevator implements TickedSubsystem {
         this.getCurrentElevatorDistance();
         this.getCurrentIntakeAngle();
     }
-
-    
 }

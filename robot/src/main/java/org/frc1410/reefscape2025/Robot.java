@@ -107,7 +107,7 @@ public final class Robot extends PhaseDrivenRobot {
 
 	@Override
 	public void teleopSequence() {
-		this.operatorController.RIGHT_TRIGGER.button().whileHeldOnce(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
+		this.operatorController.RIGHT_TRIGGER.button().whileHeldOnce(new IntakeCoral(lBozo, elevator, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.LEFT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, elevator), TaskPersistence.GAMEPLAY);
 		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, elevator), TaskPersistence.GAMEPLAY, LockPriority.HIGHEST);
 
