@@ -4,44 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="Big happy, big sad, very sad just like my 4-0-1">
+    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="we need to add the correct camera poses and calibrate the cameras">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/SwerveModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/SwerveModule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/2-Source.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/2-Source.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/3-Source.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/3-Source.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/5-Back.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/5-Back.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/6-Back.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/6-Back.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Bottom-Start-1.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Bottom-Start-1.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/DriveForwardsBottom.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/DriveForwardsBottom.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/DriveForwardsTop.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/DriveForwardsTop.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/North East Left.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/North East Left.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/North East Right.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/North East Right.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/North Left.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/North Left.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/North Right.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/North Right.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/North West Left.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/North West Left.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/North West Right.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/North West Right.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source to South Coral L.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source to South Coral L.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source to South Coral R.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source to South Coral R.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source to South East Coral L.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source to South East Coral L.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source-1.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source-1.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source-2.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source-2.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South Coral R to Source.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South Coral R to Source.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South East Coral L to Source.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South East Coral L to Source.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South East Coral R to Source.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South East Coral R to Source.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South East Left.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South East Left.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South East Right.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South East Right.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South Left.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South Left.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South Right.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South Right.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South West Left.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South West Left.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South West Right.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/South West Right.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Starting line to North L.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Starting line to North L.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Starting line to South East Coral R.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Starting line to South East Coral R.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Top-Start-1.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Top-Start-1.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Top-Start-5.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Top-Start-5.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/TopStart-3.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/TopStart-3.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/TopStart-6.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/TopStart-6.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -389,7 +353,8 @@
       <workItem from="1741655574165" duration="103000" />
       <workItem from="1741655842822" duration="5855000" />
       <workItem from="1741702513329" duration="347000" />
-      <workItem from="1741702880620" duration="549000" />
+      <workItem from="1741702880620" duration="743000" />
+      <workItem from="1741730419266" duration="1684000" />
     </task>
     <task id="LOCAL-00001" summary="Changed package name from Viridian to Reefscape">
       <option name="closed" value="true" />
@@ -527,7 +492,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741667321863</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="we need to add the correct camera poses and calibrate the cameras">
+      <option name="closed" value="true" />
+      <created>1741706915560</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1741706915560</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,9 +538,10 @@
     <MESSAGE value="I actually hate these stupid unversioned files" />
     <MESSAGE value="I cant pay electric bill" />
     <MESSAGE value="Big happy, big sad, very sad just like my 4-0-1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Big happy, big sad, very sad just like my 4-0-1" />
+    <MESSAGE value="we need to add the correct camera poses and calibrate the cameras" />
+    <option name="LAST_COMMIT_MESSAGE" value="we need to add the correct camera poses and calibrate the cameras" />
   </component>
   <component name="WpiLibVersionService">
-    <option name="lastChecked" value="20250311082123" />
+    <option name="lastChecked" value="20250311160028" />
   </component>
 </project>

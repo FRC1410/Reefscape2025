@@ -35,13 +35,15 @@ public final class Constants {
     public static int L_3_HEIGHT = 6218 + 250; //6218
     public static int L_4_HEIGHT = 11280 + 250; //11280
     public static int INTAKE_HEIGHT = 0;
-    public static int HOME_HEIGHT = 0;  
+    public static int HOME_HEIGHT = 0;
+    public static int L_2_ALGAE = 0;
 
     public static double SAFE_ANGLE = 0;
     public static double L1_ANGLE = 0; //0.564453
     public static double L2_ANGLE = 0;
     public static double L3_ANGLE = 0;
     public static double L4_ANGLE = 0; //0.447021
+    public static double CORAL_OFF = 0;
 
     public static double INTAKE_ANGLE = 0.171875;
     public static double HOME_ANGLE = 0;
@@ -156,8 +158,15 @@ public final class Constants {
 
 
     // Todo: add the correct angle and camera transformation
+//    12.5 forward
+//    9 to either side
+//    7.5 on z
+
+    // 0.3175
+    // 0.2286
+    // 0.1905
     public static final Transform3d LEFT_CAMERA_POSE = new Transform3d(
-            new Translation3d(0,0,0),
+            new Translation3d(0.3175, 0.2286,0.1905),
             new Rotation3d(0,0,Radians.convertFrom(-55, Degrees))
     );
 
