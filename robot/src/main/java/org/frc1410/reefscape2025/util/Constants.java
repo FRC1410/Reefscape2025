@@ -105,11 +105,6 @@ public final class Constants {
     public static final Translation2d BACK_LEFT_SWERVE_MODULE_LOCATION = new Translation2d(-0.301625, 0.301625);
     public static final Translation2d BACK_RIGHT_SWERVE_MODULE_LOCATION = new Translation2d(-0.301625, -0.301625);
 
-//    public static final Translation2d FRONT_LEFT_SWERVE_MODULE_LOCATION = new Translation2d(0.301625, 0.301625);
-//    public static final Translation2d FRONT_RIGHT_SWERVE_MODULE_LOCATION = new Translation2d(0.301625, -0.301625);
-//    public static final Translation2d BACK_LEFT_SWERVE_MODULE_LOCATION = new Translation2d(-0.301625, 0.301625);
-//    public static final Translation2d BACK_RIGHT_SWERVE_MODULE_LOCATION = new Translation2d(-0.301625, -0.301625);
-
     public static final SwerveDriveKinematics SWERVE_DRIVE_KINEMATICS = new SwerveDriveKinematics(
             FRONT_LEFT_SWERVE_MODULE_LOCATION,
             FRONT_RIGHT_SWERVE_MODULE_LOCATION,
@@ -159,13 +154,15 @@ public final class Constants {
 
     public static final AprilTagFieldLayout APRIL_TAG_FIELD_LAYOUT = AprilTagFieldLayout.loadField(AprilTagFields.kDefaultField);
 
+
+    // Todo: add the correct angle and camera transformation
     public static final Transform3d LEFT_CAMERA_POSE = new Transform3d(
-            new Translation3d(0.19,0,0.198685),
-            new Rotation3d(0,0,0)
+            new Translation3d(0,0,0),
+            new Rotation3d(0,0,Radians.convertFrom(-55, Degrees))
     );
 
     public static final Transform3d RIGHT_CAMERA_POSE = new Transform3d(
-            new Translation3d(0.19,0,0.198685),
-            new Rotation3d(0,0,0)
+            new Translation3d(0,0,0),
+            new Rotation3d(0,0, Radians.convertFrom(55, Degrees))
     );
 }
