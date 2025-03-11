@@ -21,7 +21,8 @@ public class IntakeCoral extends Command {
 
     @Override
     public void execute() {
-        this.lBozo.setLBozoSpeed(0.5);
+        this.lBozo.setLBozoSpeed(-0.5);
+        this.lBozo.setOuttakeSpeed(0.2);
     }
 
     @Override
@@ -32,6 +33,7 @@ public class IntakeCoral extends Command {
     @Override
     public void end(boolean interrupted) {
         this.lBozo.setLBozoSpeed(0);
+        this.lBozo.setOuttakeSpeed(0);
         this.leds.setColor(LEDs.Color.LIGHT_BLUE);
     }
 }

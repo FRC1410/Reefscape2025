@@ -16,15 +16,12 @@ import edu.wpi.first.math.geometry.Translation3d;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.units.DistanceUnit;
 import edu.wpi.first.units.Measure;
-import edu.wpi.first.units.Unit;
 import edu.wpi.first.units.Units;
 import edu.wpi.first.units.measure.Angle;
 import edu.wpi.first.units.measure.AngularAcceleration;
 import edu.wpi.first.units.measure.AngularVelocity;
-import edu.wpi.first.units.measure.Distance;
 import edu.wpi.first.units.measure.LinearAcceleration;
 import edu.wpi.first.units.measure.LinearVelocity;
-import edu.wpi.first.units.measure.*;
 import org.json.simple.parser.ParseException;
 
 import static edu.wpi.first.units.Units.*;
@@ -41,12 +38,12 @@ public final class Constants {
     public static int HOME_HEIGHT = 0;  
 
     public static double SAFE_ANGLE = 0;
-    public static double L1_ANGLE = 0.6; //0.564453
-    public static double L2_ANGLE = 0.6;
-    public static double L3_ANGLE = 0.6;
-    public static double L4_ANGLE = 0.46002; //0.447021
+    public static double L1_ANGLE = 0; //0.564453
+    public static double L2_ANGLE = 0;
+    public static double L3_ANGLE = 0;
+    public static double L4_ANGLE = 0; //0.447021
 
-    public static double INTAKE_ANGLE = 1.808;
+    public static double INTAKE_ANGLE = 0.171875;
     public static double HOME_ANGLE = 0;
     public static double TempL1 = 1.15;
 
@@ -157,12 +154,17 @@ public final class Constants {
 
     public static final List<ReefSides> RED_REEF = List.of();
 
-    public static final String REEF_CAMERA = "Arducam_OV9281_USB_Camera";
-    public static final String SOURCE_CAMERA = "Arducam_OV9281_USB_Camera 2";
+    public static final String LEFT_CAMERA_NAME = "Left_axle";
+    public static final String RIGHT_CAMERA_NAME = "Right_marin";
 
     public static final AprilTagFieldLayout APRIL_TAG_FIELD_LAYOUT = AprilTagFieldLayout.loadField(AprilTagFields.kDefaultField);
 
-    public static final Transform3d REEF_CAMERA_POSE = new Transform3d(
+    public static final Transform3d LEFT_CAMERA_POSE = new Transform3d(
+            new Translation3d(0.19,0,0.198685),
+            new Rotation3d(0,0,0)
+    );
+
+    public static final Transform3d RIGHT_CAMERA_POSE = new Transform3d(
             new Translation3d(0.19,0,0.198685),
             new Rotation3d(0,0,0)
     );

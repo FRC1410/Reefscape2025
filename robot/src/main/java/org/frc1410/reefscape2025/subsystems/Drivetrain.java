@@ -2,7 +2,6 @@ package org.frc1410.reefscape2025.subsystems;
 
 import com.ctre.phoenix6.configs.Pigeon2Configuration;
 import com.ctre.phoenix6.hardware.Pigeon2;
-import com.studica.frc.AHRS;
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
@@ -14,11 +13,9 @@ import edu.wpi.first.networktables.DoublePublisher;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.networktables.StructPublisher;
-import edu.wpi.first.units.Units;
 import edu.wpi.first.units.measure.AngularVelocity;
 import edu.wpi.first.units.measure.Voltage;
 import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj.Timer;
 import org.frc1410.framework.scheduler.subsystem.SubsystemStore;
 import org.frc1410.framework.scheduler.subsystem.TickedSubsystem;
 import org.frc1410.reefscape2025.util.NetworkTables;
@@ -28,7 +25,6 @@ import java.util.Optional;
 import static edu.wpi.first.units.Units.*;
 import static org.frc1410.reefscape2025.util.Constants.*;
 import static org.frc1410.reefscape2025.util.IDs.*;
-import static org.frc1410.reefscape2025.util.Tuning.*;
 
 public class Drivetrain implements TickedSubsystem {
     private final NetworkTable table = NetworkTableInstance.getDefault().getTable("Drivetrain");
@@ -87,7 +83,8 @@ public class Drivetrain implements TickedSubsystem {
 
     private Rotation2d fieldRelativeOffset = new Rotation2d();
 
-    private final Camera reefCamera;
+    private final Camera leftCamera;
+    private final Camera rightCamera;
     private final boolean tempVal = true;
     private double previousPipelineTimestamp = 0;
     private boolean hasSeenAprilTag = false;
@@ -163,7 +160,8 @@ public class Drivetrain implements TickedSubsystem {
                 new Pose2d()
         );
 
-        this.reefCamera = new Camera(REEF_CAMERA, REEF_CAMERA_POSE);
+        this.leftCamera = new Camera(LEFT_CAMERA_NAME, LEFT_CAMERA_POSE);
+        this.rightCamera = new Camera(RIGHT_CAMERA_NAME, RIGHT_CAMERA_POSE);
     }
 
     public void drive(ChassisSpeeds chassisSpeeds) {
@@ -271,18 +269,30 @@ public class Drivetrain implements TickedSubsystem {
                 this.getSwerveModulePositions()
         );
 
-        var estimatedPose = this.reefCamera.getEstimatedPose();
+        var leftEstimatedPose = this.leftCamera.getEstimatedPose();
+        var rightEstimatedPose = this.rightCamera.getEstimatedPose();
 
-        if(estimatedPose.isPresent()) {
+        if(leftEstimatedPose.isPresent()) {
             if(this.tempVal) {
-                var resultTimeStamp = estimatedPose.get().timestampSeconds;
+                var resultTimeStamp = leftEstimatedPose.get().timestampSeconds;
 
                 if(resultTimeStamp != this.previousPipelineTimestamp) {
                     this.previousPipelineTimestamp = resultTimeStamp;
-                    this.poseEstimator.addVisionMeasurement(estimatedPose.get().estimatedPose.toPose2d(), resultTimeStamp);
+                    this.poseEstimator.addVisionMeasurement(leftEstimatedPose.get().estimatedPose.toPose2d(), resultTimeStamp);
                 }
             }
         }
+
+//        if(rightEstimatedPose.isPresent()) {
+//            if(this.tempVal) {
+//                var resultTimeStamp = rightEstimatedPose.get().timestampSeconds;
+//
+//                if(resultTimeStamp != this.previousPipelineTimestamp) {
+//                    this.previousPipelineTimestamp = resultTimeStamp;
+//                    this.poseEstimator.addVisionMeasurement(rightEstimatedPose.get().estimatedPose.toPose2d(), resultTimeStamp);
+//                }
+//            }
+//        }
 
         // this.poseX.set(this.getEstimatedPosition().getX());
         // this.poseY.set(this.getEstimatedPosition().getY());

@@ -29,12 +29,8 @@ public final class IDs {
 	public static final int INTAKE_ROTATION_MOTOR = 13;
 	public static final int LBOZO_BOTTOM_MOTOR = 14;
 	public static final int LBOZO_TOP_MOTOR = 15;
-	public static final int LBOZO_LINE_BREAK_SENSOR = 2; //TBD
-
-	//Climber
-	public static final int BOTTOM_CLIMB_MOTOR_ID = 12;
-	public static final int TOP_CLIMB_MOTOR_ID = 11;
-	public static final int CLIMB_LIMIT_SWITCH = 21; //TBD
+	public static final int LBOZO_OUTTAKE = 16;
+	public static final int LBOZO_LINE_BREAK_SENSOR = 3; //TBD
 
 	// Elevator
 	public static final int LEFT_ELEVATOR_MOTOR = 9;

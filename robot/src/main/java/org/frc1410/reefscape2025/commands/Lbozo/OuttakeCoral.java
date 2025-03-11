@@ -21,16 +21,14 @@ public class OuttakeCoral extends Command {
 
     @Override
     public void initialize() {
-        if(this.lBozo.hasCoral()) {
-            this.leds.setColor(LEDs.Color.BLUE);
-        } else {
-            this.leds.setColor(LEDs.Color.ORANGE);
-        }
-        if(this.elevator.getDesiredElevatorAngleSetpoint() == 1.15) {
-            this.lBozo.setLBozoSpeed(-0.17);
-        } else {
-            this.lBozo.setLBozoSpeed(-0.4);
-        }
+//        if(this.elevator.getDesiredElevatorAngleSetpoint() == 1.15) {
+//            this.lBozo.setLBozoSpeed(-0.17);
+//        } else {
+//            this.lBozo.setLBozoSpeed(-0.4);
+//        }
+
+        this.lBozo.setLBozoSpeed(0.4);
+        this.lBozo.setOuttakeSpeed(0.4);
        
     }
 
@@ -47,5 +45,6 @@ public class OuttakeCoral extends Command {
     @Override
     public void end(boolean interrupted) {
         this.lBozo.setLBozoSpeed(0);
+        this.lBozo.setOuttakeSpeed(0);
     }
 }

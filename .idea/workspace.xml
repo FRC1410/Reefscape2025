@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
@@ -115,29 +116,178 @@
       <change beforePath="$PROJECT_DIR$/build-logic/build/classes/kotlin/main/org/frc1410/tooling/build/JavaPlugin.class" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/classes/kotlin/main/org/frc1410/tooling/build/JavaPlugin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/classes/kotlin/main/org/frc1410/tooling/build/Java_gradle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/classes/kotlin/main/org/frc1410/tooling/build/Java_gradle$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/classes/kotlin/main/org/frc1410/tooling/build/Java_gradle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/classes/kotlin/main/org/frc1410/tooling/build/Java_gradle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors15c80wxji7qdhvcsteytc58m6.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors15c80wxji7qdhvcsteytc58m6.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors16h8i8yvcoyu6adqodek0vazl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors16h8i8yvcoyu6adqodek0vazl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors1crcmgpg53bs3tut9tzeov9zs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors1crcmgpg53bs3tut9tzeov9zs.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors1je17tzadwn2i8n7cte4ejjuc.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors1je17tzadwn2i8n7cte4ejjuc.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors1y0x5zjrw062ti39iwig4ztsq.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors1y0x5zjrw062ti39iwig4ztsq.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors20m89wvqrtvolhrxzuq1utrar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors20m89wvqrtvolhrxzuq1utrar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors21zhoq018jw7yza6oupdxasaq.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors21zhoq018jw7yza6oupdxasaq.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors2oadk7let745pm8ahqypkqzlk.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors2oadk7let745pm8ahqypkqzlk.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors2s1m7qhtdel2iy5x5gc2gv6f5.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors2s1m7qhtdel2iy5x5gc2gv6f5.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors30fkku080rcvoj344u192bkfh.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors30fkku080rcvoj344u192bkfh.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors32yk85ycsljiuajc2oknj21lt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors32yk85ycsljiuajc2oknj21lt.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors33qjl5yednlyp9tyvd6yykvt5.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors33qjl5yednlyp9tyvd6yykvt5.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors3dn3adhcpitetfd8lbt7c66zr.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors3dn3adhcpitetfd8lbt7c66zr.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors3lkj8uvuyc1fes1zjdaceqluw.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors3lkj8uvuyc1fes1zjdaceqluw.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors45cftp2do14y8dm8cnj0yfjzm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors45cftp2do14y8dm8cnj0yfjzm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors46nwrg1rs44ofdqpi7vyy3pfc.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors46nwrg1rs44ofdqpi7vyy3pfc.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors49985hyy071qu5jjdlrughl86.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors49985hyy071qu5jjdlrughl86.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors4g3ee48g3j8ovb2sfufkb1xgh.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors4g3ee48g3j8ovb2sfufkb1xgh.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors4ymn32ugs7fc7ez4f1y4vdr9n.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors4ymn32ugs7fc7ez4f1y4vdr9n.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors5cx8iclyvbivcabq86i8mlot5.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors5cx8iclyvbivcabq86i8mlot5.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors5dc5ntgnadimckiddcyeoreq.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors5dc5ntgnadimckiddcyeoreq.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors5fk7ujd52n5i4lgh9rsd3nr80.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors5fk7ujd52n5i4lgh9rsd3nr80.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors5r7od1ls1rcal14bwiw1aolf3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors5r7od1ls1rcal14bwiw1aolf3.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors60wvtf0hlc6m7pu4zcziugmri.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors60wvtf0hlc6m7pu4zcziugmri.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors62xgvb04612dadp03ybl5vf12.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors62xgvb04612dadp03ybl5vf12.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors6xkpc5r938hqmmzagr5yicp7s.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors6xkpc5r938hqmmzagr5yicp7s.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors72pwwp7evk4t6494cyybv7kk7.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors72pwwp7evk4t6494cyybv7kk7.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors7axcot3v1j7qpduaewb3aezf4.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors7axcot3v1j7qpduaewb3aezf4.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors7pildy6t6pgcmk0gyewx4z8k1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors7pildy6t6pgcmk0gyewx4z8k1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors8lcri9ibgd9oj8dt3t8z8nvfx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors8lcri9ibgd9oj8dt3t8z8nvfx.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors8uzlaa9ndo750hmo4da2vgu2v.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors8uzlaa9ndo750hmo4da2vgu2v.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors8zd6u262ixrjkrpgx69mnl0hj.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors8zd6u262ixrjkrpgx69mnl0hj.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors96b3ii45gitqpy1kb3tvcvtxv.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors96b3ii45gitqpy1kb3tvcvtxv.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors9ofjxssccbksmuzem03z8pl6.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors9ofjxssccbksmuzem03z8pl6.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors9upc35ddn1m31thgty51w1nrj.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors9upc35ddn1m31thgty51w1nrj.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors9xbdx9ypglb5iceqwefq3l2u.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors9xbdx9ypglb5iceqwefq3l2u.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors9xim6xjdq0ry1lmc4wm5ei8eh.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessors9xim6xjdq0ry1lmc4wm5ei8eh.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsa47105wcmcbzx75lm7p2ciqqb.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsa47105wcmcbzx75lm7p2ciqqb.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsaofthkmarv0q41bodk71vcqi7.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsaofthkmarv0q41bodk71vcqi7.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsblypoh2ruc9u3bx9djsfqsntg.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsblypoh2ruc9u3bx9djsfqsntg.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsbp4j8g31qsxo0ekjysvxih5jg.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsbp4j8g31qsxo0ekjysvxih5jg.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsbtc8iwv8u9b0f38ikfmodj8ns.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsbtc8iwv8u9b0f38ikfmodj8ns.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorscosmuqa5m4pz5v4rp16nnpsrn.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorscosmuqa5m4pz5v4rp16nnpsrn.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsdemns0nrfvv4tm1e985ahms6r.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsdemns0nrfvv4tm1e985ahms6r.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsdirr8g3rs0a9h4cvi2o23j1gy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsdirr8g3rs0a9h4cvi2o23j1gy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsdjndpeyafmkvjrxu9kp0ma1gn.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsdjndpeyafmkvjrxu9kp0ma1gn.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorse3bcayds3ygcyd5zodeo0v3sh.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorse3bcayds3ygcyd5zodeo0v3sh.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorse3nu4a2kmhhq7smy0tcmgt45g.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorse3nu4a2kmhhq7smy0tcmgt45g.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorse63o1t85fyc2j2y6mbe9ytoeh.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorse63o1t85fyc2j2y6mbe9ytoeh.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorse6ex1mefr8h1znr2ivlnwcx4n.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorse6ex1mefr8h1znr2ivlnwcx4n.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorseessl0al0otcsbyqqruvoncpd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorseessl0al0otcsbyqqruvoncpd.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsem8w6wnof1lrw3ubqr6eh9gcj.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsem8w6wnof1lrw3ubqr6eh9gcj.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsf2jx22njgpl8k21k7scc1t0rw.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsf2jx22njgpl8k21k7scc1t0rw.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsfbf92xd7bth9xw3u4y6q8qcd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsfbf92xd7bth9xw3u4y6q8qcd.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsw34mwj3hroscfmyxar5atwjz.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/Accessorsw34mwj3hroscfmyxar5atwjz.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/AnnotationProcessorConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/AnnotationProcessorConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/ApiElementsConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/ApiElementsConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/ArchivesConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/ArchivesConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/CompileClasspathConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/CompileClasspathConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/CompileOnlyConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/CompileOnlyConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/DefaultConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/DefaultConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/ImplementationConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/ImplementationConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/MainSourceElementsConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/MainSourceElementsConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/RuntimeClasspathConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/RuntimeClasspathConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/RuntimeElementsConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/RuntimeElementsConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/RuntimeOnlyConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/RuntimeOnlyConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/TestAnnotationProcessorConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/TestAnnotationProcessorConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/TestCompileClasspathConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/TestCompileClasspathConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/TestCompileOnlyConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/TestCompileOnlyConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/TestImplementationConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/TestImplementationConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/TestResultsElementsForTestConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/TestResultsElementsForTestConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/TestRuntimeClasspathConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/TestRuntimeClasspathConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/TestRuntimeOnlyConfigurationAccessors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-accessors/kotlin/gradle/kotlin/dsl/accessors/_8c47cae829ea3d03260d5ff13fb2398e/TestRuntimeOnlyConfigurationAccessors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-external-plugin-spec-builders/kotlin/gradle/kotlin/dsl/plugins/_7eb2d1306c3b729bbc7825b8d14f3ecf/PluginSpecBuilders.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-external-plugin-spec-builders/kotlin/gradle/kotlin/dsl/plugins/_7eb2d1306c3b729bbc7825b8d14f3ecf/PluginSpecBuilders.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-plugins/kotlin/org/frc1410/tooling/build/JavaPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-plugins/kotlin/org/frc1410/tooling/build/JavaPlugin.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin-dsl/plugins-blocks/compiled/gradle/kotlin/dsl/plugins/_7eb2d1306c3b729bbc7825b8d14f3ecf/OrgGradlePluginGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin-dsl/plugins-blocks/compiled/gradle/kotlin/dsl/plugins/_7eb2d1306c3b729bbc7825b8d14f3ecf/OrgGradlePluginGroup.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin-dsl/plugins-blocks/compiled/gradle/kotlin/dsl/plugins/_7eb2d1306c3b729bbc7825b8d14f3ecf/OrgPluginGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin-dsl/plugins-blocks/compiled/gradle/kotlin/dsl/plugins/_7eb2d1306c3b729bbc7825b8d14f3ecf/OrgPluginGroup.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin-dsl/plugins-blocks/compiled/gradle/kotlin/dsl/plugins/_7eb2d1306c3b729bbc7825b8d14f3ecf/PluginSpecBuildersKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin-dsl/plugins-blocks/compiled/gradle/kotlin/dsl/plugins/_7eb2d1306c3b729bbc7825b8d14f3ecf/PluginSpecBuildersKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin-dsl/plugins-blocks/compiled/org/frc1410/tooling/build/Java_gradle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin-dsl/plugins-blocks/compiled/org/frc1410/tooling/build/Java_gradle$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin-dsl/plugins-blocks/compiled/org/frc1410/tooling/build/Java_gradle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin-dsl/plugins-blocks/compiled/org/frc1410/tooling/build/Java_gradle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin-dsl/plugins-blocks/extracted/org/frc1410/tooling/build/java.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin-dsl/plugins-blocks/extracted/org/frc1410/tooling/build/java.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/counters.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/counters.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/last-build.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/local-state/build-history.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/libs/build-logic.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/libs/build-logic.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9307341777470603509/.gradle/8.8/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9307341777470603509/.gradle/8.8/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9307341777470603509/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9307341777470603509/.gradle/8.8/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9307341777470603509/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9307341777470603509/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9307341777470603509/.gradle/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9307341777470603509/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/pluginDescriptors/org.frc1410.tooling.build.java.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/pluginDescriptors/org.frc1410.tooling.build.java.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/resources/main/META-INF/gradle-plugins/org.frc1410.tooling.build.java.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/resources/main/META-INF/gradle-plugins/org.frc1410.tooling.build.java.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8332175228664943547/.gradle/8.8/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8332175228664943547/.gradle/8.8/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8332175228664943547/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8332175228664943547/.gradle/8.8/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8332175228664943547/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8332175228664943547/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8332175228664943547/.gradle/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8332175228664943547/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/AutoProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/AutoProfile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/AutoSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/AutoSelector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/PhaseDrivenRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/PhaseDrivenRobot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/control/Axis.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/control/Axis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/control/AxisButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/control/AxisButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/control/Controller$RumbleTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/control/Controller$RumbleTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/control/DPadButton$Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/control/DPadButton$Direction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/phase/Phase.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/phase/Phase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/BoundTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/BoundTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/DeferredTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/DeferredTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/LazyTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/LazyTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/LifecycleHandle.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/LifecycleHandle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/Observer.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/Observer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/TaskPersistence$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/TaskPersistence$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/TaskPersistence$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/TaskPersistence$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/TaskPersistence$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/TaskPersistence$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/TaskPersistence.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/TaskPersistence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/TaskState.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/TaskState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/lock/TaskLock.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/scheduler/task/lock/TaskLock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/util/log/LogLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/util/log/LogLevel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/util/log/Logger.class" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/classes/java/main/org/frc1410/framework/util/log/Logger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/libs/framework.jar" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/libs/framework.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Elevator/Actions/AutoScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Elevator/Actions/AutoScore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Elevator/Actions/HomeElevatorA.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Elevator/Actions/HomeElevatorA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Elevator/Actions/IntakeAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Lbozo/IntakeCoral.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Lbozo/IntakeCoral.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Lbozo/OuttakeCoral.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Lbozo/OuttakeCoral.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/climber/ClimbCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/climber/UnClimbCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Climber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Drivetrain.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Drivetrain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Elevator$ELEVATOR_STATE.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Elevator$ELEVATOR_STATE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LBozo.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LBozo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs$Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs$Animation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs$Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs$Color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/IDs.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/IDs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/ReefSides.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/ReefSides.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/debug/debug_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/debug/debug_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/debug/roborio.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/debug/roborio.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/libs/robot.jar" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/libs/robot.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Robot.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Robot.class.uniqueId0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/AutoAlign.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Camera.class.uniqueId5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Climber.class.uniqueId12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Constants.class.uniqueId9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/DriveLooped.class.uniqueId7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Drivetrain.class.uniqueId4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Elevator$ELEVATOR_STATE.class.uniqueId14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Elevator.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/LBozo.class.uniqueId8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/LEDs$1.class.uniqueId6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/LEDs$Animation.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/LEDs$Color.class.uniqueId11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/LEDs.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Robot.class.uniqueId10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/SwerveModule.class.uniqueId13" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/x.auto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/New Path.path" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Elevator/Actions/IntakeAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Lbozo/IntakeCoral.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Lbozo/IntakeCoral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Lbozo/OuttakeCoral.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Lbozo/OuttakeCoral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/climber/ClimbCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/climber/UnClimbCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Climber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Drivetrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Drivetrain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/LBozo.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/LBozo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/IDs.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/IDs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,26 +327,40 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Reefscape2025" type="f1a62948:ProjectNode" />
                 <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
-                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
-                <item name="robot" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
-                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
-                <item name="robot" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Reefscape2025" type="f1a62948:ProjectNode" />
                 <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
-                <item name="robot" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
+                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="deployutils" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
+                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
+                <item name="framework" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
+                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
+                <item name="framework" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Reefscape2025" type="f1a62948:ProjectNode" />
+                <item name="Reefscape2025" type="2d1252cf:ModuleNode" />
+                <item name="framework" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
@@ -218,7 +382,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Auto-Align" />
+        <entry key="$PROJECT_DIR$" value="Duluth-2025" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -268,6 +432,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Build & Deploy Robot.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
     "Gradle.Reefscape2025 [buildDependents].executor": "Run",
     "Gradle.Reefscape2025 [deploy].executor": "Run",
@@ -278,7 +443,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Duluth-2025",
+    "git-widget-placeholder": "Before-Colorado",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/samuelrojas/Documents/Coding/Reefscape2025",
     "node.js.detected.package.eslint": "true",
@@ -293,7 +458,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.Reefscape2025:robot [build]">
+  <component name="RunManager" selected="Gradle.Build &amp; Deploy Robot">
     <configuration name="Reefscape2025 [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -405,21 +570,38 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle.Build &amp; Deploy Robot" />
+      <item itemvalue="Gradle.Build &amp; Deploy Robot for Debugging" />
+      <item itemvalue="Gradle.Build Robot" />
+      <item itemvalue="Gradle.Clean" />
+      <item itemvalue="Gradle.Clean Build &amp; Deploy Robot" />
+      <item itemvalue="Gradle.Clean Build &amp; Deploy Robot for Debugging" />
+      <item itemvalue="Gradle.Clean Build Robot" />
       <item itemvalue="Gradle.Reefscape2025 [dependencies]" />
       <item itemvalue="Gradle.Reefscape2025 [deploy]" />
       <item itemvalue="Gradle.Reefscape2025:framework [build]" />
       <item itemvalue="Gradle.Reefscape2025:robot [build]" />
       <item itemvalue="Gradle.Viridian-Framework [build]" />
+      <item itemvalue="Remote JVM Debug.Debug Robot via IP" />
+      <item itemvalue="Remote JVM Debug.Debug Robot via USB" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Reefscape2025:framework [build]" />
+        <item itemvalue="Gradle.Viridian-Framework [build]" />
         <item itemvalue="Gradle.Reefscape2025:robot [build]" />
         <item itemvalue="Gradle.Reefscape2025 [deploy]" />
         <item itemvalue="Gradle.Reefscape2025 [deploy]" />
-        <item itemvalue="Gradle.Viridian-Framework [build]" />
-        <item itemvalue="Gradle.Reefscape2025:framework [build]" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.59" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.59" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -448,6 +630,9 @@
       <workItem from="1740118812237" duration="225000" />
       <workItem from="1740119045431" duration="1046000" />
       <workItem from="1740180916587" duration="3883000" />
+      <workItem from="1741655457541" duration="105000" />
+      <workItem from="1741655574165" duration="103000" />
+      <workItem from="1741655842822" duration="5405000" />
     </task>
     <task id="LOCAL-00001" summary="Changed package name from Viridian to Reefscape">
       <option name="closed" value="true" />
@@ -617,6 +802,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="I cant pay electric bill" />
   </component>
   <component name="WpiLibVersionService">
-    <option name="lastChecked" value="20250227092430" />
+    <option name="lastChecked" value="20250310191738" />
   </component>
 </project>

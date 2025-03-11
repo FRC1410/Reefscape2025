@@ -14,10 +14,6 @@ import org.frc1410.reefscape2025.commands.Elevator.Actions.*;
 import org.frc1410.reefscape2025.commands.Elevator.Manual.IntakeAngleManual;
 import org.frc1410.reefscape2025.commands.Lbozo.IntakeCoral;
 import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoral;
-import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoralLinebreak;
-import org.frc1410.reefscape2025.commands.climber.ClimbCommand;
-import org.frc1410.reefscape2025.commands.climber.UnClimbCommand;
-import org.frc1410.reefscape2025.subsystems.Climber;
 import org.frc1410.reefscape2025.subsystems.Drivetrain;
 import org.frc1410.reefscape2025.subsystems.Elevator;
 import org.frc1410.reefscape2025.subsystems.LBozo;
@@ -25,8 +21,6 @@ import org.frc1410.reefscape2025.subsystems.LEDs;
 import org.frc1410.reefscape2025.util.NetworkTables;
 
 import com.pathplanner.lib.auto.AutoBuilder;
-import com.pathplanner.lib.commands.PathPlannerAuto;
-import com.pathplanner.lib.util.DriveFeedforwards;
 
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.networktables.NetworkTable;
@@ -35,8 +29,6 @@ import edu.wpi.first.networktables.StringPublisher;
 import edu.wpi.first.networktables.StringSubscriber;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
-
-import javax.naming.Name;
 
 import static org.frc1410.reefscape2025.util.IDs.*;
 import static org.frc1410.reefscape2025.util.Constants.*;
@@ -49,23 +41,13 @@ public final class Robot extends PhaseDrivenRobot {
 	private final Elevator elevator = subsystems.track(new Elevator());
 	private final Drivetrain drivetrain = subsystems.track(new Drivetrain(this.subsystems));
 	private final LBozo lBozo = subsystems.track(new LBozo());
-	private final Climber climber = subsystems.track(new Climber());
 	private final LEDs leds = subsystems.track(new LEDs());
 
 	private final NetworkTableInstance nt = NetworkTableInstance.getDefault();
 	private final NetworkTable table = this.nt.getTable("Auto");
 
-	private final AutoSelector autoSelector = new AutoSelector()
-			.add("Drive Forward Left Side", () -> new PathPlannerAuto("DFB"))
-			.add("Drive Forward Right Side", () -> new PathPlannerAuto("DFT"))
-			.add("1CoralL4Left", () -> new PathPlannerAuto("1CoralL4Left"))
-			.add("1CoralL4Right", () -> new PathPlannerAuto("1CoralL4Right"))
-			.add("1CoralL4Far", () -> new PathPlannerAuto("1CoralL4Far"))
-			.add("1CoralL1Far", () -> new PathPlannerAuto("1CoralL1Far"))
-			.add("1CoralL1Left", () -> new PathPlannerAuto("1CoralL1Left"))
-			.add("1CoralL1Right", () -> new PathPlannerAuto("1CoralL1Right"))
-			.add("1CoralL1SideLeft", () -> new PathPlannerAuto("1CoralL1SideLeft"))
-			.add("1CoralL1SideRight", () -> new PathPlannerAuto("1CoralL1SideRight"));
+	private final AutoSelector autoSelector = new AutoSelector();
+
 			 {
 				{
 		var profiles = new String[this.autoSelector.getProfiles().size()];
@@ -85,15 +67,9 @@ public final class Robot extends PhaseDrivenRobot {
 
 		NamedCommands.registerCommand("Go to state", new AutoScore(elevator, lBozo, Elevator.ELEVATOR_STATE.L4, leds));
 		NamedCommands.registerCommand("Go to L1", new AutoScore(elevator, lBozo, Elevator.ELEVATOR_STATE.L1TEMP, leds));
-
-		NamedCommands.registerCommand("Run Intake", new IntakeAction(elevator, lBozo, leds));
 		NamedCommands.registerCommand("Outtake", new OuttakeCoral(lBozo, leds, elevator));
 
 		NamedCommands.registerCommand("Home Elevator", new HomeElevatorA(elevator));
-
-
-
-		
 		
 		AutoBuilder.configure(
 				this.drivetrain::getEstimatedPosition,
@@ -131,15 +107,13 @@ public final class Robot extends PhaseDrivenRobot {
 
 	@Override
 	public void teleopSequence() {
-		this.operatorController.RIGHT_TRIGGER.button().whileHeldOnce(new IntakeAction(elevator, lBozo, leds), TaskPersistence.GAMEPLAY);
-		this.operatorController.RIGHT_BUMPER.whileHeldOnce(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
-		this.operatorController.LEFT_BUMPER.whileHeldOnce(new OuttakeCoralLinebreak(lBozo, leds), TaskPersistence.GAMEPLAY, LockPriority.LOW);
+		this.operatorController.RIGHT_TRIGGER.button().whileHeldOnce(new IntakeCoral(lBozo, leds), TaskPersistence.GAMEPLAY);
+		this.operatorController.LEFT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, elevator), TaskPersistence.GAMEPLAY);
 		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, elevator), TaskPersistence.GAMEPLAY, LockPriority.HIGHEST);
 
 		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
-
-		// this.operatorController.Y.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L4, leds), TaskPersistence.GAMEPLAY);
-		// this.operatorController.B.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L3, leds), TaskPersistence.GAMEPLAY);
+		this.operatorController.Y.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L4, leds), TaskPersistence.GAMEPLAY);
+		this.operatorController.B.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L3, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.A.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L2, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.X.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L1TEMP, leds), TaskPersistence.GAMEPLAY);
 
@@ -150,10 +124,6 @@ public final class Robot extends PhaseDrivenRobot {
 
 		this.scheduler.scheduleDefaultCommand(new HoldElevatorPID(elevator), TaskPersistence.GAMEPLAY);
 //		this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, driverController.RIGHT_Y_AXIS), TaskPersistence.GAMEPLAY);
-
-		// Climber
-		this.operatorController.DPAD_RIGHT.whileHeldOnce(new ClimbCommand(climber), TaskPersistence.GAMEPLAY);
-		this.operatorController.DPAD_LEFT.whileHeldOnce(new UnClimbCommand(climber), TaskPersistence.GAMEPLAY);
 
 		this.scheduler.scheduleDefaultCommand(new DriveLooped(
 						this.drivetrain,
