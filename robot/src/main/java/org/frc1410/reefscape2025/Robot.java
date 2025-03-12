@@ -61,15 +61,6 @@ public final class Robot extends PhaseDrivenRobot {
 	}
 
 	public Robot() {
-		NamedCommands.registerCommand("Hold PID", new HoldElevatorPID(this.elevator));
-		NamedCommands.registerCommand("Prime Elevator", new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L4, leds));
-		NamedCommands.registerCommand("Go to height", new ConfigureElevatorHeight(elevator));
-
-		NamedCommands.registerCommand("Go to state", new AutoScore(elevator, lBozo, Elevator.ELEVATOR_STATE.L4, leds));
-		NamedCommands.registerCommand("Go to L1", new AutoScore(elevator, lBozo, Elevator.ELEVATOR_STATE.L1TEMP, leds));
-		NamedCommands.registerCommand("Outtake", new OuttakeCoral(lBozo, leds, elevator));
-
-		NamedCommands.registerCommand("Home Elevator", new HomeElevatorA(elevator));
 		
 		AutoBuilder.configure(
 				this.drivetrain::getEstimatedPosition,
@@ -101,7 +92,6 @@ public final class Robot extends PhaseDrivenRobot {
 			String autoProfile = this.autoSubscriber.get();
 			var autoCommand = this.autoSelector.select(autoProfile);
 
-		
 			this.scheduler.scheduleAutoCommand(autoCommand);
 	}
 
