@@ -168,11 +168,11 @@ public final class Constants {
     // 0.1905
     public static final Transform3d LEFT_CAMERA_POSE = new Transform3d(
             new Translation3d(0.3175, 0.2286,0.1905),
-            new Rotation3d(0,0,Radians.convertFrom(-55, Degrees))
+            new Rotation3d(0,0, Math.toRadians(-22))
     );
 
     public static final Transform3d RIGHT_CAMERA_POSE = new Transform3d(
-            new Translation3d(0,0,0),
-            new Rotation3d(0,0, Radians.convertFrom(55, Degrees))
+            new Translation3d(0.3175, -0.2286,0.1905),
+            new Rotation3d(0,0, Math.toRadians(17))
     );
 }

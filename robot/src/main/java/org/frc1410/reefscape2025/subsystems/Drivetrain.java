@@ -278,16 +278,16 @@ public class Drivetrain implements TickedSubsystem {
             }
         }
 
-//        if(rightEstimatedPose.isPresent()) {
-//            if(this.tempVal) {
-//                var resultTimeStamp = rightEstimatedPose.get().timestampSeconds;
-//
-//                if(resultTimeStamp != this.previousPipelineTimestamp) {
-//                    this.previousPipelineTimestamp = resultTimeStamp;
-//                    this.poseEstimator.addVisionMeasurement(rightEstimatedPose.get().estimatedPose.toPose2d(), resultTimeStamp);
-//                }
-//            }
-//        }
+        if(rightEstimatedPose.isPresent()) {
+            if(this.tempVal) {
+                var resultTimeStamp = rightEstimatedPose.get().timestampSeconds;
+
+                if(resultTimeStamp != this.previousPipelineTimestamp) {
+                    this.previousPipelineTimestamp = resultTimeStamp;
+                    this.poseEstimator.addVisionMeasurement(rightEstimatedPose.get().estimatedPose.toPose2d(), resultTimeStamp);
+                }
+            }
+        }
 
          this.poseX.set(this.getEstimatedPosition().getX());
          this.poseY.set(this.getEstimatedPosition().getY());
@@ -299,7 +299,5 @@ public class Drivetrain implements TickedSubsystem {
 
         var x = new Pose2d(this.getEstimatedPosition().toMatrix());
         this.posePublisher.set(x);
-
-        
     }
 }
