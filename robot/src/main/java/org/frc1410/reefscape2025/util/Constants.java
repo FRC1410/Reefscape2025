@@ -36,14 +36,14 @@ public final class Constants {
     public static int L_4_HEIGHT = 11280 + 250; //11280
     public static int INTAKE_HEIGHT = 0;
     public static int HOME_HEIGHT = 0;
-    public static int L_2_ALGAE = 0;
+    public static int L_2_ALGAE = 3600 + 350;
 
     public static double SAFE_ANGLE = 0;
-    public static double L1_ANGLE = 0.3; //0.564453
+    public static double L1_ANGLE = 0.5; //0.564453
     public static double L2_ANGLE = 0.3;
     public static double L3_ANGLE = 0.3;
     public static double L4_ANGLE = 0.3; //0.447021
-    public static double CORAL_OFF = 0;
+    public static double CORAL_OFF = 0.5;
 
     public static double INTAKE_ANGLE = 0.1; //0.171875
     public static double HOME_ANGLE = 0;

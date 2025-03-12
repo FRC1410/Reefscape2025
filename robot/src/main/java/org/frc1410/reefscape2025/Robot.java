@@ -115,7 +115,9 @@ public final class Robot extends PhaseDrivenRobot {
 		this.operatorController.Y.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L4, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.B.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L3, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.A.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L2, leds), TaskPersistence.GAMEPLAY);
-		this.operatorController.X.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L1TEMP, leds), TaskPersistence.GAMEPLAY);
+		this.operatorController.X.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L1, leds), TaskPersistence.GAMEPLAY);
+
+		this.operatorController.DPAD_RIGHT.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.CORAL_OFF, leds), TaskPersistence.GAMEPLAY);
 
 		this.operatorController.DPAD_UP.whenPressed(new ConfigureElevatorHeight(elevator), TaskPersistence.GAMEPLAY);
 		this.operatorController.DPAD_DOWN.whenPressed(new HomeElevator(elevator), TaskPersistence.GAMEPLAY);

@@ -1,10 +1,5 @@
 package org.frc1410.reefscape2025.subsystems;
 
-import com.ctre.phoenix6.configs.TalonFXConfiguration;
-import com.ctre.phoenix6.hardware.TalonFX;
-import com.ctre.phoenix6.signals.GravityTypeValue;
-import com.ctre.phoenix6.signals.InvertedValue;
-import com.ctre.phoenix6.signals.NeutralModeValue;
 import com.revrobotics.spark.SparkBase;
 import com.revrobotics.spark.SparkLowLevel;
 import com.revrobotics.spark.SparkMax;
@@ -19,6 +14,7 @@ import edu.wpi.first.wpilibj.CounterBase;
 import edu.wpi.first.wpilibj.Encoder;
 
 import org.frc1410.framework.scheduler.subsystem.TickedSubsystem;
+import org.frc1410.reefscape2025.util.Constants;
 import org.frc1410.reefscape2025.util.NetworkTables;
 
 import static org.frc1410.reefscape2025.util.IDs.*;
@@ -138,6 +134,7 @@ public class Elevator implements TickedSubsystem {
         L4(L_4_HEIGHT, L4_ANGLE),
         INTAKE(INTAKE_HEIGHT, INTAKE_ANGLE),
         HOME(HOME_HEIGHT, HOME_ANGLE),
+        CORAL_OFF(L_2_ALGAE, TempL1),
        L1TEMP(HOME_HEIGHT, TempL1);
 
         private final int elevatorDistance;
