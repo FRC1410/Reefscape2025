@@ -88,14 +88,14 @@ public final class Constants {
     public static final Measure<DistanceUnit> TRACKWIDTH_METERS = Meters.of(0.6032627);
 
     // Drive constants
-    public static final Angle FRONT_LEFT_STEER_ENCODER_OFFSET = Degrees.of(15.029297);
-    public static final Angle FRONT_RIGHT_STEER_ENCODER_OFFSET = Degrees.of(-179.648438);
-    public static final Angle BACK_LEFT_STEER_ENCODER_OFFSET = Degrees.of(154.863281); //-49.130859
-    public static final Angle BACK_RIGHT_STEER_ENCODER_OFFSET = Degrees.of(-27.861328);
+    public static final Angle FRONT_LEFT_STEER_ENCODER_OFFSET = Degrees.of(15.029297); 
+    public static final Angle FRONT_RIGHT_STEER_ENCODER_OFFSET = Degrees.of(0.351562); //-179.648438
+    public static final Angle BACK_LEFT_STEER_ENCODER_OFFSET = Degrees.of(-25.136719); //154.863281
+    public static final Angle BACK_RIGHT_STEER_ENCODER_OFFSET = Degrees.of(-27.861328); //-27.861328
 
     public static final boolean FRONT_LEFT_DRIVE_MOTOR_INVERTED = true;
-    public static final boolean FRONT_RIGHT_DRIVE_MOTOR_INVERTED = false;
-    public static final boolean BACK_LEFT_DRIVE_MOTOR_INVERTED = true;
+    public static final boolean FRONT_RIGHT_DRIVE_MOTOR_INVERTED = true;
+    public static final boolean BACK_LEFT_DRIVE_MOTOR_INVERTED = false;
     public static final boolean BACK_RIGHT_DRIVE_MOTOR_INVERTED = false;
 
     public static final boolean FRONT_LEFT_STEER_MOTOR_INVERTED = true;

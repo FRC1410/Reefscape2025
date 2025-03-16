@@ -274,7 +274,7 @@ public class Drivetrain implements TickedSubsystem {
         var rightEstimatedPose = this.rightCamera.getEstimatedPose();
 
         if(leftEstimatedPose.isPresent()) {
-            if(leftCamera.getAmbiguity() < 0.3) {
+            if(leftCamera.getAmbiguity() < 0.45) {
                 var resultTimeStamp = leftEstimatedPose.get().timestampSeconds;
 
                 if(resultTimeStamp != this.previousPipelineTimestamp) {
@@ -285,7 +285,7 @@ public class Drivetrain implements TickedSubsystem {
         }
 
         if(rightEstimatedPose.isPresent()) {
-            if(this.rightCamera.getAmbiguity() < 0.3) {
+            if(this.rightCamera.getAmbiguity() < 0.45) {
                 var resultTimeStamp = rightEstimatedPose.get().timestampSeconds;
 
                 if(resultTimeStamp != this.previousPipelineTimestamp) {

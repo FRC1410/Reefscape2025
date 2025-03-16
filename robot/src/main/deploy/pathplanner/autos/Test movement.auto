@@ -19,12 +19,6 @@
         {
           "type": "named",
           "data": {
-            "name": "Home"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
             "name": "Intake"
           }
         }

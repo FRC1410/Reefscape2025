@@ -49,7 +49,7 @@ public final class Robot extends PhaseDrivenRobot {
 	private final NetworkTable table = this.nt.getTable("Auto");
 
 	private final AutoSelector autoSelector = new AutoSelector()
-			.add("2", () -> new PathPlannerAuto("2 coral"));
+			.add("2", () -> new PathPlannerAuto("2"));
 
 			 {
 				{
