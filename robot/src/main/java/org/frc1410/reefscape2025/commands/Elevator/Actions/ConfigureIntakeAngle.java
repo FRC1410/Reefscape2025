@@ -18,20 +18,13 @@ public class ConfigureIntakeAngle extends Command{
         this.elevator = elevator;
         this.desiredElevatorState = desiredElevatorState;
         this.leds = leds;
-        addRequirements(elevator, leds);
+
     }
 
     @Override
     public void initialize() {
        this.elevator.setDesiredIntakeState(desiredElevatorState);
-
-        // switch (desiredElevatorState) {
-        //     case HOME -> this.leds.setAnimation(RAINBOW, NULL, 0.3);
-        //     case L1 -> this.leds.setAnimation(FADE_IN_OUT, RED, 0.2);
-        //     case L2 -> this.leds.setAnimation(FADE_IN_OUT, PURPLE, 0.5);
-        //     case L3 -> this.leds.setAnimation(FADE_IN_OUT, BLUE, 0.7);
-        //     case L4 -> this.leds.setAnimation(FADE_IN_OUT, GREEN, 0.9);
-        // }
+       this.elevator.setState(desiredElevatorState);
     }
 
     @Override

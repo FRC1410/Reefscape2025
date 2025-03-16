@@ -7,7 +7,6 @@ public class ConfigureElevatorHeight extends Command {
 
     public ConfigureElevatorHeight(Elevator elevator) {
         this.elevator = elevator;
-        addRequirements(elevator);
     }
 
     @Override

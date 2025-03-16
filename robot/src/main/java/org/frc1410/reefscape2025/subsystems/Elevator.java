@@ -63,6 +63,8 @@ public class Elevator implements TickedSubsystem {
     public int desiredElevatorHeightConfirmed = 1;
     private double desiredElevatorAngle = 0;
 
+    private ELEVATOR_STATE currentState = ELEVATOR_STATE.HOME;
+
     public Elevator() {
         this.leftMotor = new SparkMax(LEFT_ELEVATOR_MOTOR, SparkLowLevel.MotorType.kBrushless);
         
@@ -103,7 +105,7 @@ public class Elevator implements TickedSubsystem {
         intakeAngleMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
         intakeAngleMotorConfig.smartCurrentLimit(25);
 
-        intakeAngleMotorConfig.inverted(false);
+        intakeAngleMotorConfig.inverted(true);
 
         var alternateEncoderConfig = new AlternateEncoderConfig();
         alternateEncoderConfig.inverted(true);
@@ -135,6 +137,8 @@ public class Elevator implements TickedSubsystem {
         INTAKE(INTAKE_HEIGHT, INTAKE_ANGLE),
         HOME(HOME_HEIGHT, HOME_ANGLE),
         CORAL_OFF(L_2_ALGAE, TempL1),
+
+
        L1TEMP(HOME_HEIGHT, TempL1);
 
         private final int elevatorDistance;
@@ -166,6 +170,14 @@ public class Elevator implements TickedSubsystem {
     public void setElevatorSetPoint(double subtract) {
         this.desiredElevatorAngle = this.getCurrentElevatorDistance() - subtract;
         this.intakeAnglePIDController.setSetpoint(desiredElevatorAngle);
+    }
+
+    public void setState(ELEVATOR_STATE state) {
+        this.currentState = state;
+    }
+
+    public ELEVATOR_STATE getState() {
+        return currentState;
     }
 
     public void setIntakeAngleSpeed(double speed) {
@@ -224,7 +236,7 @@ public class Elevator implements TickedSubsystem {
 
         this.intakeVolts.set(motorVoltage);
 
-        this.intakeAngleMotor.setVoltage(-motorVoltage);
+        this.intakeAngleMotor.setVoltage(motorVoltage);
     }
 
     public void setIntakeAngleSetpoint(double subtract) {
@@ -238,10 +250,11 @@ public class Elevator implements TickedSubsystem {
     }
 
     public boolean elevatorHeightAtSetpoint() {
-        return elevatorPIDController.atSetpoint();
+        return Math.abs(this.getDesiredElevatorDistance() - this.getCurrentElevatorDistance()) < 250;
     }
 
     public int getCurrentElevatorDistance() {return this.barroonEncoder.get();}
+    public int getDesiredElevatorDistance() {return this.desiredElevatorHeight;}
 
     public double getCurrentIntakeAngle() {return this.intakeAngleMotor.getAlternateEncoder().getPosition();}
 

@@ -5,7 +5,6 @@ import com.ctre.phoenix6.hardware.Pigeon2;
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
-import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.kinematics.SwerveModulePosition;
@@ -257,6 +256,13 @@ public class Drivetrain implements TickedSubsystem {
         return slowmode;
     }
 
+    public void playMusic() {
+        this.frontLeftModule.randomMusic();
+        this.frontRightModule.randomMusic();
+        this.backLeftModule.randomMusic();
+        this.backRightModule.randomMusic();
+    }
+
     @Override
     public void periodic() {
         this.poseEstimator.update(
@@ -268,7 +274,7 @@ public class Drivetrain implements TickedSubsystem {
         var rightEstimatedPose = this.rightCamera.getEstimatedPose();
 
         if(leftEstimatedPose.isPresent()) {
-            if(this.tempVal) {
+            if(leftCamera.getAmbiguity() < 0.3) {
                 var resultTimeStamp = leftEstimatedPose.get().timestampSeconds;
 
                 if(resultTimeStamp != this.previousPipelineTimestamp) {
@@ -279,7 +285,7 @@ public class Drivetrain implements TickedSubsystem {
         }
 
         if(rightEstimatedPose.isPresent()) {
-            if(this.tempVal) {
+            if(this.rightCamera.getAmbiguity() < 0.3) {
                 var resultTimeStamp = rightEstimatedPose.get().timestampSeconds;
 
                 if(resultTimeStamp != this.previousPipelineTimestamp) {

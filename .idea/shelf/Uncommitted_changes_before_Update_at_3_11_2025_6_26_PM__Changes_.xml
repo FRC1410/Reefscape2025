@@ -1,0 +1,104 @@
+<changelist name="Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]" date="1741739182485" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 3/11/2025 6:26 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Elevator$ELEVATOR_STATE.class" />
+    <option name="AFTER_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Elevator$ELEVATOR_STATE.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/Elevator$ELEVATOR_STATE.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" />
+    <option name="AFTER_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/Robot.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" />
+    <option name="AFTER_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/Tuning.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/util/Constants.class" />
+    <option name="AFTER_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/util/Constants.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/Constants.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/checksums/checksums.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.8/checksums/checksums.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/checksums.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value="build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/buildOutputCleanup1.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Drivetrain.class" />
+    <option name="AFTER_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Drivetrain.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/Drivetrain.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.8/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/executionHistory.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/libs/robot.jar" />
+    <option name="AFTER_PATH" value="robot/build/libs/robot.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/robot.jar" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.8/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/executionHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.8/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Lbozo/IntakeCoral.class" />
+    <option name="AFTER_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Lbozo/IntakeCoral.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/IntakeCoral.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.8/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/SwerveModule.class" />
+    <option name="AFTER_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/SwerveModule.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/SwerveModule.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/.gradle/file-system.probe" />
+    <option name="AFTER_PATH" value="build-logic/.gradle/file-system.probe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/file-system.probe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="AFTER_PATH" value="robot/build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/previous-compilation-data.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/.gradle/8.8/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value="build-logic/.gradle/8.8/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/executionHistory1.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/fileHashes/resourceHashesCache.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.8/fileHashes/resourceHashesCache.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/resourceHashesCache.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Elevator.class" />
+    <option name="AFTER_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Elevator.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_11_2025_6_26_PM_[Changes]/Elevator.class" />
+  </binary>
+</changelist>

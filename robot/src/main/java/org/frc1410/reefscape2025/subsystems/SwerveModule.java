@@ -1,11 +1,14 @@
 package org.frc1410.reefscape2025.subsystems;
 
+import com.ctre.phoenix6.Orchestra;
+import com.ctre.phoenix6.StatusCode;
 import com.ctre.phoenix6.configs.CANcoderConfiguration;
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.ctre.phoenix6.controls.TorqueCurrentFOC;
 import com.ctre.phoenix6.controls.VelocityVoltage;
 import com.ctre.phoenix6.hardware.CANcoder;
 import com.ctre.phoenix6.hardware.TalonFX;
+import com.ctre.phoenix6.jni.OrchestraJNI;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
 import com.pathplanner.lib.util.DriveFeedforwards;
@@ -25,6 +28,9 @@ import edu.wpi.first.units.measure.AngularVelocity;
 import edu.wpi.first.units.measure.Distance;
 import edu.wpi.first.units.measure.LinearVelocity;
 import org.frc1410.framework.scheduler.subsystem.TickedSubsystem;
+
+import java.io.IOException;
+import java.util.Random;
 
 import static org.frc1410.reefscape2025.util.Constants.*;
 import static org.frc1410.reefscape2025.util.Tuning.*;
@@ -48,6 +54,8 @@ public class SwerveModule implements TickedSubsystem {
 
     private final DoublePublisher actualVelocity;
     private final DoublePublisher actualAngle;
+
+    private final Orchestra orchestra;
 
     public SwerveModule(
             int driveMotorID,
@@ -115,6 +123,28 @@ public class SwerveModule implements TickedSubsystem {
 
         this.actualVelocity = actualVelocity;
         this.actualAngle = actualAngle;
+
+        this.orchestra = new Orchestra();
+        this.orchestra.addInstrument(driveMotor);
+    }
+
+    public void randomMusic() {
+//        Random rand = new Random();
+//        var randomNum = rand.nextInt(3);
+        StatusCode result = this.orchestra.loadMusic("Fox.chirp");
+        if(!result.isOK()) {
+            System.out.println("Error loading orchestra music: " + result);
+        } else {
+            System.out.println("playing");
+            this.orchestra.play();
+        }
+
+//        switch (randomNum) {
+//            case 0 -> result = this.orchestra.loadMusic("Rasputin.chirp");
+//            case 1 -> result = this.orchestra.loadMusic("Baby.chirp");
+//            case 2 -> result = this.orchestra.loadMusic("Fox.chirp");
+//            case 3 -> result = this.orchestra.loadMusic("MURICA.chirp");
+//        }
     }
 
     private Rotation2d getSteerPosition() {

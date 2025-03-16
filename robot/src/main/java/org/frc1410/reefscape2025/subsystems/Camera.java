@@ -32,4 +32,12 @@ public class Camera implements Subsystem {
             return Optional.empty();
         }
     }
+
+    public double getAmbiguity() {
+        if(this.photonCamera.getLatestResult().hasTargets()) {
+            return photonCamera.getLatestResult().getBestTarget().poseAmbiguity;
+        } else {
+            return 1;
+        }
+    }
 }

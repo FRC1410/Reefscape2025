@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="Today we ball">
+    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="hella auto changes">
+      <change afterPath="$PROJECT_DIR$/robot/src/main/deploy/Baby.chrp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/src/main/deploy/Fox.chrp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/src/main/deploy/MURICA.chrp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/src/main/deploy/Rasputin.chirp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Elevator/ScoreL3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Elevator/ScoreL4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/LEDCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
@@ -18,29 +25,22 @@
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Elevator/Actions/ConfigureElevatorHeight.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Elevator/Actions/ConfigureElevatorHeight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Elevator/Actions/ConfigureIntakeAngle.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Elevator/Actions/ConfigureIntakeAngle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Elevator/Actions/HomeElevatorA.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Elevator/Actions/HomeElevatorA.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Lbozo/IntakeCoral.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Lbozo/IntakeCoral.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Drivetrain.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Drivetrain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Elevator$ELEVATOR_STATE.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Elevator$ELEVATOR_STATE.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Elevator.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/Elevator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs$Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs$Animation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs$Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs$Color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/LEDs.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/SwerveModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/subsystems/SwerveModule.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Constants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/libs/robot.jar" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/libs/robot.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL1Far.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL1Far.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL1Left.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL1Left.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL1Right.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL1Right.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL1SideLeft.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL1SideLeft.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL1SideRight.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL1SideRight.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL4Far.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL4Far.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL4Left.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL4Left.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL4Right.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/1CoralL4Right.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/3 piece auto Left.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/3 piece auto Left.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/3Coral.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/3Coral.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/4 piece auto Left.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/4 piece auto Left.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/DFB.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/DFB.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/DFM.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/DFM.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/DFT.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/DFT.auto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/2-Source.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/2-Source.path" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/3-Source.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/3-Source.path" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/5-Back.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/5-Back.path" afterDir="false" />
@@ -76,6 +76,17 @@
       <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/TopStart-6.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/TopStart-6.path" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Elevator/Actions/ConfigureElevatorHeight.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Elevator/Actions/ConfigureElevatorHeight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Elevator/Actions/ConfigureIntakeAngle.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Elevator/Actions/ConfigureIntakeAngle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Elevator/Actions/HomeElevatorA.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Elevator/Actions/HomeElevatorA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Lbozo/IntakeCoral.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Lbozo/IntakeCoral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Drivetrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Drivetrain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/LEDs.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/LEDs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/SwerveModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/SwerveModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Tuning.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Tuning.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +245,7 @@
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "Before-Colorado",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/samuelrojas/Documents/Coding/Reefscape2025",
+    "last_opened_file_path": "C:/Users/antho/IdeaProjects/Reefscape2025/robot/src/main/deploy",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -243,10 +254,19 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.editor.code.editing",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\antho\IdeaProjects\Reefscape2025\robot\src\main\deploy" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.frc1410.reefscape2025.commands.Elevator" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.Build &amp; Deploy Robot">
     <configuration name="Reefscape2025 [deploy]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -425,6 +445,11 @@
       <workItem from="1741702513329" duration="347000" />
       <workItem from="1741702880620" duration="743000" />
       <workItem from="1741730419266" duration="2607000" />
+      <workItem from="1741815476701" duration="5038000" />
+      <workItem from="1741822086861" duration="10046000" />
+      <workItem from="1741880015934" duration="1126000" />
+      <workItem from="1741910782730" duration="7718000" />
+      <workItem from="1741989899879" duration="32067000" />
     </task>
     <task id="LOCAL-00001" summary="Changed package name from Viridian to Reefscape">
       <option name="closed" value="true" />
@@ -586,7 +611,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741753734221</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="hella auto changes">
+      <option name="closed" value="true" />
+      <created>1741757723877</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1741757723877</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,9 +660,10 @@
     <MESSAGE value="we need to add the correct camera poses and calibrate the cameras" />
     <MESSAGE value="I hate :(" />
     <MESSAGE value="Today we ball" />
-    <option name="LAST_COMMIT_MESSAGE" value="Today we ball" />
+    <MESSAGE value="hella auto changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="hella auto changes" />
   </component>
   <component name="WpiLibVersionService">
-    <option name="lastChecked" value="20250311160028" />
+    <option name="lastChecked" value="20250315125246" />
   </component>
 </project>

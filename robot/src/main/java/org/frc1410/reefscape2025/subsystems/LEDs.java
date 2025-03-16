@@ -6,13 +6,16 @@ import edu.wpi.first.wpilibj2.command.Subsystem;
 import static com.ctre.phoenix.led.LarsonAnimation.*;
 import static com.ctre.phoenix.led.ColorFlowAnimation.*;
 import static com.ctre.phoenix.led.TwinkleOffAnimation.*;
+import static org.frc1410.reefscape2025.subsystems.LEDs.Animation.FADE_IN_OUT;
+import static org.frc1410.reefscape2025.subsystems.LEDs.Animation.RAINBOW;
+import static org.frc1410.reefscape2025.subsystems.LEDs.Color.*;
 import static org.frc1410.reefscape2025.util.Constants.LED_BRIGHTNESS;
 import static org.frc1410.reefscape2025.util.IDs.*;
 
 public class LEDs implements Subsystem {
 
     private final CANdle candle = new CANdle(LED_ID, "CTRE");
-    private final int numLed = 75;
+    private final int numLed = 400;
     private int r;
     private int g;
     private int b;
@@ -25,7 +28,6 @@ public class LEDs implements Subsystem {
 
         this.candle.configLOSBehavior(true);
         this.candle.configAllSettings(config);
-        this.setAnimation(Animation.RAINBOW, Color.NULL, 0.5);
     }
 
     public void setRGB(Color color) {
@@ -91,23 +93,6 @@ public class LEDs implements Subsystem {
         this.candle.setLEDs(this.r, this.g, this.b);
     }
 
-    public void getStateColor(Elevator.ELEVATOR_STATE elevatorState) {
-        switch (elevatorState) {
-            case L1:
-                break;
-            case L2:
-                break;
-            case L3:
-                break;
-            case L4:
-                break;
-            case INTAKE:
-                break;
-            case HOME:
-                break;
-        }
-    }
-
     /**
      *
      * @param animation Animation you want from the Animation enum
@@ -117,6 +102,7 @@ public class LEDs implements Subsystem {
      */
 
     public void setAnimation(Animation animation, Color color, double speed) {
+        this.candle.clearAnimation(0);
         this.setRGB(color);
 
         switch (animation) {

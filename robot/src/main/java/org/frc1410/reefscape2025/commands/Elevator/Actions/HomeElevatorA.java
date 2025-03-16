@@ -9,9 +9,10 @@ public class HomeElevatorA extends SequentialCommandGroup {
     public HomeElevatorA(Elevator elevator) {
         this.addCommands(
                 new InstantCommand(() -> elevator.setDesiredIntakeState(Elevator.ELEVATOR_STATE.HOME)),
-                new WaitCommand(0.5),
+                new WaitCommand(0.6),
                 new InstantCommand(elevator::setDesiredElevatorState),
                 new WaitCommand(0)
+
         );
     }
 }

@@ -27,7 +27,7 @@ public class IntakeCoral extends Command {
         this.elevator.setDesiredIntakeState(Elevator.ELEVATOR_STATE.INTAKE);
 
         this.lBozo.setLBozoSpeed(-0.5);
-        this.lBozo.setOuttakeSpeed(0.2);
+        this.lBozo.setOuttakeSpeed(0.18);
     }
 
     @Override
@@ -40,6 +40,6 @@ public class IntakeCoral extends Command {
         this.lBozo.setLBozoSpeed(0);
         this.lBozo.setOuttakeSpeed(0);
         this.elevator.resetElevatorEncoder();
-        this.leds.setColor(LEDs.Color.LIGHT_BLUE);
+        this.elevator.setDesiredIntakeState(Elevator.ELEVATOR_STATE.HOME);
     }
 }

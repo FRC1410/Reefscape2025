@@ -1,6 +1,7 @@
 package org.frc1410.reefscape2025;
 
 import com.pathplanner.lib.auto.NamedCommands;
+import com.pathplanner.lib.commands.PathPlannerAuto;
 import org.frc1410.framework.AutoSelector;
 import org.frc1410.framework.PhaseDrivenRobot;
 import org.frc1410.framework.control.Controller;
@@ -12,6 +13,7 @@ import org.frc1410.reefscape2025.commands.Drivetrain.ToggleSlowmode;
 import org.frc1410.reefscape2025.commands.Elevator.*;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.*;
 import org.frc1410.reefscape2025.commands.Elevator.Manual.IntakeAngleManual;
+import org.frc1410.reefscape2025.commands.LEDCommand;
 import org.frc1410.reefscape2025.commands.Lbozo.IntakeCoral;
 import org.frc1410.reefscape2025.commands.Lbozo.OuttakeCoral;
 import org.frc1410.reefscape2025.subsystems.Drivetrain;
@@ -46,7 +48,8 @@ public final class Robot extends PhaseDrivenRobot {
 	private final NetworkTableInstance nt = NetworkTableInstance.getDefault();
 	private final NetworkTable table = this.nt.getTable("Auto");
 
-	private final AutoSelector autoSelector = new AutoSelector();
+	private final AutoSelector autoSelector = new AutoSelector()
+			.add("2", () -> new PathPlannerAuto("2 coral"));
 
 			 {
 				{
@@ -79,6 +82,12 @@ public final class Robot extends PhaseDrivenRobot {
 				},
 				drivetrain
 		);
+
+		NamedCommands.registerCommand("ScoreL4", new ScoreL4(elevator, lBozo, leds));
+		NamedCommands.registerCommand("ScoreL3", new ScoreL3(elevator, lBozo, leds));
+		NamedCommands.registerCommand("Home", new HomeElevator(elevator));
+		NamedCommands.registerCommand("Intake", new IntakeCoral(lBozo, elevator, leds));
+		NamedCommands.registerCommand("Outtake", new OuttakeCoral(lBozo, leds, elevator));
 	}
 
 	private final StringPublisher autoPublisher = NetworkTables.PublisherFactory(this.table, "Profile",
@@ -97,6 +106,7 @@ public final class Robot extends PhaseDrivenRobot {
 
 	@Override
 	public void teleopSequence() {
+		this.operatorController.RIGHT_STICK.whenPressed(new InstantCommand(drivetrain::playMusic), TaskPersistence.GAMEPLAY);
 		this.operatorController.RIGHT_TRIGGER.button().whileHeldOnce(new IntakeCoral(lBozo, elevator, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.LEFT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, elevator), TaskPersistence.GAMEPLAY);
 		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, elevator), TaskPersistence.GAMEPLAY, LockPriority.HIGHEST);
@@ -106,6 +116,8 @@ public final class Robot extends PhaseDrivenRobot {
 		this.operatorController.B.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L3, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.A.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L2, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.X.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.L1, leds), TaskPersistence.GAMEPLAY);
+
+		//NUH UH
 
 		this.operatorController.DPAD_RIGHT.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.CORAL_OFF, leds), TaskPersistence.GAMEPLAY);
 
@@ -158,7 +170,7 @@ public final class Robot extends PhaseDrivenRobot {
 				), TaskPersistence.GAMEPLAY
 		);
 
-
+		this.scheduler.scheduleDefaultCommand(new LEDCommand(leds, elevator, lBozo), TaskPersistence.DURABLE);
 	}
 
 	@Override
