@@ -9,27 +9,23 @@ import org.frc1410.reefscape2025.subsystems.LEDs;
 public class OuttakeCoral extends Command {
     private final LBozo lBozo;
     private final LEDs leds;
-    private final Elevator elevator;
+    private boolean forward;
 
-    public OuttakeCoral(LBozo lBozo, LEDs leds, Elevator elevator) {
+    public OuttakeCoral(LBozo lBozo, LEDs leds, boolean forward) {
         this.lBozo = lBozo;
         this.leds = leds;
-        this.elevator = elevator;
+        this.forward = forward;
         addRequirements(this.lBozo);
-        addRequirements(this.elevator);
     }
 
     @Override
     public void initialize() {
-//        if(this.elevator.getDesiredElevatorAngleSetpoint() == 1.15) {
-//            this.lBozo.setLBozoSpeed(-0.17);
-//        } else {
-//            this.lBozo.setLBozoSpeed(-0.4);
-//        }
-
-        this.lBozo.setLBozoSpeed(0.4);
-        this.lBozo.setOuttakeSpeed(0.4);
-       
+        if(this.forward) {
+            this.lBozo.setLBozoSpeed(0.4);
+            this.lBozo.setOuttakeSpeed(0.4);
+        } else {
+            this.lBozo.setOuttakeSpeed(-0.2);
+        }
     }
 
     @Override

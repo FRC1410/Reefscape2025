@@ -1,18 +1,23 @@
 package org.frc1410.reefscape2025.commands.Lbozo;
 
 import edu.wpi.first.wpilibj2.command.Command;
+
+import org.frc1410.reefscape2025.subsystems.CoralRotation;
 import org.frc1410.reefscape2025.subsystems.Elevator;
 import org.frc1410.reefscape2025.subsystems.LBozo;
 import org.frc1410.reefscape2025.subsystems.LEDs;
+import org.frc1410.reefscape2025.subsystems.SuperStructure;
 
 public class IntakeCoral extends Command {
-    private final LBozo lBozo;
     private final Elevator elevator;
+    private final CoralRotation coralRotation;
+    private final LBozo lBozo;
     private final LEDs leds;
 
-    public IntakeCoral(LBozo lBozo, Elevator elevator, LEDs leds) {
-        this.lBozo = lBozo;
+    public IntakeCoral(Elevator elevator, CoralRotation coralRotation, LBozo lBozo, LEDs leds) {
         this.elevator = elevator;
+        this.coralRotation = coralRotation;
+        this.lBozo = lBozo;
         this.leds = leds;
         addRequirements(this.lBozo);
     }
@@ -24,7 +29,7 @@ public class IntakeCoral extends Command {
 
     @Override
     public void execute() {
-        this.elevator.setDesiredIntakeState(Elevator.ELEVATOR_STATE.INTAKE);
+        this.coralRotation.setDesiredCoralRotation(SuperStructure.INTAKE);
 
         this.lBozo.setLBozoSpeed(-0.5);
         this.lBozo.setOuttakeSpeed(0.18);
@@ -40,6 +45,6 @@ public class IntakeCoral extends Command {
         this.lBozo.setLBozoSpeed(0);
         this.lBozo.setOuttakeSpeed(0);
         this.elevator.resetElevatorEncoder();
-        this.elevator.setDesiredIntakeState(Elevator.ELEVATOR_STATE.HOME);
+        this.coralRotation.setDesiredCoralRotation(SuperStructure.HOME);
     }
 }

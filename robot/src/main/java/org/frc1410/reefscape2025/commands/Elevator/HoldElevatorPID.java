@@ -1,38 +1,30 @@
 package org.frc1410.reefscape2025.commands.Elevator;
 
+import org.frc1410.reefscape2025.subsystems.CoralRotation;
 import org.frc1410.reefscape2025.subsystems.Elevator;
-import org.frc1410.reefscape2025.subsystems.Elevator.ELEVATOR_STATE;
+import org.frc1410.reefscape2025.subsystems.SuperStructure;
 
 import edu.wpi.first.wpilibj2.command.Command;
 
 public class HoldElevatorPID extends Command{
     private final Elevator elevator;
+    private final CoralRotation coralRotation;
 
-    public HoldElevatorPID(Elevator elevator) {
+    public HoldElevatorPID(Elevator elevator, CoralRotation coralRotation) {
         this.elevator = elevator;
+        this.coralRotation = coralRotation;
     }
 
     @Override
     public void initialize() {
-        this.elevator.setDesiredIntakeState(ELEVATOR_STATE.Saftey);
-        this.elevator.setDesiredElevatorState();
-        
-        this.elevator.resetElevatorEncoder();
-        this.elevator.resetIntakeRotationEncoder();
+        this.coralRotation.setDesiredCoralRotation(SuperStructure.HOME);
+        this.elevator.setDesiredElevatorState(SuperStructure.HOME);
     }
     
     @Override
     public void execute() {
-       if(this.elevator.getDesiredElevatorState() != 1) { //Shitty code to tell it not to immediatly go to position, need to make safer
-           if(this.elevator.getDesiredElevatorState() != 0 || this.elevator.getCurrentElevatorDistance() > 250) {
-               this.elevator.goToDesiredHeight();
-        } else {
-               this.elevator.setElevatorVolatgeToZero();
-           }
-       } else {
-           this.elevator.setElevatorVolatgeToZero();
-       }
-      this.elevator.goToDesiredAngle();// uncomment when intake rotation mech is working again
+       this.elevator.goToDesiredHeight();
+       this.coralRotation.goToAngle();
     }
 
     @Override

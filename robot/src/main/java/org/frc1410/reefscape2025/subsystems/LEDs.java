@@ -28,6 +28,7 @@ public class LEDs implements Subsystem {
 
         this.candle.configLOSBehavior(true);
         this.candle.configAllSettings(config);
+        this.setAnimation(RAINBOW, NULL, 0.3);
     }
 
     public void setRGB(Color color) {
@@ -102,7 +103,6 @@ public class LEDs implements Subsystem {
      */
 
     public void setAnimation(Animation animation, Color color, double speed) {
-        this.candle.clearAnimation(0);
         this.setRGB(color);
 
         switch (animation) {

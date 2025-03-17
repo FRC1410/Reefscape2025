@@ -11,11 +11,11 @@ public final class Tuning {
 
     public static double ELEVATOR_TOLERANCE = 50;
 
-    public static double INTAKE_ANGLE_P = 20; //10
-    public static double INTAKE_ANGLE_I = 0.5; //0.5
-    public static double INTAKE_ANGLE_D = 0.8; //0.8
+    public static double CORAL_ROTATION_P = 20; //10
+    public static double CORAL_ROTATION_I = 0.5; //0.5
+    public static double CORAL_ROTATION_D = 0.8; //0.8
     
-    public static double INTAKE_TOLERANCE = 0.05;
+    public static double CORAL_ROTATION_TOLERANCE = 0.05;
 
     // Drivetrain
     public static final double SWERVE_DRIVE_P = 0.401;

@@ -131,7 +131,7 @@ public class SwerveModule implements TickedSubsystem {
     public void randomMusic() {
 //        Random rand = new Random();
 //        var randomNum = rand.nextInt(3);
-        StatusCode result = this.orchestra.loadMusic("Fox.chirp");
+        StatusCode result = this.orchestra.loadMusic("Fox.chrp");
         if(!result.isOK()) {
             System.out.println("Error loading orchestra music: " + result);
         } else {

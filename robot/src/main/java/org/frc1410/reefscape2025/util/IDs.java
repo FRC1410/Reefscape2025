@@ -26,7 +26,7 @@ public final class IDs {
 	public static final int PIGEON_ID = 16;
 
 	//L'Bozo
-	public static final int INTAKE_ROTATION_MOTOR = 13;
+	public static final int CORAL_ROTATION_MOTOR = 13;
 	public static final int LBOZO_BOTTOM_MOTOR = 14;
 	public static final int LBOZO_TOP_MOTOR = 15;
 	public static final int LBOZO_OUTTAKE = 16;
