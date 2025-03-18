@@ -8,6 +8,8 @@ import org.frc1410.reefscape2025.subsystems.SuperStructure;
 import static org.frc1410.reefscape2025.subsystems.LEDs.Animation.FADE_IN_OUT;
 import static org.frc1410.reefscape2025.subsystems.LEDs.Animation.RAINBOW;
 import static org.frc1410.reefscape2025.subsystems.LEDs.Color.*;
+import static org.frc1410.reefscape2025.util.Constants.*;
+
 
 public class LEDCommand extends Command {
     private final LEDs leds;
@@ -23,22 +25,22 @@ public class LEDCommand extends Command {
 
     @Override
     public void execute() {
-        SuperStructure state = SuperStructure.HOME;
+        int state = elevator.getDesiredElevatorDistance();          
 
         switch (state) {
-            case L1:
+            case 1790:
                 this.leds.setAnimation(FADE_IN_OUT, RED, 0.2);
                 break;
-            case L2:
+            case 3600 + 250:
                 this.leds.setAnimation(FADE_IN_OUT, PURPLE, 0.5);
                 break;
-            case L3:
+            case 6218 + 250:
                 this.leds.setAnimation(FADE_IN_OUT, BLUE, 0.7);
                 break;
-            case L4:
+            case 11280 + 175:
                 this.leds.setAnimation(FADE_IN_OUT, GREEN, 0.9);
                 break;
-            case INTAKE:
+            case 1:
                 if(this.lBozo.hasCoral()) {
                     this.leds.setColor(LIGHT_BLUE);
                 } else {

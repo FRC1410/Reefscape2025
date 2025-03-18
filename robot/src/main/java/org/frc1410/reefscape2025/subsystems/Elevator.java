@@ -46,7 +46,7 @@ public class Elevator implements TickedSubsystem {
     private final DoublePublisher outputElevatorVolts = NetworkTables.PublisherFactory(this.table, "Desired Elevator Volts", 0);
     
 
-    private int desiredElevatorHeight = 1;
+    private int desiredElevatorHeight = 0;
 
     public Elevator() {
         this.leftMotor = new SparkMax(LEFT_ELEVATOR_MOTOR, SparkLowLevel.MotorType.kBrushless);

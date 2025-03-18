@@ -23,7 +23,6 @@ public class ConfigureLevelSimultanious extends Command{
     public void initialize() {
         this.elevator.setDesiredElevatorState(structure);
         this.coralRotation.setDesiredCoralRotation(structure);
-
     }
    
     @Override

@@ -5,7 +5,7 @@ import com.pathplanner.lib.config.PIDConstants;
 public final class Tuning {
     // Elevator
 
-    public static double ELEVEATOR_P = 0.004; //0.004
+    public static double ELEVEATOR_P = 0.005; //0.004
     public static double ELEVEATOR_I = 0;
     public static double ELEVEATOR_D = 0.0001;
 

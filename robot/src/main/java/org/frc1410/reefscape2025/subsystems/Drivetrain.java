@@ -48,6 +48,9 @@ public class Drivetrain implements TickedSubsystem {
     private final DoublePublisher backLeftObservedAngle = NetworkTables.PublisherFactory(this.table, "Back Left Observed Angle", 0);
     private final DoublePublisher backRightObservedAngle = NetworkTables.PublisherFactory(this.table, "Back Right Observed Angle", 0);
 
+    private final DoublePublisher leftAmbiguityPublisher = NetworkTables.PublisherFactory(this.table, "Left Ambiguity", 0);
+    private final DoublePublisher rightAmbiguityPublisher = NetworkTables.PublisherFactory(this.table, "Right Ambiguity", 0);
+
     private final DoublePublisher poseX = NetworkTables.PublisherFactory(this.table, "X position", 0);
     private final DoublePublisher poseY = NetworkTables.PublisherFactory(this.table, "y position", 0);
     private final DoublePublisher heading = NetworkTables.PublisherFactory(this.table, "Heading", 0);
@@ -295,6 +298,9 @@ public class Drivetrain implements TickedSubsystem {
             }
         }
 
+        this.leftAmbiguityPublisher.set(this.leftCamera.getAmbiguity());
+        this.rightAmbiguityPublisher.set(this.rightCamera.getAmbiguity());
+
          this.poseX.set(this.getEstimatedPosition().getX());
          this.poseY.set(this.getEstimatedPosition().getY());
          this.heading.set(this.getEstimatedPosition().getRotation().getDegrees());
@@ -305,5 +311,7 @@ public class Drivetrain implements TickedSubsystem {
 
         var x = new Pose2d(this.getEstimatedPosition().toMatrix());
         this.posePublisher.set(x);
+
+
     }
 }

@@ -56,7 +56,7 @@ public final class Robot extends PhaseDrivenRobot {
 	private final NetworkTable table = this.nt.getTable("Auto");
 
 	private final AutoSelector autoSelector = new AutoSelector()
-			.add("2", () -> new PathPlannerAuto("2"));
+			.add("2", () -> new PathPlannerAuto("2 coral"));
 
 			 {
 				{
@@ -112,16 +112,16 @@ public final class Robot extends PhaseDrivenRobot {
 
 	@Override
 	public void teleopSequence() {
-		this.operatorController.RIGHT_STICK.whenPressed(new InstantCommand(drivetrain::playMusic), TaskPersistence.GAMEPLAY);
+		//this.operatorController.RIGHT_STICK.whenPressed(new InstantCommand(drivetrain::playMusic), TaskPersistence.GAMEPLAY);
 		this.operatorController.RIGHT_TRIGGER.button().whileHeldOnce(new IntakeCoral(elevator, coralRotation, lBozo, leds), TaskPersistence.GAMEPLAY);
 		this.operatorController.LEFT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, true), TaskPersistence.GAMEPLAY);
 		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, true), TaskPersistence.GAMEPLAY, LockPriority.HIGHEST);
 
 		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
-		this.operatorController.Y.whenPressed(new ConfigureLevel(elevator, coralRotation, SuperStructure.L4), TaskPersistence.GAMEPLAY);
-		this.operatorController.B.whenPressed(new ConfigureLevel(elevator, coralRotation, SuperStructure.L3), TaskPersistence.GAMEPLAY);
-		this.operatorController.A.whenPressed(new ConfigureLevel(elevator, coralRotation, SuperStructure.L2), TaskPersistence.GAMEPLAY);
-		this.operatorController.X.whenPressed(new ConfigureLevel(elevator, coralRotation, SuperStructure.L1), TaskPersistence.GAMEPLAY);
+		this.operatorController.Y.whenPressed(new ConfigureLevelSimultanious(elevator, coralRotation, SuperStructure.L4), TaskPersistence.GAMEPLAY);
+		this.operatorController.B.whenPressed(new ConfigureLevelSimultanious(elevator, coralRotation, SuperStructure.L3), TaskPersistence.GAMEPLAY);
+		this.operatorController.A.whenPressed(new ConfigureLevelSimultanious(elevator, coralRotation, SuperStructure.L2), TaskPersistence.GAMEPLAY);
+		this.operatorController.X.whenPressed(new ConfigureLevelSimultanious(elevator, coralRotation, SuperStructure.L1), TaskPersistence.GAMEPLAY);
 
 		//NUH UH
 

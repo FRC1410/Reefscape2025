@@ -30,9 +30,11 @@ public class IntakeCoral extends Command {
     @Override
     public void execute() {
         this.coralRotation.setDesiredCoralRotation(SuperStructure.INTAKE);
+        this.elevator.setDesiredElevatorState(SuperStructure.INTAKE);
 
         this.lBozo.setLBozoSpeed(-0.5);
         this.lBozo.setOuttakeSpeed(0.18);
+
     }
 
     @Override

@@ -36,7 +36,7 @@ public class LBozo implements Subsystem {
 
         other.smartCurrentLimit(30);
         other.idleMode(SparkBaseConfig.IdleMode.kBrake);
-        other.inverted(LBOZO_BACK_MOTOR_IS_INVERTED);
+        other.inverted(true);
         this.outtakeMotor.configure(other, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
     }
 
