@@ -36,7 +36,7 @@ public final class Tuning {
     public static double DRIVE_MULTIPLIER = 1.0;
 
     // Path following
-    public static final PIDConstants PATH_AUTO_TRANSLATION_CONSTRAINTS = new PIDConstants(3, 0, 0);
+    public static final PIDConstants PATH_AUTO_TRANSLATION_CONSTRAINTS = new PIDConstants(3.2, 0, 0);
     public static final PIDConstants PATH_AUTO_ROTATION_CONSTRAINTS = new PIDConstants(1.3, 0, 0.1);
 
     public static final PIDConstants PATH_FOLLOWING_TRANSLATION_CONSTRAINTS = new PIDConstants(4, 0, 0);
