@@ -20,7 +20,7 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 import static org.frc1410.reefscape2025.util.IDs.CORAL_ROTATION_MOTOR;
 import static org.frc1410.reefscape2025.util.Tuning.*;
 
-public class CoralRotation implements TickedSubsystem{
+public class CoralRotation implements TickedSubsystem {
 
     private final SparkMax coralRotationMotor;
     private double desiredAngle;
@@ -35,10 +35,6 @@ public class CoralRotation implements TickedSubsystem{
     private final DoublePublisher desiredAnglePublisher = NetworkTables.PublisherFactory(this.table, "Desired Angle", 0);
     private final DoublePublisher actualAnglePublisher = NetworkTables.PublisherFactory(this.table, "Actual Angle", 0);
     private final DoublePublisher coralRotationVoltsPublisher = NetworkTables.PublisherFactory(this.table, "Coral Rotation Volts", 0);
-
-
-
-
 
     public CoralRotation() {
         this.coralRotationMotor = new SparkMax(CORAL_ROTATION_MOTOR, MotorType.kBrushless);
@@ -89,7 +85,6 @@ public class CoralRotation implements TickedSubsystem{
         return Math.abs(desiredAngle - getCurrentCoralAngle()) < 0.1;
     }
 
-
     public void setPositionManual(double change) {
         this.desiredAngle = this.getCurrentCoralAngle() + change;
         this.coralRotationPIDController.setSetpoint(this.desiredAngle);
@@ -98,8 +93,6 @@ public class CoralRotation implements TickedSubsystem{
     public void resetRotationEncoder() {
         this.coralRotationMotor.getAlternateEncoder().setPosition(0.0);
     }
-
-
 
     @Override
     public void periodic() {

@@ -1,4 +1,6 @@
 package org.frc1410.reefscape2025.subsystems;
+import org.frc1410.reefscape2025.util.Constants;
+
 import static org.frc1410.reefscape2025.util.Constants.*;
 
 public enum SuperStructure {
@@ -7,8 +9,9 @@ public enum SuperStructure {
     L1(L_1_HEIGHT, L1_ANGLE, 3),
     L2(L_2_HEIGHT, L2_ANGLE, 4),
     L3(L_3_HEIGHT, L3_ANGLE, 5),
-    L4(L_4_HEIGHT, L4_ANGLE, 6);
-
+    L4(L_4_HEIGHT, L4_ANGLE, 6),
+    ALGE_L2(L_2_HEIGHT, CORAL_OFF, 4),
+    ALGE_L3(L_3_HEIGHT, CORAL_OFF, 5);
 
     private int height;
     private double angle;

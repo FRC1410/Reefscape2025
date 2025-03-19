@@ -43,13 +43,11 @@ public final class Constants {
     public static double L2_ANGLE = 0.23;
     public static double L3_ANGLE = 0.23;
     public static double L4_ANGLE = 0.1; //0.447021
-    public static double CORAL_OFF = 0.5;
+    public static double CORAL_OFF = 0.8;
 
     public static double INTAKE_ANGLE = 0.23; //0.171875
     public static double HOME_ANGLE = 0.1;
     public static double TempL1 = 1.15;
-
-
 
     public static final double elevatorAccelerationCalculation = -1/(L_4_HEIGHT/.8);
 
