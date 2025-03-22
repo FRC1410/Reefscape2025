@@ -37,8 +37,11 @@ public class Camera implements Subsystem {
         //TODO: there is a bug where the code will crash because the best target is null
         double poseAmbeguity = 1;
         if(this.photonCamera.getLatestResult().hasTargets()) {
-            if(photonCamera.getLatestResult().getBestTarget() != null) {
-                poseAmbeguity = photonCamera.getLatestResult().getBestTarget().poseAmbiguity;
+            try {
+                poseAmbeguity = this.photonCamera.getLatestResult().getBestTarget().getPoseAmbiguity();
+
+            } catch(NullPointerException e) {
+                System.err.println("Ar Ar Ar Ar Ar    Ar Ar Ar Ar Ar");
             }
         } else {
             poseAmbeguity = 1;

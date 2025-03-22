@@ -28,7 +28,7 @@ public class LEDCommand extends Command {
         int state = elevator.getDesiredElevatorDistance();          
 
         switch (state) {
-            case 1790:
+            case 2:
                 this.leds.setAnimation(FADE_IN_OUT, RED, 0.2);
                 break;
             case 3600 + 250:

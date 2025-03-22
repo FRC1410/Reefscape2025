@@ -57,7 +57,10 @@ public final class Robot extends PhaseDrivenRobot {
 	private final NetworkTable table = this.nt.getTable("Auto");
 
 	private final AutoSelector autoSelector = new AutoSelector()
-			.add("2", () -> new PathPlannerAuto("2 coral"));
+			.add("2 coral climb", () -> new PathPlannerAuto("2 coral"))
+			.add("2 coral processor", () -> new PathPlannerAuto("2 coral left"))
+			.add("1CoralL4Right", () -> new PathPlannerAuto("1CoralL4Right"))
+			.add("1CoralL4Left", () -> new PathPlannerAuto("1CoralL4Left"));
 
 			 {
 				{
@@ -94,7 +97,7 @@ public final class Robot extends PhaseDrivenRobot {
 		NamedCommands.registerCommand("ScoreL4", new AutonomousScoring(elevator, coralRotation, lBozo, leds, SuperStructure.L4));
 		NamedCommands.registerCommand("ScoreL3", new AutonomousScoring(elevator, coralRotation, lBozo, leds, SuperStructure.L3));
 		NamedCommands.registerCommand("Intake", new IntakeCoral(elevator, coralRotation, lBozo, leds));
-		NamedCommands.registerCommand("Outtake", new OuttakeCoral(lBozo, leds, true));
+		NamedCommands.registerCommand("Outtake", new OuttakeCoral(lBozo, leds, true, elevator));
 	}
 
 	private final StringPublisher autoPublisher = NetworkTables.PublisherFactory(this.table, "Profile",
@@ -115,8 +118,8 @@ public final class Robot extends PhaseDrivenRobot {
 	public void teleopSequence() {
 
 		this.operatorController.RIGHT_TRIGGER.button().whileHeldOnce(new IntakeCoral(elevator, coralRotation, lBozo, leds), TaskPersistence.GAMEPLAY);
-		this.operatorController.LEFT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, false), TaskPersistence.GAMEPLAY);
-		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, true), TaskPersistence.GAMEPLAY, LockPriority.HIGHEST);
+		this.operatorController.LEFT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, false, elevator), TaskPersistence.GAMEPLAY);
+		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, true, elevator), TaskPersistence.GAMEPLAY, LockPriority.HIGHEST);
 
 		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
 		this.operatorController.Y.whenPressed(new ConfigureLevelSimultanious(elevator, coralRotation, SuperStructure.L4), TaskPersistence.GAMEPLAY);

@@ -25,7 +25,7 @@ public class OuttakeCoralLinebreak extends Command {
     @Override
     public void initialize() {
         timer.reset();
-        this.lBozo.setLBozoSpeed(-0.2);
+        this.lBozo.setLBozoSpeed(-0.15);
     }
 
     @Override

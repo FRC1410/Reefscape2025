@@ -61,6 +61,8 @@ public class Drivetrain implements TickedSubsystem {
 
     private final DoublePublisher rawPidgionVal = NetworkTables.PublisherFactory(this.table, "Pidgion Val", 0);
 
+
+
     private final DoublePublisher characterizationVolts = NetworkTables.PublisherFactory(this.table,
             "characterization volts", 0);
 
@@ -277,7 +279,7 @@ public class Drivetrain implements TickedSubsystem {
         var rightEstimatedPose = this.rightCamera.getEstimatedPose();
 
         if(leftEstimatedPose.isPresent()) {
-            if(leftCamera.getAmbiguity() < 0.45) {
+            if(leftCamera.getAmbiguity() < 0.1) {
                 var resultTimeStamp = leftEstimatedPose.get().timestampSeconds;
 
                 if(resultTimeStamp != this.previousPipelineTimestamp) {
@@ -288,7 +290,7 @@ public class Drivetrain implements TickedSubsystem {
         }
 
         if(rightEstimatedPose.isPresent()) {
-            if(this.rightCamera.getAmbiguity() < 0.45) {
+            if(this.rightCamera.getAmbiguity() < 0.1) {
                 var resultTimeStamp = rightEstimatedPose.get().timestampSeconds;
 
                 if(resultTimeStamp != this.previousPipelineTimestamp) {
