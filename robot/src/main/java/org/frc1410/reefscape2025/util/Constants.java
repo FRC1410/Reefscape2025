@@ -35,7 +35,7 @@ public final class Constants {
     public static int L_3_HEIGHT = 6218 + 250;//6218
     public static int L_4_HEIGHT = 11280 + 175; //11280
     public static int INTAKE_HEIGHT = 1;
-    public static int HOME_HEIGHT = 0;
+    public static int HOME_HEIGHT = 500;
     public static int L_2_ALGAE = 3600 + 350;
 
     public static double SAFE_ANGLE = 0;

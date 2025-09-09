@@ -27,7 +27,6 @@ public class DriveLooped extends Command {
     public DriveLooped(Drivetrain drivetrain, Elevator elevator, Axis xAxis, Axis yAxis, Axis rotationAxis, Axis robotRelativeTrigger) {
         this.drivetrain = drivetrain;
         this.elevator = elevator;
-
         this.xAxis = xAxis;
         this.yAxis = yAxis;
         this.rotationAxis = rotationAxis;
@@ -45,9 +44,9 @@ public class DriveLooped extends Command {
         
 
         if(this.drivetrain.isSlowModeEnabled()) {
-            xVelocity = SWERVE_DRIVE_MAX_SPEED.times(-this.xAxis.get() * 0.6);
-            yVelocity = SWERVE_DRIVE_MAX_SPEED.times(-this.yAxis.get() * 0.6);
-            angularVelocity = SWERVE_DRIVE_MAX_ANGULAR_VELOCITY.times(-this.rotationAxis.get() * 0.6);
+            xVelocity = SWERVE_DRIVE_MAX_SPEED.times(-this.xAxis.get() * 0.1);
+            yVelocity = SWERVE_DRIVE_MAX_SPEED.times(-this.yAxis.get() * 0.1);
+            angularVelocity = SWERVE_DRIVE_MAX_ANGULAR_VELOCITY.times(-this.rotationAxis.get() * 0.3);
         } else {
             xVelocity = SWERVE_DRIVE_MAX_SPEED.times(-this.xAxis.get());
             yVelocity = SWERVE_DRIVE_MAX_SPEED.times(-this.yAxis.get());
