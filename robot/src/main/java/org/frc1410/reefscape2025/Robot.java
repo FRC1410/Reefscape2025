@@ -9,6 +9,7 @@ import org.frc1410.framework.scheduler.task.TaskPersistence;
 import org.frc1410.framework.scheduler.task.lock.LockPriority;
 import org.frc1410.reefscape2025.commands.Drivetrain.AutoAlign;
 import org.frc1410.reefscape2025.commands.Drivetrain.DriveLooped;
+import org.frc1410.reefscape2025.commands.Drivetrain.ToggleFieldOrientationCommand;
 import org.frc1410.reefscape2025.commands.Drivetrain.ToggleSlowmode;
 import org.frc1410.reefscape2025.commands.Elevator.*;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.*;
@@ -141,8 +142,7 @@ public final class Robot extends PhaseDrivenRobot {
 						this.elevator,
 						this.driverController.LEFT_Y_AXIS,
 						this.driverController.LEFT_X_AXIS,
-						this.driverController.RIGHT_X_AXIS,
-						this.driverController.LEFT_TRIGGER
+						this.driverController.RIGHT_X_AXIS
 					), TaskPersistence.EPHEMERAL, LockPriority.HIGH
 		);
 
@@ -154,6 +154,8 @@ public final class Robot extends PhaseDrivenRobot {
 //		this.operatorController.BACK.whenPressed(new ResetEncoders(elevator), TaskPersistence.GAMEPLAY);
 
 		this.driverController.A.whenPressed(new ToggleSlowmode(drivetrain), TaskPersistence.GAMEPLAY);
+
+        this.driverController.X.whenPressed(new ToggleFieldOrientationCommand(drivetrain), TaskPersistence.GAMEPLAY);
 
 		this.driverController.Y.whenPressed(new InstantCommand(
 				() -> {

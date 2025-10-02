@@ -22,15 +22,15 @@ public class DriveLooped extends Command {
 
     private final Axis rotationAxis;
 
-    private final Axis robotRelativeTrigger;
+//    private final Axis robotRelativeTrigger;
 
-    public DriveLooped(Drivetrain drivetrain, Elevator elevator, Axis xAxis, Axis yAxis, Axis rotationAxis, Axis robotRelativeTrigger) {
+    public DriveLooped(Drivetrain drivetrain, Elevator elevator, Axis xAxis, Axis yAxis, Axis rotationAxis) {
         this.drivetrain = drivetrain;
         this.elevator = elevator;
         this.xAxis = xAxis;
         this.yAxis = yAxis;
         this.rotationAxis = rotationAxis;
-        this.robotRelativeTrigger = robotRelativeTrigger;
+//        this.robotRelativeTrigger = robotRelativeTrigger;
 
         this.addRequirements(drivetrain);
     }
@@ -55,7 +55,7 @@ public class DriveLooped extends Command {
 
 //        drivetrain.drive(new ChassisSpeeds(xVelocity, yVelocity, angularVelocity));
 
-        if(robotRelativeTrigger.button().isActive()) {
+        if(drivetrain.fieldOriented) {
             drivetrain.drive(new ChassisSpeeds(xVelocity, yVelocity, angularVelocity));
         } else {
             this.drivetrain.fieldOrientedDrive(

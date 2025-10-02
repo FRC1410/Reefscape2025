@@ -87,6 +87,8 @@ public class Drivetrain implements TickedSubsystem {
     private boolean hasSeenAprilTag = false;
 
     private boolean slowmode = false;
+    public boolean fieldOriented = false;
+
 
     public Drivetrain(SubsystemStore subsystems) {
         this.frontLeftModule = subsystems.track(new SwerveModule(
@@ -257,6 +259,17 @@ public class Drivetrain implements TickedSubsystem {
 
     public boolean isSlowModeEnabled() {
         return slowmode;
+    }
+    public void switchOrientation() {
+        if(!fieldOriented) {
+            fieldOriented = true;
+        } else {
+            fieldOriented = false;
+        }
+    }
+
+    public boolean isFieldOriented() {
+        return fieldOriented;
     }
 
     public void playMusic() {
