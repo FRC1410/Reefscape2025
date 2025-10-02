@@ -55,15 +55,21 @@ public class DriveLooped extends Command {
 
 //        drivetrain.drive(new ChassisSpeeds(xVelocity, yVelocity, angularVelocity));
 
-        if(drivetrain.fieldOriented) {
-            drivetrain.drive(new ChassisSpeeds(xVelocity, yVelocity, angularVelocity));
+        if(!drivetrain.fieldOriented) {
+            drivetrain.drive(
+                new ChassisSpeeds(
+                    xVelocity,
+                    yVelocity,
+                    angularVelocity
+                )
+            );
         } else {
             this.drivetrain.fieldOrientedDrive(
-                    new ChassisSpeeds(
-                            xVelocity.in(MetersPerSecond),
-                            yVelocity.in(MetersPerSecond),
-                            angularVelocity.in(RadiansPerSecond)
-                    ).times(this.elevator.driveAccelerationLimitation())
+                new ChassisSpeeds(
+                    xVelocity.in(MetersPerSecond),
+                    yVelocity.in(MetersPerSecond),
+                    angularVelocity.in(RadiansPerSecond)
+                ).times(this.elevator.driveAccelerationLimitation())
             );
         }
     }

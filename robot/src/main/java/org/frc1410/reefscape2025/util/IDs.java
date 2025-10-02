@@ -27,7 +27,7 @@ public final class IDs {
 
 	//L'Bozo
 	public static final int CORAL_ROTATION_MOTOR = 13;
-	public static final int LBOZO_BOTTOM_MOTOR = 14;
+//	public static final int LBOZO_BOTTOM_MOTOR = 14;
 	public static final int LBOZO_TOP_MOTOR = 15;
 	public static final int LBOZO_OUTTAKE = 16;
 	public static final int LBOZO_LINE_BREAK_SENSOR = 3; //TBD

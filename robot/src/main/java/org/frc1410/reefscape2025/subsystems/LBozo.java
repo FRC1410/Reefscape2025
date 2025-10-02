@@ -14,7 +14,7 @@ import static org.frc1410.reefscape2025.util.Constants.*;
 public class LBozo implements Subsystem {
 
     private final SparkMax lBozoTopMotor = new SparkMax(LBOZO_TOP_MOTOR, SparkLowLevel.MotorType.kBrushless);
-    private final SparkMax lBozoBottomMotor = new SparkMax(LBOZO_BOTTOM_MOTOR, SparkLowLevel.MotorType.kBrushless);
+//    private final SparkMax lBozoBottomMotor = new SparkMax(LBOZO_BOTTOM_MOTOR, SparkLowLevel.MotorType.kBrushless);
     private final SparkMax outtakeMotor = new SparkMax(LBOZO_OUTTAKE, SparkLowLevel.MotorType.kBrushless);
 
     public LBozo() {
@@ -30,8 +30,7 @@ public class LBozo implements Subsystem {
         bottomMotorConfig.smartCurrentLimit(30);
         bottomMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
         bottomMotorConfig.inverted(LBOZO_BACK_MOTOR_IS_INVERTED);
-        this.lBozoBottomMotor.configure(bottomMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
-
+//        this.lBozoBottomMotor.configure(bottomMotorConfig, SparkBase.ResetMode.kNoResetSafeParameters, SparkBase.PersistMode.kNoPersistParameters);
         var other = new SparkMaxConfig();
 
         other.smartCurrentLimit(30);
@@ -42,7 +41,7 @@ public class LBozo implements Subsystem {
 
     public void setLBozoSpeed(double speed) {
         this.lBozoTopMotor.set(speed);
-        this.lBozoBottomMotor.set(speed);
+//        this.lBozoBottomMotor.set(speed)
     }
 
     public void setOuttakeSpeed(double speed) {

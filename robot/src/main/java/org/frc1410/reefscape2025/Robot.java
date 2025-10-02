@@ -168,17 +168,17 @@ public final class Robot extends PhaseDrivenRobot {
 				), TaskPersistence.GAMEPLAY
 		);
 
-		this.driverController.RIGHT_BUMPER.whileHeldOnce(new AutoAlign(
-				this.drivetrain,
-						true
-				), TaskPersistence.GAMEPLAY
-		);
+//		this.driverController.RIGHT_BUMPER.whileHeldOnce(new AutoAlign(
+//				this.drivetrain,
+//						true
+//				), TaskPersistence.GAMEPLAY
+//		);
 
-		this.driverController.LEFT_BUMPER.whileHeldOnce(new AutoAlign(
-				this.drivetrain,
-				false
-				), TaskPersistence.GAMEPLAY
-		);
+//		this.driverController.LEFT_BUMPER.whileHeldOnce(new AutoAlign(
+//				this.drivetrain,
+//				false
+//				), TaskPersistence.GAMEPLAY
+//		);
 
 		this.scheduler.scheduleDefaultCommand(new LEDCommand(leds, elevator, lBozo), TaskPersistence.DURABLE);
 	}
