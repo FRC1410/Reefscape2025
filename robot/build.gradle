@@ -1,4 +1,6 @@
 import edu.wpi.first.gradlerio.GradleRIOPlugin
+import org.photonvision.*
+import org.photonlib.*
 
 plugins {
     id "java-library"
@@ -57,6 +59,7 @@ dependencies {
     simulationRelease wpi.sim.enableRelease()
 
     implementation "gov.nist.math:jama:1.0.3"
+    implementation("org.photonvision:photonlib-java:v2025.3.1")
 }
 
 // Simulation configuration (e.g. environment variables)
