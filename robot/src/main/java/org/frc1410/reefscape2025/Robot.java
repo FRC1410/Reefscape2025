@@ -155,7 +155,7 @@ public final class Robot extends PhaseDrivenRobot {
 
 		this.driverController.A.whenPressed(new ToggleSlowmode(drivetrain), TaskPersistence.GAMEPLAY);
 
-        this.driverController.X.whenPressed(new ToggleFieldOrientationCommand(drivetrain), TaskPersistence.GAMEPLAY);
+        this.driverController.X.whenPressed(new ToggledOrientationCommand(drivetrain), TaskPersistence.GAMEPLAY);
 
 		this.driverController.Y.whenPressed(new InstantCommand(
 				() -> {
@@ -168,11 +168,7 @@ public final class Robot extends PhaseDrivenRobot {
 				), TaskPersistence.GAMEPLAY
 		);
 
-//		this.driverController.RIGHT_BUMPER.whileHeldOnce(new AutoAlign(
-//				this.drivetrain,
-//						true
-//				), TaskPersistence.GAMEPLAY
-//		);
+		this.driverController.RIGHT_BUMPER.whileHeldOnce(new ResetEncoders(elevator), TaskPersistence.GAMEPLAY);
 
 //		this.driverController.LEFT_BUMPER.whileHeldOnce(new AutoAlign(
 //				this.drivetrain,
