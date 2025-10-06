@@ -7,12 +7,7 @@ import com.pathplanner.lib.config.RobotConfig;
 import com.pathplanner.lib.controllers.PPHolonomicDriveController;
 import com.pathplanner.lib.path.PathConstraints;
 
-import edu.wpi.first.apriltag.AprilTagFieldLayout;
-import edu.wpi.first.apriltag.AprilTagFields;
-import edu.wpi.first.math.geometry.Rotation3d;
-import edu.wpi.first.math.geometry.Transform3d;
 import edu.wpi.first.math.geometry.Translation2d;
-import edu.wpi.first.math.geometry.Translation3d;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.units.DistanceUnit;
 import edu.wpi.first.units.Measure;
@@ -35,7 +30,7 @@ public final class Constants {
     public static int L_3_HEIGHT = 6218 + 250;//6218
     public static int L_4_HEIGHT = 11280 + 175; //11280
     public static int INTAKE_HEIGHT = 1;
-    public static int HOME_HEIGHT = 500;
+    public static int HOME_HEIGHT = 200; //CHANGED
     public static int L_2_ALGAE = 3600 + 350;
 
     public static double SAFE_ANGLE = 0;
@@ -149,28 +144,4 @@ public final class Constants {
     );
 
     public static final List<ReefSides> RED_REEF = List.of();
-
-    public static final String LEFT_CAMERA_NAME = "Left_axle";
-    public static final String RIGHT_CAMERA_NAME = "Right_marin";
-
-    public static final AprilTagFieldLayout APRIL_TAG_FIELD_LAYOUT = AprilTagFieldLayout.loadField(AprilTagFields.kDefaultField);
-
-
-    // Todo: add the correct angle and camera transformation
-//    12.5 forward
-//    9 to either side
-//    7.5 on z
-
-    // 0.3175
-    // 0.2286
-    // 0.1905
-    public static final Transform3d LEFT_CAMERA_POSE = new Transform3d(
-            new Translation3d(0.3175, 0.2286,0.1905),
-            new Rotation3d(0,0, Math.toRadians(-22))
-    );
-
-    public static final Transform3d RIGHT_CAMERA_POSE = new Transform3d(
-            new Translation3d(0.3175, -0.2286,0.1905),
-            new Rotation3d(0,0, Math.toRadians(17))
-    );
 }

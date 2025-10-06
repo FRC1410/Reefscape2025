@@ -13,7 +13,9 @@ public class ResetEncoders extends Command{
     
     @Override
     public void initialize() {
+        System.out.println(this.elevator.getCurrentElevatorDistance());
         this.elevator.resetElevatorEncoder();
+        System.out.println("Reset Encoders");
     }
 
 

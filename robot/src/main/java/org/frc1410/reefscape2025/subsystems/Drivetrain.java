@@ -48,9 +48,6 @@ public class Drivetrain implements TickedSubsystem {
     private final DoublePublisher backLeftObservedAngle = NetworkTables.PublisherFactory(this.table, "Back Left Observed Angle", 0);
     private final DoublePublisher backRightObservedAngle = NetworkTables.PublisherFactory(this.table, "Back Right Observed Angle", 0);
 
-    private final DoublePublisher leftAmbiguityPublisher = NetworkTables.PublisherFactory(this.table, "Left Ambiguity", 0);
-    private final DoublePublisher rightAmbiguityPublisher = NetworkTables.PublisherFactory(this.table, "Right Ambiguity", 0);
-
     private final DoublePublisher poseX = NetworkTables.PublisherFactory(this.table, "X position", 0);
     private final DoublePublisher poseY = NetworkTables.PublisherFactory(this.table, "y position", 0);
     private final DoublePublisher heading = NetworkTables.PublisherFactory(this.table, "Heading", 0);
@@ -72,19 +69,11 @@ public class Drivetrain implements TickedSubsystem {
     private final SwerveModule backLeftModule;
     private final SwerveModule backRightModule;
 
-//    p
-//    rivate final AHRS gyro = new AHRS(AHRS.NavXComType.kMXP_SPI);
     private final Pigeon2 gyro = new Pigeon2(PIGEON_ID);
 
     private final SwerveDrivePoseEstimator poseEstimator;
 
     private Rotation2d fieldRelativeOffset = new Rotation2d();
-
-    private final Camera leftCamera;
-    private final Camera rightCamera;
-    private final boolean tempVal = true;
-    private double previousPipelineTimestamp = 0;
-    private boolean hasSeenAprilTag = false;
 
     private boolean slowmode = false;
     public boolean fieldOriented = false;
@@ -158,9 +147,6 @@ public class Drivetrain implements TickedSubsystem {
                 this.getSwerveModulePositions(),
                 new Pose2d()
         );
-
-        this.leftCamera = new Camera(LEFT_CAMERA_NAME, LEFT_CAMERA_POSE);
-        this.rightCamera = new Camera(RIGHT_CAMERA_NAME, RIGHT_CAMERA_POSE);
     }
 
     public void drive(ChassisSpeeds chassisSpeeds) {
@@ -286,45 +272,11 @@ public class Drivetrain implements TickedSubsystem {
                 this.getSwerveModulePositions()
         );
 
-        var leftEstimatedPose = this.leftCamera.getEstimatedPose();
-        var rightEstimatedPose = this.rightCamera.getEstimatedPose();
-
-        if(leftEstimatedPose.isPresent()) {
-            if(leftCamera.getAmbiguity() < 0.45) {
-                var resultTimeStamp = leftEstimatedPose.get().timestampSeconds;
-
-                if(resultTimeStamp != this.previousPipelineTimestamp) {
-                    this.previousPipelineTimestamp = resultTimeStamp;
-                    this.poseEstimator.addVisionMeasurement(leftEstimatedPose.get().estimatedPose.toPose2d(), resultTimeStamp);
-                }
-            }
-        }
-
-        if(rightEstimatedPose.isPresent()) {
-            if(this.rightCamera.getAmbiguity() < 0.45) {
-                var resultTimeStamp = rightEstimatedPose.get().timestampSeconds;
-
-                if(resultTimeStamp != this.previousPipelineTimestamp) {
-                    this.previousPipelineTimestamp = resultTimeStamp;
-                    this.poseEstimator.addVisionMeasurement(rightEstimatedPose.get().estimatedPose.toPose2d(), resultTimeStamp);
-                }
-            }
-        }
-
-        this.leftAmbiguityPublisher.set(this.leftCamera.getAmbiguity());
-        this.rightAmbiguityPublisher.set(this.rightCamera.getAmbiguity());
-
-         this.poseX.set(this.getEstimatedPosition().getX());
-         this.poseY.set(this.getEstimatedPosition().getY());
-         this.heading.set(this.getEstimatedPosition().getRotation().getDegrees());
-
-        // this.yaw.set(this.getGyroYaw().getDegrees());
-        // this.pitch.set(this.gyro.getPitch().getValue().in(Units.Degrees));
-        // this.roll.set(this.gyro.getRoll().getValue().in(Units.Degrees));
+        this.poseX.set(this.getEstimatedPosition().getX());
+        this.poseY.set(this.getEstimatedPosition().getY());
+        this.heading.set(this.getEstimatedPosition().getRotation().getDegrees());
 
         var x = new Pose2d(this.getEstimatedPosition().toMatrix());
         this.posePublisher.set(x);
-
-
     }
 }

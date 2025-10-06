@@ -9,6 +9,10 @@ public final class Tuning {
     public static double ELEVEATOR_I = 0;
     public static double ELEVEATOR_D = 0.0001;
 
+//    public static double ELEVEATOR_P = 0.0;
+//    public static double ELEVEATOR_I = 0.0;
+//    public static double ELEVEATOR_D = 0.0;
+
     public static double ELEVATOR_TOLERANCE = 50;
 
     public static double CORAL_ROTATION_P = 20; //10
