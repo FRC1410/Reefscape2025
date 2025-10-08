@@ -155,7 +155,7 @@ public final class Robot extends PhaseDrivenRobot {
 
 		this.driverController.A.whenPressed(new ToggleSlowmode(drivetrain), TaskPersistence.GAMEPLAY);
 
-        this.driverController.X.whenPressed(new ToggledOrientationCommand(drivetrain), TaskPersistence.GAMEPLAY);
+        this.driverController.X.whenPressed(new ToggleFieldOrientationCommand(drivetrain), TaskPersistence.GAMEPLAY);
 
 		this.driverController.Y.whenPressed(new InstantCommand(
 				() -> {

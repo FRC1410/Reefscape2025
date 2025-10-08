@@ -25,6 +25,9 @@ public class HoldElevatorPID extends Command{
     public void execute() {
        this.elevator.goToDesiredHeight();
        this.coralRotation.goToAngle();
+       if(this.elevator.getCurrentElevatorDistance() < -1) {
+           this.elevator.resetElevatorEncoder();
+       }
     }
 
     @Override

@@ -28,9 +28,9 @@ public class Elevator implements TickedSubsystem {
     private final Encoder barroonEncoder;
 
     private final PIDController elevatorPIDController = new PIDController(
-            ELEVEATOR_P,
-            ELEVEATOR_I,
-            ELEVEATOR_D
+            ELEVATOR_P,
+            ELEVATOR_I,
+            ELEVATOR_D
     );
 
     
@@ -71,10 +71,10 @@ public class Elevator implements TickedSubsystem {
         rightMotorConfig.idleMode(SparkBaseConfig.IdleMode.kBrake);
         rightMotorConfig.smartCurrentLimit(40);
 
-        rightMotorConfig.inverted(true);
+        rightMotorConfig.inverted(false);
 
         this.rightMotor.configure(
-            leftMotorConfig,
+            rightMotorConfig,
             SparkBase.ResetMode.kResetSafeParameters,
             SparkBase.PersistMode.kNoPersistParameters
         );
@@ -85,7 +85,7 @@ public class Elevator implements TickedSubsystem {
 
         this.elevatorPIDController.setTolerance(ELEVATOR_TOLERANCE);
 
-        elevatorPIDController.setSetpoint(0);
+        elevatorPIDController.setSetpoint(200);
     }
 
 
@@ -102,6 +102,8 @@ public class Elevator implements TickedSubsystem {
     public void setDesiredElevatorState(SuperStructure height) {
         this.desiredElevatorHeight = height.desiredElevatorHeight();
         this.elevatorPIDController.setSetpoint(desiredElevatorHeight);
+
+        this.elevatorPIDController.reset(); //scary possible break
     }
 
 
@@ -157,8 +159,12 @@ public class Elevator implements TickedSubsystem {
     public void periodic() {
         this.desiredHeightPub.set(this.desiredElevatorHeight);
         this.actualElevatorHeightPub.set(this.getCurrentElevatorDistance());
-        this.elevatorPIDSetpoint.set(this.elevatorPIDController.getSetpoint()); 
-        
+        this.elevatorPIDSetpoint.set(this.elevatorPIDController.getSetpoint());
+        this.actualRightElevatorVolts.set(this.rightMotor.getBusVoltage());
+        this.actualLeftElevatorVolts.set(this.leftMotor.getBusVoltage());
+        this.elevatorRightCurrent.set(this.rightMotor.getOutputCurrent());
+        this.elevatorLeftCurrent.set(this.leftMotor.getOutputCurrent());
+
 
         //this.driveAccelerationProportionalLimitation(); //we always want this to be updating
 
