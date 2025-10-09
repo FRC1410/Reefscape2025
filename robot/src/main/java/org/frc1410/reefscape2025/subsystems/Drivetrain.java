@@ -8,10 +8,7 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.kinematics.SwerveModulePosition;
-import edu.wpi.first.networktables.DoublePublisher;
-import edu.wpi.first.networktables.NetworkTable;
-import edu.wpi.first.networktables.NetworkTableInstance;
-import edu.wpi.first.networktables.StructPublisher;
+import edu.wpi.first.networktables.*;
 import edu.wpi.first.units.measure.AngularVelocity;
 import edu.wpi.first.units.measure.Voltage;
 import edu.wpi.first.wpilibj.DriverStation;
@@ -63,6 +60,8 @@ public class Drivetrain implements TickedSubsystem {
 
     private final StructPublisher<Pose2d> posePublisher = NetworkTableInstance.getDefault()
             .getStructTopic("pose", Pose2d.struct).publish();
+
+    private final DoublePublisher fieldOrientedPublisher = NetworkTables.PublisherFactory(this.table, "Field orientation", 0);
 
     private final SwerveModule frontLeftModule;
     private final SwerveModule frontRightModule;
@@ -274,7 +273,13 @@ public class Drivetrain implements TickedSubsystem {
 
         this.poseX.set(this.getEstimatedPosition().getX());
         this.poseY.set(this.getEstimatedPosition().getY());
+
         this.heading.set(this.getEstimatedPosition().getRotation().getDegrees());
+        if (this.fieldOriented) {
+            this.fieldOrientedPublisher.set(1);
+        } else {
+            this.fieldOrientedPublisher.set(0);
+        }
 
         var x = new Pose2d(this.getEstimatedPosition().toMatrix());
         this.posePublisher.set(x);

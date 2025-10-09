@@ -13,7 +13,7 @@ public final class Tuning {
 //    public static double ELEVATOR_I = 0.0;
 //    public static double ELEVATOR_D = 0.0;
 
-    public static double ELEVATOR_TOLERANCE = 50;
+    public static double ELEVATOR_TOLERANCE = 250;
 
     public static double CORAL_ROTATION_P = 20; //10
     public static double CORAL_ROTATION_I = 0.5; //0.5

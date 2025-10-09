@@ -5,13 +5,23 @@ import com.revrobotics.spark.SparkLowLevel;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.config.SparkBaseConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
+import edu.wpi.first.networktables.DoublePublisher;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj2.command.Subsystem;
+import org.frc1410.reefscape2025.util.NetworkTables;
 
 import static org.frc1410.reefscape2025.util.IDs.*;
 import static org.frc1410.reefscape2025.util.Constants.*;
 
 public class LBozo implements Subsystem {
+
+    private final NetworkTable table = NetworkTableInstance.getDefault().getTable("L'Bozo (Intake/Outtake)");
+
+    private final DoublePublisher limSwitchPublisher = NetworkTables.PublisherFactory(this.table, "Limit Switch state", 0);
+
+    public final DigitalInput limitSwitch = new DigitalInput(LBOZO_LIMIT_SWITCH);
 
     private final SparkMax lBozoTopMotor = new SparkMax(LBOZO_TOP_MOTOR, SparkLowLevel.MotorType.kBrushless);
 //    private final SparkMax lBozoBottomMotor = new SparkMax(LBOZO_BOTTOM_MOTOR, SparkLowLevel.MotorType.kBrushless);
@@ -49,11 +59,15 @@ public class LBozo implements Subsystem {
     }
 
     public boolean hasCoral(){
-        try (DigitalInput lineBreakSensor = new DigitalInput(LBOZO_LINE_BREAK_SENSOR)) {
-            return !lineBreakSensor.get();
-        } catch (Exception e){
-            System.out.println("Error: " + e.getMessage());
-            return false;
+        return !this.limitSwitch.get();
+    }
+
+    @Override
+    public void periodic() {
+        if (!this.limitSwitch.get()) {
+            this.limSwitchPublisher.set(1);
+        } else {
+            this.limSwitchPublisher.set(0);
         }
     }
 }

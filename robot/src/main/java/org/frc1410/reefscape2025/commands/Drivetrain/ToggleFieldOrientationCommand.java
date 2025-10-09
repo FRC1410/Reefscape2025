@@ -13,10 +13,10 @@ public class ToggleFieldOrientationCommand extends Command {
 
     @Override
     public void initialize() {
-        System.out.println("Switching field orientation...");
+//        System.out.println("Switching field orientation...");
         this.drivetrain.switchOrientation();
-        System.out.println("Switched! State is:");
-        System.out.println(this.drivetrain.fieldOriented);
+//        System.out.println("Switched! State is:");
+//        System.out.println(this.drivetrain.fieldOriented);
     }
 
     @Override

@@ -74,7 +74,7 @@ public class Elevator implements TickedSubsystem {
         rightMotorConfig.inverted(false);
 
         this.rightMotor.configure(
-            rightMotorConfig,
+            leftMotorConfig,
             SparkBase.ResetMode.kResetSafeParameters,
             SparkBase.PersistMode.kNoPersistParameters
         );
@@ -102,8 +102,6 @@ public class Elevator implements TickedSubsystem {
     public void setDesiredElevatorState(SuperStructure height) {
         this.desiredElevatorHeight = height.desiredElevatorHeight();
         this.elevatorPIDController.setSetpoint(desiredElevatorHeight);
-
-        this.elevatorPIDController.reset(); //scary possible break
     }
 
 
@@ -167,9 +165,6 @@ public class Elevator implements TickedSubsystem {
 
 
         //this.driveAccelerationProportionalLimitation(); //we always want this to be updating
-
-        this.elevatorLeftCurrent.set(this.leftMotor.getOutputCurrent());
-
         this.getCurrentElevatorDistance();
     }
 }

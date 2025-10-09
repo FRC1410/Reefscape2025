@@ -115,9 +115,8 @@ public final class Robot extends PhaseDrivenRobot {
 	@Override
 	public void teleopSequence() {
 
-		this.operatorController.RIGHT_TRIGGER.button().whileHeldOnce(new IntakeCoral(elevator, coralRotation, lBozo, leds), TaskPersistence.GAMEPLAY);
-		this.operatorController.LEFT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, false), TaskPersistence.GAMEPLAY);
-		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, true), TaskPersistence.GAMEPLAY, LockPriority.HIGHEST);
+		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new IntakeCoral(elevator, coralRotation, lBozo, leds), TaskPersistence.GAMEPLAY);
+		this.driverController.LEFT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, true), TaskPersistence.GAMEPLAY);
 
 		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
 		this.operatorController.Y.whenPressed(new ConfigureLevelSimultanious(elevator, coralRotation, SuperStructure.L4), TaskPersistence.GAMEPLAY);
@@ -131,7 +130,14 @@ public final class Robot extends PhaseDrivenRobot {
 		this.operatorController.DPAD_LEFT.whenPressed(new ConfigureLevelSimultanious(elevator, coralRotation, SuperStructure.ALGE_L3), TaskPersistence.GAMEPLAY);
 
 		this.operatorController.DPAD_DOWN.whenPressed(new ConfigureLevelSimultanious(elevator, coralRotation, SuperStructure.HOME), TaskPersistence.GAMEPLAY);
-		
+
+        this.scheduler.scheduleDefaultCommand(new SetCoralRotationManual(coralRotation, this.operatorController.LEFT_TRIGGER, 0.1), TaskPersistence.GAMEPLAY);
+
+        this.scheduler.scheduleDefaultCommand(new SetCoralRotationManual(coralRotation, this.operatorController.RIGHT_TRIGGER, -0.1), TaskPersistence.GAMEPLAY);
+
+//        this.operatorController.RIGHT_TRIGGER.whileHeldOnce(new SetCoralRotationManual(coralRotation, 0.1), TaskPersistence.GAMEPLAY);
+//        this.operatorController.LEFT_TRIGGER.whileHeldOnce(new SetCoralRotationManual(coralRotation, -0.1), TaskPersistence.GAMEPLAY);
+
 		//this.operatorController.RIGHT_BUMPER.whenPressed(new ConfigureIntakeAngle(elevator, Elevator.ELEVATOR_STATE.INTAKE, leds), TaskPersistence.GAMEPLAY);
 
 		this.scheduler.scheduleDefaultCommand(new HoldElevatorPID(elevator, coralRotation), TaskPersistence.GAMEPLAY);
@@ -147,9 +153,9 @@ public final class Robot extends PhaseDrivenRobot {
 		);
 
 
-		this.operatorController.START.whileHeldOnce(new SetCoralRotationManual(coralRotation, 0.1), TaskPersistence.GAMEPLAY);
-		this.operatorController.LEFT_STICK.whileHeldOnce(new SetCoralRotationManual(coralRotation, -0.1), TaskPersistence.GAMEPLAY);
-		this.operatorController.RIGHT_STICK.whileHeldOnce(new SetCoralRotationManualAndReset(coralRotation, -0.2), TaskPersistence.GAMEPLAY);
+//		this.operatorController.START.whileHeldOnce(new SetCoralRotationManual(coralRotation, 0.1), TaskPersistence.GAMEPLAY);
+//		this.operatorController.LEFT_STICK.whileHeldOnce(new SetCoralRotationManual(coralRotation, -0.1), TaskPersistence.GAMEPLAY);
+//		this.operatorController.RIGHT_STICK.whileHeldOnce(new SetCoralRotationManualAndReset(coralRotation, -0.2), TaskPersistence.GAMEPLAY);
 
 //		this.operatorController.BACK.whenPressed(new ResetEncoders(elevator), TaskPersistence.GAMEPLAY);
 
@@ -168,7 +174,7 @@ public final class Robot extends PhaseDrivenRobot {
 				), TaskPersistence.GAMEPLAY
 		);
 
-		this.driverController.RIGHT_BUMPER.whileHeldOnce(new ResetEncoders(elevator), TaskPersistence.GAMEPLAY);
+//		this.driverController.RIGHT_BUMPER.whileHeldOnce(new ResetEncoders(elevator), TaskPersistence.GAMEPLAY);
 
 //		this.driverController.LEFT_BUMPER.whileHeldOnce(new AutoAlign(
 //				this.drivetrain,

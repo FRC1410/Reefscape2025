@@ -30,12 +30,13 @@ public final class IDs {
 //	public static final int LBOZO_BOTTOM_MOTOR = 14;
 	public static final int LBOZO_TOP_MOTOR = 15;
 	public static final int LBOZO_OUTTAKE = 16;
-	public static final int LBOZO_LINE_BREAK_SENSOR = 3; //TBD
+	public static final int LBOZO_LIMIT_SWITCH = 3; //TBD
 
 	// Elevator
 	public static final int LEFT_ELEVATOR_MOTOR = 9;
 	public static final int RIGHT_ELEVATOR_MOTOR = 10;
 
+    
 	public static int INTAKE_ANGLE_ENCODER_CHANNEL_A = 4;
 	public static int INTAKE_ANGLE_ENCODER_CHANNEL_B = 5;
 
