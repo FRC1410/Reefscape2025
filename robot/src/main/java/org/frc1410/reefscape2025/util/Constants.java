@@ -28,20 +28,20 @@ public final class Constants {
     public static int L_1_HEIGHT = 1160; //1790
     public static int L_2_HEIGHT = 2730; //3600
     public static int L_3_HEIGHT = 5690;//6218
-    public static int L_4_HEIGHT = 10940; //11280
+    public static int L_4_HEIGHT = 11200; //11280
     public static int INTAKE_HEIGHT = 200;
     public static int HOME_HEIGHT = 200;
     public static int L_2_ALGAE = 3950 + 350;
 
     public static double SAFE_ANGLE = 0;
-    public static double L1_ANGLE = 0.18; //0.564453
-    public static double L2_ANGLE = 0.18;
-    public static double L3_ANGLE = 0.18;
-    public static double L4_ANGLE = 0.05; //0.447021
+    public static double L1_ANGLE = 0.564453; //0.564453
+    public static double L2_ANGLE = 0.23;
+    public static double L3_ANGLE = 0.23;
+    public static double L4_ANGLE = 0.15; //0.447021
     public static double CORAL_OFF = 0.8;
 
     public static double INTAKE_ANGLE = 0.05; //Dis some voodoo magic bro, dont touchee
-    public static double HOME_ANGLE = 0.02;
+    public static double HOME_ANGLE = 0.23;
     public static double TempL1 = 1.15;
 
     public static final double elevatorAccelerationCalculation = 1/(L_4_HEIGHT/.8);

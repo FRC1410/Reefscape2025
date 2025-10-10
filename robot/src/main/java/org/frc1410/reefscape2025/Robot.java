@@ -2,6 +2,8 @@ package org.frc1410.reefscape2025;
 
 import com.pathplanner.lib.auto.NamedCommands;
 import com.pathplanner.lib.commands.PathPlannerAuto;
+import edu.wpi.first.networktables.*;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.frc1410.framework.AutoSelector;
 import org.frc1410.framework.PhaseDrivenRobot;
 import org.frc1410.framework.control.Controller;
@@ -30,10 +32,6 @@ import org.frc1410.reefscape2025.util.NetworkTables;
 import com.pathplanner.lib.auto.AutoBuilder;
 
 import edu.wpi.first.math.geometry.Rotation2d;
-import edu.wpi.first.networktables.NetworkTable;
-import edu.wpi.first.networktables.NetworkTableInstance;
-import edu.wpi.first.networktables.StringPublisher;
-import edu.wpi.first.networktables.StringSubscriber;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 
@@ -45,80 +43,98 @@ import static org.frc1410.reefscape2025.util.Constants.*;
 
 public final class Robot extends PhaseDrivenRobot {
 
-	private final Controller driverController = new Controller(this.scheduler, DRIVER_CONTROLLER, 0.2);
-	private final Controller operatorController = new Controller(this.scheduler, OPERATOR_CONTROLLER,  0.1);
+    private final Controller driverController = new Controller(this.scheduler, DRIVER_CONTROLLER, 0.2);
+    private final Controller operatorController = new Controller(this.scheduler, OPERATOR_CONTROLLER,  0.1);
 
-	private final Elevator elevator = subsystems.track(new Elevator());
-	private final CoralRotation coralRotation = subsystems.track(new CoralRotation());
-	private final Drivetrain drivetrain = subsystems.track(new Drivetrain(this.subsystems));
-	private final LBozo lBozo = subsystems.track(new LBozo());
-	private final LEDs leds = subsystems.track(new LEDs());
+    private final Elevator elevator = subsystems.track(new Elevator());
+    private final CoralRotation coralRotation = subsystems.track(new CoralRotation());
+    private final Drivetrain drivetrain = subsystems.track(new Drivetrain(this.subsystems));
+    private final LBozo lBozo = subsystems.track(new LBozo());
+    private final LEDs leds = subsystems.track(new LEDs());
 
-	private final NetworkTableInstance nt = NetworkTableInstance.getDefault();
-	private final NetworkTable table = this.nt.getTable("Auto");
+    private final NetworkTableInstance nt = NetworkTableInstance.getDefault();
+    private final NetworkTable table = this.nt.getTable("Auto");
 
-	private final AutoSelector autoSelector = new AutoSelector()
-			.add("2", () -> new PathPlannerAuto("2 coral"));
+    private final AutoSelector autoSelector = new AutoSelector()
+            .add("1CoralL1Far", () -> new PathPlannerAuto("1CoralL1Far"))
+            .add("1CoralL1Left", () -> new PathPlannerAuto("1CoralL1Left"))
+            .add("1CoralL1Right", () -> new PathPlannerAuto("1CoralL1Right"))
+            .add("1CoralL1SideLeft", () -> new PathPlannerAuto("1CoralL1SideLeft"))
+            .add("1CoralL1SideRight", () -> new PathPlannerAuto("1CoralL1SideRight"))
+            .add("1CoralL4Far", () -> new PathPlannerAuto("1CoralL4Far"))
+            .add("1CoralL4Left", () -> new PathPlannerAuto("1CoralL4Left"))
+            .add("1CoralL4Right", () -> new PathPlannerAuto("1CoralL4Right"))
+            .add("2 coral", () -> new PathPlannerAuto("2 coral"))
+            .add("2", () -> new PathPlannerAuto("2"))
+            .add("3 coral", () -> new PathPlannerAuto("3 coral"))
+            .add("3 piece auto Left", () -> new PathPlannerAuto("3 piece auto Left"))
+            .add("3Coral", () -> new PathPlannerAuto("3Coral"))
+            .add("4 piece auto Left", () -> new PathPlannerAuto("4 piece auto Left"))
+            .add("DFB", () -> new PathPlannerAuto("DFB"))
+            .add("DFM", () -> new PathPlannerAuto("DFM"))
+            .add("DFT", () -> new PathPlannerAuto("DFT"))
+            .add("Test Auto", () -> new PathPlannerAuto("Test Auto"));
+    {
+        {
+            var profiles = new String[this.autoSelector.getProfiles().size()];
+            for (var i = 0; i < profiles.length; i++) {
+                profiles[i] = this.autoSelector.getProfiles().get(i).name();
+            }
 
-			 {
-				{
-		var profiles = new String[this.autoSelector.getProfiles().size()];
-		for (var i = 0; i < profiles.length; i++) {
-			profiles[i] = this.autoSelector.getProfiles().get(i).name();
-		}
+            var autoChoicesPub = NetworkTables.PublisherFactory(this.table, "Choices", profiles);
+            autoChoicesPub.accept(profiles);
+        }
+    }
 
-		var autoChoicesPub = NetworkTables.PublisherFactory(this.table, "Choices", profiles);
-		autoChoicesPub.accept(profiles);
-		}
-	}
+    public Robot() {
 
-	public Robot() {
-		
-		AutoBuilder.configure(
-				this.drivetrain::getEstimatedPosition,
-				this.drivetrain::resetPose,
-				this.drivetrain::getChassisSpeeds,
-				this.drivetrain::drive,
-				HOLONOMIC_AUTO_CONFIG,
-				ROBOT_CONFIG,
-				() -> {
-					var alliance = DriverStation.getAlliance();
+        AutoBuilder.configure(
+                this.drivetrain::getEstimatedPosition,
+                this.drivetrain::resetPose,
+                this.drivetrain::getChassisSpeeds,
+                this.drivetrain::drive,
+                HOLONOMIC_AUTO_CONFIG,
+                ROBOT_CONFIG,
+                () -> {
+                    var alliance = DriverStation.getAlliance();
 
-					if(alliance.isPresent()) {
-						return alliance.get() == DriverStation.Alliance.Red;
-					}
-					return false;
-				},
-				drivetrain
-		);
+                    if(alliance.isPresent()) {
+                        return alliance.get() == DriverStation.Alliance.Red;
+                    }
+                    return false;
+                },
+                drivetrain
+        );
 
-		NamedCommands.registerCommand("ScoreL4", new AutonomousScoring(elevator, coralRotation, lBozo, leds, SuperStructure.L4));
-		NamedCommands.registerCommand("ScoreL3", new AutonomousScoring(elevator, coralRotation, lBozo, leds, SuperStructure.L3));
-		NamedCommands.registerCommand("Intake", new IntakeCoral(elevator, coralRotation, lBozo, leds));
-		NamedCommands.registerCommand("Outtake", new OuttakeCoral(lBozo, leds, true));
-	}
+        NamedCommands.registerCommand("ScoreL4", new AutonomousScoring(elevator, coralRotation, lBozo, leds, SuperStructure.L4));
+        NamedCommands.registerCommand("ScoreL3", new AutonomousScoring(elevator, coralRotation, lBozo, leds, SuperStructure.L3));
+        NamedCommands.registerCommand("Intake", new IntakeCoral(elevator, coralRotation, lBozo, leds));
+        NamedCommands.registerCommand("Outtake", new OuttakeCoral(lBozo, leds, true));
+    }
 
-	private final StringPublisher autoPublisher = NetworkTables.PublisherFactory(this.table, "Profile",
-			this.autoSelector.getProfiles().isEmpty() ? "0" : this.autoSelector.getProfiles().get(0).name());
+    private final StringPublisher autoPublisher = NetworkTables.PublisherFactory(this.table, "Profile",
+            this.autoSelector.getProfiles().isEmpty() ? "0" : this.autoSelector.getProfiles().get(0).name());
 
-	private final StringSubscriber autoSubscriber = NetworkTables.SubscriberFactory(this.table, this.autoPublisher.getTopic());
+    private final StringSubscriber autoSubscriber = NetworkTables.SubscriberFactory(this.table, this.autoPublisher.getTopic());
 
-	@Override
-	public void autonomousSequence() {
-		NetworkTables.SetPersistence(this.autoPublisher.getTopic(), true);
-			String autoProfile = this.autoSubscriber.get();
-			var autoCommand = this.autoSelector.select(autoProfile);
+    @Override
+    public void autonomousSequence() {
+        NetworkTables.SetPersistence(this.autoPublisher.getTopic(), true);
+        String autoProfile = this.autoSubscriber.get();
+        var autoCommand = this.autoSelector.select(autoProfile);
 
-			this.scheduler.scheduleAutoCommand(autoCommand);
-	}
+        this.scheduler.scheduleAutoCommand(autoCommand);
+    }
 
-	@Override
+    @Override
 	public void teleopSequence() {
 
 		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new IntakeCoral(elevator, coralRotation, lBozo, leds), TaskPersistence.GAMEPLAY);
 		this.driverController.LEFT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, true), TaskPersistence.GAMEPLAY);
+        this.driverController.RIGHT_BUMPER.whileHeldOnce(new OuttakeCoral(lBozo, leds, false), TaskPersistence.GAMEPLAY);
 
-		// this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
+
+        // this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
 		this.operatorController.Y.whenPressed(new ConfigureLevelSimultanious(elevator, coralRotation, SuperStructure.L4), TaskPersistence.GAMEPLAY);
 		this.operatorController.B.whenPressed(new ConfigureLevelSimultanious(elevator, coralRotation, SuperStructure.L3), TaskPersistence.GAMEPLAY);
 		this.operatorController.A.whenPressed(new ConfigureLevelSimultanious(elevator, coralRotation, SuperStructure.L2), TaskPersistence.GAMEPLAY);
@@ -163,18 +179,16 @@ public final class Robot extends PhaseDrivenRobot {
 
         this.driverController.X.whenPressed(new ToggleFieldOrientationCommand(drivetrain), TaskPersistence.GAMEPLAY);
 
-		this.driverController.Y.whenPressed(new InstantCommand(
-				() -> {
-					if (DriverStation.getAlliance().get() == DriverStation.Alliance.Blue) {
-						this.drivetrain.setYaw(Rotation2d.fromDegrees(180));
-					} else {
-						this.drivetrain.setYaw(Rotation2d.fromDegrees(0));
-					}
-				}
-				), TaskPersistence.GAMEPLAY
-		);
-
-//		this.driverController.RIGHT_BUMPER.whileHeldOnce(new ResetEncoders(elevator), TaskPersistence.GAMEPLAY);
+//		this.driverController.X.whenPressed(new InstantCommand(
+//				() -> {
+//					if (DriverStation.getAlliance().get() == DriverStation.Alliance.Blue) {
+//						this.drivetrain.setYaw(Rotation2d.fromDegrees(180));
+//					} else {
+//						this.drivetrain.setYaw(Rotation2d.fromDegrees(0));
+//					}
+//				}
+//				), TaskPersistence.GAMEPLAY
+//		);
 
 //		this.driverController.LEFT_BUMPER.whileHeldOnce(new AutoAlign(
 //				this.drivetrain,

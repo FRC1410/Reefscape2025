@@ -18,7 +18,11 @@ public final class Tuning {
     public static double CORAL_ROTATION_P = 20; //10
     public static double CORAL_ROTATION_I = 0.5; //0.5
     public static double CORAL_ROTATION_D = 0.8; //0.8
-    
+
+//    public static double CORAL_ROTATION_P = 0; //10
+//    public static double CORAL_ROTATION_I = 0; //0.5
+//    public static double CORAL_ROTATION_D = 0; //0.8
+
     public static double CORAL_ROTATION_TOLERANCE = 0.05;
 
     // Drivetrain

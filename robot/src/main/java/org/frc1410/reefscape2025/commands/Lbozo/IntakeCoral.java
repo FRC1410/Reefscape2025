@@ -8,6 +8,7 @@ import org.frc1410.reefscape2025.subsystems.LBozo;
 import org.frc1410.reefscape2025.subsystems.LEDs;
 import org.frc1410.reefscape2025.subsystems.SuperStructure;
 
+import static org.frc1410.reefscape2025.util.Constants.L_1_HEIGHT;
 import static org.frc1410.reefscape2025.util.Tuning.*;
 
 public class IntakeCoral extends Command {
@@ -49,7 +50,7 @@ public class IntakeCoral extends Command {
         this.lBozo.setLBozoSpeed(0);
         this.lBozo.setOuttakeSpeed(0);
 
-        if(elevator.getCurrentElevatorDistance() > ELEVATOR_TOLERANCE) {
+        if(elevator.getCurrentElevatorDistance() > ELEVATOR_TOLERANCE && elevator.getCurrentElevatorDistance() < L_1_HEIGHT + 100) {
             this.elevator.resetElevatorEncoder();
         }
         this.coralRotation.setDesiredCoralRotation(SuperStructure.HOME);
