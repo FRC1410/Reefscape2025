@@ -56,6 +56,9 @@ public final class Robot extends PhaseDrivenRobot {
     private final NetworkTable table = this.nt.getTable("Auto");
 
     private final AutoSelector autoSelector = new AutoSelector()
+            .add("Pos1", () -> new PathPlannerAuto("Pos1"))
+            .add("Pos2", () -> new PathPlannerAuto("Pos2"))
+            .add("Pos3", () -> new PathPlannerAuto("Pos3"))
             .add("1CoralL1Far", () -> new PathPlannerAuto("1CoralL1Far"))
             .add("1CoralL1Left", () -> new PathPlannerAuto("1CoralL1Left"))
             .add("1CoralL1Right", () -> new PathPlannerAuto("1CoralL1Right"))
@@ -129,9 +132,12 @@ public final class Robot extends PhaseDrivenRobot {
     @Override
 	public void teleopSequence() {
 
-		this.driverController.RIGHT_TRIGGER.button().whileHeldOnce(new IntakeCoral(elevator, coralRotation, lBozo, leds), TaskPersistence.GAMEPLAY);
+		this.operatorController.RIGHT_BUMPER.whileHeldOnce(new IntakeCoral(elevator, coralRotation, lBozo, leds), TaskPersistence.GAMEPLAY);
 		this.driverController.LEFT_TRIGGER.button().whileHeldOnce(new OuttakeCoral(lBozo, leds, true), TaskPersistence.GAMEPLAY);
-        this.driverController.RIGHT_BUMPER.whileHeldOnce(new OuttakeCoral(lBozo, leds, false), TaskPersistence.GAMEPLAY);
+
+        this.driverController.LEFT_BUMPER.whileHeldOnce(new OuttakeCoral(lBozo, leds, true), TaskPersistence.GAMEPLAY);
+        this.operatorController.LEFT_BUMPER.whileHeldOnce(new OuttakeCoral(lBozo, leds, false), TaskPersistence.GAMEPLAY);
+
 
 
         // this.scheduler.scheduleDefaultCommand(new ElevatorManual(elevator, this.operatorController.LEFT_Y_AXIS), TaskPersistence.GAMEPLAY);
