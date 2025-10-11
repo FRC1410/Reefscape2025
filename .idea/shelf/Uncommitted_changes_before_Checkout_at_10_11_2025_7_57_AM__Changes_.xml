@@ -1,0 +1,10 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]" date="1760191046661" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 10/11/2025 7:57 AM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId0" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/tmp/compileJava/compileTransaction/stash-dir/Robot.class.uniqueId1" />
+  </binary>
+</changelist>

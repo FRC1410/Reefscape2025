@@ -1,0 +1,80 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1" date="1760191084489" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 10/11/2025 7:57 AM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/util/Constants.class" />
+    <option name="AFTER_PATH" value="robot/build/classes/java/main/org/frc1410/reefscape2025/util/Constants.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/Constants.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.8/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/tmp/compileJava/compileTransaction/stash-dir/Robot.class.uniqueId1" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.8/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="AFTER_PATH" value="robot/build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/previous-compilation-data.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/.gradle/file-system.probe" />
+    <option name="AFTER_PATH" value="build-logic/.gradle/file-system.probe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/file-system.probe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/checksums/checksums.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.8/checksums/checksums.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/checksums.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/fileHashes/resourceHashesCache.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.8/fileHashes/resourceHashesCache.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/resourceHashesCache.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value="build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/buildOutputCleanup1.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/libs/robot.jar" />
+    <option name="AFTER_PATH" value="robot/build/libs/robot.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/robot.jar" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="robot/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId0" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.8/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/executionHistory.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build-logic/.gradle/8.8/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value="build-logic/.gradle/8.8/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/executionHistory1.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.8/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.8/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/executionHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/file-system.probe" />
+    <option name="AFTER_PATH" value=".gradle/file-system.probe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2025_7_57_AM_[Changes]1/file-system1.probe" />
+  </binary>
+</changelist>

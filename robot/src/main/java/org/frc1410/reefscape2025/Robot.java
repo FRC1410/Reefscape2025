@@ -111,6 +111,8 @@ public final class Robot extends PhaseDrivenRobot {
 
         NamedCommands.registerCommand("ScoreL4", new AutonomousScoring(elevator, coralRotation, lBozo, leds, SuperStructure.L4));
         NamedCommands.registerCommand("ScoreL3", new AutonomousScoring(elevator, coralRotation, lBozo, leds, SuperStructure.L3));
+        NamedCommands.registerCommand("ScoreL2", new AutonomousScoring(elevator, coralRotation, lBozo, leds, SuperStructure.L2));
+        NamedCommands.registerCommand("ScoreL1", new AutonomousScoring(elevator, coralRotation, lBozo, leds, SuperStructure.L1));
         NamedCommands.registerCommand("Intake", new IntakeCoral(elevator, coralRotation, lBozo, leds));
         NamedCommands.registerCommand("Outtake", new OuttakeCoral(lBozo, leds, true));
     }
