@@ -4,46 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="Auto changes">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" afterDir="false" />
+    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="KCMT fixes, f it we ball?">
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/last-build.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/local-state/build-history.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/libs/build-logic.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/libs/build-logic.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/build/libs/framework.jar" beforeDir="false" afterPath="$PROJECT_DIR$/framework/build/libs/framework.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/util/Tuning.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/debug/debug_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/debug/debug_info.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/libs/robot.jar" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/libs/robot.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Robot.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/AutoAlign.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Constants.class.uniqueId4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/DriveLooped.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Drivetrain.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Elevator.class.uniqueId10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/IntakeCoral.class.uniqueId5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/LBozo.class.uniqueId8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/LEDs$Animation.class.uniqueId7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/LEDs$Color.class.uniqueId6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/LEDs.class.uniqueId9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Robot.class.uniqueId11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/SuperStructure.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/SwerveModule.class.uniqueId12" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/Pos1.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/Pos1.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/Pos2.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/Pos2.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/Pos3.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/Pos3.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/Test Auto.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/Test Auto.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Bottom-Start-1.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Bottom-Start-1.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Tuning.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/util/Tuning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Drivetrain/DriveLooped.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Drivetrain/DriveLooped.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,8 +116,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FRC v2 Command" />
         <option value="Class" />
+        <option value="FRC v2 Command" />
       </list>
     </option>
   </component>
@@ -667,7 +653,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760121475390</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="KCMT fixes, f it we ball?">
+      <option name="closed" value="true" />
+      <created>1760198390881</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1760198390881</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -688,7 +682,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test webhook" />
     <MESSAGE value="This time its the actual init commit frfr" />
     <MESSAGE value="Elevator constructor written" />
     <MESSAGE value="Elevator Started code" />
@@ -713,7 +706,8 @@
     <MESSAGE value="Gitignore removal. For nontechnicals, its a config thing" />
     <MESSAGE value="Lots of fixes, fixed elevator like 20 times, fixed lbozo, fixed so many shitaki mushrooms" />
     <MESSAGE value="Auto changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Auto changes" />
+    <MESSAGE value="KCMT fixes, f it we ball?" />
+    <option name="LAST_COMMIT_MESSAGE" value="KCMT fixes, f it we ball?" />
   </component>
   <component name="WpiLibVersionService">
     <option name="lastChecked" value="20251010123121" />

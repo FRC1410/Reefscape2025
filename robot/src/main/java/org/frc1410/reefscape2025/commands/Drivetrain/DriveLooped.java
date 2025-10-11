@@ -66,9 +66,9 @@ public class DriveLooped extends Command {
         } else {
             this.drivetrain.fieldOrientedDrive(
                 new ChassisSpeeds(
-                    xVelocity.in(MetersPerSecond),
-                    yVelocity.in(MetersPerSecond),
-                    angularVelocity.in(RadiansPerSecond)
+                    xVelocity,
+                    yVelocity,
+                    angularVelocity
                 ).times(this.elevator.driveAccelerationLimitation())
             );
         }
