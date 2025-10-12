@@ -56,9 +56,6 @@ public final class Robot extends PhaseDrivenRobot {
             .add("Pos1", () -> new PathPlannerAuto("Pos1"))
             .add("Pos2", () -> new PathPlannerAuto("Pos2"))
             .add("Pos3", () -> new PathPlannerAuto("Pos3"))
-            .add("Pos1-S", () -> new PathPlannerAuto("Pos1-S")) //With a source intake
-            .add("Pos2-S", () -> new PathPlannerAuto("Pos2-S"))
-            .add("Pos3-S", () -> new PathPlannerAuto("Pos3-S"))
             .add("1CoralL1Far", () -> new PathPlannerAuto("1CoralL1Far"))
             .add("1CoralL1Left", () -> new PathPlannerAuto("1CoralL1Left"))
             .add("1CoralL1Right", () -> new PathPlannerAuto("1CoralL1Right"))
