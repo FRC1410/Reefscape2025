@@ -19,15 +19,15 @@
                 "data": {
                   "commands": [
                     {
-                      "type": "named",
-                      "data": {
-                        "name": "ScoreL2"
-                      }
-                    },
-                    {
                       "type": "path",
                       "data": {
                         "pathName": "Bottom-Start-1"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "ScoreL2"
                       }
                     },
                     {

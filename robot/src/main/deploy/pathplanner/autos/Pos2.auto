@@ -19,15 +19,15 @@
                 "data": {
                   "commands": [
                     {
-                      "type": "named",
-                      "data": {
-                        "name": "ScoreL2"
-                      }
-                    },
-                    {
                       "type": "path",
                       "data": {
                         "pathName": "TopStart-6"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "ScoreL2"
                       }
                     },
                     {
@@ -56,12 +56,6 @@
                       }
                     }
                   ]
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Home Elevator"
                 }
               }
             ]

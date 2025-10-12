@@ -10,8 +10,8 @@ public enum SuperStructure {
     L2(L_2_HEIGHT, L2_ANGLE, 4),
     L3(L_3_HEIGHT, L3_ANGLE, 5),
     L4(L_4_HEIGHT, L4_ANGLE, 6),
-    ALGE_L2(L_2_HEIGHT, CORAL_OFF, 4),
-    ALGE_L3(L_3_HEIGHT, CORAL_OFF, 5);
+    ALGE_L2(L_2_ALGAE, CORAL_OFF, 7),
+    ALGE_L3(L_3_HEIGHT, CORAL_OFF, 8);
 
     private int height;
     private double angle;

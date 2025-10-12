@@ -9,10 +9,7 @@ import org.frc1410.framework.PhaseDrivenRobot;
 import org.frc1410.framework.control.Controller;
 import org.frc1410.framework.scheduler.task.TaskPersistence;
 import org.frc1410.framework.scheduler.task.lock.LockPriority;
-import org.frc1410.reefscape2025.commands.Drivetrain.AutoAlign;
-import org.frc1410.reefscape2025.commands.Drivetrain.DriveLooped;
-import org.frc1410.reefscape2025.commands.Drivetrain.ToggleFieldOrientationCommand;
-import org.frc1410.reefscape2025.commands.Drivetrain.ToggleSlowmode;
+import org.frc1410.reefscape2025.commands.Drivetrain.*;
 import org.frc1410.reefscape2025.commands.Elevator.*;
 import org.frc1410.reefscape2025.commands.Elevator.Actions.*;
 import org.frc1410.reefscape2025.commands.Elevator.Manual.SetCoralRotationManual;
@@ -59,6 +56,9 @@ public final class Robot extends PhaseDrivenRobot {
             .add("Pos1", () -> new PathPlannerAuto("Pos1"))
             .add("Pos2", () -> new PathPlannerAuto("Pos2"))
             .add("Pos3", () -> new PathPlannerAuto("Pos3"))
+            .add("Pos1-S", () -> new PathPlannerAuto("Pos1-S")) //With a source intake
+            .add("Pos2-S", () -> new PathPlannerAuto("Pos2-S"))
+            .add("Pos3-S", () -> new PathPlannerAuto("Pos3-S"))
             .add("1CoralL1Far", () -> new PathPlannerAuto("1CoralL1Far"))
             .add("1CoralL1Left", () -> new PathPlannerAuto("1CoralL1Left"))
             .add("1CoralL1Right", () -> new PathPlannerAuto("1CoralL1Right"))
@@ -186,6 +186,8 @@ public final class Robot extends PhaseDrivenRobot {
 		this.driverController.A.whenPressed(new ToggleSlowmode(drivetrain), TaskPersistence.GAMEPLAY);
 
         this.driverController.X.whenPressed(new ToggleFieldOrientationCommand(drivetrain), TaskPersistence.GAMEPLAY);
+
+        this.driverController.Y.whenPressed(new ResetAngleCommand(drivetrain), TaskPersistence.GAMEPLAY);
 
 //		this.driverController.X.whenPressed(new InstantCommand(
 //				() -> {
