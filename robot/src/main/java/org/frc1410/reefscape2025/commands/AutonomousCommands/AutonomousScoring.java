@@ -41,7 +41,10 @@ public class AutonomousScoring extends SequentialCommandGroup {
                         new WaitCommand(0.5)
                     ),
 
-                    new HomeElevator(elevator, coralRotation, level),
+                    new ParallelRaceGroup(
+                            new OuttakeCoral(lBozo, leds, false),
+                            new WaitCommand(0.5)
+                    ),
 
                     new ParallelRaceGroup(
                         new WaitUntilCommand(elevator::elevatorHeightAtSetpoint),
