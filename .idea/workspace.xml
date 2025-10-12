@@ -4,33 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="KCMT fixes, f it we ball? #2">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="5b8db817-6df8-40e1-abbf-650369373500" name="Changes" comment="KCMT fixes, f it we ball? #3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/Robot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Drivetrain/DriveLooped.class" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/classes/java/main/org/frc1410/reefscape2025/commands/Drivetrain/DriveLooped.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/libs/robot.jar" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/libs/robot.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/DriveLooped.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/compileTransaction/stash-dir/Robot.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/robot/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/Pos1.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/Pos1.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/Pos2.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/Pos2.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/Pos3.auto" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/autos/Pos3.auto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/3-Source.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/3-Source.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/6-Back.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/6-Back.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Bottom-Start-1.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Bottom-Start-1.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source to South Coral L.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/Source to South Coral L.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/TopStart-3.path" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/deploy/pathplanner/paths/TopStart-3.path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Drivetrain/DriveLooped.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/commands/Drivetrain/DriveLooped.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/SuperStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/robot/src/main/java/org/frc1410/reefscape2025/subsystems/SuperStructure.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +161,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build & Deploy Robot.executor": "Run",
-    "Gradle.Build Robot.executor": "Coverage",
+    "Gradle.Build Robot.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
     "Gradle.Reefscape2025 [buildDependents].executor": "Run",
     "Gradle.Reefscape2025 [deploy].executor": "Run",
@@ -225,7 +200,7 @@
       <recent name="org.frc1410.reefscape2025.commands.Elevator" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Build &amp; Deploy Robot">
+  <component name="RunManager" selected="Gradle.Build Robot">
     <configuration name="Reefscape2025 [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -670,7 +645,23 @@
       <option name="project" value="LOCAL" />
       <updated>1760201972047</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="KCMT fixes, f it we ball? #2">
+      <option name="closed" value="true" />
+      <created>1760228910287</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1760228910287</updated>
+    </task>
+    <task id="LOCAL-00035" summary="KCMT fixes, f it we ball? #3">
+      <option name="closed" value="true" />
+      <created>1760229284854</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1760229284854</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -691,7 +682,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Elevator constructor written" />
     <MESSAGE value="Elevator Started code" />
     <MESSAGE value="Job Security" />
     <MESSAGE value="Soren's code is based asf (I made it take angles and shit... also made PID work (: )" />
@@ -716,7 +706,8 @@
     <MESSAGE value="Auto changes" />
     <MESSAGE value="KCMT fixes, f it we ball?" />
     <MESSAGE value="KCMT fixes, f it we ball? #2" />
-    <option name="LAST_COMMIT_MESSAGE" value="KCMT fixes, f it we ball? #2" />
+    <MESSAGE value="KCMT fixes, f it we ball? #3" />
+    <option name="LAST_COMMIT_MESSAGE" value="KCMT fixes, f it we ball? #3" />
   </component>
   <component name="WpiLibVersionService">
     <option name="lastChecked" value="20251010123121" />
